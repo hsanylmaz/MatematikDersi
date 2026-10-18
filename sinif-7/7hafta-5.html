@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7. Sınıf 5. Hafta (`7hafta-5`) | Rasyonel Sayılarda Karşılaştırma ve Sıralama — Matematik Atölyesi</title>
-  <meta name="description" content="MEB TYMM 2026-2027 7. Sınıf Matematik 5. Hafta (MAT.7.1.3 b, c) Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini sembolik olarak ifade etme ve sayı doğrusu üzerinde açıklama simülasyonu.">
+  <title>7. Sınıf 5. Hafta (`7hafta-5`) | Sıralama Stratejileri ve Yoğunluk Özelliği Atölyesi — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 7. Sınıf Matematik 5. Hafta (MAT.7.1.3) Sıralama Stratejileri ve Yoğunluk Özelliği Atölyesi aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -22,10 +22,10 @@
 
       <div class="topbar-meta">
         <span class="tech-badge tech-badge--grade-7">7. SINIF • 5. HAFTA</span>
-        <span class="tech-badge mono">MAT.7.1.3 (b, c)</span>
+        <span class="tech-badge mono">MAT.7.1.3</span>
         <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
         <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
-          📐 Blueprint Koyu Mod
+          Blueprint Koyu Mod
         </button>
         <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
       </div>
@@ -41,9 +41,9 @@
           <span class="tech-badge">12–16 Ekim • 5 Ders Saati</span>
           <span class="tech-badge">1. TEMA: SAYILAR VE NİCELİKLER (1)</span>
         </div>
-        <h1 class="week-header-banner__title">Rasyonel Sayılarda Karşılaştırma ve Sıralama</h1>
+        <h1 class="week-header-banner__title">Sıralama Stratejileri ve Yoğunluk Özelliği Atölyesi</h1>
         <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
-          <strong>Öğrenme Çıktısı (MAT.7.1.3):</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme (Sembolik ifade etme ve sayı doğrusu üzerinde kendi ifadeleriyle açıklama).
+          <strong>Öğrenme Çıktısı (MAT.7.1.3):</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme.
         </p>
       </div>
       <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
@@ -55,13 +55,22 @@
   <!-- Ana İçerik Alanı -->
   <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
 
+    <!-- MEB Müfredat Çerçeve Notu (Aktif Öğrenme v2.0) -->
+    <div class="meb-context-ribbon">
+      <div>
+        <strong style="color:var(--accent-signal);">MEB TYMM Öğrenme-Öğretme Uygulaması Çerçevesi:</strong>
+        <span>"-4 ile -5 veya 3/5 ile 4/5 arasına sayı yerleştirerek 'Herhangi iki rasyonel sayı arasında daima bir rasyonel sayı bulunur' (yoğunluk özelliği) genellemesine ulaşma."</span>
+      </div>
+      <span class="tech-badge tech-badge--signal">Aktif Öğrenme v2.0</span>
+    </div>
+
     <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
     <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
       <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
         <span class="stage-tab-btn__index">1</span>
         <span class="stage-tab-btn__label">
-          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
-          <span class="stage-tab-btn__name">Rasyonel Sıralama Stratejileri Simülasyonu</span>
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF DÖNGÜSÜ</span>
+          <span class="stage-tab-btn__name">Varsayım, Deney ve Önerme Laboratuvarı</span>
         </span>
       </button>
 
@@ -69,7 +78,7 @@
         <span class="stage-tab-btn__index">2</span>
         <span class="stage-tab-btn__label">
           <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
-          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (3 Mini Görev)</span>
         </span>
       </button>
 
@@ -88,7 +97,7 @@
     <section id="stage-1" class="stage-section">
       <div class="simulation-workbench">
 
-        <!-- Sol Rehberli Görev ve İpucu Paneli -->
+        <!-- Sol Rehberli Görev, Varsayım ve Çıkarım Paneli -->
         <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">KEŞİF ADIMLARI (4 GÖREV)</span>
@@ -96,31 +105,54 @@
           </div>
 
           <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
-            <button type="button" class="guide-step-pill is-active" data-step="0">1. Eşit Paylı (-)</button>
-            <button type="button" class="guide-step-pill" data-step="1">2. Bütüne Yakınlık</button>
-            <button type="button" class="guide-step-pill" data-step="2">3. Ara Değer</button>
-            <button type="button" class="guide-step-pill" data-step="3">4. Çoklu Temsil</button>
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Keşif</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Deney</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. İnceleme</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Genelleme</button>
           </div>
 
           <div class="guide-mission-box">
-            <div class="guide-mission-box__tag" id="mission-tool-tag">GÖREV 1/4: PAYLARI EŞİT NEGATİF RASYONEL SAYILARI SIRALAMA</div>
-            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: -3/4 &lt; -3/7 &lt; -3/10 Sıralamasını Doğrulama</h2>
+            <div class="guide-mission-box__tag" id="mission-tool-tag">MATEMATİKSEL LABORATUVAR</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev Yükleniyor...</h2>
             <p class="guide-mission-box__inst" id="mission-instruction">
-              Payları eşit negatif rasyonel sayılardan <strong>-3/4</strong> ile <strong>-3/10</strong> arasında yer alan <strong>-3/7</strong> sayısını göstermek için ortadaki payda sürgüsünü <strong>7</strong> değerine getirin ve doğrulayın.
+              Laboratuvar talimatı yükleniyor...
             </p>
           </div>
 
+          <!-- Aktif Öğrenme 1: Varsayım / Ön Tahmin Seçimi -->
+          <div class="hypothesis-box" id="hypothesis-container">
+            <div class="hypothesis-box__label">
+              <span>🧠 1. Adım: Ön Varsayımınız Nedir?</span>
+              <span class="mono" id="hypothesis-status" style="font-size:0.7rem; color:var(--ink-muted);">Seçim Yapılmadı</span>
+            </div>
+            <p style="font-size:0.83rem; color:var(--ink-secondary);" id="hypothesis-prompt">
+              Deneye başlamadan önce sizce matematiksel durum nasıl sonuçlanacaktır?
+            </p>
+            <div class="hypothesis-options" id="hypothesis-options-group"></div>
+          </div>
+
           <div class="hint-box" id="mission-hint">
-            <strong>💡 Pedagojik İpucu:</strong> Pozitif kesirlerde paylar eşitken paydası büyük olan küçüktür (<code>3/10 &lt; 3/7 &lt; 3/4</code>). Negatif kesirlerde ise 0'a yakınlık yönü ters çevirir: <code>-3/4 &lt; -3/7 &lt; -3/10</code>.
+            <strong>💡 Pedagojik İpucu:</strong> İpucu yükleniyor...
+          </div>
+
+          <!-- Aktif Öğrenme 2: Önerme / Genelleme Kurucu (Boşluk Doldurma) -->
+          <div class="conjecture-box" id="conjecture-container">
+            <div class="conjecture-box__label">💡 3. Adım: Önerme &amp; Genelleme Kurucu</div>
+            <label for="conjecture-select" style="font-size:0.83rem; color:var(--ink-secondary);" id="conjecture-label">
+              Deney ve kayıt tablonuzdaki bulgulara dayanarak kuralı tamamlayın:
+            </label>
+            <select id="conjecture-select" class="conjecture-select">
+              <option value="">-- Çıkarımınızı Seçin --</option>
+            </select>
           </div>
 
           <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
-            <strong>Adım 1 Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.
+            Varsayımınızı belirleyin, sağdaki laboratuvarda deney yapıp gözlemleri tabloya kaydedin.
           </div>
 
           <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
             <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
-              ✓ Görevi Doğrula
+              ✓ Bulguları ve Önermeyi Doğrula
             </button>
             <button type="button" class="btn" id="next-step-btn">
               Sonraki Adım →
@@ -129,57 +161,66 @@
 
           <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
             <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
-              TYMM SÜREÇ BİLEŞENLERİ (MAT.7.1.3 b, c):
+              TYMM SÜREÇ BİLEŞENLERİ DURUMU:
             </div>
             <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
-              <li id="proc-b">⬜ <strong>b)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini sembolik olarak (&lt;, &gt;, =) ifade eder.</li>
-              <li id="proc-c">⬜ <strong>c)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkisini sayı doğrusu üzerinde kendi ifadeleriyle açıklar.</li>
+              <li id="proc-a">⬜ <strong>a)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini sembolik olarak ifade eder.</li>
+              <li id="proc-b">⬜ <strong>b)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkisini sayı doğrusu üzerinde kendi ifadeleriyle açıklar.</li>
+              <li id="proc-c">⬜ <strong>c)</strong> İki rasyonel sayı arasında sonsuz rasyonel sayı olduğunu (yoğunluk) fark eder.</li>
             </ul>
           </div>
         </aside>
 
-        <!-- Sağ İnteraktif Simülasyon Tuvali -->
+        <!-- Sağ İnteraktif Simülasyon Tuvali ve Gözlem Masası -->
         <div class="canvas-studio">
           <div class="canvas-toolbar">
-            <div class="tool-group" role="group" aria-label="Sıralama Stratejisi Seçimi">
-              <button type="button" class="tool-btn is-active" data-tool="samenum" id="tool-samenum">
-                🔢 1. Eşit Paylı (-3/4 &lt; -3/7 &lt; -3/10)
-              </button>
-              <button type="button" class="tool-btn" data-tool="benchmark" id="tool-benchmark">
-                🎯 2. Bütüne Yakınlık (7/8 &gt; 5/6)
-              </button>
-              <button type="button" class="tool-btn" data-tool="between" id="tool-between">
-                📍 3. Ara Rasyonel Sayı (-5/8)
-              </button>
-              <button type="button" class="tool-btn" data-tool="multiorder" id="tool-multiorder">
-                📊 4. Çoklu Temsil Sıralaması
-              </button>
-            </div>
+            <div class="tool-group" id="canvas-tool-buttons"></div>
 
             <div style="display:flex; gap:0.45rem; align-items:center;">
-              <button type="button" class="btn btn--sm" id="sim-auto-target-btn" title="Hedef Değeri Göster">
-                Hedef Konuma Getir
+              <button type="button" class="btn btn--sm btn--primary" id="sim-record-btn" title="Yapılan Deneyi Tabloya Kaydet">
+                📋 Gözlemi Kaydet
               </button>
-              <button type="button" class="btn btn--sm" id="sim-reset-btn">
-                Sıfırla
+              <button type="button" class="btn btn--sm" id="sim-reset-btn" title="Laboratuvarı Sıfırla">
+                ↺ Sıfırla
               </button>
             </div>
           </div>
 
-          <!-- İnteraktif Kontrol Sürgüsü -->
-          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
-            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
-              Ortadaki Payda (b): -3/5
-            </label>
-            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
-              <input type="range" id="sim-param-slider" min="3" max="11" step="1" value="5" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
-              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">-3/5</span>
+          <!-- Çok Değişkenli Deney Kontrol Alanı -->
+          <div class="dual-control-bar" id="control-bar-container">
+            <div class="control-group-item">
+              <div class="control-group-item__top">
+                <label for="sim-param-slider" class="mono" style="font-size:0.82rem; font-weight:700;" id="slider-label">
+                  Deney Değişkeni 1:
+                </label>
+                <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">0</span>
+              </div>
+              <input type="range" id="sim-param-slider" min="1" max="10" step="1" value="4" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+            </div>
+
+            <div class="control-group-item" id="secondary-control-group" style="display:none;">
+              <div class="control-group-item__top">
+                <label for="sim-param-slider-2" class="mono" style="font-size:0.82rem; font-weight:700;" id="slider-2-label">
+                  Deney Değişkeni 2:
+                </label>
+                <span class="tech-badge mono" id="slider-2-value-readout">0</span>
+              </div>
+              <input type="range" id="sim-param-slider-2" min="1" max="10" step="1" value="5" style="width:100%; accent-color: var(--grade-6); cursor:pointer;">
             </div>
           </div>
 
-          <!-- SVG Simülasyon Alanı -->
+          <!-- SVG Matematik Tuvali -->
           <div class="canvas-viewport">
-            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Rasyonel Sayılarda Sıralama Stratejileri Tuvali">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Matematiksel Simülasyon Tuvali">
+              <defs>
+                <marker id="arrow-ray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#0052CC" />
+                </marker>
+                <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF5500" />
+                </marker>
+              </defs>
+
               <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
               <g id="svg-construction-layer"></g>
             </svg>
@@ -187,10 +228,38 @@
 
           <!-- Alt Canlı Telemetri Çubuğu -->
           <div class="canvas-telemetry">
-            <span id="telemetry-tool">AKTİF MOD: Payları Eşit Negatif Rasyonel Sıralama</span>
-            <span id="telemetry-notation">SEMBOLİK İFADE: -3/4 &lt; -3/7 &lt; -3/10</span>
-            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">DURUM: İnceleniyor</span>
+            <span id="telemetry-tool">AKTİF MOD: Doğrudan Keşif</span>
+            <span id="telemetry-notation">KAVRAM: Temel Model</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">DURUM: Deney Hazır</span>
           </div>
+
+          <!-- Gözlem ve Canlı Veri Kayıt Tablosu Çekmecesi -->
+          <div class="observation-drawer">
+            <div class="observation-drawer__header">
+              <span class="mono" style="font-size:0.78rem; font-weight:700;">📊 CANLI DENEY &amp; GÖZLEM VERİ KAYIT TABLOSU</span>
+              <span class="mono" id="observation-counter" style="font-size:0.75rem; color:var(--ink-muted);">Kayıtlı Deneme: 0</span>
+            </div>
+            <div class="observation-table-wrap">
+              <table class="observation-table">
+                <thead>
+                  <tr id="observation-table-head">
+                    <th>#</th>
+                    <th>Deneme Girdisi</th>
+                    <th>Gözlenen Matematiksel Değer</th>
+                    <th>Durum / Not</th>
+                  </tr>
+                </thead>
+                <tbody id="observation-table-body">
+                  <tr>
+                    <td colspan="4" style="text-align:center; color:var(--ink-muted); padding:1rem;">
+                      Henüz gözlem kaydedilmedi. Sürgüleri ayarlayıp "📋 Gözlemi Kaydet" butonuna basın.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -205,10 +274,10 @@
           <div>
             <span class="tech-badge tech-badge--grade-7">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
             <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
-              Öğrendim mi? — Rasyonel Sayılarda Karşılaştırma ve Sıralama Kontrolü (MAT.7.1.3)
+              Öğrendim mi? — Hızlı Kazanım Kontrolü (MAT.7.1.3)
             </h2>
             <p style="color:var(--ink-secondary); font-size:0.92rem;">
-              Pay/payda eşitliği, bütüne yakınlık ve iki rasyonel sayı arasındaki sayıları bulma stratejilerini aşağıdaki 3 mini görevde test edin.
+              Simülasyonda deneyimlediğiniz ve önermesini kurduğunuz kavramları aşağıdaki 3 mini görevde sınayın.
             </p>
           </div>
           <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
@@ -217,6 +286,7 @@
         </div>
 
         <div class="assessment-grid">
+
           <!-- Mini Görev 1 -->
           <article class="mini-check-card" data-mini-id="1">
             <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • PAYLARI EŞİT NEGATİF RASYONEL SIRALAMA</div>
@@ -258,90 +328,224 @@
             </div>
             <div class="mono" id="mini-feedback-3" style="font-size:0.8rem; min-height:1.2rem;"></div>
           </article>
+
         </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-subtle);">
-          <p style="font-size:0.9rem; color:var(--ink-secondary);">
-            Değerlendirmeyi tamamladıysanız aşağıdaki <strong>"Ek soru çözmek ister misiniz?"</strong> alanından 10 yeni nesil soruya geçebilirsiniz.
-          </p>
+        <div style="margin-top:1.5rem; display:flex; justify-content:flex-end;">
           <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
-            Aşama 3: Ek Soru Alanına İlerle →
+            Aşama 3'e Geç (Ek Soru Alanı) →
           </button>
         </div>
       </div>
     </section>
 
     <!-- ====================================================================
-         AŞAMA 3 ve SAYFA ALTI: DİNAMİK SORU HAVUZU VE "EK SORU İSTER MİSİNİZ?"
+         AŞAMA 3: KOŞULLU EK SORU HAVUZU KAPISI ("EK SORU İSTER MİSİNİZ?")
          ==================================================================== -->
-    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
-      <div class="extra-questions-gate__inner">
-        <div>
-          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
-          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
-            Ek soru çözmek ister misiniz?
-          </h2>
-          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
-            Bu haftanın kazanımı (<strong>MAT.7.1.3 — Rasyonel Sayılarda Karşılaştırma ve Sıralama İlişkileri</strong>) için özel olarak hazırlanmış <strong>10 adet yeni nesil muhakeme sorusu</strong> hazırdır.
-          </p>
+    <section id="stage-3" class="stage-section" style="margin-top: 2rem;">
+      <div class="extra-questions-gate">
+        <div class="extra-questions-gate__inner">
+          <div>
+            <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+            <h2 style="font-family:var(--font-display); font-size:1.45rem; margin-top:0.4rem;">
+              Ek soru çözmek ister misiniz?
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem; margin-top:0.25rem;">
+              Bu modül için hazırlanmış <strong>10 adet yeni nesil beceri temelli soru</strong> ile muhakeme gücünüzü pekiştirebilirsiniz.
+            </p>
+          </div>
+
+          <div class="extra-questions-gate__btns">
+            <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+              ✓ Evet, Ek Soru Çözmek İstiyorum
+            </button>
+            <button type="button" class="btn" id="btn-extra-no">
+              ✕ Hayır, Teşekkürler (Yeterli)
+            </button>
+          </div>
         </div>
 
-        <div class="extra-questions-gate__btns" role="group" aria-label="Ek Soru Tercihi">
-          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
-            ✓ Evet, 10 Yeni Nesil Soruyu Aç
-          </button>
-          <button type="button" class="btn" id="btn-extra-no">
-            ✕ Hayır, Şimdilik Yeterli
-          </button>
-        </div>
-      </div>
-
-      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
-        Harika! Bu haftanın aktif öğrenme simülasyonunu tamamladınız. Ek sorular gizli tutuldu. İstediğiniz zaman <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak soru havuzunu görünür hale getirebilirsiniz.
-      </div>
-    </section>
-
-    <!-- KOŞULLU GÖRÜNÜMLÜ 10 YENİ NESİL EK SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
-    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden aria-label="10 Yeni Nesil Ek Soru Havuzu">
-
-      <div class="question-nav-bar">
-        <div>
-          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">7HAFTA-5 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
-          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
-        </div>
-
-        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
-          <span class="tech-badge tech-badge--grade-7" id="extra-score-display">Doğru: 0 / 10</span>
-          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
-            Tümünü Liste Görünümünde Aç
-          </button>
+        <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+          Tebrikler! Hafta etkinliğini ve değerlendirme aşamasını tamamladınız. Dilediğiniz zaman "Evet" butonuna tıklayarak ek 10 soruyu çözebilirsiniz.
         </div>
       </div>
 
-      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+      <!-- 10 Soruluk Dinamik Yeni Nesil Soru Havuzu Paneli -->
+      <div id="extra-questions-panel" class="extra-questions-container is-hidden" hidden>
+        <div class="question-nav-bar">
+          <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+            <span class="mono" style="font-size:0.8rem; font-weight:700;">SORULAR:</span>
+            <div class="question-num-pills" id="question-pills-container"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+              Tümünü Liste Görünümünde Aç
+            </button>
+            <span class="tech-badge tech-badge--signal mono" id="extra-score-display">Doğru: 0 / 10</span>
+          </div>
+        </div>
 
+        <div id="questions-render-area"></div>
+      </div>
     </section>
 
   </main>
 
-  <!-- Alt Bilgi -->
+  <!-- Alt Bilgi / Künye -->
   <footer class="atelier-footer">
     <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
       <div>
-        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB Türkiye Yüzyılı Maarif Modeli (2026-2027)
+        <strong>Matematik Atölyesi</strong> — MEB Türkiye Yüzyılı Maarif Modeli (TYMM) Uyumlu Aktif Öğrenme Platformu
       </div>
-      <div class="mono" style="font-size:0.78rem;">
-        Dosya: <code>sinif-7/7hafta-5.html</code> • Kazanım: <code>MAT.7.1.3 (b, c)</code>
+      <div class="mono" style="font-size:0.8rem; color:var(--ink-muted);">
+        7. Sınıf • 5. Hafta • MAT.7.1.3 • GitHub &amp; Vercel Ready
       </div>
     </div>
   </footer>
 
-  <!-- Simülasyon, Değerlendirme ve 10 Yeni Nesil Soru Motoru -->
+  <!-- ====================================================================
+       JAVASCRIPT MOTORU
+       ==================================================================== -->
   <script>
-    (function () {
-      const STORAGE_KEY = 'mat_atolye_7hafta_5';
+    (function() {
+      'use strict';
 
-      // 10 Adet Yeni Nesil MEB TYMM (MAT.7.1.3 b, c) Sorusu
+      const STORAGE_KEY = 'mat_atolye_7hafta-5_v2';
+
+      const SIM_STEPS = [
+      {
+            "tag": "YARIMA VE BÜTÜNE YAKINLIK",
+            "title": "Adım 1: Yarıma (1/2) ve Bütüne (1) Yakınlık Stratejisi",
+            "instruction": "5/8 ile 3/7 kesirlerini yarıma (1/2 = 4/8) göre karşılaştırın: 5/8 yarımdan büyük, 3/7 yarımdan küçüktür (5/8 > 3/7).",
+            "hint": "Payda eşitlemeye gerek kalmadan sayıların 0'a, 1/2'ye veya 1'e olan yakınlığına bakarak pratik sıralama yapılabilir.",
+            "hypotheses": [
+                  {
+                        "text": "Rasyonel sayılar 0, 1/2 ve 1 referanslarına olan yakınlıklarıyla pratikçe karşılaştırılabilir.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Her sıralamada mutlaka payda eşitlemek şarttır.",
+                        "correct": false
+                  }
+            ],
+            "conjectures": [
+                  {
+                        "text": "Referans stratejisiyle (yarımdan büyük/küçük) işlem yapmadan hızlı ve doğru sıralama yapılabilir.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Referans noktası sadece 0'dır.",
+                        "correct": false
+                  }
+            ],
+            "sliderLabel": "Pay 1 (Pay/8):",
+            "min": 1,
+            "max": 7,
+            "defaultVal": 5,
+            "unit": "pay",
+            "simType": "rational_line",
+            "hasSecondary": false
+      },
+      {
+            "tag": "ARAYA SAYI YERLEŞTİRME",
+            "title": "Adım 2: İki Rasyonel Sayı Arasına Sayı Yerleştirme",
+            "instruction": "3/5 ile 4/5 ardışık gibi görünen kesirleri 2 ile genişletin (6/10 ve 8/10). Aralarına 7/10 rasyonel sayısını yerleştirip tabloya kaydedin.",
+            "hint": "Kesirleri 10 ile, 100 ile genişlettikçe aralarına 10'larca, 100'lerce yeni rasyonel sayı sığdırabilirsiniz!",
+            "hypotheses": [
+                  {
+                        "text": "Genişletme yapılarak herhangi iki rasyonel sayı arasına istenildiği kadar yeni rasyonel sayı yerleştirilebilir.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Ardışık iki rasyonel sayı arasında başka hiçbir sayı bulunmaz.",
+                        "correct": false
+                  }
+            ],
+            "conjectures": [
+                  {
+                        "text": "Herhangi iki rasyonel sayı arasında daima en az bir (ve sonsuz sayıda) rasyonel sayı bulunur.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Rasyonel sayılar ardışık tamsayılar gibi tek tek sayılabilir.",
+                        "correct": false
+                  }
+            ],
+            "sliderLabel": "Genişletme Faktörü:",
+            "min": 2,
+            "max": 10,
+            "defaultVal": 2,
+            "unit": "kat",
+            "simType": "rational_line",
+            "hasSecondary": false
+      },
+      {
+            "tag": "YOĞUNLUK ÖZELLİĞİ",
+            "title": "Adım 3: Rasyonel Sayıların Yoğunluk Özelliği",
+            "instruction": "Sayı doğrusunda iki nokta arasına sürekli yakınlaşarak (zoom yaparak) aradaki sonsuz sayıları keşfedin.",
+            "hint": "Tam sayılarda 3 ile 4 arasında başka bir tam sayı yoktur. Ancak rasyonel sayılarda herhangi iki sayı arasında SONSUZ rasyonel sayı vardır (Yoğunluk Özelliği).",
+            "hypotheses": [
+                  {
+                        "text": "Rasyonel sayılar kümesi yoğundur; sayı doğrusundaki herhangi iki nokta arasında sonsuz sayıda rasyonel sayı vardır.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Rasyonel sayılar arasında boşluklar vardır ve sonludur.",
+                        "correct": false
+                  }
+            ],
+            "conjectures": [
+                  {
+                        "text": "Rasyonel sayılar kümesi YOĞUNDUR; herhangi iki rasyonel sayı arasında sonsuz sayıda rasyonel sayı vardır.",
+                        "correct": true
+                  },
+                  {
+                        "text": "İki rasyonel sayı arasında en fazla 1 sayı olabilir.",
+                        "correct": false
+                  }
+            ],
+            "sliderLabel": "Aralık Hassasiyeti:",
+            "min": 1,
+            "max": 5,
+            "defaultVal": 3,
+            "unit": "kademe",
+            "simType": "rational_line",
+            "hasSecondary": false
+      },
+      {
+            "tag": "ÇOKLU TEMSİL SIRALAMA",
+            "title": "Adım 4: Tam Sayı, Kesir ve Ondalık Sıralaması",
+            "instruction": "-1,5 < -3/4 < 0,25 < 5/4 çoklu gösterimlerini sayı doğrusunda küçükten büyüğe dizin.",
+            "hint": "Farklı gösterimlerdeki sayıları sıralarken hepsini ondalığa veya paydası eşit kesre dönüştürmek kolaylık sağlar.",
+            "hypotheses": [
+                  {
+                        "text": "Farklı gösterimler (ondalık, kesir, tam sayı) ortak bir temsile çevrilerek sayı doğrusunda sıralanabilir.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Ondalık sayılar kesirlerle sıralanamaz.",
+                        "correct": false
+                  }
+            ],
+            "conjectures": [
+                  {
+                        "text": "Rasyonel sayılar temsil türü ne olursa olsun sayı doğrusunda soldan sağa doğru küçükten büyüğe dizilir.",
+                        "correct": true
+                  },
+                  {
+                        "text": "Negatif sayılar daima pozitiftir.",
+                        "correct": false
+                  }
+            ],
+            "sliderLabel": "Seçilen Sayı Değeri:",
+            "min": -2,
+            "max": 2,
+            "defaultVal": 1,
+            "unit": "",
+            "simType": "rational_line",
+            "hasSecondary": false
+      }
+];
       const EXTRA_QUESTIONS = [
         {
           id: 1,
@@ -485,75 +689,14 @@
         }
       ];
 
-      // Simülasyonun 4 Rehberli Görev Tanımı (MAT.7.1.3 b, c)
-      const SIM_STEPS = [
-        {
-          tool: 'samenum',
-          tag: 'GÖREV 1/4: PAYLARI EŞİT NEGATİF RASYONEL SAYILARI SIRALAMA',
-          title: 'Görev 1: -3/4 < -3/7 < -3/10 Sıralamasını Doğrulama',
-          instruction: 'Payları eşit negatif rasyonel sayılardan <strong>-3/4</strong> ile <strong>-3/10</strong> arasında yer alan <strong>-3/7</strong> sayısını göstermek için ortadaki payda sürgüsünü <strong>7</strong> değerine getirin ve doğrulayın.',
-          hint: '💡 İpucu: Pozitif kesirlerde paylar eşitken paydası büyük olan küçüktür (3/10 < 3/7 < 3/4). Negatif kesirlerde ise 0\'a yakınlık yönü ters çevirir: -3/4 < -3/7 < -3/10.',
-          sliderLabel: 'Ortadaki Payda Değeri (b):',
-          min: 3,
-          max: 11,
-          step: 1,
-          defaultVal: 5,
-          targetVal: 7,
-          unit: '',
-          notation: '-3/4 < -3/7 < -3/10 (Paylar Eşit Negatif Sıralama)'
-        },
-        {
-          tool: 'benchmark',
-          tag: 'GÖREV 2/4: YARIMA (1/2) VE BÜTÜNE (1) YAKINLIK STRATEJİSİ',
-          title: 'Görev 2: 7/8 > 5/6 Bütüne Yakınlık Karşılaştırması',
-          instruction: 'Paydası 8 olan kesrin <strong>5/6</strong> kesrinden daha büyük (1 tama daha yakın) olması için pay sürgüsünü <strong>7</strong> (<strong>7/8</strong>) değerine ayarlayın ve doğrulayın.',
-          hint: '💡 İpucu: 5/6 kesrinin 1 tama uzaklığı 1/6 birimdir; 7/8 kesrinin 1 tama uzaklığı ise 1/8 birimdir. 1/8 < 1/6 olduğu için 7/8 bütüne daha yakındır: 7/8 > 5/6.',
-          sliderLabel: 'Pay Değeri (n / 8):',
-          min: 1,
-          max: 7,
-          step: 1,
-          defaultVal: 4,
-          targetVal: 7,
-          unit: '/8',
-          notation: '7/8 > 5/6 (1 Tama Uzaklık: 1/8 < 1/6)'
-        },
-        {
-          tool: 'between',
-          tag: 'GÖREV 3/4: İKİ RASYONEL SAYI ARASINA RASYONEL SAYI YERLEŞTİRME',
-          title: 'Görev 3: -3/4 (-6/8) ile -1/2 (-4/8) Arasındaki -5/8 Noktası',
-          instruction: 'Sayı doğrusunda <strong>-3/4 = -6/8</strong> ile <strong>-1/2 = -4/8</strong> rasyonel sayıları tam ortasında yer alan <strong>-5/8</strong> noktasını bulmak için sürgüyü <strong>Pay = -5</strong> değerine getirin.',
-          hint: '💡 İpucu: Paydaları 8\'de eşitlediğimizde -3/4 = -6/8 ve -1/2 = -4/8 olur. Bu iki sayının arasında -5/8 rasyonel sayısı bulunur (-6/8 < -5/8 < -4/8).',
-          sliderLabel: 'Aday Nokta (n / 8):',
-          min: -8,
-          max: 0,
-          step: 1,
-          defaultVal: -7,
-          targetVal: -5,
-          unit: '/8',
-          notation: '-3/4 (-6/8) < -5/8 < -1/2 (-4/8)'
-        },
-        {
-          tool: 'multiorder',
-          tag: 'GÖREV 4/4: SAYI DOĞRUSU ÜZERİNDE ÇOKLU TEMSİL SIRALAMASI',
-          title: 'Görev 4: -1,5 < -3/4 < 0,25 < 5/4 Sıralamasını Tamamlama',
-          instruction: 'Farklı temsillerle verilen rasyonel sayı dizisinde en sağdaki <strong>+1,25 (5/4)</strong> noktasını doğru yerine yerleştirmek için sürgüyü <strong>Pay = 5</strong> değerine getirin ve doğrulayın.',
-          hint: '💡 İpucu: Sayı doğrusunda soldan sağa doğru: -1,5 (-6/4) < -3/4 (-0,75) < 0,25 (1/4) < 5/4 (+1,25).',
-          sliderLabel: 'Dördüncü Nokta (n / 4):',
-          min: -4,
-          max: 7,
-          step: 1,
-          defaultVal: 2,
-          targetVal: 5,
-          unit: '/4',
-          notation: '-1,5 < -3/4 < 0,25 < 5/4 (Soldan Sağa Sıralama)'
-        }
-      ];
-
-      let state = {
+      const state = {
         currentStage: 'stage-1',
         currentSimStep: 0,
+        selectedHypothesis: {},
+        selectedConjecture: {},
+        observations: [[], [], [], []],
         completedSimSteps: [false, false, false, false],
-        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        miniCheckAnswers: {},
         extraPoolVisible: false,
         extraViewMode: 'single',
         currentQuestionIndex: 0,
@@ -568,6 +711,8 @@
             if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
             if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
             if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+            if (parsed.selectedHypothesis) state.selectedHypothesis = parsed.selectedHypothesis;
+            if (parsed.selectedConjecture) state.selectedConjecture = parsed.selectedConjecture;
           }
         } catch (e) {}
       }
@@ -594,6 +739,8 @@
             completedSimSteps: state.completedSimSteps,
             miniCheckAnswers: state.miniCheckAnswers,
             extraAnswers: state.extraAnswers,
+            selectedHypothesis: state.selectedHypothesis,
+            selectedConjecture: state.selectedConjecture,
             extraCorrectCount: extraCorrectCount,
             progressPercent: totalPercent,
             updatedAt: new Date().toISOString()
@@ -604,6 +751,7 @@
         } catch (e) {}
       }
 
+      // Tema Yönetimi
       const themeBtn = document.getElementById('theme-toggle-btn');
       function initTheme() {
         const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
@@ -618,6 +766,7 @@
         themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
       });
 
+      // Sekmeler Arası Geçiş
       const stageButtons = document.querySelectorAll('.stage-tab-btn');
       stageButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -650,6 +799,7 @@
         switchStage('stage-3');
       });
 
+      // SVG Koordinat Izgarası
       function drawSvgGrid() {
         const gridGroup = document.getElementById('svg-grid-layer');
         let html = '';
@@ -662,18 +812,26 @@
         gridGroup.innerHTML = html;
       }
 
-      const slider = document.getElementById('sim-param-slider');
-      const sliderLabel = document.getElementById('slider-label');
-      const sliderReadout = document.getElementById('slider-value-readout');
+      // Simülasyon Kontrolleri
+      const slider1 = document.getElementById('sim-param-slider');
+      const sliderLabel1 = document.getElementById('slider-label');
+      const sliderReadout1 = document.getElementById('slider-value-readout');
+
+      const slider2 = document.getElementById('sim-param-slider-2');
+      const sliderLabel2 = document.getElementById('slider-2-label');
+      const sliderReadout2 = document.getElementById('slider-2-value-readout');
+      const secondaryControlGroup = document.getElementById('secondary-control-group');
+
+      const conjectureSelect = document.getElementById('conjecture-select');
 
       function resetFeedbackForStep(index) {
         const fb = document.getElementById('sim-feedback-box');
         if (!fb) return;
         fb.className = 'feedback-banner feedback-banner--info';
         if (state.completedSimSteps[index]) {
-          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz sürgüyle tekrar deney yapabilir veya diğer adıma geçebilirsiniz.`;
+          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz değişkenleri değiştirerek yeni gözlemler kaydedebilir veya diğer adıma geçebilirsiniz.`;
         } else {
-          fb.innerHTML = `<strong>Adım ${index + 1} Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+          fb.innerHTML = `<strong>Adım ${index + 1} Aktif Öğrenme:</strong> Önce varsayımınızı belirleyin, laboratuvarda denemeler yapıp gözlem tablosuna kaydedin, ardından genelleme önermesini seçip doğrulayın.`;
         }
       }
 
@@ -682,24 +840,74 @@
         const stepCfg = SIM_STEPS[index];
 
         document.getElementById('sim-step-counter').textContent = `Adım ${index + 1} / 4`;
-        document.getElementById('mission-tool-tag').textContent = stepCfg.tag;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag || 'MATEMATİKSEL LABORATUVAR';
         document.getElementById('mission-title').textContent = stepCfg.title;
         document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
         document.getElementById('mission-hint').innerHTML = stepCfg.hint;
 
+        // Step butonlarını güncelle
         document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {
           pill.classList.toggle('is-active', idx === index);
           pill.classList.toggle('is-done', state.completedSimSteps[idx]);
         });
 
-        document.querySelectorAll('.tool-btn').forEach(btn => {
-          btn.classList.toggle('is-active', btn.getAttribute('data-tool') === stepCfg.tool);
+        // Varsayım Seçeneklerini Yükle
+        const hypoGroup = document.getElementById('hypothesis-options-group');
+        const hypoStatus = document.getElementById('hypothesis-status');
+        const letters = ['A', 'B', 'C', 'D'];
+        hypoGroup.innerHTML = stepCfg.hypotheses.map((h, hIdx) => {
+          const isSelected = state.selectedHypothesis[index] === hIdx;
+          return `<button type="button" class="hypothesis-btn ${isSelected ? 'is-selected' : ''}" data-hidx="${hIdx}">
+            <span class="mono">(${letters[hIdx]})</span>
+            <span>${h.text}</span>
+          </button>`;
+        }).join('');
+
+        if (state.selectedHypothesis[index] !== undefined) {
+          hypoStatus.textContent = `Seçim: (${letters[state.selectedHypothesis[index]]}) Kaydedildi`;
+          hypoStatus.style.color = 'var(--grade-6)';
+        } else {
+          hypoStatus.textContent = 'Seçim Yapılmadı';
+          hypoStatus.style.color = 'var(--ink-muted)';
+        }
+
+        hypoGroup.querySelectorAll('.hypothesis-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const hIdx = Number(btn.getAttribute('data-hidx'));
+            state.selectedHypothesis[index] = hIdx;
+            hypoGroup.querySelectorAll('.hypothesis-btn').forEach(b => b.classList.remove('is-selected'));
+            btn.classList.add('is-selected');
+            hypoStatus.textContent = `Seçim: (${letters[hIdx]}) Kaydedildi`;
+            hypoStatus.style.color = 'var(--grade-6)';
+            saveState();
+          });
         });
 
-        slider.min = stepCfg.min;
-        slider.max = stepCfg.max;
-        slider.step = stepCfg.step;
-        slider.value = state.completedSimSteps[index] ? stepCfg.targetVal : stepCfg.defaultVal;
+        // Önerme Seçeneklerini Yükle
+        conjectureSelect.innerHTML = '<option value="">-- Çıkarımınızı Seçin --</option>' +
+          stepCfg.conjectures.map((c, cIdx) => {
+            return `<option value="${cIdx}" ${state.selectedConjecture[index] === cIdx ? 'selected' : ''}>${c.text}</option>`;
+          }).join('');
+
+        // Sürgü 1
+        slider1.min = stepCfg.min;
+        slider1.max = stepCfg.max;
+        slider1.step = stepCfg.step || 1;
+        slider1.value = stepCfg.defaultVal;
+
+        // Sürgü 2 (Varsa)
+        if (stepCfg.hasSecondary) {
+          secondaryControlGroup.style.display = 'flex';
+          slider2.min = stepCfg.min2;
+          slider2.max = stepCfg.max2;
+          slider2.step = stepCfg.step2 || 1;
+          slider2.value = stepCfg.defaultVal2;
+          sliderLabel2.textContent = stepCfg.sliderLabel2;
+        } else {
+          secondaryControlGroup.style.display = 'none';
+        }
+
+        renderObservationTable(index);
 
         if (!preserveFeedback) {
           resetFeedbackForStep(index);
@@ -709,249 +917,466 @@
         updateProcessChecklist();
       }
 
+      conjectureSelect.addEventListener('change', () => {
+        const val = conjectureSelect.value;
+        if (val !== '') {
+          state.selectedConjecture[state.currentSimStep] = Number(val);
+        } else {
+          delete state.selectedConjecture[state.currentSimStep];
+        }
+        saveState();
+      });
+
+      function renderObservationTable(stepIdx) {
+        const tbody = document.getElementById('observation-table-body');
+        const counter = document.getElementById('observation-counter');
+        const records = state.observations[stepIdx] || [];
+        counter.textContent = `Kayıtlı Deneme: ${records.length}`;
+
+        if (records.length === 0) {
+          tbody.innerHTML = `<tr>
+            <td colspan="4" style="text-align:center; color:var(--ink-muted); padding:1rem;">
+              Henüz gözlem kaydedilmedi. Sürgüleri ayarlayıp "📋 Gözlemi Kaydet" butonuna basın.
+            </td>
+          </tr>`;
+          return;
+        }
+
+        tbody.innerHTML = records.map((rec, rIdx) => {
+          return `<tr>
+            <td><strong>#${rIdx + 1}</strong></td>
+            <td>${rec.input}</td>
+            <td><strong>${rec.value}</strong></td>
+            <td><span class="tech-badge tech-badge--signal" style="padding:0.15rem 0.4rem; font-size:0.7rem;">${rec.note}</span></td>
+          </tr>`;
+        }).join('');
+      }
+
+      // Gözlemi Kaydet Butonu
+      document.getElementById('sim-record-btn').addEventListener('click', () => {
+        const stepIdx = state.currentSimStep;
+        const stepCfg = SIM_STEPS[stepIdx];
+        const v1 = Number(slider1.value);
+        const v2 = stepCfg.hasSecondary ? Number(slider2.value) : null;
+
+        const currentObservation = calculateObservation(stepCfg, v1, v2);
+        if (!state.observations[stepIdx]) state.observations[stepIdx] = [];
+        state.observations[stepIdx].unshift(currentObservation);
+        if (state.observations[stepIdx].length > 8) state.observations[stepIdx].pop();
+
+        renderObservationTable(stepIdx);
+
+        const fb = document.getElementById('sim-feedback-box');
+        fb.className = 'feedback-banner feedback-banner--info';
+        fb.innerHTML = `📋 <strong>Gözlem Tabloya Eklendi:</strong> ${currentObservation.input} ➔ ${currentObservation.value}. Gözlem verilerini inceleyerek genellemenizi belirleyin!`;
+      });
+
+      function calculateObservation(stepCfg, v1, v2) {
+        const type = stepCfg.simType;
+        if (type === 'ruler_line') {
+          return { input: `Uzunluk = ${v1} birim`, value: `|AB| = ${v1} br`, note: v1 >= 5 ? 'Uzun Parça' : 'Kısa Parça' };
+        } else if (type === 'angle_draw') {
+          const t = v1 < 90 ? 'Dar Açı (<90°)' : (v1 === 90 ? 'Dik Açı (=90°)' : 'Geniş Açı (>90°)');
+          return { input: `Açı Açıklığı = ${v1}°`, value: `m(ABC) = ${v1}°`, note: t };
+        } else if (type === 'circle_radius') {
+          return { input: `Yarıçap r = ${v1} br`, value: `Çap R = ${v1 * 2} br`, note: `Çevre ≈ ${(2 * 3.14 * v1).toFixed(1)} br` };
+        } else if (type === 'perpendicular_drop') {
+          const dist = (Math.hypot(380 + (90 - v1) * 3.2 - 380, 210) / 40).toFixed(2);
+          const isPerp = v1 === 90;
+          return { input: `İnme Açısı = ${v1}°`, value: `Mesafe ≈ ${dist} br`, note: isPerp ? '✓ EN KISA (DİKME)' : 'Eğik Çizgi' };
+        } else if (type === 'parallel_lines') {
+          return { input: `Aralık = ${v1} br`, value: `Uzaklık Sabit (${v1} br)`, note: 'Kesişmez (Paralel)' };
+        } else if (type === 'polygon_builder') {
+          const names = { 3: 'Üçgen', 4: 'Dörtgen', 5: 'Beşgen', 6: 'Altıgen', 7: 'Yedigen', 8: 'Sekizgen' };
+          return { input: `Doğru Sayısı = ${v1}`, value: `${names[v1] || v1 + 'gen'}`, note: `İç Açı Toplamı = ${(v1 - 2) * 180}°` };
+        } else if (type === 'triangle_angle_sum') {
+          const a3 = 180 - v1 - (v2 || 60);
+          return { input: `Açı 1: ${v1}°, Açı 2: ${v2 || 60}°`, value: `Açı 3 = ${a3}°`, note: 'Toplam = 180°' };
+        } else if (type === 'euclid_flower') {
+          const isEqui = v1 === 120 && (v2 === 120 || !v2);
+          return { input: `r1 = ${v1}px, r2 = ${v2 || v1}px`, value: isEqui ? 'Üç Kenar Eşit' : 'Kenarlar Farklı', note: isEqui ? 'Eşkenar Üçgen' : 'İkiz/Çeşitkenar' };
+        } else if (type === 'factor_rect') {
+          const rem = 24 % v1;
+          return { input: `Genişlik = ${v1}`, value: rem === 0 ? `Boy = ${24 / v1}` : 'Tam Bölünmez', note: rem === 0 ? '✓ 24'ün Çarpanı' : 'Çarpanı Değil' };
+        } else if (type === 'divisibility_test') {
+          const d2 = v1 % 2 === 0, d3 = v1 % 3 === 0, d5 = v1 % 5 === 0;
+          return { input: `Sayı = ${v1}`, value: `2'ye: ${d2 ? '✓' : '✕'}, 3'e: ${d3 ? '✓' : '✕'}`, note: `5'e: ${d5 ? '✓' : '✕'}` };
+        } else if (type === 'probability_fraction') {
+          const prob = (v1 / (v2 || 20)).toFixed(2);
+          return { input: `Olay = ${v1}, Toplam = ${v2 || 20}`, value: `Göreli Sıklık = ${prob}`, note: `%${Math.round(prob * 100)} İhtimal` };
+        } else if (type === 'decimal_grid') {
+          return { input: `Boyalı = ${v1} / 100`, value: `Ondalık = ${(v1 / 100).toFixed(2)}`, note: `${v1 >= 10 ? Math.floor(v1/10) + '/10 + ' + (v1%10) + '/100' : v1 + '/100'}` };
+        } else if (type === 'fraction_division') {
+          const q = (v1 / (v2 || 3)).toFixed(3);
+          const isTerm = [1, 2, 4, 5, 8, 10, 20, 25].includes(v2 || 3);
+          return { input: `${v1} ÷ ${v2 || 3}`, value: `Sonuç ≈ ${q}`, note: isTerm ? 'Sonlu Ondalık' : 'Devirli Ondalık' };
+        } else if (type === 'integer_depth') {
+          const abs = Math.abs(v1);
+          return { input: `Konum = ${v1}`, value: `|${v1}| = ${abs} birim`, note: v1 < 0 ? 'Sıfırın Altında' : (v1 > 0 ? 'Sıfırın Üstünde' : 'Referans (0)') };
+        } else if (type === 'rational_line') {
+          const frac = (v1 / (v2 || 4)).toFixed(2);
+          return { input: `${v1}/${v2 || 4}`, value: `Sayı Doğrusunda: ${frac}`, note: v1 < 0 ? '0'ın Solunda' : '0'ın Sağında' };
+        } else if (type === 'rational_mult') {
+          const num = v1 * (v2 || 2);
+          return { input: `(${v1}/4) × (${v2 || 2}/3)`, value: `Alan = ${num}/12`, note: `Sadeleşmiş: ${(num/12).toFixed(2)}` };
+        } else {
+          return { input: `Değer = ${v1}`, value: `Sonuç = ${v1}`, note: 'Gözlem Kaydedildi' };
+        }
+      }
+
+      // Simülasyon Tuvalini Çiz
       function updateSimCanvas() {
         const stepCfg = SIM_STEPS[state.currentSimStep];
-        const val = Number(slider.value);
+        const v1 = Number(slider1.value);
+        const v2 = stepCfg.hasSecondary ? Number(slider2.value) : null;
         const layer = document.getElementById('svg-construction-layer');
 
-        if (stepCfg.tool === 'samenum') {
-          const b = val;
-          const isTarget = b === 7;
-          const midVal = -3 / b;
+        sliderLabel1.textContent = `${stepCfg.sliderLabel} ${v1} ${stepCfg.unit || ''}`;
+        sliderReadout1.textContent = `${v1} ${stepCfg.unit || ''}`;
 
-          sliderLabel.textContent = `Ortadaki Kesir Paydası (b = ${b}): -3/${b} ≈ ${midVal.toFixed(2).replace('.', ',')}`;
-          sliderReadout.textContent = `-3/${b}`;
+        if (stepCfg.hasSecondary) {
+          sliderLabel2.textContent = `${stepCfg.sliderLabel2} ${v2} ${stepCfg.unit2 || ''}`;
+          sliderReadout2.textContent = `${v2} ${stepCfg.unit2 || ''}`;
+        }
 
-          document.getElementById('telemetry-tool').textContent = `AKTİF GÖREV: Payları Eşit Negatif Rasyonel Sıralama`;
-          document.getElementById('telemetry-notation').textContent = `-3/4 (-0,75) < -3/${b} (${midVal.toFixed(2).replace('.', ',')}) < -3/10 (-0,30)`;
-          document.getElementById('telemetry-measurement').textContent = isTarget ? '-3/4 < -3/7 < -3/10 ✓ DOĞRULANDI' : `Payda: ${b}`;
+        document.getElementById('telemetry-tool').textContent = `AKTİF ARAÇ: ${stepCfg.tag || 'Laboratuvar'}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation || '';
 
-          const zeroX = 650, minusOneX = 110, lineY = 260;
-          const unitW = zeroX - minusOneX; // 540px for 1 unit
-          const xLeft = zeroX - (3 / 4) * unitW;
-          const xRight = zeroX - (3 / 10) * unitW;
-          const xMid = Math.max(70, zeroX - (3 / b) * unitW);
+        renderSimSvg(stepCfg, v1, v2, layer);
+      }
 
-          layer.innerHTML = `
-            <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14.5" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
-              ${isTarget ? '✓ DOĞRULANDI: Paylar eşitken negatiflerde paydası büyüdükçe sayı 0\'a yaklaşır ve büyür (-3/4 < -3/7 < -3/10)!' : `Payları Eşit Negatif Kesirler: -3/4 , -3/${b} , -3/10 — Hedef Payda: 7`}
-            </text>
+      function renderSimSvg(stepCfg, v1, v2, layer) {
+        const type = stepCfg.simType;
+        const tMeas = document.getElementById('telemetry-measurement');
 
-            <rect x="95" y="65" width="570" height="88" fill="#FFFFFF" stroke="#141413" stroke-width="2.5"/>
-            <text x="380" y="102" text-anchor="middle" font-family="Space Grotesk" font-size="24" font-weight="700" fill="${isTarget ? '#00875A' : '#141413'}">
-              -3/4 (-0,75)   &lt;   -3/${b} (${midVal.toFixed(2).replace('.', ',')})   &lt;   -3/10 (-0,30)
-            </text>
-            <text x="380" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">
-              Pozitifte: 3/10 &lt; 3/${b} &lt; 3/4   |   Negatifte (0'a Yakınlık): -3/4 &lt; -3/${b} &lt; -3/10
-            </text>
-
-            <!-- Sayı Doğrusu (-1 ile 0 arası) -->
-            <line x1="80" y1="${lineY}" x2="680" y2="${lineY}" stroke="#141413" stroke-width="3.5"/>
-            <line x1="${minusOneX}" y1="${lineY - 16}" x2="${minusOneX}" y2="${lineY + 16}" stroke="#141413" stroke-width="3"/>
-            <line x1="${zeroX}" y1="${lineY - 16}" x2="${zeroX}" y2="${lineY + 16}" stroke="#141413" stroke-width="3"/>
-            <text x="${minusOneX}" y="${lineY + 38}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">-1</text>
-            <text x="${zeroX}" y="${lineY + 38}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">0</text>
-
-            <!-- -3/4 noktası -->
-            <circle cx="${xLeft}" cy="${lineY}" r="10" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${xLeft}" y="${lineY - 22}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#0052CC">-3/4</text>
-
-            <!-- -3/10 noktası -->
-            <circle cx="${xRight}" cy="${lineY}" r="10" fill="#D97706" stroke="#141413" stroke-width="2"/>
-            <text x="${xRight}" y="${lineY - 22}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#D97706">-3/10</text>
-
-            <!-- Hareketli -3/b noktası -->
-            <circle cx="${xMid}" cy="${lineY}" r="12" fill="${isTarget ? '#00875A' : '#FF5500'}" stroke="#141413" stroke-width="2.5"/>
-            <text x="${xMid}" y="${lineY + 55}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">-3/${b}</text>
-          `;
-        } else if (stepCfg.tool === 'benchmark') {
-          const n = val;
-          const isTarget = n === 7;
-          const cmpSym = (n / 8) > (5 / 6) ? '>' : '<';
-
-          sliderLabel.textContent = `Pay Seçimi: ${n}/8 (${n}/8 ${cmpSym} 5/6)`;
-          sliderReadout.textContent = `${n}/8 ${cmpSym} 5/6`;
-
-          document.getElementById('telemetry-tool').textContent = `AKTİF GÖREV: Bütüne (1 Tama) ve Yarıma Yakınlık`;
-          document.getElementById('telemetry-notation').textContent = `1 Tama Uzaklık: 1 - ${n}/8 = ${8 - n}/8 br  vs  1 - 5/6 = 1/6 br`;
-          document.getElementById('telemetry-measurement').textContent = isTarget ? '7/8 > 5/6 ✓ DOĞRULANDI' : `${n}/8 ${cmpSym} 5/6`;
-
-          const barX = 120, barW = 520;
-          const wA = (n / 8) * barW;
-          const wB = (5 / 6) * barW;
-
-          layer.innerHTML = `
-            <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14.5" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
-              ${isTarget ? '✓ DOĞRULANDI: 7/8 kesrinin bütüne uzaklığı (1/8) < 5/6 kesrinin bütüne uzaklığı (1/6) ⇒ 7/8 > 5/6!' : `Bütüne (1 Tama) Yakınlık: ${n}/8 ile 5/6 karşılaştırması — Hedef: 7/8`}
-            </text>
-
-            <!-- Referans 0, 1/2, 1 Çizgileri -->
-            <line x1="${barX + barW / 2}" y1="75" x2="${barX + barW / 2}" y2="285" stroke="#D97706" stroke-width="2" stroke-dasharray="5,4"/>
-            <text x="${barX + barW / 2}" y="68" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#D97706">YARIM (1/2)</text>
-
-            <line x1="${barX + barW}" y1="75" x2="${barX + barW}" y2="285" stroke="#141413" stroke-width="3"/>
-            <text x="${barX + barW}" y="68" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#141413">BÜTÜN (1 TAM)</text>
-
-            <!-- 1. Şerit: n/8 -->
-            <text x="${barX}" y="98" font-family="Space Grotesk" font-size="16" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">
-              Seçili Kesir: ${n}/8  (1 Tama Eksik: ${8 - n}/8 birim)
-            </text>
-            <rect x="${barX}" y="108" width="${barW}" height="52" fill="#FFFFFF" stroke="#141413" stroke-width="2.5"/>
-            <rect x="${barX}" y="108" width="${wA}" height="52" fill="${isTarget ? '#00875A' : '#FF5500'}" fill-opacity="0.8"/>
-
-            <!-- 2. Şerit: 5/6 -->
-            <text x="${barX}" y="202" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#0052CC">
-              Sabit Kesir: 5/6  (1 Tama Eksik: 1/6 birim)
-            </text>
-            <rect x="${barX}" y="212" width="${barW}" height="52" fill="#FFFFFF" stroke="#141413" stroke-width="2.5"/>
-            <rect x="${barX}" y="212" width="${wB}" height="52" fill="#0052CC" fill-opacity="0.8"/>
-
-            <!-- Alt Muhakeme Kutusu -->
-            <rect x="120" y="302" width="520" height="62" fill="#FFFFFF" stroke="#141413" stroke-width="2"/>
-            <text x="380" y="340" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="${isTarget ? '#00875A' : '#141413'}">
-              ${isTarget ? '1/8 < 1/6 (7/8 bütüne daha yakın)  ⇒  7/8 > 5/6' : `Şu anki karşılaştırma: ${n}/8 ${cmpSym} 5/6`}
-            </text>
-          `;
-        } else if (stepCfg.tool === 'between') {
-          const isTarget = val === -5;
-
-          sliderLabel.textContent = `Aday Rasyonel Nokta: ${val}/8`;
-          sliderReadout.textContent = `${val}/8`;
-
-          document.getElementById('telemetry-tool').textContent = `AKTİF GÖREV: İki Rasyonel Sayı Arasına Sayı Yerleştirme`;
-          document.getElementById('telemetry-notation').textContent = `-3/4 (-6/8) < -5/8 < -1/2 (-4/8)`;
-          document.getElementById('telemetry-measurement').textContent = isTarget ? '-5/8 ARALIKTA ✓ DOĞRULANDI' : `Seçili: ${val}/8`;
-
-          const zeroX = 660, minusOneX = 100, lineY = 235;
-          const stepPx = (zeroX - minusOneX) / 8; // 70px per 1/8
-          const xLeft = zeroX - 6 * stepPx; // -6/8 = -3/4
-          const xRight = zeroX - 4 * stepPx; // -4/8 = -1/2
-          const xCur = zeroX + val * stepPx;
-
-          let ticksHtml = '';
-          for (let i = -8; i <= 0; i++) {
-            const tx = zeroX + i * stepPx;
-            const isEnd = i === 0 || i === -8;
-            ticksHtml += `
-              <line x1="${tx}" y1="${lineY - (isEnd ? 18 : 10)}" x2="${tx}" y2="${lineY + (isEnd ? 18 : 10)}" stroke="#141413" stroke-width="${isEnd ? 3.5 : 2}"/>
-              <text x="${tx}" y="${lineY + 38}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">${i}/8</text>
-            `;
+        if (type === 'ruler_line') {
+          const ax = 120, ay = 240, bx = ax + v1 * 48;
+          tMeas.textContent = `ÖLÇÜM: |AB| = ${v1} birim (Cetvel ile ölçüm)`;
+          let ticks = '';
+          for (let i = 0; i <= 10; i++) {
+            const tx = ax + i * 48;
+            ticks += `<line x1="${tx}" y1="275" x2="${tx}" y2="${i % 2 === 0 ? 292 : 286}" stroke="#141413" stroke-width="2"/>
+                      <text x="${tx}" y="310" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">${i}</text>`;
           }
-
           layer.innerHTML = `
-            <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14.5" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
-              ${isTarget ? '✓ DOĞRULANDI: -3/4 (-6/8) ile -1/2 (-4/8) arasında -5/8 rasyonel sayısı yer alır!' : `Hedef Aralık: -3/4 (-6/8) ile -1/2 (-4/8) arası — Sürgüyü -5/8'e getirin`}
-            </text>
-
-            <!-- Hedef Aralık Vurgusu -->
-            <rect x="${xLeft}" y="${lineY - 32}" width="${xRight - xLeft}" height="64" fill="#00875A" fill-opacity="0.16" stroke="#00875A" stroke-width="2" stroke-dasharray="5,3"/>
-            <text x="${(xLeft + xRight) / 2}" y="${lineY - 45}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#00875A">HEDEF ARALIK (-6/8 ile -4/8 arası)</text>
-
-            <line x1="70" y1="${lineY}" x2="690" y2="${lineY}" stroke="#141413" stroke-width="3.5"/>
-            ${ticksHtml}
-
-            <!-- Sınır Noktaları -->
-            <circle cx="${xLeft}" cy="${lineY}" r="10" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${xLeft}" y="${lineY + 62}" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#0052CC">-3/4 = -6/8</text>
-
-            <circle cx="${xRight}" cy="${lineY}" r="10" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${xRight}" y="${lineY + 62}" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#0052CC">-1/2 = -4/8</text>
-
-            <!-- Seçili Nokta -->
-            <circle cx="${xCur}" cy="${lineY}" r="12" fill="${isTarget ? '#00875A' : '#FF5500'}" stroke="#141413" stroke-width="2.5"/>
-            <rect x="${xCur - 60}" y="80" width="120" height="48" fill="#FFFFFF" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="2.5"/>
-            <text x="${xCur}" y="110" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">${val}/8</text>
+            <line x1="${ax}" y1="${ay}" x2="560" y2="95" stroke="#0052CC" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrow-ray)"/>
+            <circle cx="380" cy="154" r="6" fill="#0052CC"/>
+            <text x="380" y="138" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#0052CC">C ([AC Işını)</text>
+            <rect x="${ax - 16}" y="275" width="${10 * 48 + 32}" height="48" fill="#FEF3C7" stroke="#141413" stroke-width="2"/>
+            ${ticks}
+            <line x1="${ax}" y1="${ay}" x2="${bx}" y2="${ay}" stroke="#FF5500" stroke-width="6"/>
+            <circle cx="${ax}" cy="${ay}" r="8" fill="#141413"/>
+            <circle cx="${bx}" cy="${ay}" r="10" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${ax}" y="${ay - 18}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">A (0)</text>
+            <text x="${bx}" y="${ay - 18}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">B (${v1} br)</text>
+            <text x="${(ax + bx) / 2}" y="${ay - 22}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#00875A">|AB| = ${v1} birim</text>
           `;
-        } else if (stepCfg.tool === 'multiorder') {
-          const isTarget = val === 5;
-
-          sliderLabel.textContent = `4. Nokta Konumu: ${val}/4 (${(val / 4).toFixed(2).replace('.', ',')})`;
-          sliderReadout.textContent = `${val}/4`;
-
-          document.getElementById('telemetry-tool').textContent = `AKTİF GÖREV: Çoklu Temsil Sıralaması`;
-          document.getElementById('telemetry-notation').textContent = `-1,5 (-6/4) < -3/4 (-0,75) < 0,25 (1/4) < 5/4 (+1,25)`;
-          document.getElementById('telemetry-measurement').textContent = isTarget ? 'SIRALAMA TAMAMLANDI ✓' : `Seçili: ${val}/4 (Hedef: 5/4)`;
-
-          const centerX = 360, lineY = 235, qPx = 42;
-          const x1 = centerX - 6 * qPx; // -1,5 = -6/4
-          const x2 = centerX - 3 * qPx; // -3/4
-          const x3 = centerX + 1 * qPx; // 0,25 = 1/4
-          const x4 = centerX + val * qPx;
-
-          let ticksHtml = '';
-          for (let i = -7; i <= 7; i++) {
-            const tx = centerX + i * qPx;
-            const isInt = i % 4 === 0;
-            ticksHtml += `
-              <line x1="${tx}" y1="${lineY - (isInt ? 16 : 8)}" x2="${tx}" y2="${lineY + (isInt ? 16 : 8)}" stroke="${isInt ? '#141413' : '#4A4843'}" stroke-width="${isInt ? 3 : 1.5}"/>
-              ${isInt ? `<text x="${tx}" y="${lineY + 38}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#141413">${i / 4}</text>` : ''}
-            `;
-          }
-
+        } else if (type === 'angle_draw') {
+          const cx = 380, cy = 300, r = 170;
+          const rad = (v1 * Math.PI) / 180;
+          const px = cx + r * Math.cos(rad);
+          const py = cy - r * Math.sin(rad);
+          const angleType = v1 < 90 ? 'Dar Açı (<90°)' : (v1 === 90 ? 'Dik Açı (=90°)' : 'Geniş Açı (>90°)');
+          tMeas.textContent = `ÖLÇÜM: m(ABC) = ${v1}° — ${angleType}`;
+          const arcR = 70;
+          const arcX = cx + arcR * Math.cos(rad);
+          const arcY = cy - arcR * Math.sin(rad);
+          const largeArc = v1 > 180 ? 1 : 0;
           layer.innerHTML = `
-            <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14.5" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
-              ${isTarget ? '✓ DOĞRULANDI: Soldan sağa doğru -1,5 < -3/4 < 0,25 < 5/4 sıralaması tamamlandı!' : `Çoklu Temsil Sıralaması: -1,5 , -3/4 , 0,25 ve +1,25 (5/4) noktasını yerleştirin`}
+            <path d="M ${cx - 190} ${cy} A 190 190 0 0 1 ${cx + 190} ${cy} Z" fill="rgba(0, 82, 204, 0.08)" stroke="#141413" stroke-width="2"/>
+            <line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - 190}" stroke="rgba(20,20,19,0.25)" stroke-dasharray="4,4" stroke-width="1.5"/>
+            <text x="${cx}" y="${cy - 198}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">90° (Dik)</text>
+            <line x1="${cx}" y1="${cy}" x2="${cx + 210}" y2="${cy}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <text x="${cx + 225}" y="${cy + 5}" font-family="Space Grotesk" font-size="16" font-weight="700">A</text>
+            <path d="M ${cx} ${cy} L ${cx + arcR} ${cy} A ${arcR} ${arcR} 0 ${largeArc} 0 ${arcX} ${arcY} Z" fill="rgba(255, 85, 0, 0.22)" stroke="#FF5500" stroke-width="2.5"/>
+            <line x1="${cx}" y1="${cy}" x2="${px}" y2="${py}" stroke="#FF5500" stroke-width="4" marker-end="url(#arrow-orange)"/>
+            <circle cx="${px}" cy="${py}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+            <circle cx="${cx}" cy="${cy}" r="7" fill="#141413"/>
+            <text x="${cx}" y="${cy + 25}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">B (Köşe)</text>
+            <text x="${px}" y="${py - 14}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#FF5500">C (${v1}°)</text>
+            <text x="${cx}" y="65" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">m(ABC) = ${v1}° • ${angleType}</text>
+          `;
+        } else if (type === 'circle_radius') {
+          const ox = 380, oy = 205, rPx = v1 * 26;
+          tMeas.textContent = `ÖLÇÜM: Yarıçap r = ${v1} br | Çap R = ${v1 * 2} br`;
+          layer.innerHTML = `
+            <circle cx="${ox}" cy="${oy}" r="${rPx}" fill="rgba(0, 135, 90, 0.10)" stroke="#00875A" stroke-width="3.5"/>
+            <line x1="${ox - rPx}" y1="${oy}" x2="${ox + rPx}" y2="${oy}" stroke="#0052CC" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="${ox}" y1="${oy}" x2="${ox + rPx}" y2="${oy}" stroke="#FF5500" stroke-width="4"/>
+            <circle cx="${ox}" cy="${oy}" r="7" fill="#141413"/>
+            <circle cx="${ox + rPx}" cy="${oy}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+            <text x="${ox}" y="${oy - 14}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">O (Merkez)</text>
+            <text x="${ox + rPx / 2}" y="${oy - 10}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF5500">r = ${v1} br</text>
+            <text x="${ox}" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">Yarıçap r = ${v1} br • Çap R = 2r = ${v1 * 2} br</text>
+          `;
+        } else if (type === 'perpendicular_drop') {
+          const px = 380, py = 90, lineY = 300;
+          const hx = 380 + (90 - v1) * 3.2;
+          const isPerp = v1 === 90;
+          const dist = (Math.hypot(hx - px, lineY - py) / 40).toFixed(2);
+          tMeas.textContent = `ÖLÇÜM: Açı = ${v1}° | Uzaklık |PH| ≈ ${dist} br ${isPerp ? '✓ EN KISA (DİKME [PH] ⊥ d)' : ''}`;
+          layer.innerHTML = `
+            <line x1="100" y1="${lineY}" x2="660" y2="${lineY}" stroke="#141413" stroke-width="4"/>
+            <text x="645" y="${lineY - 12}" font-family="JetBrains Mono" font-size="16" font-weight="700">d doğrusu</text>
+            <line x1="${px}" y1="${py}" x2="${px}" y2="${lineY}" stroke="rgba(0,135,90,0.35)" stroke-dasharray="4,4" stroke-width="2"/>
+            ${isPerp ? `<rect x="${hx}" y="${lineY - 22}" width="22" height="22" fill="rgba(0,135,90,0.2)" stroke="#00875A" stroke-width="2.5"/>
+                         <circle cx="${hx + 11}" cy="${lineY - 11}" r="2.5" fill="#00875A"/>` : ''}
+            <line x1="${px}" y1="${py}" x2="${hx}" y2="${lineY}" stroke="${isPerp ? '#00875A' : '#FF5500'}" stroke-width="4.5"/>
+            <circle cx="${px}" cy="${py}" r="8" fill="#141413"/>
+            <circle cx="${hx}" cy="${lineY}" r="10" fill="${isPerp ? '#00875A' : '#FF5500'}" stroke="#141413" stroke-width="2"/>
+            <text x="${px}" y="${py - 16}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">P (Dış Nokta)</text>
+            <text x="${hx}" y="${lineY + 28}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">H (${v1}°)</text>
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${isPerp ? '#00875A' : '#D97706'}">
+              ${isPerp ? '✓ DİKME İNŞA EDİLDİ: [PH] ⊥ d (En Kısa Uzaklık = 5.25 br)' : `Açı: ${v1}° — Dikme (90°) için açıyı dik konuma getirin`}
             </text>
-
-            <rect x="85" y="62" width="590" height="58" fill="#FFFFFF" stroke="#141413" stroke-width="2"/>
-            <text x="380" y="98" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="${isTarget ? '#00875A' : '#141413'}">
-              -1,5 (-6/4)  &lt;  -3/4 (-0,75)  &lt;  0,25 (1/4)  &lt;  ${val}/4 (${(val / 4).toFixed(2).replace('.', ',')})
+          `;
+        } else if (type === 'polygon_builder') {
+          const n = v1;
+          const cx = 380, cy = 200, r = 130;
+          let pts = [];
+          for (let i = 0; i < n; i++) {
+            const ang = (i * 2 * Math.PI / n) - Math.PI / 2;
+            pts.push(`${cx + r * Math.cos(ang)},${cy + r * Math.sin(ang)}`);
+          }
+          const polyStr = pts.join(' ');
+          const names = { 3: 'Üçgen', 4: 'Dörtgen', 5: 'Beşgen', 6: 'Altıgen', 7: 'Yedigen', 8: 'Sekizgen' };
+          const sumAng = (n - 2) * 180;
+          tMeas.textContent = `ŞEKİL: ${names[n] || n + 'gen'} • Köşe: ${n} • Kenar: ${n} • İç Açılar Toplamı: ${sumAng}°`;
+          layer.innerHTML = `
+            <polygon points="${polyStr}" fill="rgba(0, 82, 204, 0.12)" stroke="#0052CC" stroke-width="4"/>
+            ${pts.map((p, idx) => {
+              const [px, py] = p.split(',');
+              return `<circle cx="${px}" cy="${py}" r="7" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+                      <text x="${px}" y="${Number(py) - 12}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">K${idx + 1}</text>`;
+            }).join('')}
+            <text x="380" y="205" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#141413">${names[n] || n + 'gen'}</text>
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">Ardışık ${n} doğrunun kesişimi: ${n} kenar, ${n} köşe</text>
+          `;
+        } else if (type === 'euclid_flower') {
+          const r1 = v1, r2 = v2 || v1;
+          const d = 140; // |AB| = 140
+          const ax = 310, ay = 230, bx = ax + d, by = ay;
+          // C noktasını kesişimden bul
+          // r1^2 - x^2 = r2^2 - (d-x)^2 -> x = (r1^2 - r2^2 + d^2) / (2d)
+          const x = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+          const y2 = r1 * r1 - x * x;
+          const y = y2 > 0 ? Math.sqrt(y2) : 0;
+          const cx = ax + x, cy = ay - y;
+          const isEqui = Math.abs(r1 - d) < 5 && Math.abs(r2 - d) < 5;
+          const isIso = Math.abs(r1 - r2) < 5 && !isEqui;
+          const typeName = isEqui ? 'Eşkenar Üçgen (Öklid 1. Önermesi)' : (isIso ? 'İkizkenar Üçgen' : 'Çeşitkenar Üçgen');
+          tMeas.textContent = `ÜÇGEN: ${typeName} • |AB|=${d}px, |AC|=${r1}px, |BC|=${r2}px`;
+          layer.innerHTML = `
+            <circle cx="${ax}" cy="${ay}" r="${r1}" fill="none" stroke="#0052CC" stroke-width="2.5" stroke-dasharray="4,3"/>
+            <circle cx="${bx}" cy="${by}" r="${r2}" fill="none" stroke="#D97706" stroke-width="2.5" stroke-dasharray="4,3"/>
+            <polygon points="${ax},${ay} ${bx},${by} ${cx},${cy}" fill="rgba(0, 135, 90, 0.18)" stroke="#00875A" stroke-width="3.5"/>
+            <circle cx="${ax}" cy="${ay}" r="7" fill="#0052CC"/>
+            <circle cx="${bx}" cy="${by}" r="7" fill="#D97706"/>
+            <circle cx="${cx}" cy="${cy}" r="8" fill="#FF5500"/>
+            <text x="${ax - 15}" y="${ay + 20}" font-family="Space Grotesk" font-size="16" font-weight="700">A (Merkez 1)</text>
+            <text x="${bx + 15}" y="${by + 20}" font-family="Space Grotesk" font-size="16" font-weight="700">B (Merkez 2)</text>
+            <text x="${cx}" y="${cy - 14}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#FF5500">C (Kesişim)</text>
+            <text x="380" y="45" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">${typeName}</text>
+          `;
+        } else if (type === 'factor_rect') {
+          const total = 24;
+          const w = v1, h = Math.floor(total / w);
+          const isDiv = total % w === 0;
+          tMeas.textContent = `ALAN MODELİ: ${w} × ${h} = ${w * h} birimkare ${isDiv ? '(Tam Çarpan: ' + w + ' × ' + h + ' = 24)' : '(Kalan: ' + (total % w) + ')'}`;
+          const cellW = 320 / Math.max(w, 8);
+          layer.innerHTML = `
+            <rect x="220" y="110" width="${w * cellW}" height="${h * cellW}" fill="${isDiv ? 'rgba(0, 135, 90, 0.18)' : 'rgba(220, 38, 38, 0.15)'}" stroke="${isDiv ? '#00875A' : '#DC2626'}" stroke-width="3"/>
+            <text x="${220 + (w * cellW) / 2}" y="95" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700">En = ${w} birim</text>
+            <text x="200" y="${110 + (h * cellW) / 2}" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700">Boy = ${h} br</text>
+            <text x="380" y="320" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="${isDiv ? '#00875A' : '#DC2626'}">
+              ${isDiv ? `✓ ${w}, 24'ün bir çarpanıdır: ${w} × ${h} = 24` : `✕ ${w}, 24'ün tam çarpanı değildir (Kalan = ${total % w})`}
             </text>
-
-            <line x1="50" y1="${lineY}" x2="710" y2="${lineY}" stroke="#141413" stroke-width="3.5"/>
-            ${ticksHtml}
-
-            <!-- Sabit 3 Nokta -->
-            <circle cx="${x1}" cy="${lineY}" r="9" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${x1}" y="${lineY - 22}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#0052CC">-1,5 (-6/4)</text>
-
-            <circle cx="${x2}" cy="${lineY}" r="9" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${x2}" y="${lineY - 22}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#0052CC">-3/4</text>
-
-            <circle cx="${x3}" cy="${lineY}" r="9" fill="#0052CC" stroke="#141413" stroke-width="2"/>
-            <text x="${x3}" y="${lineY - 22}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#0052CC">0,25 (1/4)</text>
-
-            <!-- 4. Hareketli Nokta -->
-            <circle cx="${x4}" cy="${lineY}" r="12" fill="${isTarget ? '#00875A' : '#FF5500'}" stroke="#141413" stroke-width="2.5"/>
-            <text x="${x4}" y="${lineY + 62}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">${val}/4 (${(val / 4).toFixed(2).replace('.', ',')})</text>
+          `;
+        } else if (type === 'divisibility_test') {
+          const n = v1;
+          const d2 = n % 2 === 0, d3 = n % 3 === 0, d4 = n % 4 === 0, d5 = n % 5 === 0, d9 = n % 9 === 0, d10 = n % 10 === 0;
+          const sumDigits = String(n).split('').reduce((acc, digit) => acc + Number(digit), 0);
+          tMeas.textContent = `BÖLÜNEBİLME: Sayı = ${n} | Son Rakam = ${n % 10} | Rakamlar Toplamı = ${sumDigits}`;
+          layer.innerHTML = `
+            <rect x="180" y="60" width="400" height="70" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+            <text x="380" y="105" text-anchor="middle" font-family="Space Grotesk" font-size="28" font-weight="700" fill="#0052CC">${n}</text>
+            <g transform="translate(140, 160)">
+              <rect x="0" y="0" width="140" height="45" fill="${d2 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}" stroke="#141413" stroke-width="2"/>
+              <text x="70" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">2'ye: ${d2 ? 'Tam Bölünür' : 'Bölünmez'}</text>
+              <rect x="170" y="0" width="140" height="45" fill="${d3 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}" stroke="#141413" stroke-width="2"/>
+              <text x="240" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">3'e: ${d3 ? 'Tam Bölünür' : 'Bölünmez'}</text>
+              <rect x="340" y="0" width="140" height="45" fill="${d5 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}" stroke="#141413" stroke-width="2"/>
+              <text x="410" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">5'e: ${d5 ? 'Tam Bölünür' : 'Bölünmez'}</text>
+              <rect x="85" y="65" width="140" height="45" fill="${d4 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}" stroke="#141413" stroke-width="2"/>
+              <text x="155" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">4'e: ${d4 ? 'Tam Bölünür' : 'Bölünmez'}</text>
+              <rect x="255" y="65" width="140" height="45" fill="${d9 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}" stroke="#141413" stroke-width="2"/>
+              <text x="325" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">9'a: ${d9 ? 'Tam Bölünür' : 'Bölünmez'}</text>
+            </g>
+          `;
+        } else if (type === 'probability_fraction') {
+          const succ = v1, total = v2 || 20;
+          const ratio = succ / total;
+          tMeas.textContent = `DENEYSEL OLASILIK: Göreli Sıklık = ${succ} / ${total} = ${ratio.toFixed(2)} (%${Math.round(ratio * 100)})`;
+          const barW = ratio * 480;
+          layer.innerHTML = `
+            <text x="380" y="60" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">Göreli Sıklık Spektrumu (0 İmkansız — 1 Kesin)</text>
+            <rect x="140" y="100" width="480" height="40" fill="#EFECE4" stroke="#141413" stroke-width="2.5"/>
+            <rect x="140" y="100" width="${barW}" height="40" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="140" y="165" font-family="JetBrains Mono" font-size="14" font-weight="700">0 (%0)</text>
+            <text x="380" y="165" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">0.50 (%50)</text>
+            <text x="620" y="165" text-anchor="end" font-family="JetBrains Mono" font-size="14" font-weight="700">1.0 (%100)</text>
+            <text x="380" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="22" font-weight="700" fill="#0052CC">
+              P(Olay) ≈ ${succ} / ${total} = ${ratio.toFixed(3)}
+            </text>
+          `;
+        } else if (type === 'decimal_grid') {
+          const n = v1;
+          const tenths = Math.floor(n / 10), hundredths = n % 10;
+          tMeas.textContent = `YÜZLÜK IZGARA: ${n} / 100 = ${(n / 100).toFixed(2)} = ${tenths}/10 + ${hundredths}/100`;
+          let rects = '';
+          const sz = 24, startX = 260, startY = 60;
+          for (let r = 0; r < 10; r++) {
+            for (let c = 0; c < 10; c++) {
+              const idx = r * 10 + c;
+              const isFilled = idx < n;
+              rects += `<rect x="${startX + c * sz}" y="${startY + r * sz}" width="${sz}" height="${sz}" fill="${isFilled ? '#FF5500' : '#FFFFFF'}" stroke="#141413" stroke-width="1"/>`;
+            }
+          }
+          layer.innerHTML = `
+            ${rects}
+            <text x="380" y="340" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              ${(n / 100).toFixed(2)} = ${tenths} onda bir (${tenths}/10) + ${hundredths} yüzde bir (${hundredths}/100)
+            </text>
+          `;
+        } else if (type === 'fraction_division') {
+          const num = v1, den = v2 || 3;
+          const val = (num / den).toFixed(4);
+          const isTerm = [1, 2, 4, 5, 8, 10, 16, 20, 25].includes(den);
+          tMeas.textContent = `BÖLME İLİŞKİSİ: ${num} ÷ ${den} = ${num}/${den} ≈ ${val} ${isTerm ? '(Sonlu)' : '(Devirli)'}`;
+          layer.innerHTML = `
+            <rect x="180" y="80" width="400" height="180" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+            <text x="380" y="125" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700">
+              ${num} ÷ ${den} = <tspan fill="#FF5500">${num}/${den}</tspan>
+            </text>
+            <text x="380" y="180" text-anchor="middle" font-family="JetBrains Mono" font-size="26" font-weight="700" fill="${isTerm ? '#00875A' : '#0052CC'}">
+              ${isTerm ? `= ${(num / den).toString().replace('.', ',')}` : `≈ ${val.slice(0, 6)}... (Devirli)`}
+            </text>
+            <text x="380" y="230" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="#4A4843">
+              ${isTerm ? 'Paydanın asal çarpanları sadece 2 ve 5 ➔ Sonlu Ondalık' : 'Paydada 2 ve 5 dışında asal çarpan var ➔ Devirli Ondalık'}
+            </text>
+          `;
+        } else if (type === 'integer_depth') {
+          const pos = v1;
+          const lineY = 200;
+          const px = 380 + pos * 24;
+          tMeas.textContent = `REFERANS (0) & DEĞER: Sayı = ${pos} | Başlangıca Uzaklık |${pos}| = ${Math.abs(pos)} birim`;
+          layer.innerHTML = `
+            <line x1="80" y1="${lineY}" x2="680" y2="${lineY}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <line x1="680" y1="${lineY}" x2="80" y2="${lineY}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <line x1="380" y1="${lineY - 20}" x2="380" y2="${lineY + 20}" stroke="#0052CC" stroke-width="3"/>
+            <text x="380" y="${lineY + 40}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#0052CC">0 (Referans)</text>
+            <line x1="${380}" y1="${lineY - 40}" x2="${px}" y2="${lineY - 40}" stroke="#FF5500" stroke-width="3" stroke-dasharray="4,4"/>
+            <circle cx="${px}" cy="${lineY}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${px}" y="${lineY - 14}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">${pos > 0 ? '+' + pos : pos}</text>
+            <text x="380" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              Mutlak Değer: |${pos}| = ${Math.abs(pos)} birim uzaklık
+            </text>
+          `;
+        } else if (type === 'rational_line') {
+          const num = v1, den = v2 || 4;
+          const val = num / den;
+          const px = 380 + val * 120;
+          tMeas.textContent = `SAYI DOĞRUSU: Kesir = ${num}/${den} = ${val.toFixed(2)}`;
+          layer.innerHTML = `
+            <line x1="80" y1="200" x2="680" y2="200" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            ${[-2, -1, 0, 1, 2].map(i => `
+              <line x1="${380 + i * 120}" y1="185" x2="${380 + i * 120}" y2="215" stroke="#141413" stroke-width="2.5"/>
+              <text x="${380 + i * 120}" y="240" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">${i}</text>
+            `).join('')}
+            <circle cx="${px}" cy="200" r="10" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${px}" y="170" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">${num}/${den}</text>
+            <text x="380" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              Sayı doğrusunda sağdaki sayı daima soldakinden büyüktür!
+            </text>
+          `;
+        } else if (type === 'rational_mult') {
+          const n1 = v1, n2 = v2 || 2;
+          const prod = n1 * n2;
+          tMeas.textContent = `ALAN MODELİYLE ÇARPMA: (${n1}/4) × (${n2}/3) = ${prod}/12`;
+          layer.innerHTML = `
+            <rect x="240" y="80" width="280" height="210" fill="#FFFFFF" stroke="#141413" stroke-width="3"/>
+            ${[1, 2, 3].map(i => `<line x1="${240 + i * 70}" y1="80" x2="${240 + i * 70}" y2="290" stroke="#CBD5E1" stroke-width="1.5"/>`).join('')}
+            ${[1, 2].map(j => `<line x1="240" y1="${80 + j * 70}" x2="520" y2="${80 + j * 70}" stroke="#CBD5E1" stroke-width="1.5"/>`).join('')}
+            <rect x="240" y="80" width="${n1 * 70}" height="${n2 * 70}" fill="rgba(255, 85, 0, 0.45)" stroke="#FF5500" stroke-width="2"/>
+            <text x="380" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700">En: ${n1}/4 • Boy: ${n2}/3</text>
+            <text x="380" y="340" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#00875A">
+              Ortak Kesişen Alan = ${prod} / 12 birimkare
+            </text>
+          `;
+        } else {
+          layer.innerHTML = `
+            <rect x="180" y="100" width="400" height="180" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+            <text x="380" y="180" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#0052CC">Değer 1: ${v1}</text>
+            <text x="380" y="220" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">Laboratuvar Aktif</text>
           `;
         }
       }
 
-      slider.addEventListener('input', () => {
+      slider1.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      if (slider2) {
+        slider2.addEventListener('input', () => {
+          resetFeedbackForStep(state.currentSimStep);
+          updateSimCanvas();
+        });
+      }
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider1.value = stepCfg.defaultVal;
+        if (stepCfg.hasSecondary) slider2.value = stepCfg.defaultVal2;
         resetFeedbackForStep(state.currentSimStep);
         updateSimCanvas();
       });
 
       document.getElementById('verify-step-btn').addEventListener('click', () => {
-        const stepCfg = SIM_STEPS[state.currentSimStep];
-        const val = Number(slider.value);
+        const stepIdx = state.currentSimStep;
+        const stepCfg = SIM_STEPS[stepIdx];
         const fb = document.getElementById('sim-feedback-box');
 
-        if (val === stepCfg.targetVal) {
-          state.completedSimSteps[state.currentSimStep] = true;
+        if (state.selectedHypothesis[stepIdx] === undefined) {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = '⚠️ <strong>Varsayım Eksik:</strong> Lütfen sol paneldeki <strong>"1. Adım: Ön Varsayımınız Nedir?"</strong> alanından bir seçim yapın.';
+          return;
+        }
+
+        if (state.selectedConjecture[stepIdx] === undefined) {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = '⚠️ <strong>Önerme Eksik:</strong> Lütfen sol paneldeki <strong>"3. Adım: Önerme &amp; Genelleme Kurucu"</strong> açılır kutusundan matematiksel çıkarımınızı seçin.';
+          return;
+        }
+
+        const chosenConjecture = state.selectedConjecture[stepIdx];
+        const isConjectureCorrect = stepCfg.conjectures[chosenConjecture] && stepCfg.conjectures[chosenConjecture].correct;
+
+        if (isConjectureCorrect) {
+          state.completedSimSteps[stepIdx] = true;
           fb.className = 'feedback-banner feedback-banner--success';
-          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} başarıyla doğrulandı. "Sonraki Adım" ile devam edebilirsiniz.`;
-          loadSimStep(state.currentSimStep, true);
+          const hypoChosen = stepCfg.hypotheses[state.selectedHypothesis[stepIdx]];
+          const hypoReflect = hypoChosen.correct
+            ? 'Başlangıçtaki varsayımınız deney verileriyle başarıyla doğrulandı!'
+            : 'Başlangıçtaki varsayımınızı deney gözlemleriyle geliştirip doğru matematiksel kurala ulaştınız — gerçek bilim tam olarak budur!';
+
+          fb.innerHTML = `🎉 <strong>Harika Çıkarım!</strong> ${hypoReflect} (${stepCfg.conjectures[chosenConjecture].text}). Sonraki adıma geçebilirsiniz.`;
+          loadSimStep(stepIdx, true);
           saveState();
         } else {
           fb.className = 'feedback-banner feedback-banner--error';
-          fb.innerHTML = `⚠️ Şu anki değer hedef değerde değil. Sürgüyü <strong>${stepCfg.targetVal}${stepCfg.unit}</strong> konumuna getirip tekrar doğrulayın.`;
+          fb.innerHTML = `⚠️ Seçtiğiniz önerme laboratuvar gözlemleriyle tam örtüşmüyor. Lütfen sürgülerle farklı değerleri deneyip gözlem tablonuzu inceleyin ve çıkarımınızı tekrar gözden geçirin.`;
         }
-      });
-
-      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
-        const stepCfg = SIM_STEPS[state.currentSimStep];
-        slider.value = stepCfg.targetVal;
-        resetFeedbackForStep(state.currentSimStep);
-        updateSimCanvas();
-      });
-
-      document.getElementById('sim-reset-btn').addEventListener('click', () => {
-        const stepCfg = SIM_STEPS[state.currentSimStep];
-        slider.value = stepCfg.defaultVal;
-        resetFeedbackForStep(state.currentSimStep);
-        updateSimCanvas();
       });
 
       document.getElementById('next-step-btn').addEventListener('click', () => {
@@ -968,40 +1393,39 @@
         });
       });
 
-      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
-        btn.addEventListener('click', () => {
-          loadSimStep(idx);
-        });
-      });
-
       function updateProcessChecklist() {
         const doneCount = state.completedSimSteps.filter(Boolean).length;
-        const step12Done = state.completedSimSteps[0] || state.completedSimSteps[1];
-        const step34Done = state.completedSimSteps[2] || state.completedSimSteps[3];
-        document.getElementById('proc-b').innerHTML = `${step12Done ? '✅' : '⬜'} <strong>b)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini sembolik olarak (&lt;, &gt;, =) ifade eder.`;
-        document.getElementById('proc-c').innerHTML = `${step34Done ? '✅' : '⬜'} <strong>c)</strong> Rasyonel sayıların karşılaştırma ve sıralama ilişkisini sayı doğrusu üzerinde kendi ifadeleriyle açıklar.`;
-
-        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', doneCount === 4);
+        const procKeys = ['a', 'b', 'c', 'ç', 'd'];
+        procKeys.forEach((k, idx) => {
+          const el = document.getElementById(`proc-${k}`);
+          if (el) {
+            const isDone = doneCount > idx;
+            el.innerHTML = el.innerHTML.replace(/^(✅|⬜)/, isDone ? '✅' : '⬜');
+          }
+        });
+        const tab1 = document.getElementById('tab-btn-stage-1');
+        tab1.classList.toggle('is-completed', doneCount === 4);
       }
 
-      // AŞAMA 2: Mini Kontrol
+      // AŞAMA 2 Mini Görevler
       document.querySelectorAll('.mini-option-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const miniId = btn.getAttribute('data-mini');
           const isCorrect = btn.getAttribute('data-correct') === 'true';
           const feedbackEl = document.getElementById(`mini-feedback-${miniId}`);
 
-          document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`).forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+          const siblingBtns = document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`);
+          siblingBtns.forEach(b => b.classList.remove('is-correct', 'is-wrong'));
 
           if (isCorrect) {
             btn.classList.add('is-correct');
             feedbackEl.style.color = 'var(--status-success)';
-            feedbackEl.textContent = '✓ Doğru! Sıralama stratejisi ve sayı doğrusu yorumu doğrulandı.';
+            feedbackEl.textContent = '✓ Doğru! Matematiksel çıkarım doğrulandı.';
             state.miniCheckAnswers[miniId] = true;
           } else {
             btn.classList.add('is-wrong');
             feedbackEl.style.color = 'var(--status-error)';
-            feedbackEl.textContent = '✕ Tekrar düşünün: 0\'a ve bütüne yakınlığı sayı doğrusu üzerinde kontrol edin.';
+            feedbackEl.textContent = '✕ Tekrar düşünün: Simülasyondaki genellemeyi hatırlayın.';
           }
 
           const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
@@ -1011,7 +1435,7 @@
         });
       });
 
-      // AŞAMA 3: Ek Soru Havuzu
+      // AŞAMA 3 Ek Soru Kapısı
       const btnExtraYes = document.getElementById('btn-extra-yes');
       const btnExtraNo = document.getElementById('btn-extra-no');
       const extraPanel = document.getElementById('extra-questions-panel');
@@ -1093,7 +1517,7 @@
                 <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${q.tag}</span>
               </div>
 
-              <div class="question-scenario-box" style="white-space:pre-line;">
+              <div class="question-scenario-box">
                 ${q.scenario}
               </div>
 
@@ -1185,6 +1609,7 @@
         document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
       }
 
+      // Başlatma
       initTheme();
       loadState();
       drawSvgGrid();

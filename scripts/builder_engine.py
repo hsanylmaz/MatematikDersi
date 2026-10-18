@@ -1,0 +1,1359 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+MEB TYMM Aktif Öğrenme v2.0 HTML Modül Üretim Motoru (builder_engine.py)
+"""
+
+import json
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+def build_module_html(mod_data: dict) -> str:
+    grade = mod_data["grade"]
+    week = mod_data["week"]
+    file_id = f"{grade}hafta-{week}"
+    title = mod_data["title"]
+    date_str = mod_data["date"]
+    hours_str = mod_data["hours"]
+    theme = mod_data["theme"]
+    outcome_code = mod_data["outcome_code"]
+    outcome_text = mod_data["outcome_text"]
+    process_items = mod_data["process_items"]
+    meb_quote = mod_data["meb_quote"]
+    sim_steps = mod_data["sim_steps"]
+    mini_tasks = mod_data["mini_tasks"]
+    extra_questions = mod_data["extra_questions"]
+
+    sim_steps_json = json.dumps(sim_steps, ensure_ascii=False, indent=6) if not isinstance(sim_steps, str) else sim_steps
+    extra_questions_json = json.dumps(extra_questions, ensure_ascii=False, indent=6) if not isinstance(extra_questions, str) else extra_questions
+
+    process_li_html = "\n".join([
+        f'              <li id="proc-{chr(97+i)}">⬜ <strong>{chr(97+i)})</strong> {p}</li>'
+        for i, p in enumerate(process_items)
+    ])
+
+    mini_tasks_html = ""
+    for mt in mini_tasks:
+        opts_html = "\n".join([
+            f'              <button type="button" class="mini-option-btn" data-mini="{mt["id"]}" data-correct="{str(opt["correct"]).lower()}">{opt["label"]}</button>'
+            for opt in mt["options"]
+        ])
+        mini_tasks_html += f"""
+          <!-- Mini Görev {mt["id"]} -->
+          <article class="mini-check-card" data-mini-id="{mt["id"]}">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV {mt["id"]} • {mt["tag"]}</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              {mt["question"]}
+            </h3>
+            <div class="mini-check-options">
+{opts_html}
+            </div>
+            <div class="mono" id="mini-feedback-{mt["id"]}" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+"""
+
+    return f"""<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{grade}. Sınıf {week}. Hafta (`{file_id}`) | {title} — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 {grade}. Sınıf Matematik {week}. Hafta ({outcome_code}) {title} aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • {file_id.upper()} MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-{grade}">{grade}. SINIF • {week}. HAFTA</span>
+        <span class="tech-badge mono">{outcome_code}</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
+          Blueprint Koyu Mod
+        </button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: {file_id}.html</span>
+          <span class="tech-badge">{date_str} • {hours_str}</span>
+          <span class="tech-badge">{theme}</span>
+        </div>
+        <h1 class="week-header-banner__title">{title}</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı ({outcome_code}):</strong> {outcome_text}
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- MEB Müfredat Çerçeve Notu (Aktif Öğrenme v2.0) -->
+    <div class="meb-context-ribbon">
+      <div>
+        <strong style="color:var(--accent-signal);">MEB TYMM Öğrenme-Öğretme Uygulaması Çerçevesi:</strong>
+        <span>"{meb_quote}"</span>
+      </div>
+      <span class="tech-badge tech-badge--signal">Aktif Öğrenme v2.0</span>
+    </div>
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF DÖNGÜSÜ</span>
+          <span class="stage-tab-btn__name">Varsayım, Deney ve Önerme Laboratuvarı</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (3 Mini Görev)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         AŞAMA 1: AKTİF ÖĞRENME VE KEŞİF SİMÜLASYONU
+         ==================================================================== -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <!-- Sol Rehberli Görev, Varsayım ve Çıkarım Paneli -->
+        <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">KEŞİF ADIMLARI (4 GÖREV)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Keşif</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Deney</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. İnceleme</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Genelleme</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">MATEMATİKSEL LABORATUVAR</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev Yükleniyor...</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              Laboratuvar talimatı yükleniyor...
+            </p>
+          </div>
+
+          <!-- Aktif Öğrenme 1: Varsayım / Ön Tahmin Seçimi -->
+          <div class="hypothesis-box" id="hypothesis-container">
+            <div class="hypothesis-box__label">
+              <span>🧠 1. Adım: Ön Varsayımınız Nedir?</span>
+              <span class="mono" id="hypothesis-status" style="font-size:0.7rem; color:var(--ink-muted);">Seçim Yapılmadı</span>
+            </div>
+            <p style="font-size:0.83rem; color:var(--ink-secondary);" id="hypothesis-prompt">
+              Deneye başlamadan önce sizce matematiksel durum nasıl sonuçlanacaktır?
+            </p>
+            <div class="hypothesis-options" id="hypothesis-options-group"></div>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            <strong>💡 Pedagojik İpucu:</strong> İpucu yükleniyor...
+          </div>
+
+          <!-- Aktif Öğrenme 2: Önerme / Genelleme Kurucu (Boşluk Doldurma) -->
+          <div class="conjecture-box" id="conjecture-container">
+            <div class="conjecture-box__label">💡 3. Adım: Önerme &amp; Genelleme Kurucu</div>
+            <label for="conjecture-select" style="font-size:0.83rem; color:var(--ink-secondary);" id="conjecture-label">
+              Deney ve kayıt tablonuzdaki bulgulara dayanarak kuralı tamamlayın:
+            </label>
+            <select id="conjecture-select" class="conjecture-select">
+              <option value="">-- Çıkarımınızı Seçin --</option>
+            </select>
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            Varsayımınızı belirleyin, sağdaki laboratuvarda deney yapıp gözlemleri tabloya kaydedin.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
+              ✓ Bulguları ve Önermeyi Doğrula
+            </button>
+            <button type="button" class="btn" id="next-step-btn">
+              Sonraki Adım →
+            </button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ DURUMU:
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
+{process_li_html}
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Sağ İnteraktif Simülasyon Tuvali ve Gözlem Masası -->
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group" id="canvas-tool-buttons"></div>
+
+            <div style="display:flex; gap:0.45rem; align-items:center;">
+              <button type="button" class="btn btn--sm btn--primary" id="sim-record-btn" title="Yapılan Deneyi Tabloya Kaydet">
+                📋 Gözlemi Kaydet
+              </button>
+              <button type="button" class="btn btn--sm" id="sim-reset-btn" title="Laboratuvarı Sıfırla">
+                ↺ Sıfırla
+              </button>
+            </div>
+          </div>
+
+          <!-- Çok Değişkenli Deney Kontrol Alanı -->
+          <div class="dual-control-bar" id="control-bar-container">
+            <div class="control-group-item">
+              <div class="control-group-item__top">
+                <label for="sim-param-slider" class="mono" style="font-size:0.82rem; font-weight:700;" id="slider-label">
+                  Deney Değişkeni 1:
+                </label>
+                <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">0</span>
+              </div>
+              <input type="range" id="sim-param-slider" min="1" max="10" step="1" value="4" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+            </div>
+
+            <div class="control-group-item" id="secondary-control-group" style="display:none;">
+              <div class="control-group-item__top">
+                <label for="sim-param-slider-2" class="mono" style="font-size:0.82rem; font-weight:700;" id="slider-2-label">
+                  Deney Değişkeni 2:
+                </label>
+                <span class="tech-badge mono" id="slider-2-value-readout">0</span>
+              </div>
+              <input type="range" id="sim-param-slider-2" min="1" max="10" step="1" value="5" style="width:100%; accent-color: var(--grade-6); cursor:pointer;">
+            </div>
+          </div>
+
+          <!-- SVG Matematik Tuvali -->
+          <div class="canvas-viewport">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Matematiksel Simülasyon Tuvali">
+              <defs>
+                <marker id="arrow-ray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#0052CC" />
+                </marker>
+                <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF5500" />
+                </marker>
+              </defs>
+
+              <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
+              <g id="svg-construction-layer"></g>
+            </svg>
+          </div>
+
+          <!-- Alt Canlı Telemetri Çubuğu -->
+          <div class="canvas-telemetry">
+            <span id="telemetry-tool">AKTİF MOD: Doğrudan Keşif</span>
+            <span id="telemetry-notation">KAVRAM: Temel Model</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">DURUM: Deney Hazır</span>
+          </div>
+
+          <!-- Gözlem ve Canlı Veri Kayıt Tablosu Çekmecesi -->
+          <div class="observation-drawer">
+            <div class="observation-drawer__header">
+              <span class="mono" style="font-size:0.78rem; font-weight:700;">📊 CANLI DENEY &amp; GÖZLEM VERİ KAYIT TABLOSU</span>
+              <span class="mono" id="observation-counter" style="font-size:0.75rem; color:var(--ink-muted);">Kayıtlı Deneme: 0</span>
+            </div>
+            <div class="observation-table-wrap">
+              <table class="observation-table">
+                <thead>
+                  <tr id="observation-table-head">
+                    <th>#</th>
+                    <th>Deneme Girdisi</th>
+                    <th>Gözlenen Matematiksel Değer</th>
+                    <th>Durum / Not</th>
+                  </tr>
+                </thead>
+                <tbody id="observation-table-body">
+                  <tr>
+                    <td colspan="4" style="text-align:center; color:var(--ink-muted); padding:1rem;">
+                      Henüz gözlem kaydedilmedi. Sürgüleri ayarlayıp "📋 Gözlemi Kaydet" butonuna basın.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) SEKMESİ
+         ==================================================================== -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-{grade}">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Hızlı Kazanım Kontrolü ({outcome_code})
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem;">
+              Simülasyonda deneyimlediğiniz ve önermesini kurduğunuz kavramları aşağıdaki 3 mini görevde sınayın.
+            </p>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
+            Doğrulanan: 0 / 3
+          </div>
+        </div>
+
+        <div class="assessment-grid">
+{mini_tasks_html}
+        </div>
+
+        <div style="margin-top:1.5rem; display:flex; justify-content:flex-end;">
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
+            Aşama 3'e Geç (Ek Soru Alanı) →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 3: KOŞULLU EK SORU HAVUZU KAPISI ("EK SORU İSTER MİSİNİZ?")
+         ==================================================================== -->
+    <section id="stage-3" class="stage-section" style="margin-top: 2rem;">
+      <div class="extra-questions-gate">
+        <div class="extra-questions-gate__inner">
+          <div>
+            <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+            <h2 style="font-family:var(--font-display); font-size:1.45rem; margin-top:0.4rem;">
+              Ek soru çözmek ister misiniz?
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem; margin-top:0.25rem;">
+              Bu modül için hazırlanmış <strong>10 adet yeni nesil beceri temelli soru</strong> ile muhakeme gücünüzü pekiştirebilirsiniz.
+            </p>
+          </div>
+
+          <div class="extra-questions-gate__btns">
+            <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+              ✓ Evet, Ek Soru Çözmek İstiyorum
+            </button>
+            <button type="button" class="btn" id="btn-extra-no">
+              ✕ Hayır, Teşekkürler (Yeterli)
+            </button>
+          </div>
+        </div>
+
+        <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+          Tebrikler! Hafta etkinliğini ve değerlendirme aşamasını tamamladınız. Dilediğiniz zaman "Evet" butonuna tıklayarak ek 10 soruyu çözebilirsiniz.
+        </div>
+      </div>
+
+      <!-- 10 Soruluk Dinamik Yeni Nesil Soru Havuzu Paneli -->
+      <div id="extra-questions-panel" class="extra-questions-container is-hidden" hidden>
+        <div class="question-nav-bar">
+          <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+            <span class="mono" style="font-size:0.8rem; font-weight:700;">SORULAR:</span>
+            <div class="question-num-pills" id="question-pills-container"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+              Tümünü Liste Görünümünde Aç
+            </button>
+            <span class="tech-badge tech-badge--signal mono" id="extra-score-display">Doğru: 0 / 10</span>
+          </div>
+        </div>
+
+        <div id="questions-render-area"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi / Künye -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi</strong> — MEB Türkiye Yüzyılı Maarif Modeli (TYMM) Uyumlu Aktif Öğrenme Platformu
+      </div>
+      <div class="mono" style="font-size:0.8rem; color:var(--ink-muted);">
+        {grade}. Sınıf • {week}. Hafta • {outcome_code} • GitHub &amp; Vercel Ready
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       JAVASCRIPT MOTORU
+       ==================================================================== -->
+  <script>
+    (function() {{
+      'use strict';
+
+      const STORAGE_KEY = 'mat_atolye_{file_id}_v2';
+
+      const SIM_STEPS = {sim_steps_json};
+      const EXTRA_QUESTIONS = {extra_questions_json};
+
+      const state = {{
+        currentStage: 'stage-1',
+        currentSimStep: 0,
+        selectedHypothesis: {{}},
+        selectedConjecture: {{}},
+        observations: [[], [], [], []],
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: {{}},
+        extraPoolVisible: false,
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {{}}
+      }};
+
+      function loadState() {{
+        try {{
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {{
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
+            if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
+            if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+            if (parsed.selectedHypothesis) state.selectedHypothesis = parsed.selectedHypothesis;
+            if (parsed.selectedConjecture) state.selectedConjecture = parsed.selectedConjecture;
+          }}
+        }} catch (e) {{}}
+      }}
+
+      function saveState() {{
+        try {{
+          const simDoneCount = state.completedSimSteps.filter(Boolean).length;
+          const miniDoneCount = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrectCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {{
+            const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }}).length;
+
+          const totalPercent = Math.min(100, Math.round(
+            (simDoneCount / 4) * 40 +
+            (miniDoneCount / 3) * 30 +
+            (Object.keys(state.extraAnswers).length / 10) * 30
+          ));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({{
+            id: '{file_id}',
+            grade: {grade},
+            week: {week},
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            selectedHypothesis: state.selectedHypothesis,
+            selectedConjecture: state.selectedConjecture,
+            extraCorrectCount: extraCorrectCount,
+            progressPercent: totalPercent,
+            updatedAt: new Date().toISOString()
+          }}));
+
+          const badge = document.getElementById('module-progress-badge');
+          if (badge) badge.textContent = `İlerleme: %${{totalPercent}}`;
+        }} catch (e) {{}}
+      }}
+
+      // Tema Yönetimi
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {{
+        const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }}
+      themeBtn.addEventListener('click', () => {{
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }});
+
+      // Sekmeler Arası Geçiş
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      stageButtons.forEach(btn => {{
+        btn.addEventListener('click', () => {{
+          switchStage(btn.getAttribute('data-stage-target'));
+        }});
+      }});
+
+      function switchStage(stageId) {{
+        state.currentStage = stageId;
+        stageButtons.forEach(b => {{
+          b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId);
+        }});
+
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+
+        if (stageId === 'stage-1') {{
+          s1.classList.remove('is-hidden');
+          s2.classList.add('is-hidden');
+        }} else if (stageId === 'stage-2') {{
+          s1.classList.add('is-hidden');
+          s2.classList.remove('is-hidden');
+        }} else if (stageId === 'stage-3') {{
+          s3.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+        }}
+      }}
+
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => {{
+        switchStage('stage-3');
+      }});
+
+      // SVG Koordinat Izgarası
+      function drawSvgGrid() {{
+        const gridGroup = document.getElementById('svg-grid-layer');
+        let html = '';
+        for (let x = 40; x <= 720; x += 40) {{
+          html += `<line x1="${{x}}" y1="0" x2="${{x}}" y2="400" />`;
+        }}
+        for (let y = 40; y <= 360; y += 40) {{
+          html += `<line x1="0" y1="${{y}}" x2="760" y2="${{y}}" />`;
+        }}
+        gridGroup.innerHTML = html;
+      }}
+
+      // Simülasyon Kontrolleri
+      const slider1 = document.getElementById('sim-param-slider');
+      const sliderLabel1 = document.getElementById('slider-label');
+      const sliderReadout1 = document.getElementById('slider-value-readout');
+
+      const slider2 = document.getElementById('sim-param-slider-2');
+      const sliderLabel2 = document.getElementById('slider-2-label');
+      const sliderReadout2 = document.getElementById('slider-2-value-readout');
+      const secondaryControlGroup = document.getElementById('secondary-control-group');
+
+      const conjectureSelect = document.getElementById('conjecture-select');
+
+      function resetFeedbackForStep(index) {{
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[index]) {{
+          fb.innerHTML = `✅ <strong>Adım ${{index + 1}} tamamlandı.</strong> İsterseniz değişkenleri değiştirerek yeni gözlemler kaydedebilir veya diğer adıma geçebilirsiniz.`;
+        }} else {{
+          fb.innerHTML = `<strong>Adım ${{index + 1}} Aktif Öğrenme:</strong> Önce varsayımınızı belirleyin, laboratuvarda denemeler yapıp gözlem tablosuna kaydedin, ardından genelleme önermesini seçip doğrulayın.`;
+        }}
+      }}
+
+      function loadSimStep(index, preserveFeedback = false) {{
+        state.currentSimStep = index;
+        const stepCfg = SIM_STEPS[index];
+
+        document.getElementById('sim-step-counter').textContent = `Adım ${{index + 1}} / 4`;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag || 'MATEMATİKSEL LABORATUVAR';
+        document.getElementById('mission-title').textContent = stepCfg.title;
+        document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
+        document.getElementById('mission-hint').innerHTML = stepCfg.hint;
+
+        // Step butonlarını güncelle
+        document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {{
+          pill.classList.toggle('is-active', idx === index);
+          pill.classList.toggle('is-done', state.completedSimSteps[idx]);
+        }});
+
+        // Varsayım Seçeneklerini Yükle
+        const hypoGroup = document.getElementById('hypothesis-options-group');
+        const hypoStatus = document.getElementById('hypothesis-status');
+        const letters = ['A', 'B', 'C', 'D'];
+        hypoGroup.innerHTML = stepCfg.hypotheses.map((h, hIdx) => {{
+          const isSelected = state.selectedHypothesis[index] === hIdx;
+          return `<button type="button" class="hypothesis-btn ${{isSelected ? 'is-selected' : ''}}" data-hidx="${{hIdx}}">
+            <span class="mono">(${{letters[hIdx]}})</span>
+            <span>${{h.text}}</span>
+          </button>`;
+        }}).join('');
+
+        if (state.selectedHypothesis[index] !== undefined) {{
+          hypoStatus.textContent = `Seçim: (${{letters[state.selectedHypothesis[index]]}}) Kaydedildi`;
+          hypoStatus.style.color = 'var(--grade-6)';
+        }} else {{
+          hypoStatus.textContent = 'Seçim Yapılmadı';
+          hypoStatus.style.color = 'var(--ink-muted)';
+        }}
+
+        hypoGroup.querySelectorAll('.hypothesis-btn').forEach(btn => {{
+          btn.addEventListener('click', () => {{
+            const hIdx = Number(btn.getAttribute('data-hidx'));
+            state.selectedHypothesis[index] = hIdx;
+            hypoGroup.querySelectorAll('.hypothesis-btn').forEach(b => b.classList.remove('is-selected'));
+            btn.classList.add('is-selected');
+            hypoStatus.textContent = `Seçim: (${{letters[hIdx]}}) Kaydedildi`;
+            hypoStatus.style.color = 'var(--grade-6)';
+            saveState();
+          }});
+        }});
+
+        // Önerme Seçeneklerini Yükle
+        conjectureSelect.innerHTML = '<option value="">-- Çıkarımınızı Seçin --</option>' +
+          stepCfg.conjectures.map((c, cIdx) => {{
+            return `<option value="${{cIdx}}" ${{state.selectedConjecture[index] === cIdx ? 'selected' : ''}}>${{c.text}}</option>`;
+          }}).join('');
+
+        // Sürgü 1
+        slider1.min = stepCfg.min;
+        slider1.max = stepCfg.max;
+        slider1.step = stepCfg.step || 1;
+        slider1.value = stepCfg.defaultVal;
+
+        // Sürgü 2 (Varsa)
+        if (stepCfg.hasSecondary) {{
+          secondaryControlGroup.style.display = 'flex';
+          slider2.min = stepCfg.min2;
+          slider2.max = stepCfg.max2;
+          slider2.step = stepCfg.step2 || 1;
+          slider2.value = stepCfg.defaultVal2;
+          sliderLabel2.textContent = stepCfg.sliderLabel2;
+        }} else {{
+          secondaryControlGroup.style.display = 'none';
+        }}
+
+        renderObservationTable(index);
+
+        if (!preserveFeedback) {{
+          resetFeedbackForStep(index);
+        }}
+
+        updateSimCanvas();
+        updateProcessChecklist();
+      }}
+
+      conjectureSelect.addEventListener('change', () => {{
+        const val = conjectureSelect.value;
+        if (val !== '') {{
+          state.selectedConjecture[state.currentSimStep] = Number(val);
+        }} else {{
+          delete state.selectedConjecture[state.currentSimStep];
+        }}
+        saveState();
+      }});
+
+      function renderObservationTable(stepIdx) {{
+        const tbody = document.getElementById('observation-table-body');
+        const counter = document.getElementById('observation-counter');
+        const records = state.observations[stepIdx] || [];
+        counter.textContent = `Kayıtlı Deneme: ${{records.length}}`;
+
+        if (records.length === 0) {{
+          tbody.innerHTML = `<tr>
+            <td colspan="4" style="text-align:center; color:var(--ink-muted); padding:1rem;">
+              Henüz gözlem kaydedilmedi. Sürgüleri ayarlayıp "📋 Gözlemi Kaydet" butonuna basın.
+            </td>
+          </tr>`;
+          return;
+        }}
+
+        tbody.innerHTML = records.map((rec, rIdx) => {{
+          return `<tr>
+            <td><strong>#${{rIdx + 1}}</strong></td>
+            <td>${{rec.input}}</td>
+            <td><strong>${{rec.value}}</strong></td>
+            <td><span class="tech-badge tech-badge--signal" style="padding:0.15rem 0.4rem; font-size:0.7rem;">${{rec.note}}</span></td>
+          </tr>`;
+        }}).join('');
+      }}
+
+      // Gözlemi Kaydet Butonu
+      document.getElementById('sim-record-btn').addEventListener('click', () => {{
+        const stepIdx = state.currentSimStep;
+        const stepCfg = SIM_STEPS[stepIdx];
+        const v1 = Number(slider1.value);
+        const v2 = stepCfg.hasSecondary ? Number(slider2.value) : null;
+
+        const currentObservation = calculateObservation(stepCfg, v1, v2);
+        if (!state.observations[stepIdx]) state.observations[stepIdx] = [];
+        state.observations[stepIdx].unshift(currentObservation);
+        if (state.observations[stepIdx].length > 8) state.observations[stepIdx].pop();
+
+        renderObservationTable(stepIdx);
+
+        const fb = document.getElementById('sim-feedback-box');
+        fb.className = 'feedback-banner feedback-banner--info';
+        fb.innerHTML = `📋 <strong>Gözlem Tabloya Eklendi:</strong> ${{currentObservation.input}} ➔ ${{currentObservation.value}}. Gözlem verilerini inceleyerek genellemenizi belirleyin!`;
+      }});
+
+      function calculateObservation(stepCfg, v1, v2) {{
+        const type = stepCfg.simType;
+        if (type === 'ruler_line') {{
+          return {{ input: `Uzunluk = ${{v1}} birim`, value: `|AB| = ${{v1}} br`, note: v1 >= 5 ? 'Uzun Parça' : 'Kısa Parça' }};
+        }} else if (type === 'angle_draw') {{
+          const t = v1 < 90 ? 'Dar Açı (<90°)' : (v1 === 90 ? 'Dik Açı (=90°)' : 'Geniş Açı (>90°)');
+          return {{ input: `Açı Açıklığı = ${{v1}}°`, value: `m(ABC) = ${{v1}}°`, note: t }};
+        }} else if (type === 'circle_radius') {{
+          return {{ input: `Yarıçap r = ${{v1}} br`, value: `Çap R = ${{v1 * 2}} br`, note: `Çevre ≈ ${{(2 * 3.14 * v1).toFixed(1)}} br` }};
+        }} else if (type === 'perpendicular_drop') {{
+          const dist = (Math.hypot(380 + (90 - v1) * 3.2 - 380, 210) / 40).toFixed(2);
+          const isPerp = v1 === 90;
+          return {{ input: `İnme Açısı = ${{v1}}°`, value: `Mesafe ≈ ${{dist}} br`, note: isPerp ? '✓ EN KISA (DİKME)' : 'Eğik Çizgi' }};
+        }} else if (type === 'parallel_lines') {{
+          return {{ input: `Aralık = ${{v1}} br`, value: `Uzaklık Sabit (${{v1}} br)`, note: 'Kesişmez (Paralel)' }};
+        }} else if (type === 'polygon_builder') {{
+          const names = {{ 3: 'Üçgen', 4: 'Dörtgen', 5: 'Beşgen', 6: 'Altıgen', 7: 'Yedigen', 8: 'Sekizgen' }};
+          return {{ input: `Doğru Sayısı = ${{v1}}`, value: `${{names[v1] || v1 + 'gen'}}`, note: `İç Açı Toplamı = ${{(v1 - 2) * 180}}°` }};
+        }} else if (type === 'triangle_angle_sum') {{
+          const a3 = 180 - v1 - (v2 || 60);
+          return {{ input: `Açı 1: ${{v1}}°, Açı 2: ${{v2 || 60}}°`, value: `Açı 3 = ${{a3}}°`, note: 'Toplam = 180°' }};
+        }} else if (type === 'euclid_flower') {{
+          const isEqui = v1 === 120 && (v2 === 120 || !v2);
+          return {{ input: `r1 = ${{v1}}px, r2 = ${{v2 || v1}}px`, value: isEqui ? 'Üç Kenar Eşit' : 'Kenarlar Farklı', note: isEqui ? 'Eşkenar Üçgen' : 'İkiz/Çeşitkenar' }};
+        }} else if (type === 'factor_rect') {{
+          const rem = 24 % v1;
+          return {{ input: `Genişlik = ${{v1}}`, value: rem === 0 ? `Boy = ${{24 / v1}}` : 'Tam Bölünmez', note: rem === 0 ? '✓ 24\'ün Çarpanı' : 'Çarpanı Değil' }};
+        }} else if (type === 'divisibility_test') {{
+          const d2 = v1 % 2 === 0, d3 = v1 % 3 === 0, d5 = v1 % 5 === 0;
+          return {{ input: `Sayı = ${{v1}}`, value: `2'ye: ${{d2 ? '✓' : '✕'}}, 3'e: ${{d3 ? '✓' : '✕'}}`, note: `5'e: ${{d5 ? '✓' : '✕'}}` }};
+        }} else if (type === 'probability_fraction') {{
+          const prob = (v1 / (v2 || 20)).toFixed(2);
+          return {{ input: `Olay = ${{v1}}, Toplam = ${{v2 || 20}}`, value: `Göreli Sıklık = ${{prob}}`, note: `%${{Math.round(prob * 100)}} İhtimal` }};
+        }} else if (type === 'decimal_grid') {{
+          return {{ input: `Boyalı = ${{v1}} / 100`, value: `Ondalık = ${{(v1 / 100).toFixed(2)}}`, note: `${{v1 >= 10 ? Math.floor(v1/10) + '/10 + ' + (v1%10) + '/100' : v1 + '/100'}}` }};
+        }} else if (type === 'fraction_division') {{
+          const q = (v1 / (v2 || 3)).toFixed(3);
+          const isTerm = [1, 2, 4, 5, 8, 10, 20, 25].includes(v2 || 3);
+          return {{ input: `${{v1}} ÷ ${{v2 || 3}}`, value: `Sonuç ≈ ${{q}}`, note: isTerm ? 'Sonlu Ondalık' : 'Devirli Ondalık' }};
+        }} else if (type === 'integer_depth') {{
+          const abs = Math.abs(v1);
+          return {{ input: `Konum = ${{v1}}`, value: `|${{v1}}| = ${{abs}} birim`, note: v1 < 0 ? 'Sıfırın Altında' : (v1 > 0 ? 'Sıfırın Üstünde' : 'Referans (0)') }};
+        }} else if (type === 'rational_line') {{
+          const frac = (v1 / (v2 || 4)).toFixed(2);
+          return {{ input: `${{v1}}/${{v2 || 4}}`, value: `Sayı Doğrusunda: ${{frac}}`, note: v1 < 0 ? '0\'ın Solunda' : '0\'ın Sağında' }};
+        }} else if (type === 'rational_mult') {{
+          const num = v1 * (v2 || 2);
+          return {{ input: `(${{v1}}/4) × (${{v2 || 2}}/3)`, value: `Alan = ${{num}}/12`, note: `Sadeleşmiş: ${{(num/12).toFixed(2)}}` }};
+        }} else {{
+          return {{ input: `Değer = ${{v1}}`, value: `Sonuç = ${{v1}}`, note: 'Gözlem Kaydedildi' }};
+        }}
+      }}
+
+      // Simülasyon Tuvalini Çiz
+      function updateSimCanvas() {{
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const v1 = Number(slider1.value);
+        const v2 = stepCfg.hasSecondary ? Number(slider2.value) : null;
+        const layer = document.getElementById('svg-construction-layer');
+
+        sliderLabel1.textContent = `${{stepCfg.sliderLabel}} ${{v1}} ${{stepCfg.unit || ''}}`;
+        sliderReadout1.textContent = `${{v1}} ${{stepCfg.unit || ''}}`;
+
+        if (stepCfg.hasSecondary) {{
+          sliderLabel2.textContent = `${{stepCfg.sliderLabel2}} ${{v2}} ${{stepCfg.unit2 || ''}}`;
+          sliderReadout2.textContent = `${{v2}} ${{stepCfg.unit2 || ''}}`;
+        }}
+
+        document.getElementById('telemetry-tool').textContent = `AKTİF ARAÇ: ${{stepCfg.tag || 'Laboratuvar'}}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation || '';
+
+        renderSimSvg(stepCfg, v1, v2, layer);
+      }}
+
+      function renderSimSvg(stepCfg, v1, v2, layer) {{
+        const type = stepCfg.simType;
+        const tMeas = document.getElementById('telemetry-measurement');
+
+        if (type === 'ruler_line') {{
+          const ax = 120, ay = 240, bx = ax + v1 * 48;
+          tMeas.textContent = `ÖLÇÜM: |AB| = ${{v1}} birim (Cetvel ile ölçüm)`;
+          let ticks = '';
+          for (let i = 0; i <= 10; i++) {{
+            const tx = ax + i * 48;
+            ticks += `<line x1="${{tx}}" y1="275" x2="${{tx}}" y2="${{i % 2 === 0 ? 292 : 286}}" stroke="#141413" stroke-width="2"/>
+                      <text x="${{tx}}" y="310" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">${{i}}</text>`;
+          }}
+          layer.innerHTML = `
+            <line x1="${{ax}}" y1="${{ay}}" x2="560" y2="95" stroke="#0052CC" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrow-ray)"/>
+            <circle cx="380" cy="154" r="6" fill="#0052CC"/>
+            <text x="380" y="138" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#0052CC">C ([AC Işını)</text>
+            <rect x="${{ax - 16}}" y="275" width="${{10 * 48 + 32}}" height="48" fill="#FEF3C7" stroke="#141413" stroke-width="2"/>
+            ${{ticks}}
+            <line x1="${{ax}}" y1="${{ay}}" x2="${{bx}}" y2="${{ay}}" stroke="#FF5500" stroke-width="6"/>
+            <circle cx="${{ax}}" cy="${{ay}}" r="8" fill="#141413"/>
+            <circle cx="${{bx}}" cy="${{ay}}" r="10" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${{ax}}" y="${{ay - 18}}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">A (0)</text>
+            <text x="${{bx}}" y="${{ay - 18}}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">B (${{v1}} br)</text>
+            <text x="${{(ax + bx) / 2}}" y="${{ay - 22}}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#00875A">|AB| = ${{v1}} birim</text>
+          `;
+        }} else if (type === 'angle_draw') {{
+          const cx = 380, cy = 300, r = 170;
+          const rad = (v1 * Math.PI) / 180;
+          const px = cx + r * Math.cos(rad);
+          const py = cy - r * Math.sin(rad);
+          const angleType = v1 < 90 ? 'Dar Açı (<90°)' : (v1 === 90 ? 'Dik Açı (=90°)' : 'Geniş Açı (>90°)');
+          tMeas.textContent = `ÖLÇÜM: m(ABC) = ${{v1}}° — ${{angleType}}`;
+          const arcR = 70;
+          const arcX = cx + arcR * Math.cos(rad);
+          const arcY = cy - arcR * Math.sin(rad);
+          const largeArc = v1 > 180 ? 1 : 0;
+          layer.innerHTML = `
+            <path d="M ${{cx - 190}} ${{cy}} A 190 190 0 0 1 ${{cx + 190}} ${{cy}} Z" fill="rgba(0, 82, 204, 0.08)" stroke="#141413" stroke-width="2"/>
+            <line x1="${{cx}}" y1="${{cy}}" x2="${{cx}}" y2="${{cy - 190}}" stroke="rgba(20,20,19,0.25)" stroke-dasharray="4,4" stroke-width="1.5"/>
+            <text x="${{cx}}" y="${{cy - 198}}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">90° (Dik)</text>
+            <line x1="${{cx}}" y1="${{cy}}" x2="${{cx + 210}}" y2="${{cy}}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <text x="${{cx + 225}}" y="${{cy + 5}}" font-family="Space Grotesk" font-size="16" font-weight="700">A</text>
+            <path d="M ${{cx}} ${{cy}} L ${{cx + arcR}} ${{cy}} A ${{arcR}} ${{arcR}} 0 ${{largeArc}} 0 ${{arcX}} ${{arcY}} Z" fill="rgba(255, 85, 0, 0.22)" stroke="#FF5500" stroke-width="2.5"/>
+            <line x1="${{cx}}" y1="${{cy}}" x2="${{px}}" y2="${{py}}" stroke="#FF5500" stroke-width="4" marker-end="url(#arrow-orange)"/>
+            <circle cx="${{px}}" cy="${{py}}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+            <circle cx="${{cx}}" cy="${{cy}}" r="7" fill="#141413"/>
+            <text x="${{cx}}" y="${{cy + 25}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">B (Köşe)</text>
+            <text x="${{px}}" y="${{py - 14}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#FF5500">C (${{v1}}°)</text>
+            <text x="${{cx}}" y="65" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">m(ABC) = ${{v1}}° • ${{angleType}}</text>
+          `;
+        }} else if (type === 'circle_radius') {{
+          const ox = 380, oy = 205, rPx = v1 * 26;
+          tMeas.textContent = `ÖLÇÜM: Yarıçap r = ${{v1}} br | Çap R = ${{v1 * 2}} br`;
+          layer.innerHTML = `
+            <circle cx="${{ox}}" cy="${{oy}}" r="${{rPx}}" fill="rgba(0, 135, 90, 0.10)" stroke="#00875A" stroke-width="3.5"/>
+            <line x1="${{ox - rPx}}" y1="${{oy}}" x2="${{ox + rPx}}" y2="${{oy}}" stroke="#0052CC" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="${{ox}}" y1="${{oy}}" x2="${{ox + rPx}}" y2="${{oy}}" stroke="#FF5500" stroke-width="4"/>
+            <circle cx="${{ox}}" cy="${{oy}}" r="7" fill="#141413"/>
+            <circle cx="${{ox + rPx}}" cy="${{oy}}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+            <text x="${{ox}}" y="${{oy - 14}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">O (Merkez)</text>
+            <text x="${{ox + rPx / 2}}" y="${{oy - 10}}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF5500">r = ${{v1}} br</text>
+            <text x="${{ox}}" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">Yarıçap r = ${{v1}} br • Çap R = 2r = ${{v1 * 2}} br</text>
+          `;
+        }} else if (type === 'perpendicular_drop') {{
+          const px = 380, py = 90, lineY = 300;
+          const hx = 380 + (90 - v1) * 3.2;
+          const isPerp = v1 === 90;
+          const dist = (Math.hypot(hx - px, lineY - py) / 40).toFixed(2);
+          tMeas.textContent = `ÖLÇÜM: Açı = ${{v1}}° | Uzaklık |PH| ≈ ${{dist}} br ${{isPerp ? '✓ EN KISA (DİKME [PH] ⊥ d)' : ''}}`;
+          layer.innerHTML = `
+            <line x1="100" y1="${{lineY}}" x2="660" y2="${{lineY}}" stroke="#141413" stroke-width="4"/>
+            <text x="645" y="${{lineY - 12}}" font-family="JetBrains Mono" font-size="16" font-weight="700">d doğrusu</text>
+            <line x1="${{px}}" y1="${{py}}" x2="${{px}}" y2="${{lineY}}" stroke="rgba(0,135,90,0.35)" stroke-dasharray="4,4" stroke-width="2"/>
+            ${{isPerp ? `<rect x="${{hx}}" y="${{lineY - 22}}" width="22" height="22" fill="rgba(0,135,90,0.2)" stroke="#00875A" stroke-width="2.5"/>
+                         <circle cx="${{hx + 11}}" cy="${{lineY - 11}}" r="2.5" fill="#00875A"/>` : ''}}
+            <line x1="${{px}}" y1="${{py}}" x2="${{hx}}" y2="${{lineY}}" stroke="${{isPerp ? '#00875A' : '#FF5500'}}" stroke-width="4.5"/>
+            <circle cx="${{px}}" cy="${{py}}" r="8" fill="#141413"/>
+            <circle cx="${{hx}}" cy="${{lineY}}" r="10" fill="${{isPerp ? '#00875A' : '#FF5500'}}" stroke="#141413" stroke-width="2"/>
+            <text x="${{px}}" y="${{py - 16}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">P (Dış Nokta)</text>
+            <text x="${{hx}}" y="${{lineY + 28}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">H (${{v1}}°)</text>
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${{isPerp ? '#00875A' : '#D97706'}}">
+              ${{isPerp ? '✓ DİKME İNŞA EDİLDİ: [PH] ⊥ d (En Kısa Uzaklık = 5.25 br)' : `Açı: ${{v1}}° — Dikme (90°) için açıyı dik konuma getirin`}}
+            </text>
+          `;
+        }} else if (type === 'polygon_builder') {{
+          const n = v1;
+          const cx = 380, cy = 200, r = 130;
+          let pts = [];
+          for (let i = 0; i < n; i++) {{
+            const ang = (i * 2 * Math.PI / n) - Math.PI / 2;
+            pts.push(`${{cx + r * Math.cos(ang)}},${{cy + r * Math.sin(ang)}}`);
+          }}
+          const polyStr = pts.join(' ');
+          const names = {{ 3: 'Üçgen', 4: 'Dörtgen', 5: 'Beşgen', 6: 'Altıgen', 7: 'Yedigen', 8: 'Sekizgen' }};
+          const sumAng = (n - 2) * 180;
+          tMeas.textContent = `ŞEKİL: ${{names[n] || n + 'gen'}} • Köşe: ${{n}} • Kenar: ${{n}} • İç Açılar Toplamı: ${{sumAng}}°`;
+          layer.innerHTML = `
+            <polygon points="${{polyStr}}" fill="rgba(0, 82, 204, 0.12)" stroke="#0052CC" stroke-width="4"/>
+            ${{pts.map((p, idx) => {{
+              const [px, py] = p.split(',');
+              return `<circle cx="${{px}}" cy="${{py}}" r="7" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+                      <text x="${{px}}" y="${{Number(py) - 12}}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">K${{idx + 1}}</text>`;
+            }}).join('')}}
+            <text x="380" y="205" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#141413">${{names[n] || n + 'gen'}}</text>
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">Ardışık ${{n}} doğrunun kesişimi: ${{n}} kenar, ${{n}} köşe</text>
+          `;
+        }} else if (type === 'euclid_flower') {{
+          const r1 = v1, r2 = v2 || v1;
+          const d = 140; // |AB| = 140
+          const ax = 310, ay = 230, bx = ax + d, by = ay;
+          // C noktasını kesişimden bul
+          // r1^2 - x^2 = r2^2 - (d-x)^2 -> x = (r1^2 - r2^2 + d^2) / (2d)
+          const x = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+          const y2 = r1 * r1 - x * x;
+          const y = y2 > 0 ? Math.sqrt(y2) : 0;
+          const cx = ax + x, cy = ay - y;
+          const isEqui = Math.abs(r1 - d) < 5 && Math.abs(r2 - d) < 5;
+          const isIso = Math.abs(r1 - r2) < 5 && !isEqui;
+          const typeName = isEqui ? 'Eşkenar Üçgen (Öklid 1. Önermesi)' : (isIso ? 'İkizkenar Üçgen' : 'Çeşitkenar Üçgen');
+          tMeas.textContent = `ÜÇGEN: ${{typeName}} • |AB|=${{d}}px, |AC|=${{r1}}px, |BC|=${{r2}}px`;
+          layer.innerHTML = `
+            <circle cx="${{ax}}" cy="${{ay}}" r="${{r1}}" fill="none" stroke="#0052CC" stroke-width="2.5" stroke-dasharray="4,3"/>
+            <circle cx="${{bx}}" cy="${{by}}" r="${{r2}}" fill="none" stroke="#D97706" stroke-width="2.5" stroke-dasharray="4,3"/>
+            <polygon points="${{ax}},${{ay}} ${{bx}},${{by}} ${{cx}},${{cy}}" fill="rgba(0, 135, 90, 0.18)" stroke="#00875A" stroke-width="3.5"/>
+            <circle cx="${{ax}}" cy="${{ay}}" r="7" fill="#0052CC"/>
+            <circle cx="${{bx}}" cy="${{by}}" r="7" fill="#D97706"/>
+            <circle cx="${{cx}}" cy="${{cy}}" r="8" fill="#FF5500"/>
+            <text x="${{ax - 15}}" y="${{ay + 20}}" font-family="Space Grotesk" font-size="16" font-weight="700">A (Merkez 1)</text>
+            <text x="${{bx + 15}}" y="${{by + 20}}" font-family="Space Grotesk" font-size="16" font-weight="700">B (Merkez 2)</text>
+            <text x="${{cx}}" y="${{cy - 14}}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#FF5500">C (Kesişim)</text>
+            <text x="380" y="45" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#00875A">${{typeName}}</text>
+          `;
+        }} else if (type === 'factor_rect') {{
+          const total = 24;
+          const w = v1, h = Math.floor(total / w);
+          const isDiv = total % w === 0;
+          tMeas.textContent = `ALAN MODELİ: ${{w}} × ${{h}} = ${{w * h}} birimkare ${{isDiv ? '(Tam Çarpan: ' + w + ' × ' + h + ' = 24)' : '(Kalan: ' + (total % w) + ')'}}`;
+          const cellW = 320 / Math.max(w, 8);
+          layer.innerHTML = `
+            <rect x="220" y="110" width="${{w * cellW}}" height="${{h * cellW}}" fill="${{isDiv ? 'rgba(0, 135, 90, 0.18)' : 'rgba(220, 38, 38, 0.15)'}}" stroke="${{isDiv ? '#00875A' : '#DC2626'}}" stroke-width="3"/>
+            <text x="${{220 + (w * cellW) / 2}}" y="95" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700">En = ${{w}} birim</text>
+            <text x="200" y="${{110 + (h * cellW) / 2}}" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700">Boy = ${{h}} br</text>
+            <text x="380" y="320" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="${{isDiv ? '#00875A' : '#DC2626'}}">
+              ${{isDiv ? `✓ ${{w}}, 24'ün bir çarpanıdır: ${{w}} × ${{h}} = 24` : `✕ ${{w}}, 24'ün tam çarpanı değildir (Kalan = ${{total % w}})`}}
+            </text>
+          `;
+        }} else if (type === 'divisibility_test') {{
+          const n = v1;
+          const d2 = n % 2 === 0, d3 = n % 3 === 0, d4 = n % 4 === 0, d5 = n % 5 === 0, d9 = n % 9 === 0, d10 = n % 10 === 0;
+          const sumDigits = String(n).split('').reduce((acc, digit) => acc + Number(digit), 0);
+          tMeas.textContent = `BÖLÜNEBİLME: Sayı = ${{n}} | Son Rakam = ${{n % 10}} | Rakamlar Toplamı = ${{sumDigits}}`;
+          layer.innerHTML = `
+            <rect x="180" y="60" width="400" height="70" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+            <text x="380" y="105" text-anchor="middle" font-family="Space Grotesk" font-size="28" font-weight="700" fill="#0052CC">${{n}}</text>
+            <g transform="translate(140, 160)">
+              <rect x="0" y="0" width="140" height="45" fill="${{d2 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}}" stroke="#141413" stroke-width="2"/>
+              <text x="70" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">2'ye: ${{d2 ? 'Tam Bölünür' : 'Bölünmez'}}</text>
+              <rect x="170" y="0" width="140" height="45" fill="${{d3 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}}" stroke="#141413" stroke-width="2"/>
+              <text x="240" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">3'e: ${{d3 ? 'Tam Bölünür' : 'Bölünmez'}}</text>
+              <rect x="340" y="0" width="140" height="45" fill="${{d5 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}}" stroke="#141413" stroke-width="2"/>
+              <text x="410" y="28" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">5'e: ${{d5 ? 'Tam Bölünür' : 'Bölünmez'}}</text>
+              <rect x="85" y="65" width="140" height="45" fill="${{d4 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}}" stroke="#141413" stroke-width="2"/>
+              <text x="155" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">4'e: ${{d4 ? 'Tam Bölünür' : 'Bölünmez'}}</text>
+              <rect x="255" y="65" width="140" height="45" fill="${{d9 ? 'var(--status-success-bg)' : 'var(--status-error-bg)'}}" stroke="#141413" stroke-width="2"/>
+              <text x="325" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">9'a: ${{d9 ? 'Tam Bölünür' : 'Bölünmez'}}</text>
+            </g>
+          `;
+        }} else if (type === 'probability_fraction') {{
+          const succ = v1, total = v2 || 20;
+          const ratio = succ / total;
+          tMeas.textContent = `DENEYSEL OLASILIK: Göreli Sıklık = ${{succ}} / ${{total}} = ${{ratio.toFixed(2)}} (%${{Math.round(ratio * 100)}})`;
+          const barW = ratio * 480;
+          layer.innerHTML = `
+            <text x="380" y="60" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">Göreli Sıklık Spektrumu (0 İmkansız — 1 Kesin)</text>
+            <rect x="140" y="100" width="480" height="40" fill="#EFECE4" stroke="#141413" stroke-width="2.5"/>
+            <rect x="140" y="100" width="${{barW}}" height="40" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="140" y="165" font-family="JetBrains Mono" font-size="14" font-weight="700">0 (%0)</text>
+            <text x="380" y="165" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700">0.50 (%50)</text>
+            <text x="620" y="165" text-anchor="end" font-family="JetBrains Mono" font-size="14" font-weight="700">1.0 (%100)</text>
+            <text x="380" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="22" font-weight="700" fill="#0052CC">
+              P(Olay) ≈ ${{succ}} / ${{total}} = ${{ratio.toFixed(3)}}
+            </text>
+          `;
+        }} else if (type === 'decimal_grid') {{
+          const n = v1;
+          const tenths = Math.floor(n / 10), hundredths = n % 10;
+          tMeas.textContent = `YÜZLÜK IZGARA: ${{n}} / 100 = ${{(n / 100).toFixed(2)}} = ${{tenths}}/10 + ${{hundredths}}/100`;
+          let rects = '';
+          const sz = 24, startX = 260, startY = 60;
+          for (let r = 0; r < 10; r++) {{
+            for (let c = 0; c < 10; c++) {{
+              const idx = r * 10 + c;
+              const isFilled = idx < n;
+              rects += `<rect x="${{startX + c * sz}}" y="${{startY + r * sz}}" width="${{sz}}" height="${{sz}}" fill="${{isFilled ? '#FF5500' : '#FFFFFF'}}" stroke="#141413" stroke-width="1"/>`;
+            }}
+          }}
+          layer.innerHTML = `
+            ${{rects}}
+            <text x="380" y="340" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              ${{(n / 100).toFixed(2)}} = ${{tenths}} onda bir (${{tenths}}/10) + ${{hundredths}} yüzde bir (${{hundredths}}/100)
+            </text>
+          `;
+        }} else if (type === 'fraction_division') {{
+          const num = v1, den = v2 || 3;
+          const val = (num / den).toFixed(4);
+          const isTerm = [1, 2, 4, 5, 8, 10, 16, 20, 25].includes(den);
+          tMeas.textContent = `BÖLME İLİŞKİSİ: ${{num}} ÷ ${{den}} = ${{num}}/${{den}} ≈ ${{val}} ${{isTerm ? '(Sonlu)' : '(Devirli)'}}`;
+          layer.innerHTML = `
+            <rect x="180" y="80" width="400" height="180" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+            <text x="380" y="125" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700">
+              ${{num}} ÷ ${{den}} = <tspan fill="#FF5500">${{num}}/${{den}}</tspan>
+            </text>
+            <text x="380" y="180" text-anchor="middle" font-family="JetBrains Mono" font-size="26" font-weight="700" fill="${{isTerm ? '#00875A' : '#0052CC'}}">
+              ${{isTerm ? `= ${{(num / den).toString().replace('.', ',')}}` : `≈ ${{val.slice(0, 6)}}... (Devirli)`}}
+            </text>
+            <text x="380" y="230" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="#4A4843">
+              ${{isTerm ? 'Paydanın asal çarpanları sadece 2 ve 5 ➔ Sonlu Ondalık' : 'Paydada 2 ve 5 dışında asal çarpan var ➔ Devirli Ondalık'}}
+            </text>
+          `;
+        }} else if (type === 'integer_depth') {{
+          const pos = v1;
+          const lineY = 200;
+          const px = 380 + pos * 24;
+          tMeas.textContent = `REFERANS (0) & DEĞER: Sayı = ${{pos}} | Başlangıca Uzaklık |${{pos}}| = ${{Math.abs(pos)}} birim`;
+          layer.innerHTML = `
+            <line x1="80" y1="${{lineY}}" x2="680" y2="${{lineY}}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <line x1="680" y1="${{lineY}}" x2="80" y2="${{lineY}}" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            <line x1="380" y1="${{lineY - 20}}" x2="380" y2="${{lineY + 20}}" stroke="#0052CC" stroke-width="3"/>
+            <text x="380" y="${{lineY + 40}}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#0052CC">0 (Referans)</text>
+            <line x1="${{380}}" y1="${{lineY - 40}}" x2="${{px}}" y2="${{lineY - 40}}" stroke="#FF5500" stroke-width="3" stroke-dasharray="4,4"/>
+            <circle cx="${{px}}" cy="${{lineY}}" r="9" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${{px}}" y="${{lineY - 14}}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">${{pos > 0 ? '+' + pos : pos}}</text>
+            <text x="380" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              Mutlak Değer: |${{pos}}| = ${{Math.abs(pos)}} birim uzaklık
+            </text>
+          `;
+        }} else if (type === 'rational_line') {{
+          const num = v1, den = v2 || 4;
+          const val = num / den;
+          const px = 380 + val * 120;
+          tMeas.textContent = `SAYI DOĞRUSU: Kesir = ${{num}}/${{den}} = ${{val.toFixed(2)}}`;
+          layer.innerHTML = `
+            <line x1="80" y1="200" x2="680" y2="200" stroke="#141413" stroke-width="4" marker-end="url(#arrow-ray)"/>
+            ${{[-2, -1, 0, 1, 2].map(i => `
+              <line x1="${{380 + i * 120}}" y1="185" x2="${{380 + i * 120}}" y2="215" stroke="#141413" stroke-width="2.5"/>
+              <text x="${{380 + i * 120}}" y="240" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">${{i}}</text>
+            `).join('')}}
+            <circle cx="${{px}}" cy="200" r="10" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${{px}}" y="170" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#FF5500">${{num}}/${{den}}</text>
+            <text x="380" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">
+              Sayı doğrusunda sağdaki sayı daima soldakinden büyüktür!
+            </text>
+          `;
+        }} else if (type === 'rational_mult') {{
+          const n1 = v1, n2 = v2 || 2;
+          const prod = n1 * n2;
+          tMeas.textContent = `ALAN MODELİYLE ÇARPMA: (${{n1}}/4) × (${{n2}}/3) = ${{prod}}/12`;
+          layer.innerHTML = `
+            <rect x="240" y="80" width="280" height="210" fill="#FFFFFF" stroke="#141413" stroke-width="3"/>
+            ${{[1, 2, 3].map(i => `<line x1="${{240 + i * 70}}" y1="80" x2="${{240 + i * 70}}" y2="290" stroke="#CBD5E1" stroke-width="1.5"/>`).join('')}}
+            ${{[1, 2].map(j => `<line x1="240" y1="${{80 + j * 70}}" x2="520" y2="${{80 + j * 70}}" stroke="#CBD5E1" stroke-width="1.5"/>`).join('')}}
+            <rect x="240" y="80" width="${{n1 * 70}}" height="${{n2 * 70}}" fill="rgba(255, 85, 0, 0.45)" stroke="#FF5500" stroke-width="2"/>
+            <text x="380" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700">En: ${{n1}}/4 • Boy: ${{n2}}/3</text>
+            <text x="380" y="340" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#00875A">
+              Ortak Kesişen Alan = ${{prod}} / 12 birimkare
+            </text>
+          `;
+        }} else {{
+          layer.innerHTML = `
+            <rect x="180" y="100" width="400" height="180" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+            <text x="380" y="180" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#0052CC">Değer 1: ${{v1}}</text>
+            <text x="380" y="220" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#00875A">Laboratuvar Aktif</text>
+          `;
+        }}
+      }}
+
+      slider1.addEventListener('input', () => {{
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      }});
+
+      if (slider2) {{
+        slider2.addEventListener('input', () => {{
+          resetFeedbackForStep(state.currentSimStep);
+          updateSimCanvas();
+        }});
+      }}
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {{
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider1.value = stepCfg.defaultVal;
+        if (stepCfg.hasSecondary) slider2.value = stepCfg.defaultVal2;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      }});
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {{
+        const stepIdx = state.currentSimStep;
+        const stepCfg = SIM_STEPS[stepIdx];
+        const fb = document.getElementById('sim-feedback-box');
+
+        if (state.selectedHypothesis[stepIdx] === undefined) {{
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = '⚠️ <strong>Varsayım Eksik:</strong> Lütfen sol paneldeki <strong>"1. Adım: Ön Varsayımınız Nedir?"</strong> alanından bir seçim yapın.';
+          return;
+        }}
+
+        if (state.selectedConjecture[stepIdx] === undefined) {{
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = '⚠️ <strong>Önerme Eksik:</strong> Lütfen sol paneldeki <strong>"3. Adım: Önerme &amp; Genelleme Kurucu"</strong> açılır kutusundan matematiksel çıkarımınızı seçin.';
+          return;
+        }}
+
+        const chosenConjecture = state.selectedConjecture[stepIdx];
+        const isConjectureCorrect = stepCfg.conjectures[chosenConjecture] && stepCfg.conjectures[chosenConjecture].correct;
+
+        if (isConjectureCorrect) {{
+          state.completedSimSteps[stepIdx] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          const hypoChosen = stepCfg.hypotheses[state.selectedHypothesis[stepIdx]];
+          const hypoReflect = hypoChosen.correct
+            ? 'Başlangıçtaki varsayımınız deney verileriyle başarıyla doğrulandı!'
+            : 'Başlangıçtaki varsayımınızı deney gözlemleriyle geliştirip doğru matematiksel kurala ulaştınız — gerçek bilim tam olarak budur!';
+
+          fb.innerHTML = `🎉 <strong>Harika Çıkarım!</strong> ${{hypoReflect}} (${{stepCfg.conjectures[chosenConjecture].text}}). Sonraki adıma geçebilirsiniz.`;
+          loadSimStep(stepIdx, true);
+          saveState();
+        }} else {{
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Seçtiğiniz önerme laboratuvar gözlemleriyle tam örtüşmüyor. Lütfen sürgülerle farklı değerleri deneyip gözlem tablonuzu inceleyin ve çıkarımınızı tekrar gözden geçirin.`;
+        }}
+      }});
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {{
+        if (state.currentSimStep < SIM_STEPS.length - 1) {{
+          loadSimStep(state.currentSimStep + 1);
+        }} else {{
+          switchStage('stage-2');
+        }}
+      }});
+
+      document.querySelectorAll('.guide-step-pill').forEach(pill => {{
+        pill.addEventListener('click', () => {{
+          loadSimStep(Number(pill.getAttribute('data-step')));
+        }});
+      }});
+
+      function updateProcessChecklist() {{
+        const doneCount = state.completedSimSteps.filter(Boolean).length;
+        const procKeys = ['a', 'b', 'c', 'ç', 'd'];
+        procKeys.forEach((k, idx) => {{
+          const el = document.getElementById(`proc-${{k}}`);
+          if (el) {{
+            const isDone = doneCount > idx;
+            el.innerHTML = el.innerHTML.replace(/^(✅|⬜)/, isDone ? '✅' : '⬜');
+          }}
+        }});
+        const tab1 = document.getElementById('tab-btn-stage-1');
+        tab1.classList.toggle('is-completed', doneCount === 4);
+      }}
+
+      // AŞAMA 2 Mini Görevler
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {{
+        btn.addEventListener('click', () => {{
+          const miniId = btn.getAttribute('data-mini');
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackEl = document.getElementById(`mini-feedback-${{miniId}}`);
+
+          const siblingBtns = document.querySelectorAll(`.mini-option-btn[data-mini="${{miniId}}"]`);
+          siblingBtns.forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+
+          if (isCorrect) {{
+            btn.classList.add('is-correct');
+            feedbackEl.style.color = 'var(--status-success)';
+            feedbackEl.textContent = '✓ Doğru! Matematiksel çıkarım doğrulandı.';
+            state.miniCheckAnswers[miniId] = true;
+          }} else {{
+            btn.classList.add('is-wrong');
+            feedbackEl.style.color = 'var(--status-error)';
+            feedbackEl.textContent = '✕ Tekrar düşünün: Simülasyondaki genellemeyi hatırlayın.';
+          }}
+
+          const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${{totalMiniCorrect}} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalMiniCorrect === 3);
+          saveState();
+        }});
+      }});
+
+      // AŞAMA 3 Ek Soru Kapısı
+      const btnExtraYes = document.getElementById('btn-extra-yes');
+      const btnExtraNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleViewModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnExtraYes.addEventListener('click', () => {{
+        state.extraPoolVisible = true;
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnExtraYes.setAttribute('aria-expanded', 'true');
+
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({{ behavior: 'smooth', block: 'nearest' }});
+      }});
+
+      btnExtraNo.addEventListener('click', () => {{
+        state.extraPoolVisible = false;
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnExtraYes.setAttribute('aria-expanded', 'false');
+
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      }});
+
+      toggleViewModeBtn.addEventListener('click', () => {{
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleViewModeBtn.textContent = state.extraViewMode === 'single'
+          ? 'Tümünü Liste Görünümünde Aç'
+          : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      }});
+
+      function renderExtraQuestions() {{
+        const pillsContainer = document.getElementById('question-pills-container');
+        const renderArea = document.getElementById('questions-render-area');
+
+        pillsContainer.innerHTML = EXTRA_QUESTIONS.map((q, idx) => {{
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && idx === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) {{
+            cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          }}
+          return `<button type="button" class="${{cls}}" data-q-index="${{idx}}" aria-label="Soru ${{q.id}}">${{q.id}}</button>`;
+        }}).join('');
+
+        pillsContainer.querySelectorAll('.q-pill').forEach(pill => {{
+          pill.addEventListener('click', () => {{
+            state.currentQuestionIndex = Number(pill.getAttribute('data-q-index'));
+            if (state.extraViewMode === 'list') {{
+              const cardEl = document.getElementById(`extra-q-card-${{state.currentQuestionIndex + 1}}`);
+              if (cardEl) cardEl.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+            }} else {{
+              renderExtraQuestions();
+            }}
+          }});
+        }});
+
+        const questionsToDisplay = state.extraViewMode === 'single'
+          ? [EXTRA_QUESTIONS[state.currentQuestionIndex]]
+          : EXTRA_QUESTIONS;
+
+        const letters = ['A', 'B', 'C', 'D'];
+
+        renderArea.innerHTML = questionsToDisplay.map(q => {{
+          const chosenIdx = state.extraAnswers[q.id];
+          const isAnswered = chosenIdx !== undefined;
+          const isCorrect = isAnswered && chosenIdx === q.correctIndex;
+
+          return `
+            <article class="new-gen-question-card" id="extra-q-card-${{q.id}}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <span class="tech-badge tech-badge--signal">SORU ${{q.id}} / 10</span>
+                <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${{q.tag}}</span>
+              </div>
+
+              <div class="question-scenario-box">
+                ${{q.scenario}}
+              </div>
+
+              <p class="question-stem">${{q.stem}}</p>
+
+              <div class="choices-grid">
+                ${{q.choices.map((choiceText, cIdx) => {{
+                  let btnCls = 'choice-btn';
+                  if (isAnswered) {{
+                    if (cIdx === q.correctIndex) btnCls += ' is-correct';
+                    else if (cIdx === chosenIdx) btnCls += ' is-wrong';
+                  }}
+                  return `
+                    <button type="button" class="${{btnCls}}" data-qid="${{q.id}}" data-cidx="${{cIdx}}">
+                      <span class="choice-btn__letter">${{letters[cIdx]}}</span>
+                      <span>${{choiceText}}</span>
+                    </button>
+                  `;
+                }}).join('')}}
+              </div>
+
+              ${{isAnswered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; margin-bottom:0.3rem; color:${{isCorrect ? 'var(--status-success)' : 'var(--status-error)'}};">
+                    ${{isCorrect ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${{letters[q.correctIndex]}}`}}
+                  </div>
+                  <div><strong>Pedagojik Çözüm &amp; Muhakeme:</strong> ${{q.explanation}}</div>
+                </div>
+              ` : ''}}
+
+              ${{state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${{state.currentQuestionIndex === 0 ? 'disabled' : ''}}>
+                    ← Önceki Soru
+                  </button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${{q.id}} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${{state.currentQuestionIndex === EXTRA_QUESTIONS.length - 1 ? 'disabled' : ''}}>
+                    Sonraki Soru →
+                  </button>
+                </div>
+              ` : ''}}
+            </article>
+          `;
+        }}).join('');
+
+        renderArea.querySelectorAll('.choice-btn').forEach(choiceBtn => {{
+          choiceBtn.addEventListener('click', () => {{
+            const qId = Number(choiceBtn.getAttribute('data-qid'));
+            const cIdx = Number(choiceBtn.getAttribute('data-cidx'));
+            state.extraAnswers[qId] = cIdx;
+            updateExtraScore();
+            renderExtraQuestions();
+            saveState();
+          }});
+        }});
+
+        const prevBtn = document.getElementById('prev-q-btn');
+        const nextBtn = document.getElementById('next-q-btn');
+        if (prevBtn) {{
+          prevBtn.addEventListener('click', () => {{
+            if (state.currentQuestionIndex > 0) {{
+              state.currentQuestionIndex--;
+              renderExtraQuestions();
+            }}
+          }});
+        }}
+        if (nextBtn) {{
+          nextBtn.addEventListener('click', () => {{
+            if (state.currentQuestionIndex < EXTRA_QUESTIONS.length - 1) {{
+              state.currentQuestionIndex++;
+              renderExtraQuestions();
+            }}
+          }});
+        }}
+
+        updateExtraScore();
+      }}
+
+      function updateExtraScore() {{
+        const correctCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {{
+          const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+          return q && q.correctIndex === ansIdx;
+        }}).length;
+
+        const scoreEl = document.getElementById('extra-score-display');
+        if (scoreEl) scoreEl.textContent = `Doğru: ${{correctCount}} / 10`;
+
+        const answeredCount = Object.keys(state.extraAnswers).length;
+        document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
+      }}
+
+      // Başlatma
+      initTheme();
+      loadState();
+      drawSvgGrid();
+      loadSimStep(0);
+      saveState();
+    }})();
+  </script>
+</body>
+</html>
+"""

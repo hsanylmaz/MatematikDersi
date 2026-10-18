@@ -114,14 +114,21 @@ Türkiye Yüzyılı Maarif Modeli (TYMM) 5, 6 ve 7. sınıf matematik simülasyo
 
 ## Components
 - **Simulation Canvas Workbench:** Noktalı/kareli/izometrik arka plan seçenekli, üst araç çubuklu, canlı ölçüm göstergeli etkileşim alanı.
-- **Guided Stepper Card:** Öğrenciye o anki adımı ("Adım 1/4: Pergel ile Çember İnşası") gösteren ve görevi tamamlayınca yeşil onay veren aktif yönlendirme bileşeni.
+- **MEB Context Ribbon (`.meb-context-ribbon`):** MEB TYMM Öğrenme-Öğretme Uygulamaları kılavuzundaki resmi bağlam ve yönerge bandı.
+- **Hypothesis Box (`.hypothesis-box`):** Deneye başlamadan önce öğrencinin matematiksel varsayımını/hipotezini seçtiği alan.
+- **Dual Control Bar (`.dual-control-bar`):** Çok değişkenli dinamik deney sürgüleri ve parametre kontrolleri (cevabı doğrudan dikte etmeyen keşif alanı).
+- **Observation Drawer & Table (`.observation-drawer`, `.observation-table`):** "📋 Gözlemi Kaydet" butonu ile yapılan denemelerin anlık olarak kaydedildiği bilimsel veri tablosu.
+- **Conjecture Box (`.conjecture-box`):** Toplanan verilerden ve denemelerden hareketle öğrencinin matematiksel kuralı/genellemeyi çıkardığı akıl yürütme kutusu.
+- **Guided Stepper Card:** Öğrenciye o anki adımı gösteren, varsayım + deney + kural çıkarımını doğrulayan ("🔍 Çıkarımımı Doğrula") aktif yönlendirme bileşeni.
 - **Conditional Extra Question Gate:** "Ek soru çözmek ister misiniz? (Evet / Hayır)" kontrol kutusu ve ona bağlı 10 soruluk yeni nesil soru motoru.
 
 ## Do's and Don'ts
 - **Do:** Her etkileşimde öğrenciye anında görsel ve metinsel pedagojik geri bildirim ver.
+- **Do (Aktif Öğrenme Döngüsü):** Pasif sürgü kaydırma yerine "Varsayım Belirleme -> Bağımsız Değişken Deneyi -> Veri/Gözlem Kaydetme -> Kural Çıkarımı" pedagojik döngüsünü uygula.
 - **Do:** Simülasyon adımları arasında geçiş yapıldığında ("Sonraki Adım →", adım sekmeleri veya araç butonları tıklandığında) ya da sürgü hareket ettirildiğinde `#sim-feedback-box` alanını (`resetFeedbackForStep`) mutlaka yeni adımın durumuna sıfırla; önceki adımın "🎉 Tebrikler!" mesajını yeni adımda ekranda bırakma.
 - **Do:** Etkinlik sayfalarında başka bir sınıf veya haftaya doğrudan geçiş linki bulundurma; yalnızca `../index.html` ("🏠 Ana Sayfa") dönüş butonu kullan.
 - **Do:** "Ek soru çözmek ister misiniz?" alanında başlangıçta ve "Hayır" durumunda 10 ek soruyu tamamen gizli tut; yalnızca "Evet" butonuna basıldığında görünür yap.
+- **Don't:** "Hedef Konuma Getir" gibi öğrencinin yerine deneyi çözen pasif/hile butonları kesinlikle ekleme.
 - **Don't:** Mor, eflatun veya indigo (`#8b5cf6`, `#6366f1`) renklerini kesinlikle kullanma.
 - **Don't:** Öğrenciyi metin yığınına boğma; her adımı interaktif tuval üzerindeki eylemlerle eşleştir.
 

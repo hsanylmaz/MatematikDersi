@@ -1127,6 +1127,176 @@ body {
   gap: 1rem;
 }
 
+/* ==========================================================================
+   AKTİF ÖĞRENME v2.0 (MEB TYMM ÖĞRENME-ÖĞRETME UYGULAMALARI BİLEŞENLERİ)
+   ========================================================================== */
+
+.meb-context-ribbon {
+  background-color: var(--surface-elevated);
+  border: 2px solid var(--border-sharp);
+  border-left: 6px solid var(--accent-signal);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.86rem;
+}
+
+.hypothesis-box {
+  background-color: var(--surface-paper);
+  border: 2px solid var(--border-sharp);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.hypothesis-box__label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--grade-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hypothesis-options {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.hypothesis-btn {
+  text-align: left;
+  padding: 0.52rem 0.75rem;
+  border: 1.5px solid var(--border-sharp);
+  background-color: var(--surface-card);
+  color: var(--ink-primary);
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hypothesis-btn:hover {
+  background-color: var(--accent-signal-soft);
+}
+
+.hypothesis-btn.is-selected {
+  background-color: var(--grade-6-soft);
+  border-color: var(--grade-6);
+  color: var(--grade-6);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.conjecture-box {
+  background-color: var(--surface-elevated);
+  border: 2px solid var(--border-sharp);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.conjecture-box__label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--grade-5);
+}
+
+.conjecture-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 0.65rem;
+  border: 2px solid var(--border-sharp);
+  background-color: var(--surface-card);
+  color: var(--ink-primary);
+  cursor: pointer;
+}
+
+.conjecture-select:focus {
+  outline: 2px solid var(--accent-signal);
+}
+
+.observation-drawer {
+  border-top: 2px solid var(--border-sharp);
+  background-color: var(--surface-elevated);
+  padding: 0.85rem 1rem;
+}
+
+.observation-drawer__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.observation-table-wrap {
+  overflow-x: auto;
+  max-height: 150px;
+  background-color: var(--surface-card);
+  border: 1.5px solid var(--border-sharp);
+}
+
+.observation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-align: left;
+}
+
+.observation-table th,
+.observation-table td {
+  padding: 0.42rem 0.65rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.observation-table th {
+  background-color: var(--surface-paper);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  border-bottom: 1.5px solid var(--border-sharp);
+}
+
+.dual-control-bar {
+  padding: 0.75rem 1rem;
+  background: var(--surface-card);
+  border-bottom: 1.5px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+}
+
+.control-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.control-group-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* Footer */
 .atelier-footer {
   margin-top: auto;
