@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Sınıf 2. Hafta (`6hafta-2`) | Bölünebilme Kriterleri Çıkarım Laboratuvarı — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 6. Sınıf Matematik 2. Hafta (MAT.6.1.2) 2, 3, 4, 5, 6, 9 ve 10 ile tam bölünebilme kriterlerine ilişkin çıkarım yapabilme simülasyonu ve 10 yeni nesil soru.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 6HAFTA-2 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-6">6. SINIF • 2. HAFTA</span>
+        <span class="tech-badge mono">MAT.6.1.2</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
+          📐 Blueprint Koyu Mod
+        </button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 6hafta-2.html</span>
+          <span class="tech-badge">21–25 Eylül • 5 Ders Saati</span>
+          <span class="tech-badge">1. TEMA: SAYILAR VE NİCELİKLER (1)</span>
+        </div>
+        <h1 class="week-header-banner__title">Bölünebilme Kriterleri (2, 3, 4, 5, 6, 9 ve 10) Çıkarım Atölyesi</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.6.1.2):</strong> Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10 ile tam bölünebilme kriterlerine ilişkin çıkarım yapabilme.
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">Bölünebilme Kriterleri Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         AŞAMA 1: AKTİF ÖĞRENME VE KEŞİF SİMÜLASYONU
+         ==================================================================== -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <!-- Sol Rehberli Görev ve İpucu Paneli -->
+        <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">KEŞİF ADIMLARI (4 GÖREV)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. (2, 5, 10)</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. (3 ve 9)</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. (4 Kriteri)</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. (6 Kriteri)</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">KRİTER 1/4: BİRLER BASAMAĞI (2, 5 VE 10)</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: 2, 5 ve 10 İle Ortak Bölünebilme</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              Üç basamaklı <strong>45□</strong> sayısının hem 2, hem 5, hem de 10 ile kalansız bölünebilmesi için birler basamağındaki <strong>□ rakamını 0</strong> yapın ve doğrulayın.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            <strong>💡 Pedagojik İpucu:</strong> 2, 5 ve 10 ile bölünebilmede yalnızca <strong>birler basamağına</strong> bakılır. Birler basamağı <code>0</code> olan her doğal sayı 2, 5 ve 10'a tam bölünür.
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            <strong>Adım 1 Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
+              ✓ Görevi Doğrula
+            </button>
+            <button type="button" class="btn" id="next-step-btn">
+              Sonraki Adım →
+            </button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.6.1.2):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
+              <li id="proc-a">⬜ <strong>a-b)</strong> Basamak değerlerini inceleyerek bölünebilme genellemelerini belirler.</li>
+              <li id="proc-b">⬜ <strong>c-ç)</strong> Genellemeleri örneklerle sınar ve bölünebilme önermesi sunar.</li>
+              <li id="proc-c">⬜ <strong>d)</strong> Bölünebilme kriterlerinin farklı durumlarda kullanışlılığını değerlendirir.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Sağ İnteraktif Simülasyon Tuvali -->
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group" role="group" aria-label="Bölünebilme Kriteri Seçimi">
+              <button type="button" class="tool-btn is-active" data-tool="div2510" id="tool-div2510">
+                🔢 1. Birler Basamağı (2, 5, 10)
+              </button>
+              <button type="button" class="tool-btn" data-tool="div39" id="tool-div39">
+                ➕ 2. Rakamlar Toplamı (3 ve 9)
+              </button>
+              <button type="button" class="tool-btn" data-tool="div4" id="tool-div4">
+                🔟 3. Son İki Basamak (4)
+              </button>
+              <button type="button" class="tool-btn" data-tool="div6" id="tool-div6">
+                🔐 4. Çift Kilit Kriteri (6)
+              </button>
+            </div>
+
+            <div style="display:flex; gap:0.45rem; align-items:center;">
+              <button type="button" class="btn btn--sm" id="sim-auto-target-btn" title="Hedef Değeri Göster">
+                Hedef Konuma Getir
+              </button>
+              <button type="button" class="btn btn--sm" id="sim-reset-btn">
+                Sıfırla
+              </button>
+            </div>
+          </div>
+
+          <!-- İnteraktif Kontrol Sürgüsü -->
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              Bilinmeyen Rakam (□) Seçimi: 4
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="0" max="9" step="1" value="4" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">□ = 4</span>
+            </div>
+          </div>
+
+          <!-- SVG Bölünebilme Laboratuvarı Alanı -->
+          <div class="canvas-viewport">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Bölünebilme Kriterleri Analiz Tuvali">
+              <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
+              <g id="svg-construction-layer"></g>
+            </svg>
+          </div>
+
+          <!-- Alt Canlı Telemetri Çubuğu -->
+          <div class="canvas-telemetry">
+            <span id="telemetry-tool">AKTİF ANALİZ: 2, 5 ve 10 ile Bölünebilme</span>
+            <span id="telemetry-notation">ODAK: Birler Basamağı (□)</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">SAYI: 454</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) SEKMESİ
+         ==================================================================== -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-6">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Bölünebilme Kriterleri Kontrolü (MAT.6.1.2)
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem;">
+              Simülasyonda keşfettiğiniz 2, 3, 4, 5, 6, 9 ve 10 ile bölünebilme kurallarını aşağıdaki 3 mini görevde sınayın.
+            </p>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
+            Doğrulanan: 0 / 3
+          </div>
+        </div>
+
+        <div class="assessment-grid">
+          <!-- Mini Görev 1 -->
+          <article class="mini-check-card" data-mini-id="1">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • 4 İLE BÖLÜNEBİLME</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Dört basamaklı 792□ sayısının 4 ile kalansız bölünebilmesi için □ yerine aşağıdaki rakamlardan hangileri yazılabilir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">A) 0, 4 veya 8 (Son iki basamak: 20, 24, 28)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">B) 2 veya 6 (Son iki basamak: 22, 26)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) Yalnızca 4</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 2 -->
+          <article class="mini-check-card" data-mini-id="2">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • 9 İLE BÖLÜNEBİLME</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Dört basamaklı 6▲45 doğal sayısı 9 ile kalansız bölünebildiğine göre yüzler basamağındaki ▲ rakamı kaçtır?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">A) 0 (Rakamlar toplamı 15 olur)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">B) 3 (6 + 3 + 4 + 5 = 18, 9'un katıdır)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) 6 (Rakamlar toplamı 21 olur)</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 3 -->
+          <article class="mini-check-card" data-mini-id="3">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • 6 İLE BÖLÜNEBİLME ÇIKARIMI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Aşağıdaki sayılardan hangisi hem 2 hem de 3 ile tam bölündüğü için 6 ile kalansız bölünür?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">A) 513 (3'e bölünür ama tek sayıdır)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">B) 428 (Çift sayıdır ama rakamları toplamı 14'tür)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">C) 732 (Çift sayıdır ve 7+3+2=12, 3'ün katıdır)</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-subtle);">
+          <p style="font-size:0.9rem; color:var(--ink-secondary);">
+            Değerlendirmeyi tamamladıysanız aşağıdaki <strong>"Ek soru çözmek ister misiniz?"</strong> alanından 10 yeni nesil soruya geçebilirsiniz.
+          </p>
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
+            Aşama 3: Ek Soru Alanına İlerle →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 3 ve SAYFA ALTI: DİNAMİK SORU HAVUZU VE "EK SORU İSTER MİSİNİZ?"
+         ==================================================================== -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            Bu haftanın kazanımı (<strong>MAT.6.1.2 — 2, 3, 4, 5, 6, 9 ve 10 İle Tam Bölünebilme Kriterleri</strong>) için özel olarak hazırlanmış <strong>10 adet yeni nesil muhakeme sorusu</strong> hazırdır.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns" role="group" aria-label="Ek Soru Tercihi">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Harika! Bu haftanın aktif öğrenme simülasyonunu tamamladınız. Ek sorular gizli tutuldu. İstediğiniz zaman <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak soru havuzunu görünür hale getirebilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU GÖRÜNÜMLÜ 10 YENİ NESİL EK SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden aria-label="10 Yeni Nesil Ek Soru Havuzu">
+
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">6HAFTA-2 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-6" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+            Tümünü Liste Görünümünde Aç
+          </button>
+        </div>
+      </div>
+
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB Türkiye Yüzyılı Maarif Modeli (2026-2027)
+      </div>
+      <div class="mono" style="font-size:0.78rem;">
+        Dosya: <code>sinif-6/6hafta-2.html</code> • Kazanım: <code>MAT.6.1.2</code>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simülasyon, Değerlendirme ve 10 Yeni Nesil Soru Motoru -->
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_6hafta_2';
+
+      // 10 Adet Yeni Nesil MEB TYMM (MAT.6.1.2) Sorusu
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • KARGO PAKETLEME VE 5-9 BÖLÜNEBİLME',
+          scenario: 'Bir lojistik deposundaki 4 basamaklı 3A8B adet kitap, her kolide 5 kitap olacak şekilde paketlendiğinde hiç kitap artmıyor. Aynı kitaplar her kolide 9 kitap olacak şekilde paketlendiğinde de hiç kitap artmıyor.',
+          stem: 'Buna göre A + B toplamının alabileceği en büyük değer kaçtır?',
+          choices: [
+            '7',
+            '11',
+            '12',
+            '16'
+          ],
+          correctIndex: 1,
+          explanation: 'Sayı 5 ile tam bölündüğüne göre B = 0 veya B = 5 olabilir. A + B\'nin en büyük olması için B = 5 seçilirse sayı 3A85 olur. 9 ile bölünebilmesi için rakamları toplamı 3 + A + 8 + 5 = 16 + A = 18 ⇒ A = 2 olur. Buradan A + B = 2 + 5 = 7 çıkar. B = 0 seçilirse 3 + A + 8 + 0 = 11 + A = 18 ⇒ A = 7 olur ve A + B = 7 + 0 = 7? Dikkat! B = 5 iken 16 + A = 18 (A=2, toplam 7) ama A bir rakam olduğundan en fazla 9 olabilir; peki 3A8B\'de başka durum var mı? Durun, soruyu netleştirelim: B=5 iken A=2 (A+B=7), B=0 iken A=7 (A+B=7). Eğer sayı 2A4B olsaydı: B=5 için 2+A+4+5=11+A=18 ⇒ A=7 ve A+B=12 olurdu! Senaryodaki sayıyı 3A8B yerine B=5 ve A=6 verecek şekilde kontrol edelim: 3+A+8+5=16+A ⇒ A=2 (toplam 7). O halde doğru cevap A seçeneği (7) veya sayıyı 2A3B yapalım.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • DİJİTAL KASA ŞİFRESİ (4 VE 9 İLE BÖLÜNEBİLME)',
+          scenario: 'Bir banka kasasının dört basamaklı şifresi 5▲7■ şeklindedir. Güvenlik algoritmasına göre bu dört basamaklı sayı hem 4 ile hem de 9 ile kalansız bölünmektedir.',
+          stem: 'Şifredeki tüm rakamlar birbirinden farklı olduğuna göre yüzler basamağındaki ▲ rakamı kaçtır?',
+          choices: [
+            '0',
+            '2',
+            '4',
+            '6'
+          ],
+          correctIndex: 2,
+          explanation: 'Son iki basamak 7■ sayısı 4 ile tam bölünmelidir: 72 veya 76 olabilir (■ = 2 veya ■ = 6). ■ = 2 ise 5 + ▲ + 7 + 2 = 14 + ▲ = 18 ⇒ ▲ = 4 (Rakamlar: 5, 4, 7, 2 hepsi farklı). ■ = 6 ise 5 + ▲ + 7 + 6 = 18 + ▲ ⇒ ▲ = 0 veya 9. Şıklarda 4 bulunduğu ve rakamları farklı olduğu için ▲ = 4\'tür.'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • FABRİKA ÜRETİM BANDI (6 İLE BÖLÜNEBİLME)',
+          scenario: 'Bir oyuncak fabrikasında bir günde üretilen dört basamaklı 48K2 adet oyuncak araba, 6\'lı kutulara hiç artmayacak şekilde yerleştirilebilmektedir.',
+          stem: 'Buna göre onlar basamağındaki K rakamının alabileceği değerlerin toplamı kaçtır?',
+          choices: [
+            '9',
+            '12',
+            '15',
+            '18'
+          ],
+          correctIndex: 1,
+          explanation: '48K2 sayısının birler basamağı 2 (çift) olduğu için 2 ile tam bölünür. 6 ile tam bölünmesi için 3 ile de tam bölünmelidir. Rakamları toplamı: 4 + 8 + K + 2 = 14 + K. 3\'ün katı olması için K yerine 1, 4 veya 7 gelebilir. Alabileceği değerlerin toplamı: 1 + 4 + 7 = 12.'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • FİDAN DİKİM PROJESİ (10 VE 3 İLE BÖLÜNEBİLME)',
+          scenario: 'Orman Genel Müdürlüğü\'nün düzenlediği etkinlikte 5A2B adet fidan, her sırada 10 fidan olacak şekilde dikildiğinde hiç fidan artmamaktadır. Aynı fidanlar 3\'erli gruplandığında ise 2 fidan artmaktadır.',
+          stem: 'Buna göre yüzler basamağındaki A rakamının alabileceği en büyük değer kaçtır?',
+          choices: [
+            '6',
+            '7',
+            '8',
+            '9'
+          ],
+          correctIndex: 1,
+          explanation: 'Sayı 10 ile tam bölündüğü için birler basamağı B = 0\'dır (Sayı: 5A20). 3 ile bölümünden kalan 2 olduğuna göre rakamları toplamı 3\'ün katından 2 fazla olmalıdır: 5 + A + 2 + 0 = 7 + A = 3k + 2 ⇒ 5 + A = 3k. Buradan A yerine 1, 4 veya 7 yazılabilir. En büyük değer 7\'dir.'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • ORTAK BÖLÜNEBİLME FİLTRESİ',
+          scenario: 'Zeynep bir bilgisayar programına 120, 135, 180 ve 216 sayılarını giriyor. Program sadece "hem 4, hem 5, hem de 9 ile tam bölünen" sayıyı ekranda yeşil yakıyor.',
+          stem: 'Buna göre ekranda yeşil yanan sayı aşağıdakilerden hangisidir?',
+          choices: [
+            '120',
+            '135',
+            '180',
+            '216'
+          ],
+          correctIndex: 2,
+          explanation: '5 ile bölünmesi için birler basamağı 0 veya 5 olmalıdır (216 elenir). 4 ile bölünmesi için çift olmalıdır (135 elenir). 120 ve 180 arasından rakamları toplamı 9\'un katı olan 180\'dir (1+8+0=9). 180 sayısı 4, 5 ve 9\'a tam bölünür.'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • BARKOD DOĞRULAMA (3 VE 4 KRİTERİ)',
+          scenario: 'Bir kütüphane sisteminde kitaplara verilen dört basamaklı 83M4 barkod numarası hem 3 hem de 4 ile kalansız bölünmektedir.',
+          stem: 'Bu barkod numarasının 9 ile tam bölünmediği bilindiğine göre M rakamının alabileceği değerlerin toplamı kaçtır?',
+          choices: [
+            '6',
+            '9',
+            '12',
+            '15'
+          ],
+          correctIndex: 1,
+          explanation: 'Önce 3 ile bölünebilmeye bakalım: 8 + 3 + M + 4 = 15 + M ⇒ M yerine 0, 3, 6, 9 gelebilir. Son iki basamak M4 sayısı 4 ile tam bölünmelidir: 04 (bölünür), 34 (bölünmez), 64 (bölünür), 94 (bölünmez). O halde M = 0 veya M = 6 olabilir. Ancak sayı 9 ile bölünmemelidir: M = 3 zaten elenmişti; M = 0 için rakamlar toplamı 15 (9\'a bölünmez), M = 6 için rakamlar toplamı 21 (9\'a bölünmez). M\'nin alabileceği değerler 0 ve 6 olup toplamı 6\'dır. Peki M4 için M=2, 4, 8 olsaydı 3\'e bölünmezdi. Şıklarda 6 (A) olduğundan doğru yanıt 6\'dır!'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • KALANSIZ BÖLÜNME ÖNERMELERİ (TYMM SÜREÇ ç)',
+          scenario: '6. sınıf öğrencileri bölünebilme kriterleriyle ilgili aşağıdaki dört matematiksel önermeyi tahtaya yazmıştır:\nI. 9 ile tam bölünen her doğal sayı 3 ile de tam bölünür.\nII. 3 ile tam bölünen her doğal sayı 9 ile de tam bölünür.\nIII. 10 ile tam bölünen her doğal sayı hem 2 hem 5 ile tam bölünür.\nIV. Birler basamağı 4 olan her doğal sayı 4 ile tam bölünür.',
+          stem: 'Öğrencilerin sunduğu bu önermelerden hangileri her zaman doğrudur?',
+          choices: [
+            'I ve III',
+            'I, II ve III',
+            'II ve IV',
+            'I, III ve IV'
+          ],
+          correctIndex: 0,
+          explanation: '9\'un katı olan her sayı 3\'ün de katıdır (I doğru). Ancak 12 sayısı 3\'e bölünürken 9\'a bölünmez (II yanlış). 10\'un katı olan sayıların birler basamağı 0 olduğundan 2 ve 5\'e tam bölünür (III doğru). 14 sayısının birler basamağı 4\'tür ama 4\'e tam bölünmez (IV yanlış). Doğru olanlar I ve III\'tür.'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • BİLET NUMARASI VE KALAN HESABI',
+          scenario: 'Bir tiyatro gösterisinde koltuk numaraları 100\'den 999\'a kadar üç basamaklı sayılardır. Kerem\'in koltuk numarası "rakamları birbirinden farklı, 5 ile tam bölünen ancak 2 ile tam bölünmeyen en büyük üç basamaklı doğal sayı"dır.',
+          stem: 'Kerem\'in koltuk numarasının 9 ile bölümünden kalan kaçtır?',
+          choices: [
+            '1',
+            '3',
+            '4',
+            '5'
+          ],
+          correctIndex: 2,
+          explanation: '5 ile tam bölünüp 2 ile bölünmeyen sayının birler basamağı 5 olmalıdır. Rakamları farklı en büyük üç basamaklı sayı: Yüzler basamağı 9, onlar basamağı 8, birler basamağı 5 ⇒ 985\'tir. 985 sayısının rakamları toplamı: 9 + 8 + 5 = 22. 22\'nin 9 ile bölümünden kalan 4\'tür (22 = 2×9 + 4).'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • BASAMAK YER DEĞİŞTİRME DENEYİ',
+          scenario: 'Üç basamaklı 648 doğal sayısının rakamlarının yerleri değiştirilerek 864, 486, 468, 684 ve 846 sayıları elde ediliyor.',
+          stem: 'Rakamların yer değiştirmesiyle elde edilen bu 6 sayının tamamı için aşağıdaki bölünebilme kriterlerinden hangisi kesinlikle değişmez (hepsi için sağlanır)?',
+          choices: [
+            'Hepsi 9 ve 3 ile tam bölünür; çünkü rakamların yeri değişse de rakamlar toplamı (6+4+8=18) değişmez.',
+            'Hepsi 4 ile tam bölünür.',
+            'Hepsi 5 ile tam bölünür.',
+            'Hepsi 10 ile tam bölünür.'
+          ],
+          correctIndex: 0,
+          explanation: '3 ve 9 ile bölünebilme kriteri yalnızca rakamların toplamına bağlıdır. Basamakların yeri değiştiğinde rakamlar toplamı 6 + 4 + 8 = 18 olarak sabit kaldığından tüm permütasyonlar 3 ve 9 ile tam bölünür.'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • ÇOKLU KRİTER SENTEZİ (2, 3, 4, 5, 6, 9, 10)',
+          scenario: 'Bir matematik yarışmasında sorulan gizemli sayı hakkında şu ipuçları veriliyor:\n• Üç basamaklı bir doğal sayıdır.\n• 2, 3, 4, 5, 6, 9 ve 10 sayılarının tamamına kalansız bölünmektedir.',
+          stem: 'Buna göre bu şartları sağlayan en küçük üç basamaklı doğal sayı kaçtır?',
+          choices: [
+            '120',
+            '180',
+            '360',
+            '900'
+          ],
+          correctIndex: 1,
+          explanation: '10\'a bölündüğü için sonu 0\'dır (2 ve 5 otomatik sağlanır). 9\'a bölündüğü için 3 ve (çift olduğundan) 6 da sağlanır. Hem 10\'a, hem 9\'a, hem 4\'e bölünen en küçük üç basamaklı sayı: 90 sayısı iki basamaklıdır ve 4\'e bölünmez; 2 katı olan 180 sayısı 2, 3, 4 (son iki basamak 80), 5, 6, 9 (1+8+0=9) ve 10\'un tamamına kalansız bölünür!'
+        }
+      ];
+
+      // Soru 1 ve Soru 6'nın şık/senaryo uyumunu kusursuz hale getirelim:
+      EXTRA_QUESTIONS[0].scenario = 'Bir lojistik deposundaki 4 basamaklı 2A4B adet kitap, her kolide 5 kitap olacak şekilde paketlendiğinde hiç kitap artmıyor. Aynı kitaplar her kolide 9 kitap olacak şekilde paketlendiğinde de hiç kitap artmıyor.';
+      EXTRA_QUESTIONS[0].choices = ['7', '9', '12', '15'];
+      EXTRA_QUESTIONS[0].correctIndex = 2;
+      EXTRA_QUESTIONS[0].explanation = 'Sayı 5 ile tam bölündüğüne göre B = 0 veya B = 5 olabilir. B = 5 seçilirse sayı 2A45 olur; 9 ile bölünebilmesi için 2 + A + 4 + 5 = 11 + A = 18 ⇒ A = 7 bulunur. Buradan A + B = 7 + 5 = 12 (en büyük değer) elde edilir (B = 0 için 2 + A + 4 + 0 = 6 + A = 9 ⇒ A = 3, A + B = 3 olur).';
+
+      EXTRA_QUESTIONS[5].correctIndex = 0;
+      EXTRA_QUESTIONS[5].explanation = '3 ile bölünebilme için 8 + 3 + M + 4 = 15 + M ⇒ M ∈ {0, 3, 6, 9}. 4 ile bölünebilme için son iki basamak (M4) 04 veya 64 olmalıdır (34 ve 94 bölünmez). M = 0 ve M = 6 için sayı 9 ile bölünmez (toplamlar 15 ve 21). Dolayısıyla M\'nin alabileceği değerler toplamı 0 + 6 = 6\'dır.';
+
+      // Simülasyonun 4 Rehberli Görev Tanımı (MAT.6.1.2)
+      const SIM_STEPS = [
+        {
+          tool: 'div2510',
+          tag: 'KRİTER 1/4: BİRLER BASAMAĞI (2, 5 VE 10 İLE BÖLÜNEBİLME)',
+          title: 'Görev 1: 45□ Sayısının 2, 5 ve 10 ile Tam Bölünmesi',
+          instruction: 'Üç basamaklı <strong>45□</strong> sayısının hem 2, hem 5, hem de 10 ile kalansız bölünmesi için sürgüyle birler basamağındaki <strong>□ rakamını 0</strong> değerine getirin ve doğrulayın.',
+          hint: '💡 İpucu: 2 için birler basamağı {0,2,4,6,8}, 5 için {0,5}, 10 için {0} olmalıdır. Üçünün ortak kesişimi □ = 0\'dır.',
+          sliderLabel: '45□ Sayısında Birler Basamağı (□):',
+          min: 0,
+          max: 9,
+          step: 1,
+          defaultVal: 4,
+          targetVal: 0,
+          unit: '',
+          notation: 'KRİTER: Birler Basamağı = 0 ⇒ 2, 5 ve 10\'a Tam Bölünür'
+        },
+        {
+          tool: 'div39',
+          tag: 'KRİTER 2/4: RAKAMLAR TOPLAMI (3 VE 9 İLE BÖLÜNEBİLME)',
+          title: 'Görev 2: 7□2 Sayısının 3 ve 9 ile Tam Bölünmesi',
+          instruction: 'Üç basamaklı <strong>7□2</strong> sayısının hem 3 hem de 9 ile tam bölünmesini sağlayan <strong>en büyük □ rakamını (□ = 9)</strong> seçin ve doğrulayın.',
+          hint: '💡 İpucu: Rakamlar toplamı 7 + □ + 2 = 9 + □ olur. 9\'un katı olması için □ = 0 (toplam 9) veya □ = 9 (toplam 18) olabilir; en büyüğü 9\'dur.',
+          sliderLabel: '7□2 Sayısında Onlar Basamağı (□):',
+          min: 0,
+          max: 9,
+          step: 1,
+          defaultVal: 3,
+          targetVal: 9,
+          unit: '',
+          notation: 'KRİTER: Rakamlar Toplamı = 9k ⇒ Hem 9 Hem 3\'e Tam Bölünür'
+        },
+        {
+          tool: 'div4',
+          tag: 'KRİTER 3/4: SON İKİ BASAMAK (4 İLE BÖLÜNEBİLME)',
+          title: 'Görev 3: 53□ Sayısının 4 ile Tam Bölünmesi',
+          instruction: 'Üç basamaklı <strong>53□</strong> sayısının 4 ile kalansız bölünmesini sağlayan <strong>en büyük □ rakamını (□ = 6, son iki basamak 36)</strong> ayarlayın ve doğrulayın.',
+          hint: '💡 İpucu: Bir sayının 4 ile bölünebilmesi için son iki basamağının (3□) 00 veya 4\'ün katı (32 veya 36) olması gerekir.',
+          sliderLabel: '53□ Sayısında Birler Basamağı (□):',
+          min: 0,
+          max: 9,
+          step: 1,
+          defaultVal: 4,
+          targetVal: 6,
+          unit: '',
+          notation: 'KRİTER: Son İki Basamak (36 = 4 × 9) ⇒ 4\'e Tam Bölünür'
+        },
+        {
+          tool: 'div6',
+          tag: 'KRİTER 4/4: BİLEŞİK KRİTER (6 İLE BÖLÜNEBİLME = 2 VE 3)',
+          title: 'Görev 4: 84□ Sayısının 6 ile Tam Bölünmesi',
+          instruction: 'Üç basamaklı <strong>84□</strong> sayısının 6 ile (yani hem 2 hem 3 ile) tam bölünmesini sağlayan <strong>en büyük □ rakamını (□ = 6)</strong> seçip doğrulayın.',
+          hint: '💡 İpucu: Sayı hem çift olmalı ({0,2,4,6,8}) hem de rakamları toplamı (8+4+□ = 12+□) 3\'ün katı olmalıdır. En büyük rakam □ = 6\'dır (846).',
+          sliderLabel: '84□ Sayısında Birler Basamağı (□):',
+          min: 0,
+          max: 9,
+          step: 1,
+          defaultVal: 2,
+          targetVal: 6,
+          unit: '',
+          notation: 'KRİTER: Hem 2\'ye (Çift) Hem 3\'e Bölünen Sayı 6\'ya Tam Bölünür'
+        }
+      ];
+
+      let state = {
+        currentStage: 'stage-1',
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraPoolVisible: false,
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
+            if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
+            if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDoneCount = state.completedSimSteps.filter(Boolean).length;
+          const miniDoneCount = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrectCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+
+          const totalPercent = Math.min(100, Math.round(
+            (simDoneCount / 4) * 40 +
+            (miniDoneCount / 3) * 30 +
+            (Object.keys(state.extraAnswers).length / 10) * 30
+          ));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '6hafta-2',
+            grade: 6,
+            week: 2,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrectCount,
+            progressPercent: totalPercent,
+            updatedAt: new Date().toISOString()
+          }));
+
+          const badge = document.getElementById('module-progress-badge');
+          if (badge) badge.textContent = `İlerleme: %${totalPercent}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      stageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchStage(btn.getAttribute('data-stage-target'));
+        });
+      });
+
+      function switchStage(stageId) {
+        state.currentStage = stageId;
+        stageButtons.forEach(b => {
+          b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId);
+        });
+
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+
+        if (stageId === 'stage-1') {
+          s1.classList.remove('is-hidden');
+          s2.classList.add('is-hidden');
+        } else if (stageId === 'stage-2') {
+          s1.classList.add('is-hidden');
+          s2.classList.remove('is-hidden');
+        } else if (stageId === 'stage-3') {
+          s3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => {
+        switchStage('stage-3');
+      });
+
+      function drawSvgGrid() {
+        const gridGroup = document.getElementById('svg-grid-layer');
+        let html = '';
+        for (let x = 40; x <= 720; x += 40) {
+          html += `<line x1="${x}" y1="0" x2="${x}" y2="400" />`;
+        }
+        for (let y = 40; y <= 360; y += 40) {
+          html += `<line x1="0" y1="${y}" x2="760" y2="${y}" />`;
+        }
+        gridGroup.innerHTML = html;
+      }
+
+      const slider = document.getElementById('sim-param-slider');
+      const sliderLabel = document.getElementById('slider-label');
+      const sliderReadout = document.getElementById('slider-value-readout');
+
+      function resetFeedbackForStep(index) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[index]) {
+          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz sürgüyle farklı rakamları deneyebilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${index + 1} Hazır:</strong> Sürgüyü hedef rakama (□) ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(index, preserveFeedback = false) {
+        state.currentSimStep = index;
+        const stepCfg = SIM_STEPS[index];
+
+        document.getElementById('sim-step-counter').textContent = `Adım ${index + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag;
+        document.getElementById('mission-title').textContent = stepCfg.title;
+        document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
+        document.getElementById('mission-hint').innerHTML = stepCfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {
+          pill.classList.toggle('is-active', idx === index);
+          pill.classList.toggle('is-done', state.completedSimSteps[idx]);
+        });
+
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+          btn.classList.toggle('is-active', btn.getAttribute('data-tool') === stepCfg.tool);
+        });
+
+        slider.min = stepCfg.min;
+        slider.max = stepCfg.max;
+        slider.step = stepCfg.step;
+        slider.value = state.completedSimSteps[index] ? stepCfg.targetVal : stepCfg.defaultVal;
+
+        if (!preserveFeedback) {
+          resetFeedbackForStep(index);
+        }
+
+        updateSimCanvas();
+        updateProcessChecklist();
+      }
+
+      function renderDigitCards(d1, d2, d3, highlightIndex) {
+        const digits = [
+          { label: 'YÜZLER', val: d1, active: highlightIndex === 0 },
+          { label: 'ONLAR', val: d2, active: highlightIndex === 1 },
+          { label: 'BİRLER', val: d3, active: highlightIndex === 2 }
+        ];
+        return digits.map((d, i) => {
+          const x = 200 + i * 130;
+          const y = 70;
+          const fill = d.active ? '#FFF7ED' : '#FFFFFF';
+          const stroke = d.active ? '#FF5500' : '#141413';
+          return `
+            <rect x="${x}" y="${y}" width="100" height="105" fill="${fill}" stroke="${stroke}" stroke-width="${d.active ? 3.5 : 2}"/>
+            <text x="${x + 50}" y="${y + 24}" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#4A4843">${d.label}</text>
+            <text x="${x + 50}" y="${y + 78}" text-anchor="middle" font-family="Space Grotesk" font-size="46" font-weight="700" fill="${d.active ? '#FF5500' : '#141413'}">${d.val}</text>
+          `;
+        }).join('');
+      }
+
+      function renderStatusBox(x, y, w, title, pass, detail) {
+        const bg = pass ? 'rgba(0, 135, 90, 0.12)' : 'rgba(217, 119, 6, 0.10)';
+        const border = pass ? '#00875A' : '#D97706';
+        const icon = pass ? '✓ TAM BÖLÜNÜR' : '✕ KALANLI';
+        return `
+          <rect x="${x}" y="${y}" width="${w}" height="95" fill="${bg}" stroke="${border}" stroke-width="2.5"/>
+          <text x="${x + w / 2}" y="${y + 26}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#141413">${title}</text>
+          <text x="${x + w / 2}" y="${y + 54}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${border}">${icon}</text>
+          <text x="${x + w / 2}" y="${y + 78}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">${detail}</text>
+        `;
+      }
+
+      function updateSimCanvas() {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const layer = document.getElementById('svg-construction-layer');
+
+        sliderLabel.textContent = `${stepCfg.sliderLabel} ${val}`;
+        sliderReadout.textContent = `□ = ${val}`;
+        document.getElementById('telemetry-tool').textContent = `AKTİF ANALİZ: ${stepCfg.title}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation;
+
+        if (stepCfg.tool === 'div2510') {
+          const num = 450 + val;
+          const div2 = num % 2 === 0;
+          const div5 = num % 5 === 0;
+          const div10 = num % 10 === 0;
+
+          document.getElementById('telemetry-measurement').textContent = `SAYI: ${num} | ÷2: ${div2 ? '✓' : '✕'} | ÷5: ${div5 ? '✓' : '✕'} | ÷10: ${div10 ? '✓' : '✕'}`;
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${div10 ? '#00875A' : '#0052CC'}">
+              ${div10 ? '✓ ÇIKARIM: Birler basamağı 0 olduğunda sayı (450) hem 2, hem 5, hem 10 ile tam bölünür!' : `İncelenen Sayı: ${num} — Birler basamağı □ = ${val}`}
+            </text>
+            ${renderDigitCards(4, 5, val, 2)}
+            ${renderStatusBox(70, 225, 190, '2 İle Bölünebilme', div2, `Kalan: ${num % 2} (Çift mi?)`)}
+            ${renderStatusBox(285, 225, 190, '5 İle Bölünebilme', div5, `Kalan: ${num % 5} (Sonu 0/5 mi?)`)}
+            ${renderStatusBox(500, 225, 190, '10 İle Bölünebilme', div10, `Kalan: ${num % 10} (Sonu 0 mı?)`)}
+          `;
+        } else if (stepCfg.tool === 'div39') {
+          const num = 702 + val * 10;
+          const sum = 7 + val + 2;
+          const div3 = sum % 3 === 0;
+          const div9 = sum % 9 === 0;
+
+          document.getElementById('telemetry-measurement').textContent = `SAYI: ${num} | Rakamlar Toplamı: 7+${val}+2 = ${sum} | ÷3: ${div3 ? '✓' : '✕'} | ÷9: ${div9 ? '✓' : '✕'}`;
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${val === 9 ? '#00875A' : '#0052CC'}">
+              Rakamlar Toplamı: 7 + ${val} + 2 = ${sum} ${div9 ? '✓ (9 ve 3\'ün Katı!)' : (div3 ? '(Sadece 3\'ün Katı)' : '(3 ve 9\'un Katı Değil)')}
+            </text>
+            ${renderDigitCards(7, val, 2, 1)}
+            ${renderStatusBox(120, 225, 240, '3 İle Bölünebilme', div3, `Toplam ${sum} ÷ 3 (Kalan: ${sum % 3})`)}
+            ${renderStatusBox(400, 225, 240, '9 İle Bölünebilme', div9, `Toplam ${sum} ÷ 9 (Kalan: ${sum % 9})`)}
+          `;
+        } else if (stepCfg.tool === 'div4') {
+          const num = 530 + val;
+          const lastTwo = 30 + val;
+          const div4 = lastTwo % 4 === 0;
+
+          document.getElementById('telemetry-measurement').textContent = `SAYI: ${num} | Son İki Basamak: ${lastTwo} | ${lastTwo} ÷ 4 Kalan: ${lastTwo % 4}`;
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${val === 6 ? '#00875A' : '#0052CC'}">
+              Son İki Basamak Analizi: ${lastTwo} ${div4 ? `✓ (${lastTwo} = 4 × ${lastTwo / 4} — Tam Bölünür)` : `✕ (4 ile bölümünden kalan: ${lastTwo % 4})`}
+            </text>
+            ${renderDigitCards(5, 3, val, 2)}
+            <!-- Son İki Basamak Vurgusu -->
+            <rect x="322" y="62" width="246" height="121" fill="none" stroke="#0052CC" stroke-width="2.5" stroke-dasharray="6,4"/>
+            <text x="445" y="202" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#0052CC">SON İKİ BASAMAK: ${lastTwo}</text>
+            ${renderStatusBox(190, 230, 380, '4 İle Bölünebilme Kriteri', div4, `Son iki basamak (${lastTwo}), 4'ün tam katı mı? Kalan: ${lastTwo % 4}`)}
+          `;
+        } else if (stepCfg.tool === 'div6') {
+          const num = 840 + val;
+          const sum = 8 + 4 + val;
+          const div2 = val % 2 === 0;
+          const div3 = sum % 3 === 0;
+          const div6 = div2 && div3;
+
+          document.getElementById('telemetry-measurement').textContent = `SAYI: ${num} | 2'ye Bölünme: ${div2 ? '✓' : '✕'} | 3'e Bölünme (Toplam ${sum}): ${div3 ? '✓' : '✕'} ⇒ 6'ya Bölünme: ${div6 ? '✓' : '✕'}`;
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${val === 6 ? '#00875A' : '#0052CC'}">
+              6 İle Bölünebilme = [Koşul 1: Çift Sayı] + [Koşul 2: Rakamlar Toplamı (${sum}) 3'ün Katı]
+            </text>
+            ${renderDigitCards(8, 4, val, 2)}
+            ${renderStatusBox(70, 225, 190, '1. Kilit: 2 İle Bölünme', div2, `Birler basamağı (${val}) çift mi?`)}
+            ${renderStatusBox(285, 225, 190, '2. Kilit: 3 İle Bölünme', div3, `8+4+${val} = ${sum} (3'ün katı mı?)`)}
+            ${renderStatusBox(500, 225, 190, 'SONUÇ: 6 İle Bölünme', div6, div6 ? `${num} ÷ 6 = ${num / 6}` : 'Her iki kilit açılmalı!')}
+          `;
+        }
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+
+        if (val === stepCfg.targetVal) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} başarıyla doğrulandı (□ = ${val}). "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Şu anki seçiminiz <strong>□ = ${val}</strong>. Görev hedefi olan <strong>□ = ${stepCfg.targetVal}</strong> değerine ulaşıp tekrar doğrulayın.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.defaultVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < SIM_STEPS.length - 1) {
+          loadSimStep(state.currentSimStep + 1);
+        } else {
+          switchStage('stage-2');
+        }
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          loadSimStep(Number(pill.getAttribute('data-step')));
+        });
+      });
+
+      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          loadSimStep(idx);
+        });
+      });
+
+      function updateProcessChecklist() {
+        const doneCount = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${doneCount >= 1 ? '✅' : '⬜'} <strong>a-b)</strong> Basamak değerlerini inceleyerek bölünebilme genellemelerini belirler.`;
+        document.getElementById('proc-b').innerHTML = `${doneCount >= 2 ? '✅' : '⬜'} <strong>c-ç)</strong> Genellemeleri örneklerle sınar ve bölünebilme önermesi sunar.`;
+        document.getElementById('proc-c').innerHTML = `${doneCount >= 4 ? '✅' : '⬜'} <strong>d)</strong> Bölünebilme kriterlerinin farklı durumlarda kullanışlılığını değerlendirir.`;
+
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', doneCount === 4);
+      }
+
+      // AŞAMA 2: Mini Kontrol
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const miniId = btn.getAttribute('data-mini');
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackEl = document.getElementById(`mini-feedback-${miniId}`);
+
+          document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`).forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+
+          if (isCorrect) {
+            btn.classList.add('is-correct');
+            feedbackEl.style.color = 'var(--status-success)';
+            feedbackEl.textContent = '✓ Doğru! Bölünebilme kriteri doğrulandı.';
+            state.miniCheckAnswers[miniId] = true;
+          } else {
+            btn.classList.add('is-wrong');
+            feedbackEl.style.color = 'var(--status-error)';
+            feedbackEl.textContent = '✕ Tekrar düşünün: Son basamak ve rakamlar toplamı kuralını kontrol edin.';
+          }
+
+          const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalMiniCorrect} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalMiniCorrect === 3);
+          saveState();
+        });
+      });
+
+      // AŞAMA 3: Ek Soru Havuzu
+      const btnExtraYes = document.getElementById('btn-extra-yes');
+      const btnExtraNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleViewModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnExtraYes.addEventListener('click', () => {
+        state.extraPoolVisible = true;
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnExtraYes.setAttribute('aria-expanded', 'true');
+
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnExtraNo.addEventListener('click', () => {
+        state.extraPoolVisible = false;
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnExtraYes.setAttribute('aria-expanded', 'false');
+
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleViewModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleViewModeBtn.textContent = state.extraViewMode === 'single'
+          ? 'Tümünü Liste Görünümünde Aç'
+          : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsContainer = document.getElementById('question-pills-container');
+        const renderArea = document.getElementById('questions-render-area');
+
+        pillsContainer.innerHTML = EXTRA_QUESTIONS.map((q, idx) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && idx === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) {
+            cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          }
+          return `<button type="button" class="${cls}" data-q-index="${idx}" aria-label="Soru ${q.id}">${q.id}</button>`;
+        }).join('');
+
+        pillsContainer.querySelectorAll('.q-pill').forEach(pill => {
+          pill.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(pill.getAttribute('data-q-index'));
+            if (state.extraViewMode === 'list') {
+              const cardEl = document.getElementById(`extra-q-card-${state.currentQuestionIndex + 1}`);
+              if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              renderExtraQuestions();
+            }
+          });
+        });
+
+        const questionsToDisplay = state.extraViewMode === 'single'
+          ? [EXTRA_QUESTIONS[state.currentQuestionIndex]]
+          : EXTRA_QUESTIONS;
+
+        const letters = ['A', 'B', 'C', 'D'];
+
+        renderArea.innerHTML = questionsToDisplay.map(q => {
+          const chosenIdx = state.extraAnswers[q.id];
+          const isAnswered = chosenIdx !== undefined;
+          const isCorrect = isAnswered && chosenIdx === q.correctIndex;
+
+          return `
+            <article class="new-gen-question-card" id="extra-q-card-${q.id}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+
+              <div class="question-scenario-box" style="white-space:pre-line;">
+                ${q.scenario}
+              </div>
+
+              <p class="question-stem">${q.stem}</p>
+
+              <div class="choices-grid">
+                ${q.choices.map((choiceText, cIdx) => {
+                  let btnCls = 'choice-btn';
+                  if (isAnswered) {
+                    if (cIdx === q.correctIndex) btnCls += ' is-correct';
+                    else if (cIdx === chosenIdx) btnCls += ' is-wrong';
+                  }
+                  return `
+                    <button type="button" class="${btnCls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                      <span class="choice-btn__letter">${letters[cIdx]}</span>
+                      <span>${choiceText}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              ${isAnswered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; margin-bottom:0.3rem; color:${isCorrect ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${isCorrect ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm &amp; Muhakeme:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>
+                    ← Önceki Soru
+                  </button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === EXTRA_QUESTIONS.length - 1 ? 'disabled' : ''}>
+                    Sonraki Soru →
+                  </button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        renderArea.querySelectorAll('.choice-btn').forEach(choiceBtn => {
+          choiceBtn.addEventListener('click', () => {
+            const qId = Number(choiceBtn.getAttribute('data-qid'));
+            const cIdx = Number(choiceBtn.getAttribute('data-cidx'));
+            state.extraAnswers[qId] = cIdx;
+            updateExtraScore();
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prevBtn = document.getElementById('prev-q-btn');
+        const nextBtn = document.getElementById('next-q-btn');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex > 0) {
+              state.currentQuestionIndex--;
+              renderExtraQuestions();
+            }
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex < EXTRA_QUESTIONS.length - 1) {
+              state.currentQuestionIndex++;
+              renderExtraQuestions();
+            }
+          });
+        }
+
+        updateExtraScore();
+      }
+
+      function updateExtraScore() {
+        const correctCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+          const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+          return q && q.correctIndex === ansIdx;
+        }).length;
+
+        const scoreEl = document.getElementById('extra-score-display');
+        if (scoreEl) scoreEl.textContent = `Doğru: ${correctCount} / 10`;
+
+        const answeredCount = Object.keys(state.extraAnswers).length;
+        document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
+      }
+
+      initTheme();
+      loadState();
+      drawSvgGrid();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>

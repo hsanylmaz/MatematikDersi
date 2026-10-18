@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matematik Atölyesi &amp; Simülasyon Platformu | MEB TYMM 2026-2027 (5, 6 ve 7. Sınıf)</title>
+  <meta name="description" content="Türkiye MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026-2027 yıllık planlarına dayalı 5., 6. ve 7. sınıf interaktif matematik simülasyon, anlık değerlendirme ve yeni nesil soru atölyesi.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="index.html" class="brand-mark">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">MEB TYMM 2026-2027 • SİMÜLASYON PLATFORMU</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-5">5. SINIF</span>
+        <span class="tech-badge tech-badge--grade-6">6. SINIF</span>
+        <span class="tech-badge tech-badge--grade-7">7. SINIF</span>
+        <span class="tech-badge mono" id="active-modules-count">Yayında: 18 Etkinlik</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn">
+          📐 Blueprint Koyu Mod
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Asimetrik Teknik Karşılama Alanı (Hero) -->
+  <section class="portal-hero">
+    <div class="container portal-hero__grid">
+
+      <div>
+        <span class="tech-badge tech-badge--signal">TÜRKİYE YÜZYILI MAARİF MODELİ • 2026–2027 YILLIK PLAN UYUMLU</span>
+        <h1 class="portal-hero__headline">
+          Sınıfı ve Kazanımı Seçin, <em>İnteraktif Etkinliği</em> Anında Başlatın.
+        </h1>
+        <p class="portal-hero__sub">
+          Öğretmen ve öğrenciler için MEB TYMM 2026-2027 yıllık planlarına birebir uyumlu 5., 6. ve 7. sınıf aktif öğrenme platformu. Aşağıdaki panelden <strong>Sınıf</strong> ve <strong>Kazanım (Öğrenme Çıktısı)</strong> seçerek doğrudan ilgili haftanın simülasyonuna geçebilirsiniz.
+        </p>
+
+        <div class="portal-hero__actions">
+          <a href="#teacher-selector-section" class="btn btn--primary">
+            🎯 Sınıf ve Kazanım Seçerek Başlat ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 Aşamalı Pedagojik Mimari Özeti -->
+      <aside class="architecture-blueprint" aria-label="3 Aşamalı Pedagojik Mimari">
+        <div class="architecture-blueprint__title">
+          <span>PEDAGOJİK ETKİNLİK MİMARİSİ</span>
+          <span>İZOLASYONLU 3 AŞAMA</span>
+        </div>
+
+        <div class="pedagogy-flow-steps">
+          <div class="pedagogy-flow-step">
+            <div class="pedagogy-flow-step__num">01</div>
+            <div>
+              <div class="pedagogy-flow-step__title">Aktif Öğrenme ve Keşif Simülasyonu</div>
+              <div class="pedagogy-flow-step__desc">Adım adım yönlendirmeler, ipuçları ve dijital matematik araçlarıyla kazanımı deneyimleme.</div>
+            </div>
+          </div>
+
+          <div class="pedagogy-flow-step">
+            <div class="pedagogy-flow-step__num">02</div>
+            <div>
+              <div class="pedagogy-flow-step__title">Anlık Değerlendirme (Öğrendim mi?)</div>
+              <div class="pedagogy-flow-step__desc">Simülasyonun hemen sonraki sekmesinde kazanımın özümsenip özümsenmediğini test eden mini kontrol.</div>
+            </div>
+          </div>
+
+          <div class="pedagogy-flow-step">
+            <div class="pedagogy-flow-step__num">03</div>
+            <div>
+              <div class="pedagogy-flow-step__title">Koşullu 10 Yeni Nesil Ek Soru Havuzu</div>
+              <div class="pedagogy-flow-step__desc">Başlangıçta gizlidir; yalnızca <strong>"Ek soru çözmek ister misiniz? → Evet"</strong> seçildiğinde açılır.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Ana İçerik: Öğretmen Sınıf & Kazanım Seçici Konsol -->
+  <main class="container" style="padding-bottom: 3rem;">
+
+    <section id="teacher-selector-section" class="teacher-selector-console" aria-labelledby="selector-console-title">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.75rem; border-bottom:2px solid var(--border-sharp); padding-bottom:0.9rem;">
+        <div>
+          <span class="tech-badge tech-badge--signal">ÖĞRETMEN KONTROL PANELİ</span>
+          <h2 id="selector-console-title" style="font-family:var(--font-display); font-size:1.45rem; margin-top:0.25rem;">
+            Sınıf ve Kazanım (Öğrenme Çıktısı) Seçici
+          </h2>
+        </div>
+        <label style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.88rem; font-weight:600; cursor:pointer;">
+          <input type="checkbox" id="only-ready-checkbox" checked style="width:18px; height:18px; accent-color:var(--accent-signal);">
+          <span>Listede Sadece Yayında Olan (Hazır) Kazanımları Göster</span>
+        </label>
+      </div>
+
+      <div class="selector-console-grid">
+        <!-- Sol: 1. Adım (Sınıf) ve 2. Adım (Kazanım) Seçimi -->
+        <div class="selector-step-card">
+          <div>
+            <div class="selector-label">1. ADIM • SINIF DÜZEYİNİ SEÇİN</div>
+            <div class="grade-tabs" role="radiogroup" aria-label="Sınıf Düzeyi Seçimi" style="margin-top:0.45rem;">
+              <button type="button" class="grade-tab is-active" data-select-grade="5" style="flex:1; justify-content:center;">
+                5. Sınıf
+              </button>
+              <button type="button" class="grade-tab" data-select-grade="6" style="flex:1; justify-content:center;">
+                6. Sınıf
+              </button>
+              <button type="button" class="grade-tab" data-select-grade="7" style="flex:1; justify-content:center;">
+                7. Sınıf
+              </button>
+            </div>
+          </div>
+
+          <div style="margin-top:0.4rem;">
+            <label for="outcome-dropdown" class="selector-label" style="display:block; margin-bottom:0.45rem;">
+              2. ADIM • HAFTA VE MEB TYMM KAZANIMINI SEÇİN
+            </label>
+            <select id="outcome-dropdown" class="selector-select" aria-label="Kazanım ve Hafta Seçimi"></select>
+          </div>
+
+          <p style="font-size:0.82rem; color:var(--ink-muted);">
+            * Seçtiğiniz kazanımın etkinliği açıldığında öğrencinin dikkatinin dağılmaması için içeride başka bir etkinliğe geçiş bulunmaz; yalnızca <strong>Ana Sayfa</strong> butonu yer alır.
+          </p>
+        </div>
+
+        <!-- Sağ: 3. Adım Seçilen Kazanım Detayı ve "İlgili Etkinliği Aç" Alanı -->
+        <div class="outcome-launch-card" id="selected-outcome-card">
+          <!-- JS tarafından dinamik doldurulur -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Alt Bölüm: Seçili Sınıfın Yayındaki Etkinlik Kartları -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.75rem; margin: 2rem 0 1rem;">
+      <div>
+        <h3 style="font-family:var(--font-display); font-size:1.2rem;" id="cards-section-heading">
+          Yayında Olan Haftalık Etkinlikler
+        </h3>
+        <p style="font-size:0.88rem; color:var(--ink-secondary);">
+          Her hafta sonu yeni haftanın etkinliği eklendikçe bu alanda otomatik olarak listelenir.
+        </p>
+      </div>
+      <button type="button" class="btn btn--sm" id="show-all-grades-cards-btn">
+        Tüm Sınıfların Yayındaki Etkinliklerini Göster
+      </button>
+    </div>
+
+    <section class="weeks-grid" id="weeks-grid-container" aria-live="polite"></section>
+
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • Türkiye Yüzyılı Maarif Modeli (2026–2027)
+      </div>
+      <div class="mono" style="font-size:0.78rem;">
+        5, 6 ve 7. Sınıf Haftalık Aktif Öğrenme Laboratuvarı
+      </div>
+    </div>
+  </footer>
+
+  <!-- Yıllık Plan Müfredat Verisi (scripts/generator.py tarafından data/*.docx içinden üretilmiştir) -->
+  <script src="assets/js/curriculum-data.js"></script>
+
+  <script>
+    (function () {
+      let selectedGrade = '5';
+      let selectedFileId = '5hafta-1';
+      let onlyReadyInDropdown = true;
+      let cardsGradeFilter = 'all';
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const saved = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        themeBtn.textContent = saved === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      function getSavedProgress(fileId) {
+        try {
+          const key = 'mat_atolye_' + fileId.replace('-', '_');
+          const raw = localStorage.getItem(key);
+          if (!raw) return null;
+          return JSON.parse(raw);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function getGradeWeeks(gradeStr) {
+        const data = window.TYMM_CURRICULUM || {};
+        return data[String(gradeStr)] || [];
+      }
+
+      function populateOutcomeDropdown() {
+        const dropdown = document.getElementById('outcome-dropdown');
+        const allForGrade = getGradeWeeks(selectedGrade);
+        const list = onlyReadyInDropdown
+          ? allForGrade.filter(w => w.isReady)
+          : allForGrade;
+
+        const itemsToRender = list.length > 0 ? list : allForGrade;
+
+        dropdown.innerHTML = itemsToRender.map(w => {
+          const statusPrefix = w.isReady ? '● [HAZIR]' : '⏳ [Yakında]';
+          const shortOutcome = (w.outcomes || w.content || '').slice(0, 95);
+          return `<option value="${w.fileId}">${statusPrefix} ${w.weekLabel} (${w.date}) — ${shortOutcome}</option>`;
+        }).join('');
+
+        if (itemsToRender.length > 0) {
+          const stillExists = itemsToRender.find(w => w.fileId === selectedFileId);
+          selectedFileId = stillExists ? stillExists.fileId : itemsToRender[0].fileId;
+          dropdown.value = selectedFileId;
+        }
+
+        renderSelectedOutcomeCard();
+      }
+
+      function renderSelectedOutcomeCard() {
+        const card = document.getElementById('selected-outcome-card');
+        const allForGrade = getGradeWeeks(selectedGrade);
+        const item = allForGrade.find(w => w.fileId === selectedFileId) || allForGrade[0];
+
+        if (!item) {
+          card.innerHTML = '<p>Bu sınıf için kazanım verisi bulunamadı.</p>';
+          return;
+        }
+
+        const prog = getSavedProgress(item.fileId);
+        const pct = prog && typeof prog.progressPercent === 'number' ? prog.progressPercent : null;
+        const gradeBadgeClass = `tech-badge--grade-${item.grade}`;
+
+        card.innerHTML = `
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+              <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+                <span class="tech-badge ${gradeBadgeClass}">${item.grade}. SINIF • ${item.weekLabel}</span>
+                <span class="tech-badge mono">${item.date} (${item.hours})</span>
+                <span class="tech-badge mono">Dosya: ${item.fileName}</span>
+              </div>
+              ${pct !== null ? `<span class="tech-badge tech-badge--signal">Tamamlanma: %${pct}</span>` : ''}
+            </div>
+
+            <div class="mono" style="font-size:0.76rem; color:var(--accent-signal); font-weight:700; margin-top:0.85rem;">
+              ${item.theme} • ${item.content}
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.22rem; margin:0.3rem 0 0.6rem;">
+              ${item.outcomes}
+            </h3>
+
+            <p style="font-size:0.86rem; color:var(--ink-secondary); background:var(--surface-card); padding:0.75rem; border:1.5px solid var(--border-subtle);">
+              <strong>Süreç Bileşenleri:</strong> ${(item.process || '').slice(0, 260)}${(item.process || '').length > 260 ? '...' : ''}
+            </p>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:0.85rem; border-top:1.5px dashed var(--border-subtle);">
+            ${item.isReady ? `
+              <span class="tech-badge" style="border-color:var(--status-success); color:var(--status-success);">
+                ● ETKİNLİK HAZIR (Simülasyon + Değerlendirme + 10 Ek Soru)
+              </span>
+              <a href="${item.path}" class="btn btn--primary">
+                İlgili Etkinliği Başlat (${item.fileName}) →
+              </a>
+            ` : `
+              <span class="tech-badge">
+                ⏳ Bu kazanımın simülasyonu ilgili hafta sonu eklenecektir.
+              </span>
+              <button type="button" class="btn" disabled style="opacity:0.55; cursor:not-allowed;">
+                Henüz Yayında Değil (${item.fileName})
+              </button>
+            `}
+          </div>
+        `;
+      }
+
+      function renderReadyCards() {
+        const container = document.getElementById('weeks-grid-container');
+        const data = window.TYMM_CURRICULUM || {};
+        const allReady = [];
+        ['5', '6', '7'].forEach(g => {
+          (data[g] || []).forEach(w => {
+            if (w.isReady && (cardsGradeFilter === 'all' || String(w.grade) === cardsGradeFilter)) {
+              allReady.push(w);
+            }
+          });
+        });
+
+        const totalReadyCount = ['5', '6', '7'].reduce((acc, g) => acc + (data[g] || []).filter(w => w.isReady).length, 0);
+        const countEl = document.getElementById('active-modules-count');
+        if (countEl) countEl.textContent = `Yayında: ${totalReadyCount} Etkinlik`;
+
+        container.innerHTML = allReady.map(item => {
+          const gradeBadgeClass = `tech-badge--grade-${item.grade}`;
+          const prog = getSavedProgress(item.fileId);
+          const pct = prog && typeof prog.progressPercent === 'number' ? prog.progressPercent : null;
+
+          return `
+            <article class="week-card week-card--featured">
+              <div>
+                <div class="week-card__header">
+                  <span class="tech-badge ${gradeBadgeClass}">${item.grade}. SINIF • ${item.weekLabel}</span>
+                  <span class="week-card__file-tag">${item.fileName}</span>
+                </div>
+
+                <div style="margin-top:0.55rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+                  <span class="mono" style="font-size:0.74rem; color:var(--ink-muted);">${item.date} (${item.hours})</span>
+                  ${pct !== null ? `<span class="tech-badge tech-badge--signal">İlerleme: %${pct}</span>` : ''}
+                </div>
+
+                <h2 class="week-card__title">${item.content || item.theme}</h2>
+                <div class="mono" style="font-size:0.74rem; color:var(--accent-signal); margin-bottom:0.35rem;">
+                  ${item.theme}
+                </div>
+                <p class="week-card__outcome">${item.outcomes}</p>
+              </div>
+
+              <div class="week-card__footer">
+                <span class="tech-badge" style="border-color:var(--status-success); color:var(--status-success);">
+                  ● YAYINDA
+                </span>
+                <a href="${item.path}" class="btn btn--sm btn--primary">
+                  Etkinliği Aç →
+                </a>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // 1. Adım: Sınıf Seçimi Butonları
+      document.querySelectorAll('[data-select-grade]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-select-grade]').forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          selectedGrade = btn.getAttribute('data-select-grade');
+          cardsGradeFilter = selectedGrade;
+          document.getElementById('cards-section-heading').textContent = `${selectedGrade}. Sınıf Yayında Olan Haftalık Etkinlikler`;
+          populateOutcomeDropdown();
+          renderReadyCards();
+        });
+      });
+
+      // 2. Adım: Kazanım Açılır Listesi
+      document.getElementById('outcome-dropdown').addEventListener('change', (e) => {
+        selectedFileId = e.target.value;
+        renderSelectedOutcomeCard();
+      });
+
+      // Sadece Hazır Kazanımlar Checkbox
+      document.getElementById('only-ready-checkbox').addEventListener('change', (e) => {
+        onlyReadyInDropdown = e.target.checked;
+        populateOutcomeDropdown();
+      });
+
+      // Tüm sınıfların kartlarını göster butonu
+      document.getElementById('show-all-grades-cards-btn').addEventListener('click', () => {
+        cardsGradeFilter = 'all';
+        document.getElementById('cards-section-heading').textContent = 'Tüm Sınıfların Yayında Olan Haftalık Etkinlikleri (5, 6 ve 7. Sınıf)';
+        renderReadyCards();
+      });
+
+      initTheme();
+      populateOutcomeDropdown();
+      renderReadyCards();
+    })();
+  </script>
+</body>
+</html>

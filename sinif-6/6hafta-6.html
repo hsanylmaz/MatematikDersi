@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Sınıf 6. Hafta (`6hafta-6`) | Ondalık Gösterimleri Çözümleme ve Kesir-Bölme İlişkisi — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 6. Sınıf Matematik 6. Hafta (MAT.6.1.5 & MAT.6.1.6) Ondalık gösterimleri kesirlerle çözümleme ve kesir-bölme ilişkisi (sonlu/devirli ondalık) simülasyonu ve 10 yeni nesil soru.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 6HAFTA-6 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-6">6. SINIF • 6. HAFTA</span>
+        <span class="tech-badge mono">MAT.6.1.5 &amp; MAT.6.1.6</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
+          📐 Blueprint Koyu Mod
+        </button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 6hafta-6.html</span>
+          <span class="tech-badge">19–23 Ekim • 5 Ders Saati</span>
+          <span class="tech-badge">1. TEMA: SAYILAR VE NİCELİKLER (2)</span>
+        </div>
+        <h1 class="week-header-banner__title">Ondalık Gösterimleri Çözümleme • Kesir-Bölme İlişkisi Atölyesi</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.6.1.5 &amp; MAT.6.1.6):</strong> MAT.6.1.5. Gerçek yaşam durumlarında ondalık gösterimlerin basamak değerlerini kesirlerden yararlanarak yorumlayabilme (3 Saat) • MAT.6.1.6. Kesir ve bölme işlemi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme (2 Saat).
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">Ondalık Çözümleme &amp; Kesir-Bölme Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         AŞAMA 1: AKTİF ÖĞRENME VE KEŞİF SİMÜLASYONU
+         ==================================================================== -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <!-- Sol Rehberli Görev ve İpucu Paneli -->
+        <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">KEŞİF ADIMLARI (4 GÖREV)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Çözümleme</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Kesir-Bölme</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. Sonlu Ondalık</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Devirli Ondalık</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">GÖREV 1/4: ONDALIK GÖSTERİMİ KESİRLERLE ÇÖZÜMLEME (MAT.6.1.5)</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: 5,408 Sayısında Binde Birler Basamağı</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              <strong>5,408 = 5 + 4/10 + □/1000</strong> kesir toplamı çözümlemesini tamamlamak için binde birler basamağındaki rakamı (<strong>□ = 8</strong>) sürgüyle seçip doğrulayın.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            <strong>💡 Pedagojik İpucu:</strong> <code>5,408</code> sayısında yüzde birler basamağı <code>0</code> olduğu için çözümlemede yer almaz; binde birler basamağı <code>8/1000</code>'dir.
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            <strong>Adım 1 Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
+              ✓ Görevi Doğrula
+            </button>
+            <button type="button" class="btn" id="next-step-btn">
+              Sonraki Adım →
+            </button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.6.1.5 &amp; MAT.6.1.6):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
+              <li id="proc-a">⬜ <strong>MAT.6.1.5:</strong> Ondalık gösterimlerin basamak değerlerini kesir toplamlarından yararlanarak çözümler.</li>
+              <li id="proc-b">⬜ <strong>MAT.6.1.6 (a-b):</strong> Kesir ve bölme işlemi arasındaki ilişkiyi (a ÷ b = a/b) örüntülerle geneller.</li>
+              <li id="proc-c">⬜ <strong>MAT.6.1.6 (c):</strong> Bölme sonucunda oluşan sonlu ve devirli ondalık gösterimleri yorumlar.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Sağ İnteraktif Simülasyon Tuvali -->
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group" role="group" aria-label="Simülasyon Aracı Seçimi">
+              <button type="button" class="tool-btn is-active" data-tool="decExpand" id="tool-decExpand">
+                🔢 1. Kesirle Çözümleme (5,408)
+              </button>
+              <button type="button" class="tool-btn" data-tool="fracDiv" id="tool-fracDiv">
+                ➗ 2. Kesir-Bölme (3 ÷ 4)
+              </button>
+              <button type="button" class="tool-btn" data-tool="termDec" id="tool-termDec">
+                📐 3. Sonlu Ondalık (5 ÷ 8)
+              </button>
+              <button type="button" class="tool-btn" data-tool="repDec" id="tool-repDec">
+                🔄 4. Devirli Ondalık (2 ÷ 3)
+              </button>
+            </div>
+
+            <div style="display:flex; gap:0.45rem; align-items:center;">
+              <button type="button" class="btn btn--sm" id="sim-auto-target-btn" title="Hedef Değeri Göster">
+                Hedef Konuma Getir
+              </button>
+              <button type="button" class="btn btn--sm" id="sim-reset-btn">
+                Sıfırla
+              </button>
+            </div>
+          </div>
+
+          <!-- İnteraktif Kontrol Sürgüsü -->
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              5,40□ Sayısında Binde Birler Basamağı: 3
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="0" max="9" step="1" value="3" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">Değer = 3</span>
+            </div>
+          </div>
+
+          <!-- SVG Simülasyon Alanı -->
+          <div class="canvas-viewport">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Ondalık Çözümleme ve Kesir-Bölme İlişkisi Tuvali">
+              <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
+              <g id="svg-construction-layer"></g>
+            </svg>
+          </div>
+
+          <!-- Alt Canlı Telemetri Çubuğu -->
+          <div class="canvas-telemetry">
+            <span id="telemetry-tool">AKTİF ANALİZ: Ondalık Çözümleme</span>
+            <span id="telemetry-notation">ODAK: 5,408 = 5 + 4/10 + 8/1000</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">SAYI: 5,403</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) SEKMESİ
+         ==================================================================== -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-6">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Ondalık Çözümleme ve Kesir-Bölme İlişkisi Kontrolü (MAT.6.1.5 &amp; MAT.6.1.6)
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem;">
+              Simülasyonda keşfettiğiniz basamak çözümlemesi, kesir-bölme özdeşliği ve devirli ondalık gösterimleri aşağıdaki 3 mini görevde sınayın.
+            </p>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
+            Doğrulanan: 0 / 3
+          </div>
+        </div>
+
+        <div class="assessment-grid">
+          <!-- Mini Görev 1 -->
+          <article class="mini-check-card" data-mini-id="1">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • ONDALIK GÖSTERİMİ ÇÖZÜMLEME (MAT.6.1.5)</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              60,047 ondalık gösteriminin kesirlerden yararlanılarak çözümlenmiş biçimi aşağıdakilerden hangisidir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">A) 6 × 10 + 4 × (1/10) + 7 × (1/100)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">B) 6 × 10 + 4 × (1/100) + 7 × (1/1000)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) 6 × 1 + 4 × (1/100) + 7 × (1/1000)</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 2 -->
+          <article class="mini-check-card" data-mini-id="2">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • KESİR-BÖLME İLİŞKİSİ (MAT.6.1.6)</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              9 kilogram ceviz 4 kişiye eşit olarak paylaştırıldığında bir kişiye düşen ceviz miktarının kesir ve ondalık gösterimi hangisidir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">A) 4/9 kg = 0,44... kg</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">B) 9/4 kg = 2,25 kg (9 ÷ 4 = 2 tam 1/4 = 2,25)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) 9/4 kg = 2,50 kg</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 3 -->
+          <article class="mini-check-card" data-mini-id="3">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • DEVİRLİ ONDALIK GÖSTERİM (MAT.6.1.6)</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              7 ÷ 9 bölme işleminin sonucunda elde edilen devirli ondalık gösterim aşağıdakilerden hangisidir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">A) 0,777... = 0,7̄ (7 rakamı süresiz tekrar eder)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">B) 0,70 (Sonlu ondalık gösterimdir)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">C) 0,7979...</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-subtle);">
+          <p style="font-size:0.9rem; color:var(--ink-secondary);">
+            Değerlendirmeyi tamamladıysanız aşağıdaki <strong>"Ek soru çözmek ister misiniz?"</strong> alanından 10 yeni nesil soruya geçebilirsiniz.
+          </p>
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
+            Aşama 3: Ek Soru Alanına İlerle →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 3 ve SAYFA ALTI: DİNAMİK SORU HAVUZU VE "EK SORU İSTER MİSİNİZ?"
+         ==================================================================== -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            Bu haftanın kazanımları (<strong>MAT.6.1.5 &amp; MAT.6.1.6 — Ondalık Gösterimleri Çözümleme ve Kesir-Bölme İlişkisi</strong>) için özel olarak hazırlanmış <strong>10 adet yeni nesil muhakeme sorusu</strong> hazırdır.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns" role="group" aria-label="Ek Soru Tercihi">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Harika! Bu haftanın aktif öğrenme simülasyonunu tamamladınız. Ek sorular gizli tutuldu. İstediğiniz zaman <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak soru havuzunu görünür hale getirebilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU GÖRÜNÜMLÜ 10 YENİ NESİL EK SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden aria-label="10 Yeni Nesil Ek Soru Havuzu">
+
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">6HAFTA-6 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-6" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+            Tümünü Liste Görünümünde Aç
+          </button>
+        </div>
+      </div>
+
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB Türkiye Yüzyılı Maarif Modeli (2026-2027)
+      </div>
+      <div class="mono" style="font-size:0.78rem;">
+        Dosya: <code>sinif-6/6hafta-6.html</code> • Kazanım: <code>MAT.6.1.5 &amp; MAT.6.1.6</code>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simülasyon, Değerlendirme ve 10 Yeni Nesil Soru Motoru -->
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_6hafta_6';
+
+      // 10 Adet Yeni Nesil MEB TYMM (MAT.6.1.5 & MAT.6.1.6) Sorusu
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • MARKET FİŞİNDE EKSİK RAKAM ANALİZİ (MAT.6.1.5)',
+          scenario: 'Bir market fişinde alınan peynir paketinin ağırlığı kilogram cinsinden şu şekilde çözümlenmiştir:\n1 × 1 + A × (1/10) + 5 × (1/100) + B × (1/1000) = 1,754 kg.',
+          stem: 'Buna göre A + B toplamı kaçtır?',
+          choices: [
+            '9',
+            '11',
+            '12',
+            '13'
+          ],
+          correctIndex: 1,
+          explanation: '1,754 ondalık gösteriminde onda birler basamağındaki rakam A = 7, binde birler basamağındaki rakam B = 4\'tür. Dolayısıyla A + B = 7 + 4 = 11 bulunur.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • LABORATUVAR MİKROPİPET ÖLÇÜMÜ (MAT.6.1.5)',
+          scenario: 'Bir biyoloji laboratuvarında 4 farklı tüpe damlatılan sıvı miktarlarının kesir çözümlemeleri aşağıda verilmiştir:\n• K tüpü: 2 + 4/10 + 9/1000 mL\n• L tüpü: 2 + 4/10 + 9/100 mL\n• M tüpü: 2 + 49/1000 mL\n• N tüpü: 2 + 409/1000 mL',
+          stem: 'Buna göre hangi iki tüpteki sıvı miktarları birbirine eşittir?',
+          choices: [
+            'K ve L',
+            'K ve N',
+            'L ve M',
+            'M ve N'
+          ],
+          correctIndex: 1,
+          explanation: 'K tüpündeki sıvı miktarı: 2 + 0,4 + 0,009 = 2,409 mL\'dir. N tüpündeki sıvı miktarı: 2 + 409/1000 = 2,409 mL\'dir (4/10 + 9/1000 = 400/1000 + 9/1000 = 409/1000). Dolayısıyla K ve N tüpleri birbirine eşittir.'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • AHŞAP ÇITA PAYLAŞIMI — KESİR VE BÖLME (MAT.6.1.6)',
+          scenario: 'Bir marangoz 15 metre uzunluğundaki tek parça ahşap çıtayı, hiç parça artmayacak şekilde 8 eş parçaya bölmüştür.',
+          stem: 'Elde edilen her bir parçanın metre cinsinden kesir ve ondalık gösterimi aşağıdakilerden hangisidir?',
+          choices: [
+            '15/8 m = 1,825 m',
+            '15/8 m = 1,875 m',
+            '8/15 m = 0,875 m',
+            '15/8 m = 1,75 m'
+          ],
+          correctIndex: 1,
+          explanation: '15 metrenin 8 eş parçaya bölünmesi: 15 ÷ 8 = 15/8 = 1 tam 7/8 metredir. 7 ÷ 8 = 0,875 olduğundan 1 + 0,875 = 1,875 metre bulunur.'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • SONLU VE DEVİRLİ ONDALIK GÖSTERİM SINIFLANDIRMASI (MAT.6.1.6)',
+          scenario: 'Bir matematik öğretmeni tahtaya aşağıdaki dört bölme işlemini yazmıştır:\nI. 3 ÷ 5\nII. 5 ÷ 6\nIII. 7 ÷ 8\nIV. 4 ÷ 9',
+          stem: 'Bu bölme işlemlerinden hangilerinin sonucu "devirli ondalık gösterim" belirtir?',
+          choices: [
+            'I ve III',
+            'II ve IV',
+            'I, II ve IV',
+            'II, III ve IV'
+          ],
+          correctIndex: 1,
+          explanation: 'I. 3 ÷ 5 = 0,6 (Sonlu). II. 5 ÷ 6 = 0,8333... = 0,83̄ (Devirli). III. 7 ÷ 8 = 0,875 (Sonlu). IV. 4 ÷ 9 = 0,444... = 0,4̄ (Devirli). Devirli olanlar II ve IV\'tür.'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • BASAMAK KARTLARIYLA SAYI OLUŞTURMA (MAT.6.1.5)',
+          scenario: ' Kerem\'in elinde üzerinde "3 tane birlik", "7 tane onda birlik", "15 tane binde birlik" yazılı üç kart vardır.',
+          stem: 'Kerem bu üç kartın belirttiği değerleri topladığında hangi ondalık gösterimi elde eder?',
+          choices: [
+            '3,715',
+            '3,705',
+            '3,157',
+            '3,85'
+          ],
+          correctIndex: 0,
+          explanation: '15 tane binde birlik = 15/1000 = 1/100 + 5/1000 (1 yüzde birlik + 5 binde birlik) demektir. Toplam: 3 + 7/10 + 1/100 + 5/1000 = 3,715 olur.'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • DEVİRLİ ONDALIK ÖRÜNTÜSÜNDE BASAMAK TAHMİNİ (MAT.6.1.6)',
+          scenario: '5 ÷ 11 bölme işlemi yapıldığında bölüm 0,454545... (0,45̄) şeklinde iki rakamlı bir örüntüyle süresiz devam etmektedir.',
+          stem: 'Bu örüntüye göre virgülden sonraki 19. basamakta bulunan rakam kaçtır?',
+          choices: [
+            '0',
+            '4',
+            '5',
+            '9'
+          ],
+          correctIndex: 1,
+          explanation: 'Virgülden sonraki basamaklar sırasıyla: 1. basamak 4, 2. basamak 5, 3. basamak 4, 4. basamak 5... şeklindedir. Tek sıradaki basamaklar (1, 3, 5, ..., 19) her zaman 4, çift sıradaki basamaklar ise 5\'tir. 19 tek sayı olduğundan 19. basamaktaki rakam 4\'tür.'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • GÜNEŞ PANELİ ENERJİ ÜRETİMİ (MAT.6.1.5)',
+          scenario: 'Bir güneş panelinin dört farklı saatte ürettiği elektrik enerjisi (kWh) miktarları çözümlenmiş olarak verilmiştir:\n• 11.00 → 4 + 8/10 + 2/100\n• 12.00 → 4 + 8/10 + 9/1000\n• 13.00 → 4 + 82/1000\n• 14.00 → 4 + 8/10 + 2/100 + 5/1000',
+          stem: 'Güneş panelinin en fazla enerji ürettiği saat hangisidir ve bu saatteki üretim kaç kWh\'tir?',
+          choices: [
+            '11.00 — 4,820 kWh',
+            '12.00 — 4,809 kWh',
+            '13.00 — 4,082 kWh',
+            '14.00 — 4,825 kWh'
+          ],
+          correctIndex: 3,
+          explanation: 'Ondalık gösterimleri yazalım: 11.00 → 4,820 kWh; 12.00 → 4,809 kWh; 13.00 → 4,082 kWh; 14.00 → 4,825 kWh. En büyük değer saat 14.00\'teki 4,825 kWh\'tir.'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • TÜMEVARIMSAL KESİR-BÖLME ÖRÜNTÜSÜ (MAT.6.1.6)',
+          scenario: 'Bir öğrenci 9\'a bölme işlemlerini sırasıyla yaparak aşağıdaki örüntüyü keşfediyor:\n• 1 ÷ 9 = 1/9 = 0,111...\n• 2 ÷ 9 = 2/9 = 0,222...\n• 4 ÷ 9 = 4/9 = 0,444...',
+          stem: 'Öğrencinin keşfettiği bu tümevarımsal örüntüye göre (5 ÷ 9) + (3 ÷ 9) işleminin sonucu hangi devirli ondalık gösterime eşittir?',
+          choices: [
+            '0,777... (0,7̄)',
+            '0,888... (0,8̄)',
+            '0,5353... (0,53̄)',
+            '0,90'
+          ],
+          correctIndex: 1,
+          explanation: '5 ÷ 9 = 5/9 ve 3 ÷ 9 = 3/9 olup toplamları 8/9 = 8 ÷ 9\'dur. Örüntüye göre k ÷ 9 = 0,kkk... olduğundan 8 ÷ 9 = 0,888... = 0,8̄ bulunur.'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • EŞİT PAYLAŞIM KARŞILAŞTIRMASI (MAT.6.1.6)',
+          scenario: 'İki farklı piknik masasından A masasında 3 eş pizza 4 kişiye, B masasında ise 4 eş pizza 5 kişiye eşit olarak paylaştırılmıştır.',
+          stem: 'A ve B masalarında birer kişiye düşen pizza miktarlarının ondalık gösterimleri sırasıyla aşağıdakilerden hangisidir?',
+          choices: [
+            'A: 0,75 pizza — B: 0,80 pizza',
+            'A: 0,75 pizza — B: 0,85 pizza',
+            'A: 0,60 pizza — B: 0,80 pizza',
+            'A: 1,33... pizza — B: 1,25 pizza'
+          ],
+          correctIndex: 0,
+          explanation: 'A masasında 1 kişiye düşen pizza: 3 ÷ 4 = 3/4 = 75/100 = 0,75 pizzadır. B masasında 1 kişiye düşen pizza: 4 ÷ 5 = 4/5 = 8/10 = 0,80 pizzadır.'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • BÖLME İŞLEMİNDEN BASAMAK DEĞERİNE (MAT.6.1.5 & MAT.6.1.6)',
+          scenario: '27 ÷ 8 bölme işleminin sonucu ondalık gösterim olarak yazılıyor.',
+          stem: 'Elde edilen bu ondalık gösterimin "yüzde birler" basamağındaki rakamın basamak değeri kesir olarak kaçtır?',
+          choices: [
+            '3 / 10',
+            '7 / 100',
+            '5 / 1000',
+            '7 / 10'
+          ],
+          correctIndex: 1,
+          explanation: '27 ÷ 8 = 27/8 = 3 tam 3/8\'dir. 3 ÷ 8 = 0,375 olduğundan 27 ÷ 8 = 3,375 olur. 3,375 sayısının yüzde birler basamağındaki rakam 7\'dir ve basamak değeri 7/100\'dür.'
+        }
+      ];
+
+      // Simülasyonun 4 Rehberli Görev Tanımı (MAT.6.1.5 & MAT.6.1.6)
+      const SIM_STEPS = [
+        {
+          tool: 'decExpand',
+          tag: 'GÖREV 1/4: ONDALIK GÖSTERİMİ KESİR TOPLAMLARIYLA ÇÖZÜMLEME (MAT.6.1.5)',
+          title: 'Görev 1: 5,408 = 5 + 4/10 + 8/1000 Çözümlemesi',
+          instruction: '<strong>5,40□ = 5 + 4/10 + □/1000</strong> kesir toplamı çözümlemesinde <strong>5,408</strong> sayısını oluşturmak için binde birler basamağını (<strong>□ = 8</strong>) seçip doğrulayın.',
+          hint: '💡 İpucu: 5,408 sayısında onda birler 4 (4/10), yüzde birler 0 (0/100) ve binde birler 8 (8/1000) değerindedir.',
+          sliderLabel: '5,40□ Sayısında Binde Birler Basamağı (□):',
+          min: 0,
+          max: 9,
+          step: 1,
+          defaultVal: 3,
+          targetVal: 8,
+          unit: '',
+          notation: 'ÇÖZÜMLEME: 5,408 = 5×1 + 4×(1/10) + 0×(1/100) + 8×(1/1000)'
+        },
+        {
+          tool: 'fracDiv',
+          tag: 'GÖREV 2/4: KESİR-BÖLME İLİŞKİSİ (MAT.6.1.6)',
+          title: 'Görev 2: 3 ÷ 4 = 3/4 = 0,75 Eşit Paylaşım Modeli',
+          instruction: '4 kişiye eşit paylaştırıldığında kişi başına <strong>3/4 = 0,75</strong> bütün düşmesi için bölünen bütün sayısını sürgüyle <strong>3</strong> değerine getirip doğrulayın.',
+          hint: '💡 İpucu: a ÷ b bölme işlemi a/b kesrine eşittir. 3 bütün 4 kişiye bölündüğünde 3 ÷ 4 = 3/4 = 75/100 = 0,75 elde edilir.',
+          sliderLabel: '4 Kişiye Paylaştırılan Bütün Sayısı (a ÷ 4):',
+          min: 1,
+          max: 6,
+          step: 1,
+          defaultVal: 1,
+          targetVal: 3,
+          unit: 'bütün',
+          notation: 'İLİŞKİ: 3 ÷ 4 = 3 / 4 = 75 / 100 = 0,75'
+        },
+        {
+          tool: 'termDec',
+          tag: 'GÖREV 3/4: SONLU ONDALIK GÖSTERİM ÖRÜNTÜSÜ (MAT.6.1.6)',
+          title: 'Görev 3: 5 ÷ 8 = 0,625 Sonlu Ondalık Gösterimi',
+          instruction: '8\'e bölme örüntüsünde (<code>1÷8 = 0,125</code>) bölümün <strong>0,625</strong> olması için bölünen sayıyı sürgüyle <strong>5</strong> değerine getirip doğrulayın.',
+          hint: '💡 İpucu: 1/8 = 0,125 olduğundan 5 ÷ 8 = 5 × 0,125 = 0,625 (kalan 0 olduğu için sonlu ondalık gösterimdir).',
+          sliderLabel: '8\'e Bölünen Doğal Sayı (a ÷ 8):',
+          min: 1,
+          max: 8,
+          step: 1,
+          defaultVal: 2,
+          targetVal: 5,
+          unit: '',
+          notation: 'ÖRÜNTÜ: 5 ÷ 8 = 5/8 = 625/1000 = 0,625 (Sonlu Ondalık)'
+        },
+        {
+          tool: 'repDec',
+          tag: 'GÖREV 4/4: DEVİRLİ ONDALIK GÖSTERİM ÖRÜNTÜSÜ (MAT.6.1.6)',
+          title: 'Görev 4: 2 ÷ 3 = 0,666... = 0,6̄ Devirli Ondalık Gösterimi',
+          instruction: '3\'e bölme işleminde bölümün <strong>0,666... = 0,6̄</strong> devirli ondalık gösterimini vermesi için bölünen sayıyı sürgüyle <strong>2</strong> değerine getirip doğrulayın.',
+          hint: '💡 İpucu: 2\'nin içinde 3 aranırken her adımda kalan 2 olur ve bölümde 6 rakamı sonsuza kadar tekrar eder: 2 ÷ 3 = 0,666... = 0,6̄.',
+          sliderLabel: '3\'e Bölünen Doğal Sayı (a ÷ 3):',
+          min: 1,
+          max: 6,
+          step: 1,
+          defaultVal: 4,
+          targetVal: 2,
+          unit: '',
+          notation: 'DEVİRLİ ÖRÜNTÜ: 2 ÷ 3 = 2/3 = 0,666... = 0,6̄'
+        }
+      ];
+
+      let state = {
+        currentStage: 'stage-1',
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraPoolVisible: false,
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
+            if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
+            if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDoneCount = state.completedSimSteps.filter(Boolean).length;
+          const miniDoneCount = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrectCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+
+          const totalPercent = Math.min(100, Math.round(
+            (simDoneCount / 4) * 40 +
+            (miniDoneCount / 3) * 30 +
+            (Object.keys(state.extraAnswers).length / 10) * 30
+          ));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '6hafta-6',
+            grade: 6,
+            week: 6,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrectCount,
+            progressPercent: totalPercent,
+            updatedAt: new Date().toISOString()
+          }));
+
+          const badge = document.getElementById('module-progress-badge');
+          if (badge) badge.textContent = `İlerleme: %${totalPercent}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      stageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchStage(btn.getAttribute('data-stage-target'));
+        });
+      });
+
+      function switchStage(stageId) {
+        state.currentStage = stageId;
+        stageButtons.forEach(b => {
+          b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId);
+        });
+
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+
+        if (stageId === 'stage-1') {
+          s1.classList.remove('is-hidden');
+          s2.classList.add('is-hidden');
+        } else if (stageId === 'stage-2') {
+          s1.classList.add('is-hidden');
+          s2.classList.remove('is-hidden');
+        } else if (stageId === 'stage-3') {
+          s3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => {
+        switchStage('stage-3');
+      });
+
+      function drawSvgGrid() {
+        const gridGroup = document.getElementById('svg-grid-layer');
+        let html = '';
+        for (let x = 40; x <= 720; x += 40) {
+          html += `<line x1="${x}" y1="0" x2="${x}" y2="400" />`;
+        }
+        for (let y = 40; y <= 360; y += 40) {
+          html += `<line x1="0" y1="${y}" x2="760" y2="${y}" />`;
+        }
+        gridGroup.innerHTML = html;
+      }
+
+      const slider = document.getElementById('sim-param-slider');
+      const sliderLabel = document.getElementById('slider-label');
+      const sliderReadout = document.getElementById('slider-value-readout');
+
+      function resetFeedbackForStep(index) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[index]) {
+          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz sürgüyle farklı değerleri deneyebilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${index + 1} Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(index, preserveFeedback = false) {
+        state.currentSimStep = index;
+        const stepCfg = SIM_STEPS[index];
+
+        document.getElementById('sim-step-counter').textContent = `Adım ${index + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag;
+        document.getElementById('mission-title').textContent = stepCfg.title;
+        document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
+        document.getElementById('mission-hint').innerHTML = stepCfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {
+          pill.classList.toggle('is-active', idx === index);
+          pill.classList.toggle('is-done', state.completedSimSteps[idx]);
+        });
+
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+          btn.classList.toggle('is-active', btn.getAttribute('data-tool') === stepCfg.tool);
+        });
+
+        slider.min = stepCfg.min;
+        slider.max = stepCfg.max;
+        slider.step = stepCfg.step;
+        slider.value = state.completedSimSteps[index] ? stepCfg.targetVal : stepCfg.defaultVal;
+
+        if (!preserveFeedback) {
+          resetFeedbackForStep(index);
+        }
+
+        updateSimCanvas();
+        updateProcessChecklist();
+      }
+
+      function updateSimCanvas() {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const layer = document.getElementById('svg-construction-layer');
+
+        sliderLabel.textContent = `${stepCfg.sliderLabel} ${val}`;
+        sliderReadout.textContent = `Değer = ${val}`;
+        document.getElementById('telemetry-tool').textContent = `AKTİF ANALİZ: ${stepCfg.title}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation;
+
+        if (stepCfg.tool === 'decExpand') {
+          const isTarget = val === 8;
+          const numStr = `5,40${val}`;
+
+          document.getElementById('telemetry-measurement').textContent = `ONDALIK: ${numStr} = 5 + 4/10 + ${val}/1000`;
+
+          const cols = [
+            { name: 'BİRLER (1)', digit: '5', valText: '5 × 1 = 5', x: 75, active: false },
+            { name: 'ONDA BİRLER (1/10)', digit: '4', valText: '4 / 10 = 0,4', x: 255, active: false },
+            { name: 'YÜZDE BİRLER (1/100)', digit: '0', valText: '0 / 100 = 0', x: 415, active: false },
+            { name: 'BİNDE BİRLER (1/1000)', digit: String(val), valText: `${val} / 1000 = 0,00${val}`, x: 575, active: true }
+          ];
+
+          const cards = cols.map(c => {
+            const fill = c.active ? (isTarget ? 'rgba(0, 135, 90, 0.14)' : '#FFF7ED') : '#FFFFFF';
+            const stroke = c.active ? (isTarget ? '#00875A' : '#FF5500') : '#141413';
+            return `
+              <rect x="${c.x}" y="80" width="132" height="142" fill="${fill}" stroke="${stroke}" stroke-width="${c.active ? 3.5 : 2}"/>
+              <text x="${c.x + 66}" y="106" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#4A4843">${c.name}</text>
+              <text x="${c.x + 66}" y="164" text-anchor="middle" font-family="Space Grotesk" font-size="44" font-weight="700" fill="${c.active ? (isTarget ? '#00875A' : '#FF5500') : '#141413'}">${c.digit}</text>
+              <text x="${c.x + 66}" y="204" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0052CC">${c.valText}</text>
+            `;
+          }).join('');
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+              ${isTarget ? '✓ ÇÖZÜMLEME DOĞRULANDI: 5,408 = 5 + 4/10 + 8/1000' : `Ondalık Gösterim: ${numStr} — Binde Birler Basamağı: ${val}/1000`}
+            </text>
+            ${cards}
+            <text x="230" y="175" text-anchor="middle" font-family="Space Grotesk" font-size="52" font-weight="700" fill="#FF5500">,</text>
+
+            <rect x="95" y="255" width="590" height="95" fill="${isTarget ? 'rgba(0, 135, 90, 0.12)' : '#FFF7ED'}" stroke="${isTarget ? '#00875A' : '#D97706'}" stroke-width="2.5"/>
+            <text x="390" y="292" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#141413">
+              ${numStr}  =  5  +  4/10  +  0/100  +  ${val}/1000
+            </text>
+            <text x="390" y="326" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="${isTarget ? '#00875A' : '#4A4843'}">
+              ${isTarget ? '✓ Yüzde birler 0 olduğu için 5 + 4/10 + 8/1000 şeklinde yazılır!' : 'Hedef: 5,408 sayısını elde etmek için sürgüyü 8\'e getirin.'}
+            </text>
+          `;
+        } else if (stepCfg.tool === 'fracDiv') {
+          const isTarget = val === 3;
+          const decVal = (val / 4).toFixed(2).replace('.', ',');
+
+          document.getElementById('telemetry-measurement').textContent = `BÖLME: ${val} ÷ 4 = ${val}/4 = ${decVal}`;
+
+          let circles = '';
+          const startX = Math.max(95, 380 - (val * 105) / 2);
+          for (let i = 0; i < val; i++) {
+            const cx = startX + i * 105 + 45;
+            const cy = 140;
+            circles += `
+              <circle cx="${cx}" cy="${cy}" r="40" fill="rgba(0, 82, 204, 0.16)" stroke="#0052CC" stroke-width="2.5"/>
+              <line x1="${cx - 40}" y1="${cy}" x2="${cx + 40}" y2="${cy}" stroke="#141413" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <line x1="${cx}" y1="${cy - 40}" x2="${cx}" y2="${cy + 40}" stroke="#141413" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <path d="M${cx},${cy} L${cx},${cy - 40} A40,40 0 0,1 ${cx + 40},${cy} Z" fill="#FF5500" opacity="0.75"/>
+              <text x="${cx}" y="${cy + 58}" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#141413">${i + 1}. Bütün (1/4)</text>
+            `;
+          }
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+              ${isTarget ? '✓ KESİR-BÖLME İLİŞKİSİ: 3 ÷ 4 = 3/4 = 75/100 = 0,75' : `${val} Bütünün 4 Eş Parçaya Bölünmesi: ${val} ÷ 4 = ${val}/4 = ${decVal}`}
+            </text>
+            ${circles}
+            <rect x="120" y="235" width="520" height="115" fill="${isTarget ? 'rgba(0, 135, 90, 0.12)' : '#FFF7ED'}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="2.5"/>
+            <text x="380" y="275" text-anchor="middle" font-family="Space Grotesk" font-size="28" font-weight="700" fill="#141413">
+              ${val} ÷ 4  =  ${val} / 4  =  ${val * 25} / 100  =  ${decVal}
+            </text>
+            <text x="380" y="318" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="${isTarget ? '#00875A' : '#4A4843'}">
+              ${isTarget ? '✓ Her bütünden 1/4 alındığında toplam 3 tane 1/4 = 3/4 = 0,75 olur!' : 'Her bütünden turuncu boyalı 1/4 dilim 1. kişiye verilir.'}
+            </text>
+          `;
+        } else if (stepCfg.tool === 'termDec') {
+          const isTarget = val === 5;
+          const decVal = (val / 8).toFixed(3).replace('.', ',');
+
+          document.getElementById('telemetry-measurement').textContent = `ÖRÜNTÜ: ${val} ÷ 8 = ${val}/8 = ${decVal} (Sonlu Ondalık)`;
+
+          let rows = '';
+          for (let k = 1; k <= 8; k++) {
+            const active = k === val;
+            const col = k <= 4 ? 0 : 1;
+            const row = (k - 1) % 4;
+            const x = 90 + col * 300;
+            const y = 78 + row * 48;
+            const dStr = (k / 8).toFixed(3).replace('.', ',');
+            const bg = active ? (k === 5 ? 'rgba(0, 135, 90, 0.16)' : '#FFF7ED') : '#FFFFFF';
+            const stroke = active ? (k === 5 ? '#00875A' : '#FF5500') : '#141413';
+            rows += `
+              <rect x="${x}" y="${y}" width="280" height="40" fill="${bg}" stroke="${stroke}" stroke-width="${active ? 3 : 1.5}"/>
+              <text x="${x + 140}" y="${y + 25}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${active ? (k === 5 ? '#00875A' : '#FF5500') : '#141413'}">
+                ${k} ÷ 8 = ${k}/8 = ${dStr}
+              </text>
+            `;
+          }
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+              ${isTarget ? '✓ SONLU ONDALIK ÖRÜNTÜSÜ: 5 ÷ 8 = 5 × 0,125 = 0,625 (Kalan = 0)' : `8'e Bölme Örüntüsü: ${val} ÷ 8 = ${decVal}`}
+            </text>
+            ${rows}
+            <rect x="90" y="285" width="580" height="72" fill="${isTarget ? 'rgba(0, 135, 90, 0.12)' : '#FFF7ED'}" stroke="${isTarget ? '#00875A' : '#D97706'}" stroke-width="2.5"/>
+            <text x="380" y="316" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="#141413">
+              Birim Kesir Tabanı: 1 ÷ 8 = 1/8 = 125/1000 = 0,125
+            </text>
+            <text x="380" y="342" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="${isTarget ? '#00875A' : '#4A4843'}">
+              ${isTarget ? '✓ 5 ÷ 8 = 0,625 işleminde bölme sonlanır (Sonlu Ondalık Gösterim).' : `Seçilen adım: ${val} × 0,125 = ${decVal}. Hedef için 5 seçin.`}
+            </text>
+          `;
+        } else if (stepCfg.tool === 'repDec') {
+          const isTarget = val === 2;
+          const whole = Math.floor(val / 3);
+          const rem = val % 3;
+          const repDigit = rem === 0 ? '0' : (rem === 1 ? '3' : '6');
+          const resultStr = rem === 0
+            ? `${whole},0 (Tam Bölünür)`
+            : `${whole},${repDigit}${repDigit}${repDigit}... = ${whole},${repDigit}\u0304`;
+
+          document.getElementById('telemetry-measurement').textContent = `BÖLME: ${val} ÷ 3 = ${val}/3 = ${resultStr}`;
+
+          layer.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+              ${isTarget ? '✓ DEVİRLİ ONDALIK GÖSTERİM: 2 ÷ 3 = 0,666... = 0,6̄ (Süresiz Tekrar)' : `3'e Bölme Analizi: ${val} ÷ 3 = ${resultStr}`}
+            </text>
+
+            <!-- Sol: Uzun Bölme Şeması -->
+            <rect x="85" y="75" width="265" height="250" fill="#FFFFFF" stroke="#141413" stroke-width="2.5"/>
+            <text x="217" y="104" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#0052CC">UZUN BÖLME ADIMLARI</text>
+            <text x="125" y="142" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141413">${val},000...  |  3</text>
+            <line x1="215" y1="122" x2="215" y2="295" stroke="#141413" stroke-width="2"/>
+            <line x1="215" y1="152" x2="330" y2="152" stroke="#141413" stroke-width="2"/>
+            <text x="272" y="178" text-anchor="middle" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#FF5500">${whole},${repDigit}${repDigit}${repDigit}...</text>
+            <text x="125" y="190" font-family="JetBrains Mono" font-size="13" fill="#4A4843">Her adımda kalan: ${rem}</text>
+            <text x="125" y="220" font-family="JetBrains Mono" font-size="13" fill="#4A4843">İndirilen sıfırla: ${rem * 10}</text>
+            <text x="125" y="250" font-family="JetBrains Mono" font-size="13" fill="#00875A">${rem * 10} ÷ 3 = ${repDigit} (Kalan yine ${rem})</text>
+            <text x="125" y="285" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#D97706">
+              ${rem === 0 ? 'Kalan 0 ⇒ Sonlu' : `Kalan ${rem} sürekli tekrar eder!`}
+            </text>
+
+            <!-- Sağ: Devir Çizgisi Gösterimi -->
+            <rect x="380" y="75" width="300" height="250" fill="${isTarget ? 'rgba(0, 135, 90, 0.12)' : '#FFF7ED'}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="2.5"/>
+            <text x="530" y="110" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#4A4843">DEVİRLİ ONDALIK GÖSTERİM</text>
+            <text x="530" y="175" text-anchor="middle" font-family="Space Grotesk" font-size="42" font-weight="700" fill="${isTarget ? '#00875A' : '#141413'}">
+              ${rem === 0 ? `${whole},0` : `${whole},${repDigit}\u0304`}
+            </text>
+            <text x="530" y="225" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#0052CC">
+              ${val} ÷ 3 = ${val}/3 = ${whole},${repDigit}${repDigit}${repDigit}...
+            </text>
+            <text x="530" y="275" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">
+              ${isTarget ? '✓ 6 rakamı sonsuza dek tekrar ettiği için üzerine devir çizgisi (0,6̄) konulur.' : 'Hedef: 2 ÷ 3 = 0,6̄ devirli gösterimini doğrulamak için 2 seçin.'}
+            </text>
+          `;
+        }
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+
+        if (val === stepCfg.targetVal) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} başarıyla doğrulandı (Değer = ${val}). "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Şu anki seçiminiz <strong>${val}</strong>. Görev hedefi olan <strong>${stepCfg.targetVal}</strong> değerine ulaşıp tekrar doğrulayın.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.defaultVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < SIM_STEPS.length - 1) {
+          loadSimStep(state.currentSimStep + 1);
+        } else {
+          switchStage('stage-2');
+        }
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          loadSimStep(Number(pill.getAttribute('data-step')));
+        });
+      });
+
+      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          loadSimStep(idx);
+        });
+      });
+
+      function updateProcessChecklist() {
+        const doneCount = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${doneCount >= 1 ? '✅' : '⬜'} <strong>MAT.6.1.5:</strong> Ondalık gösterimlerin basamak değerlerini kesir toplamlarından yararlanarak çözümler.`;
+        document.getElementById('proc-b').innerHTML = `${doneCount >= 2 ? '✅' : '⬜'} <strong>MAT.6.1.6 (a-b):</strong> Kesir ve bölme işlemi arasındaki ilişkiyi (a ÷ b = a/b) örüntülerle geneller.`;
+        document.getElementById('proc-c').innerHTML = `${doneCount >= 4 ? '✅' : '⬜'} <strong>MAT.6.1.6 (c):</strong> Bölme sonucunda oluşan sonlu ve devirli ondalık gösterimleri yorumlar.`;
+
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', doneCount === 4);
+      }
+
+      // AŞAMA 2: Mini Kontrol
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const miniId = btn.getAttribute('data-mini');
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackEl = document.getElementById(`mini-feedback-${miniId}`);
+
+          document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`).forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+
+          if (isCorrect) {
+            btn.classList.add('is-correct');
+            feedbackEl.style.color = 'var(--status-success)';
+            feedbackEl.textContent = '✓ Doğru! Ondalık çözümleme ve kesir-bölme ilişkisi doğrulandı.';
+            state.miniCheckAnswers[miniId] = true;
+          } else {
+            btn.classList.add('is-wrong');
+            feedbackEl.style.color = 'var(--status-error)';
+            feedbackEl.textContent = '✕ Tekrar düşünün: Basamak değerlerini ve a ÷ b = a/b ilişkisini kontrol edin.';
+          }
+
+          const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalMiniCorrect} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalMiniCorrect === 3);
+          saveState();
+        });
+      });
+
+      // AŞAMA 3: Ek Soru Havuzu
+      const btnExtraYes = document.getElementById('btn-extra-yes');
+      const btnExtraNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleViewModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnExtraYes.addEventListener('click', () => {
+        state.extraPoolVisible = true;
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnExtraYes.setAttribute('aria-expanded', 'true');
+
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnExtraNo.addEventListener('click', () => {
+        state.extraPoolVisible = false;
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnExtraYes.setAttribute('aria-expanded', 'false');
+
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleViewModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleViewModeBtn.textContent = state.extraViewMode === 'single'
+          ? 'Tümünü Liste Görünümünde Aç'
+          : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsContainer = document.getElementById('question-pills-container');
+        const renderArea = document.getElementById('questions-render-area');
+
+        pillsContainer.innerHTML = EXTRA_QUESTIONS.map((q, idx) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && idx === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) {
+            cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          }
+          return `<button type="button" class="${cls}" data-q-index="${idx}" aria-label="Soru ${q.id}">${q.id}</button>`;
+        }).join('');
+
+        pillsContainer.querySelectorAll('.q-pill').forEach(pill => {
+          pill.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(pill.getAttribute('data-q-index'));
+            if (state.extraViewMode === 'list') {
+              const cardEl = document.getElementById(`extra-q-card-${state.currentQuestionIndex + 1}`);
+              if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              renderExtraQuestions();
+            }
+          });
+        });
+
+        const questionsToDisplay = state.extraViewMode === 'single'
+          ? [EXTRA_QUESTIONS[state.currentQuestionIndex]]
+          : EXTRA_QUESTIONS;
+
+        const letters = ['A', 'B', 'C', 'D'];
+
+        renderArea.innerHTML = questionsToDisplay.map(q => {
+          const chosenIdx = state.extraAnswers[q.id];
+          const isAnswered = chosenIdx !== undefined;
+          const isCorrect = isAnswered && chosenIdx === q.correctIndex;
+
+          return `
+            <article class="new-gen-question-card" id="extra-q-card-${q.id}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+
+              <div class="question-scenario-box" style="white-space:pre-line;">
+                ${q.scenario}
+              </div>
+
+              <p class="question-stem">${q.stem}</p>
+
+              <div class="choices-grid">
+                ${q.choices.map((choiceText, cIdx) => {
+                  let btnCls = 'choice-btn';
+                  if (isAnswered) {
+                    if (cIdx === q.correctIndex) btnCls += ' is-correct';
+                    else if (cIdx === chosenIdx) btnCls += ' is-wrong';
+                  }
+                  return `
+                    <button type="button" class="${btnCls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                      <span class="choice-btn__letter">${letters[cIdx]}</span>
+                      <span>${choiceText}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              ${isAnswered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; margin-bottom:0.3rem; color:${isCorrect ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${isCorrect ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm &amp; Muhakeme:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>
+                    ← Önceki Soru
+                  </button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === EXTRA_QUESTIONS.length - 1 ? 'disabled' : ''}>
+                    Sonraki Soru →
+                  </button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        renderArea.querySelectorAll('.choice-btn').forEach(choiceBtn => {
+          choiceBtn.addEventListener('click', () => {
+            const qId = Number(choiceBtn.getAttribute('data-qid'));
+            const cIdx = Number(choiceBtn.getAttribute('data-cidx'));
+            state.extraAnswers[qId] = cIdx;
+            updateExtraScore();
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prevBtn = document.getElementById('prev-q-btn');
+        const nextBtn = document.getElementById('next-q-btn');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex > 0) {
+              state.currentQuestionIndex--;
+              renderExtraQuestions();
+            }
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex < EXTRA_QUESTIONS.length - 1) {
+              state.currentQuestionIndex++;
+              renderExtraQuestions();
+            }
+          });
+        }
+
+        updateExtraScore();
+      }
+
+      function updateExtraScore() {
+        const correctCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+          const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+          return q && q.correctIndex === ansIdx;
+        }).length;
+
+        const scoreEl = document.getElementById('extra-score-display');
+        if (scoreEl) scoreEl.textContent = `Doğru: ${correctCount} / 10`;
+
+        const answeredCount = Object.keys(state.extraAnswers).length;
+        document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
+      }
+
+      initTheme();
+      loadState();
+      drawSvgGrid();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>

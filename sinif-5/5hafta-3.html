@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. Sınıf 3. Hafta (`5hafta-3`) | Açı Ölçme Araçları ve İletki Laboratuvarı — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 5. Sınıf Matematik 3. Hafta (MAT.5.3.3) Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme etkileşimli simülasyonu.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 5HAFTA-3 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-5">5. SINIF • 3. HAFTA</span>
+        <span class="tech-badge mono">MAT.5.3.3</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
+          📐 Blueprint Koyu Mod
+        </button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 5hafta-3.html</span>
+          <span class="tech-badge">28 Eylül–02 Ekim • 5 Ders Saati</span>
+          <span class="tech-badge">3. TEMA: GEOMETRİK ŞEKİLLER</span>
+          <span class="tech-badge">İÇERİK: Açı Ölçme</span>
+        </div>
+        <h1 class="week-header-banner__title">Açı Ölçme: İletki, Gönye ve Dijital Açıölçer Laboratuvarı</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.5.3.3):</strong> Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme.
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">İletki ve Açı Ölçme Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         AŞAMA 1: AKTİF ÖĞRENME VE KEŞİF SİMÜLASYONU
+         ==================================================================== -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <!-- Sol Rehberli Görev ve İpucu Paneli -->
+        <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">ÖLÇÜM GÖREVLERİ (4 ADIM)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Dar Açı</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Geniş Açı</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. Fark Ölçümü</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Dik Açı &amp; Gönye</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">ARAÇ 1/4: İLETKİ İLE DAR AÇI ÖLÇÜMÜ</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: İletki ile 45° Dar Açı Ölçümü</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              İletkinin merkezini <strong>O köşesine</strong>, taban çizgisini <strong>[OA ışınına (0°)</strong> hizaladık. <strong>[OB ışınını 45°</strong> konumuna getirerek dar açıyı ölçün ve doğrulayın.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            <strong>💡 Pedagojik İpucu:</strong> İletki üzerinde iki ölçek (iç ve dış) bulunur. Açının bir kolu sağdaki <code>0°</code> çizgisinden başlıyorsa, o sıfırdan artan ölçeği takip etmelisiniz.
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            <strong>Adım 1 Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
+              ✓ Görevi Doğrula
+            </button>
+            <button type="button" class="btn" id="next-step-btn">
+              Sonraki Adım →
+            </button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.5.3.3):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
+              <li id="proc-a">⬜ <strong>a)</strong> Açı ölçmek için gerekli araç ve teknolojiyi tanır.</li>
+              <li id="proc-b">⬜ <strong>b)</strong> Açı ölçmek için uygun araç ve teknolojiyi belirler.</li>
+              <li id="proc-c">⬜ <strong>c)</strong> Açı ölçmek için uygun araç ve teknolojiyi kullanır.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Sağ İnteraktif Simülasyon Tuvali -->
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group" role="group" aria-label="Açı Ölçme Deneyi Seçimi">
+              <button type="button" class="tool-btn is-active" data-tool="acute" id="tool-acute">
+                📐 1. Dar Açı (45°)
+              </button>
+              <button type="button" class="tool-btn" data-tool="obtuse" id="tool-obtuse">
+                🧭 2. Geniş Açı (135°)
+              </button>
+              <button type="button" class="tool-btn" data-tool="diff" id="tool-diff">
+                📏 3. Kollar Farkı (30°–140°)
+              </button>
+              <button type="button" class="tool-btn" data-tool="right" id="tool-right">
+                直角 4. Gönye &amp; Dik Açı (90°)
+              </button>
+            </div>
+
+            <div style="display:flex; gap:0.45rem; align-items:center;">
+              <button type="button" class="btn btn--sm" id="sim-auto-target-btn" title="Hedef Değeri Göster">
+                Hedef Konuma Getir
+              </button>
+              <button type="button" class="btn btn--sm" id="sim-reset-btn">
+                Sıfırla
+              </button>
+            </div>
+          </div>
+
+          <!-- İnteraktif Kontrol Sürgüsü -->
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              İletki Açı Ölçüsü s(AOB): 30°
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="10" max="85" step="5" value="30" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">30°</span>
+            </div>
+          </div>
+
+          <!-- SVG Geometrik Ölçüm Alanı -->
+          <div class="canvas-viewport">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Açı Ölçme ve İletki Simülasyon Tuvali">
+              <defs>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#0052CC" />
+                </marker>
+                <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF5500" />
+                </marker>
+                <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#00875A" />
+                </marker>
+              </defs>
+
+              <!-- Koordinat Izgara Çizgileri -->
+              <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
+
+              <!-- Dinamik Çizim Katmanı -->
+              <g id="svg-construction-layer"></g>
+            </svg>
+          </div>
+
+          <!-- Alt Canlı Telemetri Çubuğu -->
+          <div class="canvas-telemetry">
+            <span id="telemetry-tool">AKTİF ARAÇ: İletki (Açıölçer)</span>
+            <span id="telemetry-notation">GÖSTERİM: s(AOB) = 45° (Dar Açı)</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">ÖLÇÜM: 30°</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) SEKMESİ
+         ==================================================================== -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-5">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Açı Ölçme Araçları Kontrolü (MAT.5.3.3)
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem;">
+              İletki ve gönye kullanımıyla ilgili edindiğiniz becerileri aşağıdaki 3 mini görevde doğrulayın.
+            </p>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
+            Doğrulanan: 0 / 3
+          </div>
+        </div>
+
+        <div class="assessment-grid">
+          <!-- Mini Görev 1 -->
+          <article class="mini-check-card" data-mini-id="1">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • UYGUN ÖLÇME ARACI SEÇİMİ</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Defterine çizilmiş olan bir ABC açısının kaç derece olduğunu tam olarak ölçmek isteyen bir öğrenci hangi matematiksel aracı seçmelidir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">A) Yalnızca düz cetvel (cm ölçekli)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">B) İletki (Açıölçer)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) Yalnızca pergel</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 2 -->
+          <article class="mini-check-card" data-mini-id="2">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • SIFIRDAN BAŞLAMAYAN İLETKİ OKUMASI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Merkezi O köşesine yerleştirilen bir iletkide, KLM açısının bir kolu 40° çizgisini, diğer kolu aynı ölçekte 125° çizgisini gösteriyorsa s(KLM) kaç derecedir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">A) 85° (125° - 40° = 85°)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">B) 125°</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) 165° (125° + 40° = 165°)</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 3 -->
+          <article class="mini-check-card" data-mini-id="3">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • İÇ VE DIŞ ÖLÇEK DOĞRULAMASI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Görsel olarak dik açıdan (90°) daha küçük olduğu açıkça görülen bir dar açıyı iletkiyle ölçen Ali, sonucu yanlışlıkla 130° olarak okumuştur. Ali'nin hatası nedir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">A) İletki dar açıları ölçemez.</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">B) 0°'dan başlayan ölçek (50°) yerine ters yöndeki bütünler ölçeği (130°) okumuştur.</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">C) Açının kollarını kısa çizmiştir.</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-subtle);">
+          <p style="font-size:0.9rem; color:var(--ink-secondary);">
+            Değerlendirmeyi tamamladıysanız aşağıdaki <strong>"Ek soru çözmek ister misiniz?"</strong> alanından 10 yeni nesil soruya geçebilirsiniz.
+          </p>
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
+            Aşama 3: Ek Soru Alanına İlerle →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 3 ve SAYFA ALTI: DİNAMİK SORU HAVUZU VE "EK SORU İSTER MİSİNİZ?"
+         ==================================================================== -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            Bu haftanın kazanımı (<strong>MAT.5.3.3 — Açıları Ölçmek İçin Matematiksel Araç ve Teknolojiden Yararlanabilme</strong>) için hazırlanmış <strong>10 adet yeni nesil muhakeme sorusu</strong> hazırdır.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns" role="group" aria-label="Ek Soru Tercihi">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Harika! Bu haftanın aktif öğrenme simülasyonunu tamamladınız. Ek sorular gizli tutuldu. İstediğiniz zaman <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak soru havuzunu görünür hale getirebilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU GÖRÜNÜMLÜ 10 YENİ NESİL EK SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden aria-label="10 Yeni Nesil Ek Soru Havuzu">
+
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">5HAFTA-3 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-5" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+            Tümünü Liste Görünümünde Aç
+          </button>
+        </div>
+      </div>
+
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB Türkiye Yüzyılı Maarif Modeli (2026-2027)
+      </div>
+      <div class="mono" style="font-size:0.78rem;">
+        Dosya: <code>sinif-5/5hafta-3.html</code> • Kazanım: <code>MAT.5.3.3</code>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simülasyon, Değerlendirme ve 10 Yeni Nesil Soru Motoru -->
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_5hafta_3';
+
+      // 10 Adet Yeni Nesil MEB TYMM (MAT.5.3.3) Sorusu
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • İLETKİ MERKEZİ VE HİZALAMA İLKESİ',
+          scenario: 'Mert, defterindeki PRS açısını ölçmek için iletkisini kağıdın üzerine koyuyor. Ancak iletkinin merkez noktasını R köşesi yerine [RS ışınının ortasına yerleştirdiğini fark ediyor.',
+          stem: 'Mert\'in doğru bir açı ölçümü yapabilmesi için iletkiyi nasıl konumlandırması gerekir?',
+          choices: [
+            'İletkinin merkez noktasını tam R köşesine, 0°–180° taban çizgisini ise açının kollarından birine çakıştırmalıdır.',
+            'İletkinin dış yayını R köşesine değdirmelidir.',
+            'İletkiyi açının kollarına değmeden kağıdın sağ alt köşesine koymalıdır.',
+            'Açının kollarını silip daha kısa çizmelidir.'
+          ],
+          correctIndex: 0,
+          explanation: 'İletki ile hatasız ölçüm yapmanın ilk kuralı, iletkinin merkez noktasını açının köşesi (R) ile çakıştırmak ve taban çizgisini (0° çizgisi) açının bir koluyla hizalamaktır.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • KIRIK İLETKİ İLE FARK ÖLÇÜMÜ',
+          scenario: 'Selin\'in plastik iletkisinin sol ve sağ uç kısımları kırıldığı için 0° ve 180° çizgileri görünmemektedir. Selin, ABC açısının köşesini iletkinin merkezine koyduğunda [BA kolu 25° çizgisini, [BC kolu ise aynı ölçekte 135° çizgisini gösteriyor.',
+          stem: 'Buna göre Selin\'in ölçtüğü ABC açısının gerçek ölçüsü kaç derecedir?',
+          choices: [
+            '100°',
+            '110°',
+            '135°',
+            '160°'
+          ],
+          correctIndex: 1,
+          explanation: 'Açının kolları 0° çizgisinden başlamıyorsa, aynı ölçek üzerindeki iki değerin farkı alınır: |135° - 25°| = 110° (Geniş Açı).'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • İKİZKENAR DİK GÖNYE AÇILARI',
+          scenario: 'Geometri takımında bulunan iki standart gönyeden biri "ikizkenar dik gönye", diğeri ise "çeşitkenar dik gönye (30°-60°-90°)" olarak adlandırılır. Kerem, ikizkenar dik gönyenin dar açılarından birini ve çeşitkenar dik gönyenin en küçük açısını yan yana getirerek komşu bir açı oluşturuyor.',
+          stem: 'Kerem\'in iki gönyeyi yan yana koyarak oluşturduğu birleşik açının ölçüsü kaç derecedir?',
+          choices: [
+            '75° (45° + 30° = 75°)',
+            '90° (45° + 45° = 90°)',
+            '105° (45° + 60° = 105°)',
+            '120° (60° + 60° = 120°)'
+          ],
+          correctIndex: 0,
+          explanation: 'İkizkenar dik gönyenin dar açıları 45°\'dir. Çeşitkenar dik gönyenin (30°-60°-90°) en küçük açısı ise 30°\'dir. Yan yana geldiklerinde 45° + 30° = 75°\'lik bir açı oluştururlar.'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • İÇ VE DIŞ ÖLÇEK KARIŞIKLIĞI ANALİZİ',
+          scenario: 'Zeynep, geniş açı olduğu bilinen bir KLM açısını iletkiyle ölçüyor. [LK kolunu soldaki 0° (dış ölçek) çizgisine hizalıyor fakat [LM kolunun denk geldiği yerde iç ölçekteki 55° sayısını okuyarak "Bu açı 55°\'dir" diyor.',
+          stem: 'Zeynep\'in ölçtüğü KLM geniş açısının gerçek ölçüsü kaç derecedir?',
+          choices: [
+            '35°',
+            '55°',
+            '125°',
+            '145°'
+          ],
+          correctIndex: 2,
+          explanation: 'İletkide aynı hizadaki iç ve dış ölçek sayılarının toplamı her zaman 180°\'dir. Yanlış ölçekte 55° okunduğuna göre doğru ölçekteki geniş açı değeri 180° - 55° = 125°\'dir.'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • DİJİTAL GEOMETRİ YAZILIMINDA DÖNME AÇISI',
+          scenario: 'Dinamik bir geometri yazılımında (teknolojik açı ölçme aracı) başlangıç noktası O olan iki ışın üst üste 0° konumunda durmaktadır. [OB ışını saat yönünün tersine dakikada 15° dönecek şekilde programlanıyor.',
+          stem: 'Program çalıştırıldıktan 7 dakika sonra dijital açıölçer ekranında s(AOB) kaç derece ve hangi açı türü olarak görünür?',
+          choices: [
+            '90° — Dik Açı',
+            '105° — Geniş Açı',
+            '115° — Geniş Açı',
+            '75° — Dar Açı'
+          ],
+          correctIndex: 1,
+          explanation: 'Dakikada 15° dönen ışın 7 dakikada 7 × 15° = 105° döner. 90° < 105° < 180° olduğu için oluşan açı Geniş Açıdır.'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • İLETKİ ÜZERİNDE BÜTÜNLER İKİ IŞIN',
+          scenario: 'Bir doğru üzerindeki O noktasına merkezi yerleştirilen iletkide, [OA ışını 0° çizgisini, [OB ışını 180° çizgisini göstermektedir. O noktasından çıkan [OC ve [OD ışınları ise sırasıyla sağdan itibaren 35° ve 125° çizgilerinden geçmektedir.',
+          stem: 'Buna göre [OC ve [OD ışınları arasındaki s(COD) açısı ile ilgili aşağıdakilerden hangisi doğrudur?',
+          choices: [
+            's(COD) = 90° olup iki ışın birbirine diktir ([OC ⊥ [OD).',
+            's(COD) = 80° olup dar açıdır.',
+            's(COD) = 160° olup geniş açıdır.',
+            's(COD) = 55° olup dar açıdır.'
+          ],
+          correctIndex: 0,
+          explanation: 'Aynı ölçek üzerinde 35° ve 125° çizgilerinden geçen iki ışın arasındaki açı farkı 125° - 35° = 90°\'dir. Ölçüsü 90° olan açı dik açıdır.'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • BÜYÜTEÇ ALTINDA AÇI ÖLÇÜMÜ DENEYİ',
+          scenario: 'Emre, kağıttaki 40°\'lik bir açıyı 3 kat büyüten bir büyüteç (mercek) arkasından inceliyor ve dijital ekran iletkisiyle açıyı tekrar ölçüyor.',
+          stem: 'Büyüteç altında görüntü 3 kat büyüdüğüne göre, dijital iletkinin göstereceği açı ölçüsü kaç derece olur?',
+          choices: [
+            '120° olur çünkü görüntü 3 kat büyümüştür.',
+            '40° olarak kalır çünkü büyüteç kolların arasındaki açıklığı (dönme miktarını) değiştirmez.',
+            '13,3° olur.',
+            '80° olur.'
+          ],
+          correctIndex: 1,
+          explanation: 'Açının ölçüsü kolların uzunluğuna veya şeklin yakınlaştırılmasına (zoom) bağlı değildir; iki ışın arasındaki dönme açıklığı değişmediği için açı yine 40° ölçülür.'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • SAAT KADRANI VE İLETKİ ÖLÇÜMÜ',
+          scenario: 'Duvar saatinin merkezi üzerine şeffaf bir tam daire (360°) açıölçer yerleştiriliyor. Saat tam 12:00 iken yelkovan 0° çizgisindedir. Saat 12:20 olduğunda akrep ile yelkovan arasındaki açı inceleniyor (akrebin sabit 12 üzerinde kaldığı varsayılan modelde).',
+          stem: '12 rakamı (0°) ile 4 rakamı arasındaki açıyı ölçen açıölçer kaç dereceyi gösterir?',
+          choices: [
+            '90°',
+            '100°',
+            '120°',
+            '150°'
+          ],
+          correctIndex: 2,
+          explanation: 'Tam daire açıölçer 360°\'dir ve saat kadranı 12 eş bölmeye ayrılmıştır. Her iki ardışık sayı arası 360° ÷ 12 = 30°\'dir. 12\'den 4\'e kadar 4 × 30° = 120° olur.'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • GÖNYE İLE AÇI TÜRÜ BELİRLEME STRATEJİSİ',
+          scenario: 'Yanında iletki bulunmayan ancak dik açılı bir gönyesi olan Elif, kağıttaki üç farklı açıyı (K, L ve M açıları) gönyenin 90°\'lik dik köşesiyle kontrol ediyor. K açısının kolu gönyenin içinde kalıyor, L açısının kolları gönyenin dik kenarlarıyla tam çakışıyor, M açısının kolu ise gönyenin dışına taşıyor.',
+          stem: 'Elif\'in yalnızca gönye kullanarak K, L ve M açılarının türleri hakkında yaptığı hangi sınıflandırma doğrudur?',
+          choices: [
+            'K: Dar Açı (<90°), L: Dik Açı (=90°), M: Geniş Açı (>90°)',
+            'K: Geniş Açı, L: Dik Açı, M: Dar Açı',
+            'K: Dik Açı, L: Dar Açı, M: Doğru Açı',
+            'Gönye ile açıların dar veya geniş olduğu anlaşılamaz.'
+          ],
+          correctIndex: 0,
+          explanation: 'Gönyenin dik köşesi 90° referansıdır. 90° köşesinin içinde kalan K açısı dar açı (<90°), tam çakışan L açısı dik açı (=90°), dışına taşan M açısı ise geniş açıdır (>90°).'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • ROBOT KOLU ROTASYON KALİBRASYONU',
+          scenario: 'Bir robotik kodlama atölyesinde robot kolu başlangıçta yatay masa yüzeyiyle 20° açı yapmaktadır. Öğrenci, robot kolunun masa yüzeyiyle 115° açı yapmasını istiyor.',
+          stem: 'İletki ölçeğine göre robot kolu mevcut konumundan aynı yönde kaç derece daha döndürülmelidir?',
+          choices: [
+            '85°',
+            '95°',
+            '115°',
+            '135°'
+          ],
+          correctIndex: 1,
+          explanation: 'Başlangıç konumu 20° ve hedef konum 115° olduğundan, robot kolunun dönmesi gereken ek açı miktarı iki değerin farkıdır: 115° - 20° = 95°.'
+        }
+      ];
+
+      // Simülasyonun 4 Rehberli Görev Tanımı (MAT.5.3.3 Açı Ölçme)
+      const SIM_STEPS = [
+        {
+          tool: 'acute',
+          tag: 'ARAÇ 1/4: İLETKİ İLE DAR AÇI ÖLÇÜMÜ',
+          title: 'Görev 1: İletki ile 45° Dar Açı Ölçümü',
+          instruction: 'İletkinin merkezini <strong>O köşesine</strong>, taban çizgisini <strong>[OA ışınına (0°)</strong> hizaladık. Sürgüyle <strong>[OB ışınını 45°</strong> değerine getirerek dar açıyı ölçün ve doğrulayın.',
+          hint: '💡 İpucu: [OA kolu sağdaki 0° çizgisinden başladığı için sağdan 0°, 10°, 20°... diye artan iç ölçeği takip edin.',
+          sliderLabel: 'İletki Dar Açı Ölçüsü s(AOB):',
+          min: 10,
+          max: 85,
+          step: 5,
+          defaultVal: 30,
+          targetVal: 45,
+          unit: '°',
+          notation: 'GÖSTERİM: s(AOB) = 45° (Dar Açı < 90°)'
+        },
+        {
+          tool: 'obtuse',
+          tag: 'ARAÇ 2/4: İLETKİ İLE GENİŞ AÇI ÖLÇÜMÜ',
+          title: 'Görev 2: İletki ile 135° Geniş Açı Ölçümü',
+          instruction: 'Taban kolu [OA yine 0° çizgisindedir. İkinci kol <strong>[OB ışınını 135°</strong> değerine döndürerek geniş açıyı iletki üzerinde ölçün ve doğrulayın.',
+          hint: '💡 İpucu: 135° çizgisinin üzerinde hem 135° hem de 45° yazar. Açımız 90°\'yi geçtiği (geniş açı olduğu) için 0°\'dan başlayan ölçekteki 135° değerini okuruz.',
+          sliderLabel: 'İletki Geniş Açı Ölçüsü s(AOB):',
+          min: 95,
+          max: 170,
+          step: 5,
+          defaultVal: 115,
+          targetVal: 135,
+          unit: '°',
+          notation: 'GÖSTERİM: s(AOB) = 135° (90° < Geniş Açı < 180°)'
+        },
+        {
+          tool: 'diff',
+          tag: 'ARAÇ 3/4: SIFIRDAN BAŞLAMAYAN KOLLARIN FARKI',
+          title: 'Görev 3: 30° ile 140° Arasındaki Açıyı Fark İle Ölçme',
+          instruction: 'İlk kol <strong>[OK = 30°</strong> çizgisinde sabittir. İkinci kol <strong>[OL\'yi 140° çizgisine</strong> ulaştıracak şekilde açı farkını <strong>110°</strong> yapın (<code>140° - 30° = 110°</code>) ve doğrulayın.',
+          hint: '💡 İpucu: Açının kolu 0° çizgisinde değilse, iki kolun iletkide gösterdiği derecelerin farkı alınır: |140° - 30°| = 110°.',
+          sliderLabel: 'İki Kol Arasındaki Açı Farkı s(KOL):',
+          min: 50,
+          max: 150,
+          step: 10,
+          defaultVal: 80,
+          targetVal: 110,
+          unit: '°',
+          notation: 'FARK FORMÜLÜ: s(KOL) = |140° - 30°| = 110°'
+        },
+        {
+          tool: 'right',
+          tag: 'ARAÇ 4/4: GÖNYE VE İLETKİ İLE DİK AÇI KONTROLÜ',
+          title: 'Görev 4: Gönye ve İletki ile 90° Dik Açı Doğrulaması',
+          instruction: 'Hem iletkinin tepe noktasını hem de dik gönyenin köşesini kullanarak <strong>[PR ve [PS ışınları arasındaki açıyı tam 90° (Dik Açı)</strong> konumuna getirin.',
+          hint: '💡 İpucu: 90° hem iç hem dış ölçekte aynı çizgidedir ve dik gönyenin dik kenarlarıyla tam çakışır ([PR ⊥ [PS).',
+          sliderLabel: 'Gönye & İletki Kontrol Açısı s(RPS):',
+          min: 60,
+          max: 120,
+          step: 5,
+          defaultVal: 75,
+          targetVal: 90,
+          unit: '°',
+          notation: 'GÖSTERİM: s(RPS) = 90° ([PR ⊥ [PS Dik Açı)'
+        }
+      ];
+
+      let state = {
+        currentStage: 'stage-1',
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraPoolVisible: false,
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
+            if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
+            if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDoneCount = state.completedSimSteps.filter(Boolean).length;
+          const miniDoneCount = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrectCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+
+          const totalPercent = Math.min(100, Math.round(
+            (simDoneCount / 4) * 40 +
+            (miniDoneCount / 3) * 30 +
+            (Object.keys(state.extraAnswers).length / 10) * 30
+          ));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '5hafta-3',
+            grade: 5,
+            week: 3,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrectCount,
+            progressPercent: totalPercent,
+            updatedAt: new Date().toISOString()
+          }));
+
+          const badge = document.getElementById('module-progress-badge');
+          if (badge) badge.textContent = `İlerleme: %${totalPercent}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      stageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchStage(btn.getAttribute('data-stage-target'));
+        });
+      });
+
+      function switchStage(stageId) {
+        state.currentStage = stageId;
+        stageButtons.forEach(b => {
+          b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId);
+        });
+
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+
+        if (stageId === 'stage-1') {
+          s1.classList.remove('is-hidden');
+          s2.classList.add('is-hidden');
+        } else if (stageId === 'stage-2') {
+          s1.classList.add('is-hidden');
+          s2.classList.remove('is-hidden');
+        } else if (stageId === 'stage-3') {
+          s3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => {
+        switchStage('stage-3');
+      });
+
+      function drawSvgGrid() {
+        const gridGroup = document.getElementById('svg-grid-layer');
+        let html = '';
+        for (let x = 40; x <= 720; x += 40) {
+          html += `<line x1="${x}" y1="0" x2="${x}" y2="400" />`;
+        }
+        for (let y = 40; y <= 360; y += 40) {
+          html += `<line x1="0" y1="${y}" x2="760" y2="${y}" />`;
+        }
+        gridGroup.innerHTML = html;
+      }
+
+      // Yardımcı: Yarım Daire İletki SVG Çizimi
+      function renderProtractorSvg(cx, cy, R) {
+        let ticks = '';
+        for (let deg = 0; deg <= 180; deg += 10) {
+          const rad = (deg * Math.PI) / 180;
+          const xOuter = cx + R * Math.cos(rad);
+          const yOuter = cy - R * Math.sin(rad);
+          const tickLen = deg % 30 === 0 ? 16 : 9;
+          const xInner = cx + (R - tickLen) * Math.cos(rad);
+          const yInner = cy - (R - tickLen) * Math.sin(rad);
+
+          ticks += `<line x1="${xInner}" y1="${yInner}" x2="${xOuter}" y2="${yOuter}" stroke="#141413" stroke-width="${deg % 30 === 0 ? 2 : 1}" opacity="0.65"/>`;
+
+          if (deg % 30 === 0 || deg === 45 || deg === 135) {
+            const labelR = R - 28;
+            const lx = cx + labelR * Math.cos(rad);
+            const ly = cy - labelR * Math.sin(rad);
+            ticks += `<text x="${lx}" y="${ly + 4}" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0052CC">${deg}°</text>`;
+          }
+        }
+
+        return `
+          <!-- İletki Gövdesi -->
+          <path d="M ${cx - R} ${cy} A ${R} ${R} 0 0 1 ${cx + R} ${cy} Z" fill="rgba(0, 82, 204, 0.06)" stroke="#0052CC" stroke-width="2.5"/>
+          <path d="M ${cx - R * 0.55} ${cy} A ${R * 0.55} ${R * 0.55} 0 0 1 ${cx + R * 0.55} ${cy} Z" fill="rgba(255,255,255,0.45)" stroke="rgba(0, 82, 204, 0.3)" stroke-width="1.5"/>
+          <line x1="${cx - R}" y1="${cy}" x2="${cx + R}" y2="${cy}" stroke="#141413" stroke-width="2"/>
+          <line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - R}" stroke="rgba(20,20,19,0.2)" stroke-width="1.5" stroke-dasharray="4,4"/>
+          ${ticks}
+        `;
+      }
+
+      const slider = document.getElementById('sim-param-slider');
+      const sliderLabel = document.getElementById('slider-label');
+      const sliderReadout = document.getElementById('slider-value-readout');
+
+      function resetFeedbackForStep(index) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[index]) {
+          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz sürgüyle tekrar deney yapabilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${index + 1} Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(index, preserveFeedback = false) {
+        state.currentSimStep = index;
+        const stepCfg = SIM_STEPS[index];
+
+        document.getElementById('sim-step-counter').textContent = `Adım ${index + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag;
+        document.getElementById('mission-title').textContent = stepCfg.title;
+        document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
+        document.getElementById('mission-hint').innerHTML = stepCfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {
+          pill.classList.toggle('is-active', idx === index);
+          pill.classList.toggle('is-done', state.completedSimSteps[idx]);
+        });
+
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+          btn.classList.toggle('is-active', btn.getAttribute('data-tool') === stepCfg.tool);
+        });
+
+        slider.min = stepCfg.min;
+        slider.max = stepCfg.max;
+        slider.step = stepCfg.step;
+        slider.value = state.completedSimSteps[index] ? stepCfg.targetVal : stepCfg.defaultVal;
+
+        if (!preserveFeedback) {
+          resetFeedbackForStep(index);
+        }
+
+        updateSimCanvas();
+        updateProcessChecklist();
+      }
+
+      function updateSimCanvas() {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const layer = document.getElementById('svg-construction-layer');
+
+        sliderLabel.textContent = `${stepCfg.sliderLabel} ${val}${stepCfg.unit}`;
+        sliderReadout.textContent = `${val}${stepCfg.unit}`;
+        document.getElementById('telemetry-tool').textContent = `AKTİF DENEY: ${stepCfg.title}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation;
+
+        const cx = 380, cy = 320, R = 220;
+
+        if (stepCfg.tool === 'acute' || stepCfg.tool === 'obtuse') {
+          const isTarget = val === stepCfg.targetVal;
+          const rad = (val * Math.PI) / 180;
+          const rayLen = 235;
+          const bx = cx + rayLen * Math.cos(rad);
+          const by = cy - rayLen * Math.sin(rad);
+          const arcR = 75;
+          const arcX = cx + arcR * Math.cos(rad);
+          const arcY = cy - arcR * Math.sin(rad);
+
+          document.getElementById('telemetry-measurement').textContent = `İLETKİ OKUMASI: s(AOB) = ${val}° (Ters Ölçek: ${180 - val}°) ${isTarget ? '✓ HEDEF DOĞRULANDI' : ''}`;
+
+          layer.innerHTML = `
+            <text x="380" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+              ${isTarget ? `✓ DOĞRU ÖLÇÜM: [OA (0°) ile [OB arasındaki açı tam ${val}° olarak ölçüldü!` : `İletki Ölçümü: s(AOB) = ${val}° — Hedef açı: ${stepCfg.targetVal}°`}
+            </text>
+
+            ${renderProtractorSvg(cx, cy, R)}
+
+            <!-- Açı Dilimi -->
+            <path d="M ${cx} ${cy} L ${cx + arcR} ${cy} A ${arcR} ${arcR} 0 0 0 ${arcX} ${arcY} Z" fill="${isTarget ? 'rgba(0,135,90,0.22)' : 'rgba(255,85,0,0.18)'}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="2.5"/>
+
+            <!-- Taban Kolu [OA (0°) -->
+            <line x1="${cx}" y1="${cy}" x2="${cx + rayLen}" y2="${cy}" stroke="#0052CC" stroke-width="5" marker-end="url(#arrow-blue)"/>
+            <!-- Hareketli Kol [OB -->
+            <line x1="${cx}" y1="${cy}" x2="${bx}" y2="${by}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="5" marker-end="${isTarget ? 'url(#arrow-green)' : 'url(#arrow-orange)'}"/>
+
+            <circle cx="${cx}" cy="${cy}" r="8" fill="#141413"/>
+            <text x="${cx}" y="${cy + 26}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">O (Köşe / İletki Merkezi)</text>
+            <text x="${cx + rayLen + 14}" y="${cy + 5}" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#0052CC">A (0°)</text>
+            <text x="${bx + (val > 90 ? -24 : 16)}" y="${by - 10}" font-family="Space Grotesk" font-size="16" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">B (${val}°)</text>
+            <text x="${cx + (arcR + 28) * Math.cos(rad / 2)}" y="${cy - (arcR + 28) * Math.sin(rad / 2)}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">${val}°</text>
+          `;
+        } else if (stepCfg.tool === 'diff') {
+          const deg1 = 30;
+          const deg2 = deg1 + val; // val=110 iken deg2=140°
+          const isTarget = val === 110;
+          const rad1 = (deg1 * Math.PI) / 180;
+          const rad2 = (deg2 * Math.PI) / 180;
+          const rayLen = 235;
+          const x1 = cx + rayLen * Math.cos(rad1), y1 = cy - rayLen * Math.sin(rad1);
+          const x2 = cx + rayLen * Math.cos(rad2), y2 = cy - rayLen * Math.sin(rad2);
+          const arcR = 85;
+          const ax1 = cx + arcR * Math.cos(rad1), ay1 = cy - arcR * Math.sin(rad1);
+          const ax2 = cx + arcR * Math.cos(rad2), ay2 = cy - arcR * Math.sin(rad2);
+          const midRad = ((deg1 + deg2) / 2 * Math.PI) / 180;
+
+          document.getElementById('telemetry-measurement').textContent = `KOL 1: 30° | KOL 2: ${deg2}° ⇒ FARK: |${deg2}° - 30°| = ${val}° ${isTarget ? '✓ DOĞRULANDI' : ''}`;
+
+          layer.innerHTML = `
+            <text x="380" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isTarget ? '#00875A' : '#D97706'}">
+              ${isTarget ? '✓ FARK ÖLÇÜMÜ DOĞRULANDI: |140° - 30°| = 110° (Sıfırdan başlamayan kolların farkı)' : `Kol 1 = 30°, Kol 2 = ${deg2}° ⇒ Fark = ${deg2}° - 30° = ${val}° (Hedef: 140° - 30° = 110°)`}
+            </text>
+
+            ${renderProtractorSvg(cx, cy, R)}
+
+            <!-- Açı Fark Dilimi -->
+            <path d="M ${cx} ${cy} L ${ax1} ${ay1} A ${arcR} ${arcR} 0 0 0 ${ax2} ${ay2} Z" fill="${isTarget ? 'rgba(0,135,90,0.22)' : 'rgba(255,85,0,0.18)'}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="2.5"/>
+
+            <!-- Sabit Kol 1 [OK (30°) -->
+            <line x1="${cx}" y1="${cy}" x2="${x1}" y2="${y1}" stroke="#0052CC" stroke-width="5" marker-end="url(#arrow-blue)"/>
+            <!-- Hareketli Kol 2 [OL -->
+            <line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="${isTarget ? '#00875A' : '#FF5500'}" stroke-width="5" marker-end="${isTarget ? 'url(#arrow-green)' : 'url(#arrow-orange)'}"/>
+
+            <circle cx="${cx}" cy="${cy}" r="8" fill="#141413"/>
+            <text x="${cx}" y="${cy + 26}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">O (Merkez)</text>
+            <text x="${x1 + 16}" y="${y1}" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#0052CC">K (30°)</text>
+            <text x="${x2 - 22}" y="${y2 - 12}" font-family="Space Grotesk" font-size="15" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">L (${deg2}°)</text>
+            <text x="${cx + (arcR + 30) * Math.cos(midRad)}" y="${cy - (arcR + 30) * Math.sin(midRad)}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isTarget ? '#00875A' : '#FF5500'}">${deg2}° - 30° = ${val}°</text>
+          `;
+        } else if (stepCfg.tool === 'right') {
+          const isRight = val === 90;
+          const rad = (val * Math.PI) / 180;
+          const rayLen = 235;
+          const sx = cx + rayLen * Math.cos(rad);
+          const sy = cy - rayLen * Math.sin(rad);
+
+          document.getElementById('telemetry-measurement').textContent = `GÖNYE & İLETKİ KONTROLÜ: s(RPS) = ${val}° ${isRight ? '✓ DİK AÇI ([PR ⊥ [PS)' : (val < 90 ? '(Dar Açı)' : '(Geniş Açı)')}`;
+
+          layer.innerHTML = `
+            <text x="380" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isRight ? '#00875A' : '#D97706'}">
+              ${isRight ? '✓ DİK AÇI DOĞRULANDI: Gönye dik köşesi ve iletki 90° çizgisi tam çakıştı ([PR ⊥ [PS)!' : `Şu anki açı: ${val}° — Gönye dik köşesiyle tam çakışma için 90° yapın`}
+            </text>
+
+            ${renderProtractorSvg(cx, cy, R)}
+
+            <!-- Referans Dik Gönye Üçgeni (90° Şablonu) -->
+            <polygon points="${cx},${cy} ${cx + 130},${cy} ${cx},${cy - 130}" fill="rgba(0, 135, 90, 0.12)" stroke="#00875A" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="${cx + 55}" y="${cy - 45}" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#00875A">Gönye (90°)</text>
+
+            ${isRight ? `
+              <rect x="${cx}" y="${cy - 28}" width="28" height="28" fill="rgba(0,135,90,0.28)" stroke="#00875A" stroke-width="2.5"/>
+              <circle cx="${cx + 14}" cy="${cy - 14}" r="3" fill="#00875A"/>
+            ` : ''}
+
+            <!-- Taban Kolu [PR -->
+            <line x1="${cx}" y1="${cy}" x2="${cx + rayLen}" y2="${cy}" stroke="#0052CC" stroke-width="5" marker-end="url(#arrow-blue)"/>
+            <!-- Hareketli Kol [PS -->
+            <line x1="${cx}" y1="${cy}" x2="${sx}" y2="${sy}" stroke="${isRight ? '#00875A' : '#FF5500'}" stroke-width="5" marker-end="${isRight ? 'url(#arrow-green)' : 'url(#arrow-orange)'}"/>
+
+            <circle cx="${cx}" cy="${cy}" r="8" fill="#141413"/>
+            <text x="${cx}" y="${cy + 26}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700">P (Köşe)</text>
+            <text x="${cx + rayLen + 14}" y="${cy + 5}" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#0052CC">R (0°)</text>
+            <text x="${sx}" y="${sy - 14}" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="${isRight ? '#00875A' : '#FF5500'}">S (${val}°)</text>
+          `;
+        }
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+
+        if (val === stepCfg.targetVal) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} ölçümü başarıyla doğrulandı (${val}${stepCfg.unit}). "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Şu anki değeriniz <strong>${val}${stepCfg.unit}</strong>. Ölçümü doğrulamak için hedef değer olan <strong>${stepCfg.targetVal}${stepCfg.unit}</strong> konumuna getirin.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.defaultVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < SIM_STEPS.length - 1) {
+          loadSimStep(state.currentSimStep + 1);
+        } else {
+          switchStage('stage-2');
+        }
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          loadSimStep(Number(pill.getAttribute('data-step')));
+        });
+      });
+
+      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          loadSimStep(idx);
+        });
+      });
+
+      function updateProcessChecklist() {
+        const doneCount = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${doneCount >= 1 ? '✅' : '⬜'} <strong>a)</strong> Açı ölçmek için gerekli araç ve teknolojiyi tanır.`;
+        document.getElementById('proc-b').innerHTML = `${doneCount >= 2 ? '✅' : '⬜'} <strong>b)</strong> Açı ölçmek için uygun araç ve teknolojiyi belirler.`;
+        document.getElementById('proc-c').innerHTML = `${doneCount >= 4 ? '✅' : '⬜'} <strong>c)</strong> Açı ölçmek için uygun araç ve teknolojiyi kullanır.`;
+
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', doneCount === 4);
+      }
+
+      // AŞAMA 2: Mini Kontrol
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const miniId = btn.getAttribute('data-mini');
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackEl = document.getElementById(`mini-feedback-${miniId}`);
+
+          document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`).forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+
+          if (isCorrect) {
+            btn.classList.add('is-correct');
+            feedbackEl.style.color = 'var(--status-success)';
+            feedbackEl.textContent = '✓ Doğru! Açı ölçme aracı ve ölçek kuralı doğrulandı.';
+            state.miniCheckAnswers[miniId] = true;
+          } else {
+            btn.classList.add('is-wrong');
+            feedbackEl.style.color = 'var(--status-error)';
+            feedbackEl.textContent = '✕ Tekrar düşünün: İletki merkezini ve sıfır başlangıç ölçeğini kontrol edin.';
+          }
+
+          const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalMiniCorrect} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalMiniCorrect === 3);
+          saveState();
+        });
+      });
+
+      // AŞAMA 3: Ek Soru Havuzu
+      const btnExtraYes = document.getElementById('btn-extra-yes');
+      const btnExtraNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleViewModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnExtraYes.addEventListener('click', () => {
+        state.extraPoolVisible = true;
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnExtraYes.setAttribute('aria-expanded', 'true');
+
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnExtraNo.addEventListener('click', () => {
+        state.extraPoolVisible = false;
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnExtraYes.setAttribute('aria-expanded', 'false');
+
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleViewModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleViewModeBtn.textContent = state.extraViewMode === 'single'
+          ? 'Tümünü Liste Görünümünde Aç'
+          : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsContainer = document.getElementById('question-pills-container');
+        const renderArea = document.getElementById('questions-render-area');
+
+        pillsContainer.innerHTML = EXTRA_QUESTIONS.map((q, idx) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && idx === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) {
+            cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          }
+          return `<button type="button" class="${cls}" data-q-index="${idx}" aria-label="Soru ${q.id}">${q.id}</button>`;
+        }).join('');
+
+        pillsContainer.querySelectorAll('.q-pill').forEach(pill => {
+          pill.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(pill.getAttribute('data-q-index'));
+            if (state.extraViewMode === 'list') {
+              const cardEl = document.getElementById(`extra-q-card-${state.currentQuestionIndex + 1}`);
+              if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              renderExtraQuestions();
+            }
+          });
+        });
+
+        const questionsToDisplay = state.extraViewMode === 'single'
+          ? [EXTRA_QUESTIONS[state.currentQuestionIndex]]
+          : EXTRA_QUESTIONS;
+
+        const letters = ['A', 'B', 'C', 'D'];
+
+        renderArea.innerHTML = questionsToDisplay.map(q => {
+          const chosenIdx = state.extraAnswers[q.id];
+          const isAnswered = chosenIdx !== undefined;
+          const isCorrect = isAnswered && chosenIdx === q.correctIndex;
+
+          return `
+            <article class="new-gen-question-card" id="extra-q-card-${q.id}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+
+              <div class="question-scenario-box">
+                ${q.scenario}
+              </div>
+
+              <p class="question-stem">${q.stem}</p>
+
+              <div class="choices-grid">
+                ${q.choices.map((choiceText, cIdx) => {
+                  let btnCls = 'choice-btn';
+                  if (isAnswered) {
+                    if (cIdx === q.correctIndex) btnCls += ' is-correct';
+                    else if (cIdx === chosenIdx) btnCls += ' is-wrong';
+                  }
+                  return `
+                    <button type="button" class="${btnCls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                      <span class="choice-btn__letter">${letters[cIdx]}</span>
+                      <span>${choiceText}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              ${isAnswered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; margin-bottom:0.3rem; color:${isCorrect ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${isCorrect ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm &amp; Muhakeme:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>
+                    ← Önceki Soru
+                  </button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === EXTRA_QUESTIONS.length - 1 ? 'disabled' : ''}>
+                    Sonraki Soru →
+                  </button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        renderArea.querySelectorAll('.choice-btn').forEach(choiceBtn => {
+          choiceBtn.addEventListener('click', () => {
+            const qId = Number(choiceBtn.getAttribute('data-qid'));
+            const cIdx = Number(choiceBtn.getAttribute('data-cidx'));
+            state.extraAnswers[qId] = cIdx;
+            updateExtraScore();
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prevBtn = document.getElementById('prev-q-btn');
+        const nextBtn = document.getElementById('next-q-btn');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex > 0) {
+              state.currentQuestionIndex--;
+              renderExtraQuestions();
+            }
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex < EXTRA_QUESTIONS.length - 1) {
+              state.currentQuestionIndex++;
+              renderExtraQuestions();
+            }
+          });
+        }
+
+        updateExtraScore();
+      }
+
+      function updateExtraScore() {
+        const correctCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+          const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+          return q && q.correctIndex === ansIdx;
+        }).length;
+
+        const scoreEl = document.getElementById('extra-score-display');
+        if (scoreEl) scoreEl.textContent = `Doğru: ${correctCount} / 10`;
+
+        const answeredCount = Object.keys(state.extraAnswers).length;
+        document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
+      }
+
+      initTheme();
+      loadState();
+      drawSvgGrid();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>

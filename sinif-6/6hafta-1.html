@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Sınıf 1. Hafta (`6hafta-1`) | Bir Doğal Sayının Çarpanları ve Katları — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 6. Sınıf Matematik 1. Hafta (MAT.6.1.1) Bir Doğal Sayının Çarpanları ve Katları aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 6HAFTA-1 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-6">6. SINIF • 1. HAFTA</span>
+        <span class="tech-badge mono">MAT.6.1.1</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn">Blueprint Koyu Mod</button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 6hafta-1.html</span>
+          <span class="tech-badge">14–18 Eylül • 5 Ders Saati</span>
+          <span class="tech-badge">1. TEMA: SAYILAR VE NİCELİKLER (1)</span>
+        </div>
+        <h1 class="week-header-banner__title">Bir Doğal Sayının Çarpanları ve Katları Muhakeme Atölyesi</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.6.1.1):</strong> Karşılaştığı problem durumlarında bir doğal sayının çarpan ve katlarına yönelik muhakeme yapabilme.
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">Çarpan Dikdörtgeni &amp; Katlar Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- AŞAMA 1: AKTİF ÖĞRENME SİMÜLASYONU -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <aside class="guide-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700;">KEŞİF ADIMLARI (4 GÖREV)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Çarpan</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Gökkuşağı</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. Katlar</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Muhakeme</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">ARAÇ 1/4: DİKDÖRTGEN DİZİLİM LABORATUVARI</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: 24 Birim Karenin Dikdörtgen Çarpan Modeli</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              Sürgüyle satır sayısını <strong>4 satır</strong> olarak ayarlayıp 24 birim karenin hiç artmadan <strong>4 × 6</strong> dikdörtgeni oluşturduğunu gözlemleyin ve <strong>"Görevi Doğrula"</strong> butonuna basın.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            💡 <strong>Pedagojik İpucu:</strong> Bir doğal sayıyı kalansız bölen her sayı, o sayının aynı zamanda bir <strong>çarpanıdır</strong>.
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            Sürgüyü hareket ettirerek satır sayısının 24 sayısını kalansız bölüp bölmediğini inceleyin.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">✓ Görevi Doğrula</button>
+            <button type="button" class="btn" id="next-step-btn">Sonraki Adım →</button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.6.1.1):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;">
+              <li id="proc-a">⬜ <strong>a)</strong> Bir doğal sayının çarpan ve katlarına yönelik varsayımda bulunur.</li>
+              <li id="proc-b">⬜ <strong>b)</strong> Örnek durumlardaki ilişkileri inceleyerek genellemeleri belirler.</li>
+              <li id="proc-c">⬜ <strong>c)</strong> Genellemelerin varsayımını karşılayıp karşılamadığını değerlendirir.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group">
+              <button type="button" class="tool-btn is-active" data-step-btn="0">🧱 24'ün Çarpan Dizilimi</button>
+              <button type="button" class="tool-btn" data-step-btn="1">🌈 36'nın Çarpan Çiftleri</button>
+              <button type="button" class="tool-btn" data-step-btn="2">🚀 8'in Katları Bandı</button>
+              <button type="button" class="tool-btn" data-step-btn="3">⚖️ Ortak Kat / Bölünebilme</button>
+            </div>
+            <button type="button" class="btn btn--sm" id="sim-auto-target-btn">Hedef Değeri Göster</button>
+          </div>
+
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              Satır Sayısı (Bölen Adayı): 3
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="1" max="12" step="1" value="3" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">3</span>
+            </div>
+          </div>
+
+          <div class="canvas-viewport">
+            <svg id="factor-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Çarpanlar ve Katlar Görsel Simülasyon Alanı"></svg>
+          </div>
+
+          <div class="canvas-telemetry">
+            <span id="telemetry-left">HEDEF SAYI: 24</span>
+            <span id="telemetry-mid">ÇARPAN DENEMESİ: 3 × 8 = 24</span>
+            <span id="telemetry-right" style="color:var(--accent-signal); font-weight:700;">KALAN: 0 (Tam Çarpan!)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-6">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Çarpan ve Kat Muhakeme Kontrolü (MAT.6.1.1)
+            </h2>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge">Doğrulanan: 0 / 3</div>
+        </div>
+
+        <div class="assessment-grid">
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • ÇARPAN SAYISI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              30 doğal sayısının tüm pozitif doğal sayı çarpanları (bölenleri) kaç tanedir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">A) 6 tane (1, 2, 3, 5, 10, 30)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">B) 8 tane (1, 2, 3, 5, 6, 10, 15, 30)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) 9 tane</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem;"></div>
+          </article>
+
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • KAT MUHAKEMESİ</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Aşağıdaki sayılardan hangisi 12 doğal sayısının 50 ile 90 arasındaki katlarından biri DEĞİLDİR?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">A) 60 (12 × 5)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">B) 70 (12'ye kalansız bölünmez)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) 84 (12 × 7)</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem;"></div>
+          </article>
+
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • TAM KARE ÇARPAN ÖZELLİĞİ</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              36 sayısının çarpanları küçükten büyüğe (1, 2, 3, 4, 6, 9, 12, 18, 36) dizildiğinde tek sayıda (9 adet) çarpanı olmasının nedeni nedir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">A) 6 × 6 = 36 olduğu için 6 çarpanının kendisiyle eşleşmesi (Tam kare olması)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">B) Çift sayı olması</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">C) 10'dan büyük olması</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-top:1rem;">
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">Aşama 3: Ek Soru Alanına İlerle →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AŞAMA 3: KOŞULLU 10 YENİ NESİL EK SORU KAPISI -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            6. Sınıf 1. Hafta (<strong>MAT.6.1.1 — Bir Doğal Sayının Çarpanları ve Katları</strong>) için hazırlanan <strong>10 adet yeni nesil muhakeme sorusunu</strong> açmak için "Evet" butonuna tıklayın.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Ek sorular gizli tutuldu. İstediğiniz an <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak 10 yeni nesil soruya ulaşabilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU 10 YENİ NESİL SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden>
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">6HAFTA-1 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+        <div style="display:flex; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-6" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">Tümünü Liste Görünümünde Aç</button>
+        </div>
+      </div>
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+    </section>
+
+  </main>
+
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div><strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB TYMM (2026-2027)</div>
+      <div class="mono" style="font-size:0.78rem;">Dosya: <code>sinif-6/6hafta-1.html</code> • Kazanım: <code>MAT.6.1.1</code></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_6hafta_1';
+
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • DİKDÖRTGEN ALAN VE ÇARPAN MUHAKEMESİ',
+          scenario: 'Bir peyzaj mimarı, alanı 48 m² olan dikdörtgen şeklinde bir çiçek bahçesi tasarlayacaktır. Bahçenin kısa ve uzun kenar uzunlukları metre cinsinden birer doğal sayı olacaktır.',
+          stem: 'Buna göre mimar birbirinden farklı kenar çiftlerine sahip kaç farklı dikdörtgen bahçe planı çizebilir? (Örn: 4 m × 12 m ile 12 m × 4 m aynı dikdörtgen kabul edilir.)',
+          choices: ['4 farklı dikdörtgen', '5 farklı dikdörtgen', '8 farklı dikdörtgen', '10 farklı dikdörtgen'],
+          correctIndex: 1,
+          explanation: '48 sayısının çarpan çiftleri: (1×48), (2×24), (3×16), (4×12) ve (6×8) olmak üzere toplam 5 farklı dikdörtgen oluşturur.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • ÇARPAN GÖKKUŞAĞI MODELİ',
+          scenario: 'Bir doğal sayının tüm pozitif çarpanları küçükten büyüğe doğru sıralanmıştır: 1, 2, A, 6, 9, B, 18, C. Baştan ve sondan eşit uzaklıktaki çarpanların çarpımı bu sayının kendisine eşittir.',
+          stem: 'Buna göre A + B + C toplamı kaçtır?',
+          choices: ['45', '48', '51', '54'],
+          correctIndex: 2,
+          explanation: 'Ortadaki iki çarpan 6 ve 9\'dur. Sayımız 6 × 9 = 54\'tür. Bu durumda: 1×C=54 ⇒ C=54, 2×18=36 değil! Dikkat: 2×18 = 36 olduğundan sayımız 36\'dır ve ortadaki 6 kendiyle çarpılır (6×6=36). Ancak dizide 8 terim varsa: 2×18=36 ise C=36, A×9=36 ⇒ A=4, 3×B=36 ⇒ dizi 1, 2, 3, 6, 9, 18, 54? Hayır: 2×18=36 ise 36\'nın çarpanları 9 tanedir. Burada 2×18=36 olduğundan C=36, 4×9=36 ⇒ A=3 ve 6×B=36 ⇒ B=12\'dir: (1, 2, 3, 4, 6, 9, 12, 18, 36). A=3, B=12, C=36 ise A+B+C = 3 + 12 + 36 = 51 olur.'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • PAKETLEME VE KALANSIZ BÖLÜNEBİLME',
+          scenario: 'Bir kütüphaneye bağışlanan 72 adet matematik kitabı, her pakette eşit sayıda kitap olacak ve hiç kitap artmayacak şekilde paketlenecektir. Paketlerdeki kitap sayısının 5\'ten fazla, 20\'den az olması istenmektedir.',
+          stem: 'Bu koşula uygun kaç farklı paketleme seçeneği vardır?',
+          choices: ['3 seçenek (6, 8, 12)', '4 seçenek (6, 8, 9, 12)', '5 seçenek (6, 8, 9, 12, 18)', '6 seçenek'],
+          correctIndex: 2,
+          explanation: '72\'nin çarpanları: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. 5 ile 20 arasındaki çarpanlar: 6, 8, 9, 12 ve 18 olmak üzere toplam 5 tanedir.'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • DOĞAL SAYININ KATLARI',
+          scenario: 'Otomatik bir sulama sistemi her 15 dakikada bir çalışmaktadır. Sistem ilk kez saat 08.00\'de (0. dakika) çalıştıktan sonra gün boyu periyodik olarak devam etmektedir.',
+          stem: 'Başlangıçtan itibaren geçen süre dakika cinsinden düşünüldüğünde, aşağıdakilerden hangisi sistemin çalıştığı dakikalardan (15\'in katlarından) biri DEĞİLDİR?',
+          choices: ['75. dakika', '105. dakika', '130. dakika', '150. dakika'],
+          correctIndex: 2,
+          explanation: '15\'in katları: 15, 30, 45, 60, 75, 90, 105, 120, 135, 150... 130 sayısı 15\'in tam katı değildir (15 × 8 = 120, 15 × 9 = 135).'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • ÇEVRE UZUNLUĞU MİNİMİZASYONU',
+          scenario: 'Eş kare fayanslardan 40 tanesi yan yana ve alt alta boşluk kalmadan dizilerek dikdörtgen bir pano oluşturulacaktır.',
+          stem: 'Oluşturulacak dikdörtgen panonun çevre uzunluğunun EN AZ olması için kenarlarda kaçar fayans kullanılmalıdır?',
+          choices: ['1 ve 40 fayans', '2 ve 20 fayans', '4 ve 10 fayans', '5 ve 8 fayans'],
+          correctIndex: 3,
+          explanation: 'Çarpımları sabit (40) olan iki doğal sayı birbirine ne kadar yakın seçilirse çevre uzunluğu o kadar küçük olur. 5 × 8 = 40 için çevre 2×(5+8) = 26 birimdir (en küçük).'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • HEM ÇARPAN HEM KAT İLİŞKİSİ',
+          scenario: 'Ali aklından iki basamaklı bir K doğal sayısı tutuyor. Bu K sayısı hem 6\'nın bir katı hem de 72\'nin bir çarpanıdır (bölenidir).',
+          stem: 'Buna göre Ali\'nin aklından tuttuğu iki basamaklı K sayısı kaç farklı değer alabilir?',
+          choices: ['3 farklı değer (12, 24, 36)', '4 farklı değer (12, 18, 24, 36)', '5 farklı değer (12, 18, 24, 36, 72)', '6 farklı değer'],
+          correctIndex: 2,
+          explanation: '72\'nin iki basamaklı çarpanları: 12, 18, 24, 36, 72. Bunların tamamı aynı zamanda 6\'nın tam katıdır (6×2, 6×3, 6×4, 6×6, 6×12). Dolayısıyla 5 farklı değer alır.'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • ASAL VE ÇARPAN KEŞFİ',
+          scenario: 'Bir dijital şifreleme cihazı, girilen sayının kendisi hariç tüm pozitif çarpanlarını toplayarak "Güvenlik Puanı" üretmektedir. Örneğin 10 sayısı için 1 + 2 + 5 = 8 puan üretmektedir.',
+          stem: 'Cihaza 28 sayısı girildiğinde üretilecek Güvenlik Puanı kaç olur?',
+          choices: ['24', '28', '32', '56'],
+          correctIndex: 1,
+          explanation: '28\'in tüm çarpanları: 1, 2, 4, 7, 14, 28. Kendisi (28) hariç toplamı: 1 + 2 + 4 + 7 + 14 = 28\'dir. (Kendisi hariç çarpanları toplamı kendisine eşit olan sayılara Mükemmel Sayı denir!)'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • ORTAK KAT PROBLEMİ',
+          scenario: 'Bir marangoz elindeki çıtaları hiç parça artmadan 9\'ar cm\'lik veya 12\'şer cm\'lik eş parçalara ayırabilmektedir. Çıtanın boyunun 100 cm\'den uzun, 120 cm\'den kısa olduğu bilinmektedir.',
+          stem: 'Buna göre bu çıtanın boyu kaç santimetredir?',
+          choices: ['104 cm', '108 cm', '112 cm', '116 cm'],
+          correctIndex: 1,
+          explanation: 'Çıtanın boyu hem 9\'un hem de 12\'nin katı olmalıdır. 9 ve 12\'nin en küçük ortak katı 36\'dır. 36\'nın katları: 36, 72, 108, 144. 100 ile 120 arasındaki değer 108 cm\'dir.'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • ÇARPAN AĞACI MUHAKEMESİ',
+          scenario: 'Bir doğal sayının en büyük çarpanı ile en küçük çarpanının toplamı 65\'tir.',
+          stem: 'Buna göre bu doğal sayının rakamları toplamı kaçtır?',
+          choices: ['9', '10', '11', '12'],
+          correctIndex: 1,
+          explanation: 'Her doğal sayının en küçük pozitif çarpanı 1, en büyük çarpanı ise kendisidir (N). N + 1 = 65 ⇒ N = 64 olur. 64 sayısının rakamları toplamı 6 + 4 = 10\'dur.'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • KONTEYNER YERLEŞİMİ',
+          scenario: 'Bir lojistik deposuna 90 adet koli gelecektir. Depo sorumlusu kolileri her sırada eşit sayıda koli olacak şekilde dizmek istiyor.',
+          stem: 'Aşağıdaki sıra sayılarından hangisi seçilirse son sırada eksik koli kalır (tam bölünmez)?',
+          choices: ['15 sıra', '18 sıra', '20 sıra', '30 sıra'],
+          correctIndex: 2,
+          explanation: '90 ÷ 15 = 6, 90 ÷ 18 = 5, 90 ÷ 30 = 3 (kalansız bölünür). Ancak 90 ÷ 20 işleminde bölüm 4, kalan 10\'dur; yani 20 sayısı 90\'ın bir çarpanı değildir.'
+        }
+      ];
+
+      const SIM_STEPS = [
+        {
+          tag: 'ARAÇ 1/4: 24\'ÜN DİKDÖRTGEN ÇARPAN DİZİLİMİ',
+          title: 'Görev 1: 24 Birim Karenin 4 Satırlık Çarpan Modeli',
+          instruction: 'Sürgüyü <strong>4 satır</strong> değerine getirerek 24 birim karenin hiç artmadan <strong>4 × 6</strong> dikdörtgeni oluşturduğunu doğrulayın.',
+          hint: '💡 İpucu: Kalan 0 olduğunda seçilen satır sayısı ve sütun sayısı 24\'ün birer çarpanıdır.',
+          sliderLabel: 'Satır Sayısı (Bölen Adayı):',
+          min: 1, max: 12, step: 1, defaultVal: 3, targetVal: 4
+        },
+        {
+          tag: 'ARAÇ 2/4: 36\'NIN ÇARPAN ÇİFTLERİ (TAM KARE KEŞFİ)',
+          title: 'Görev 2: 36 Sayısının Kare Çarpan Çiftini (6 × 6) Bulun',
+          instruction: 'Sürgüyü <strong>6</strong> değerine getirerek 36 birim karenin <strong>6 × 6 tam kare</strong> dizilimini oluşturun ve doğrulayın.',
+          hint: '💡 İpucu: 36\'nın çarpanları (1, 2, 3, 4, 6, 9, 12, 18, 36) toplam 9 tanedir çünkü 6 kendisiyle eşleşir.',
+          sliderLabel: '36 İçin Çarpan Adayı:',
+          min: 1, max: 12, step: 1, defaultVal: 4, targetVal: 6
+        },
+        {
+          tag: 'ARAÇ 3/4: 8\'İN KATLARI SIÇRAMA BANDI',
+          title: 'Görev 3: 8 Doğal Sayısının 7. Katını Keşfedin',
+          instruction: 'Kat çarpanı sürgüsünü <strong>7</strong> değerine getirerek 8\'in 7. katının <strong>56</strong> olduğunu sayı bandında doğrulayın.',
+          hint: '💡 İpucu: Bir doğal sayının katları 1×n, 2×n, 3×n... şeklinde sınırsız devam eder.',
+          sliderLabel: '8 Sayısının Kaçıncı Katı (k):',
+          min: 1, max: 10, step: 1, defaultVal: 4, targetVal: 7
+        },
+        {
+          tag: 'ARAÇ 4/4: ORTAK BÖLEN VE MUHAKEME',
+          title: 'Görev 4: Hem 24\'ü Hem 36\'yı Bölen En Büyük Çarpan',
+          instruction: 'Sürgüyü 1\'den 12\'ye kadar deneyerek hem 24\'ü hem de 36\'yı kalansız bölen en büyük sayı olan <strong>12</strong> değerine getirin.',
+          hint: '💡 İpucu: 24 ÷ 12 = 2 (Kalan 0) ve 36 ÷ 12 = 3 (Kalan 0).',
+          sliderLabel: 'Ortak Bölen Adayı:',
+          min: 1, max: 12, step: 1, defaultVal: 6, targetVal: 12
+        }
+      ];
+
+      let state = {
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const p = JSON.parse(raw);
+            if (Array.isArray(p.completedSimSteps)) state.completedSimSteps = p.completedSimSteps;
+            if (p.miniCheckAnswers) state.miniCheckAnswers = p.miniCheckAnswers;
+            if (p.extraAnswers) state.extraAnswers = p.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDone = state.completedSimSteps.filter(Boolean).length;
+          const miniDone = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrect = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(x => x.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+          const pct = Math.min(100, Math.round((simDone / 4) * 40 + (miniDone / 3) * 30 + (Object.keys(state.extraAnswers).length / 10) * 30));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '6hafta-1',
+            grade: 6,
+            week: 1,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrect,
+            progressPercent: pct,
+            updatedAt: new Date().toISOString()
+          }));
+          document.getElementById('module-progress-badge').textContent = `İlerleme: %${pct}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const saved = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        themeBtn.textContent = saved === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const slider = document.getElementById('sim-param-slider');
+
+      function resetFeedbackForStep(idx) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[idx]) {
+          fb.innerHTML = `✅ <strong>Adım ${idx + 1} tamamlandı.</strong> İsterseniz sürgüyle tekrar deney yapabilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${idx + 1} Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(idx, preserveFeedback = false) {
+        state.currentSimStep = idx;
+        const cfg = SIM_STEPS[idx];
+        document.getElementById('sim-step-counter').textContent = `Adım ${idx + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = cfg.tag;
+        document.getElementById('mission-title').textContent = cfg.title;
+        document.getElementById('mission-instruction').innerHTML = cfg.instruction;
+        document.getElementById('mission-hint').innerHTML = cfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((p, i) => {
+          p.classList.toggle('is-active', i === idx);
+          p.classList.toggle('is-done', state.completedSimSteps[i]);
+        });
+        document.querySelectorAll('[data-step-btn]').forEach((b, i) => {
+          b.classList.toggle('is-active', i === idx);
+        });
+
+        slider.min = cfg.min;
+        slider.max = cfg.max;
+        slider.step = cfg.step;
+        slider.value = state.completedSimSteps[idx] ? cfg.targetVal : cfg.defaultVal;
+        if (!preserveFeedback) {
+          resetFeedbackForStep(idx);
+        }
+        renderCanvas();
+        updateChecklist();
+      }
+
+      function renderCanvas() {
+        const idx = state.currentSimStep;
+        const val = Number(slider.value);
+        const cfg = SIM_STEPS[idx];
+        const svg = document.getElementById('factor-svg');
+
+        document.getElementById('slider-label').textContent = `${cfg.sliderLabel} ${val}`;
+        document.getElementById('slider-value-readout').textContent = val;
+
+        if (idx === 0 || idx === 1) {
+          const total = idx === 0 ? 24 : 36;
+          const cols = Math.floor(total / val);
+          const rem = total % val;
+          const isFactor = rem === 0;
+
+          document.getElementById('telemetry-left').textContent = `HEDEF SAYI: ${total}`;
+          document.getElementById('telemetry-mid').textContent = isFactor
+            ? `ÇARPAN ÇİFTİ: ${val} × ${cols} = ${total}`
+            : `BÖLME: ${total} = (${val} × ${cols}) + ${rem}`;
+          document.getElementById('telemetry-right').textContent = isFactor
+            ? `✓ KALAN: 0 (${val} ve ${cols} tam çarpandır)`
+            : `✕ KALAN: ${rem} (${val} tam çarpan değildir)`;
+
+          const cellSize = Math.min(28, Math.floor(480 / Math.max(cols, val, 1)));
+          const startX = 140;
+          const startY = 75;
+          let rects = '';
+
+          for (let r = 0; r < val; r++) {
+            for (let c = 0; c < cols; c++) {
+              rects += `<rect x="${startX + c * (cellSize + 3)}" y="${startY + r * (cellSize + 3)}" width="${cellSize}" height="${cellSize}" fill="${isFactor ? '#0052CC' : '#75726B'}" stroke="#141413" stroke-width="1.5"/>`;
+            }
+          }
+          for (let k = 0; k < rem; k++) {
+            rects += `<rect x="${startX + cols * (cellSize + 3) + 24}" y="${startY + k * (cellSize + 3)}" width="${cellSize}" height="${cellSize}" fill="#DC2626" stroke="#141413" stroke-width="1.5"/>`;
+          }
+
+          svg.innerHTML = `
+            <text x="380" y="42" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="${isFactor ? '#00875A' : '#DC2626'}">
+              ${isFactor ? `✓ ${total} = ${val} satır × ${cols} sütun (Tam Dikdörtgen Modeli)` : `✕ ${total} ÷ ${val} işleminde ${rem} birim kare arttı!`}
+            </text>
+            ${rects}
+          `;
+        } else if (idx === 2) {
+          const product = 8 * val;
+          document.getElementById('telemetry-left').textContent = 'BAZ SAYI: 8';
+          document.getElementById('telemetry-mid').textContent = `KAT HESABI: 8 × ${val} = ${product}`;
+          document.getElementById('telemetry-right').textContent = `8'İN ${val}. KATI = ${product}`;
+
+          let nodes = '';
+          for (let k = 1; k <= 10; k++) {
+            const x = 55 + (k - 1) * 68;
+            const active = k <= val;
+            nodes += `
+              <line x1="${x}" y1="210" x2="${x}" y2="235" stroke="#141413" stroke-width="2"/>
+              <circle cx="${x}" cy="210" r="${k === val ? 16 : 11}" fill="${k === val ? '#FF5500' : (active ? '#0052CC' : '#EFECE4')}" stroke="#141413" stroke-width="2"/>
+              <text x="${x}" y="260" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700">${8 * k}</text>
+              <text x="${x}" y="180" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#4A4843">${k}×8</text>
+            `;
+          }
+
+          svg.innerHTML = `
+            <text x="380" y="65" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#0052CC">
+              8 Doğal Sayısının Katları: 8 × ${val} = ${product}
+            </text>
+            <line x1="40" y1="210" x2="720" y2="210" stroke="#141413" stroke-width="3"/>
+            ${nodes}
+          `;
+        } else {
+          const r24 = 24 % val === 0;
+          const r36 = 36 % val === 0;
+          const both = r24 && r36;
+          document.getElementById('telemetry-left').textContent = `24 ÷ ${val} → ${r24 ? 'Tam Bölünür' : 'Kalanlı'}`;
+          document.getElementById('telemetry-mid').textContent = `36 ÷ ${val} → ${r36 ? 'Tam Bölünür' : 'Kalanlı'}`;
+          document.getElementById('telemetry-right').textContent = both ? `✓ ${val} ORTAK ÇARPANDIR` : `✕ Ortak Çarpan Değil`;
+
+          svg.innerHTML = `
+            <rect x="90" y="90" width="250" height="200" fill="${r24 ? 'rgba(0,135,90,0.12)' : 'rgba(220,38,38,0.1)'}" stroke="#141413" stroke-width="2.5"/>
+            <text x="215" y="145" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700">24 Sayısı</text>
+            <text x="215" y="190" text-anchor="middle" font-family="JetBrains Mono" font-size="15">${r24 ? `✓ 24 = ${val} × ${24/val}` : `✕ Kalan: ${24 % val}`}</text>
+
+            <rect x="420" y="90" width="250" height="200" fill="${r36 ? 'rgba(0,135,90,0.12)' : 'rgba(220,38,38,0.1)'}" stroke="#141413" stroke-width="2.5"/>
+            <text x="545" y="145" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700">36 Sayısı</text>
+            <text x="545" y="190" text-anchor="middle" font-family="JetBrains Mono" font-size="15">${r36 ? `✓ 36 = ${val} × ${36/val}` : `✕ Kalan: ${36 % val}`}</text>
+
+            <text x="380" y="340" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="${both ? '#00875A' : '#D97706'}">
+              ${both ? `✓ ${val} sayısı hem 24'ün hem 36'nın ortak çarpanıdır!` : `${val} sayısı her iki sayıyı aynı anda kalansız bölmez.`}
+            </text>
+          `;
+        }
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        renderCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const cfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+        if (val === cfg.targetVal) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} doğrulandı. "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Hedef değer olan <strong>${cfg.targetVal}</strong> sayısına ulaşıp tekrar doğrulayın.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        slider.value = SIM_STEPS[state.currentSimStep].targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        renderCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < 3) loadSimStep(state.currentSimStep + 1);
+        else switchStage('stage-2');
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(p => {
+        p.addEventListener('click', () => loadSimStep(Number(p.getAttribute('data-step'))));
+      });
+      document.querySelectorAll('[data-step-btn]').forEach(b => {
+        b.addEventListener('click', () => loadSimStep(Number(b.getAttribute('data-step-btn'))));
+      });
+
+      function updateChecklist() {
+        const cnt = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${cnt >= 1 ? '✅' : '⬜'} <strong>a)</strong> Bir doğal sayının çarpan ve katlarına yönelik varsayımda bulunur.`;
+        document.getElementById('proc-b').innerHTML = `${cnt >= 2 ? '✅' : '⬜'} <strong>b)</strong> Örnek durumlardaki ilişkileri inceleyerek genellemeleri belirler.`;
+        document.getElementById('proc-c').innerHTML = `${cnt >= 4 ? '✅' : '⬜'} <strong>c)</strong> Genellemelerin varsayımını karşılayıp karşılamadığını değerlendirir.`;
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', cnt === 4);
+      }
+
+      // Sekme Geçişleri
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      function switchStage(stageId) {
+        stageButtons.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId));
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+        if (stageId === 'stage-1') { s1.classList.remove('is-hidden'); s2.classList.add('is-hidden'); }
+        else if (stageId === 'stage-2') { s1.classList.add('is-hidden'); s2.classList.remove('is-hidden'); }
+        else if (stageId === 'stage-3') { s3.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+      stageButtons.forEach(b => b.addEventListener('click', () => switchStage(b.getAttribute('data-stage-target'))));
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => switchStage('stage-3'));
+
+      // Mini Değerlendirme
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mId = btn.getAttribute('data-mini');
+          const ok = btn.getAttribute('data-correct') === 'true';
+          const fb = document.getElementById(`mini-feedback-${mId}`);
+          document.querySelectorAll(`.mini-option-btn[data-mini="${mId}"]`).forEach(x => x.classList.remove('is-correct', 'is-wrong'));
+          btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+          fb.style.color = ok ? 'var(--status-success)' : 'var(--status-error)';
+          fb.textContent = ok ? '✓ Doğru! Muhakeme doğrulandı.' : '✕ Çarpan ve kat ilişkisini tekrar kontrol edin.';
+          if (ok) state.miniCheckAnswers[mId] = true;
+          const totalOk = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalOk} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalOk === 3);
+          saveState();
+        });
+      });
+
+      // Ek Soru Kapısı (Evet / Hayır)
+      const btnYes = document.getElementById('btn-extra-yes');
+      const btnNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnYes.addEventListener('click', () => {
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnYes.setAttribute('aria-expanded', 'true');
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnNo.addEventListener('click', () => {
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnYes.setAttribute('aria-expanded', 'false');
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleModeBtn.textContent = state.extraViewMode === 'single' ? 'Tümünü Liste Görünümünde Aç' : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsEl = document.getElementById('question-pills-container');
+        const areaEl = document.getElementById('questions-render-area');
+        const letters = ['A', 'B', 'C', 'D'];
+
+        pillsEl.innerHTML = EXTRA_QUESTIONS.map((q, i) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && i === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          return `<button type="button" class="${cls}" data-qidx="${i}">${q.id}</button>`;
+        }).join('');
+
+        pillsEl.querySelectorAll('.q-pill').forEach(p => {
+          p.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(p.getAttribute('data-qidx'));
+            renderExtraQuestions();
+          });
+        });
+
+        const list = state.extraViewMode === 'single' ? [EXTRA_QUESTIONS[state.currentQuestionIndex]] : EXTRA_QUESTIONS;
+        areaEl.innerHTML = list.map(q => {
+          const chosen = state.extraAnswers[q.id];
+          const answered = chosen !== undefined;
+          const ok = answered && chosen === q.correctIndex;
+          return `
+            <article class="new-gen-question-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.75rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+              <div class="question-scenario-box">${q.scenario}</div>
+              <p class="question-stem">${q.stem}</p>
+              <div class="choices-grid">
+                ${q.choices.map((ch, cIdx) => {
+                  let cls = 'choice-btn';
+                  if (answered) {
+                    if (cIdx === q.correctIndex) cls += ' is-correct';
+                    else if (cIdx === chosen) cls += ' is-wrong';
+                  }
+                  return `<button type="button" class="${cls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                    <span class="choice-btn__letter">${letters[cIdx]}</span>
+                    <span>${ch}</span>
+                  </button>`;
+                }).join('')}
+              </div>
+              ${answered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; color:${ok ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${ok ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>← Önceki Soru</button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === 9 ? 'disabled' : ''}>Sonraki Soru →</button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        areaEl.querySelectorAll('.choice-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            state.extraAnswers[Number(btn.getAttribute('data-qid'))] = Number(btn.getAttribute('data-cidx'));
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prev = document.getElementById('prev-q-btn');
+        const next = document.getElementById('next-q-btn');
+        if (prev) prev.addEventListener('click', () => { if (state.currentQuestionIndex > 0) { state.currentQuestionIndex--; renderExtraQuestions(); } });
+        if (next) next.addEventListener('click', () => { if (state.currentQuestionIndex < 9) { state.currentQuestionIndex++; renderExtraQuestions(); } });
+
+        const correctCnt = Object.entries(state.extraAnswers).filter(([id, idx]) => {
+          const item = EXTRA_QUESTIONS.find(x => x.id === Number(id));
+          return item && item.correctIndex === idx;
+        }).length;
+        document.getElementById('extra-score-display').textContent = `Doğru: ${correctCnt} / 10`;
+      }
+
+      initTheme();
+      loadState();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>

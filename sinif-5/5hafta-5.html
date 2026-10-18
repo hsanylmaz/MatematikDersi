@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. Sınıf 5. Hafta (`5hafta-5`) | Ardışık Kesişen Doğrular ve Çokgenlerin Oluşumu — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 5. Sınıf Matematik 5. Hafta (MAT.5.3.5) Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme simülasyonu.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 5HAFTA-5 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-5">5. SINIF • 5. HAFTA</span>
+        <span class="tech-badge mono">MAT.5.3.5</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
+          📐 Blueprint Koyu Mod
+        </button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 5hafta-5.html</span>
+          <span class="tech-badge">12–16 Ekim • 5 Ders Saati</span>
+          <span class="tech-badge">3. TEMA: GEOMETRİK ŞEKİLLER</span>
+          <span class="tech-badge">İÇERİK: Çokgenler ve Çember</span>
+        </div>
+        <h1 class="week-header-banner__title">Çokgenlerin İnşası: Ardışık Kesişen Doğrular ve Kapalı Şekiller Atölyesi</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.5.3.5):</strong> Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme.
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">Ardışık Doğrular ve Çokgen Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         AŞAMA 1: AKTİF ÖĞRENME VE KEŞİF SİMÜLASYONU
+         ==================================================================== -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <!-- Sol Rehberli Görev ve İpucu Paneli -->
+        <aside class="guide-panel" aria-label="Adım Adım Keşif Rehberi">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">KEŞİF GÖREVLERİ (4 ADIM)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills" role="tablist" aria-label="Simülasyon Görev Adımları">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. En Az 3 Doğru</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Dörtgen (4 Doğru)</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. Altıgen (6 Doğru)</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Kapalılık Koşulu</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">YORUMLAMA 1/4: EN AZ 3 DOĞRU İLKESİ</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: En Az Kaç Doğru Kapalı Çokgen Oluşturur?</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              1 veya 2 doğru düzlemde kapalı bir bölge oluşturamaz. Doğru sayısını <strong>3 doğru</strong> konumuna getirerek son doğrunun ilk doğruyla kesiştiği en küçük kenarlı çokgeni (<strong>Üçgen</strong>) oluşturun.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            <strong>💡 Pedagojik İpucu:</strong> Düzlemde bir bölgenin etrafını tamamen kapatabilmek için ardışık kesişen <strong>en az 3 doğruya</strong> ihtiyaç vardır.
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            <strong>Adım 1 Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">
+              ✓ Görevi Doğrula
+            </button>
+            <button type="button" class="btn" id="next-step-btn">
+              Sonraki Adım →
+            </button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.5.3.5):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;" id="process-checklist">
+              <li id="proc-a">⬜ <strong>a)</strong> Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık kesişerek oluşturdukları durumları inceler.</li>
+              <li id="proc-b">⬜ <strong>b)</strong> Çeşitli çokgenler oluşturur.</li>
+              <li id="proc-c">⬜ <strong>c)</strong> İfade eder.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Sağ İnteraktif Simülasyon Tuvali -->
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group" role="group" aria-label="Çokgen Oluşum Deneyi Seçimi">
+              <button type="button" class="tool-btn is-active" data-tool="minlines" id="tool-minlines">
+                🔺 1. En Az 3 Doğru (Üçgen)
+              </button>
+              <button type="button" class="tool-btn" data-tool="quad" id="tool-quad">
+                🔶 2. 4 Doğru (Dörtgen)
+              </button>
+              <button type="button" class="tool-btn" data-tool="hex" id="tool-hex">
+                ⬢ 3. 6 Doğru (Altıgen)
+              </button>
+              <button type="button" class="tool-btn" data-tool="closure" id="tool-closure">
+                🔒 4. Kapalılık Koşulu
+              </button>
+            </div>
+
+            <div style="display:flex; gap:0.45rem; align-items:center;">
+              <button type="button" class="btn btn--sm" id="sim-auto-target-btn" title="Hedef Değeri Göster">
+                Hedef Konuma Getir
+              </button>
+              <button type="button" class="btn btn--sm" id="sim-reset-btn">
+                Sıfırla
+              </button>
+            </div>
+          </div>
+
+          <!-- İnteraktif Kontrol Sürgüsü -->
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              Ardışık Kesişen Doğru Sayısı: 2 doğru
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="1" max="5" step="1" value="2" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">2 doğru</span>
+            </div>
+          </div>
+
+          <!-- SVG Geometrik Çıkarım Alanı -->
+          <div class="canvas-viewport">
+            <svg id="geometry-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Ardışık Kesişen Doğrular ve Çokgen Tuvali">
+              <!-- Koordinat Izgara Çizgileri -->
+              <g id="svg-grid-layer" stroke="rgba(20,20,19,0.08)" stroke-width="1"></g>
+
+              <!-- Dinamik Çizim Katmanı -->
+              <g id="svg-construction-layer"></g>
+            </svg>
+          </div>
+
+          <!-- Alt Canlı Telemetri Çubuğu -->
+          <div class="canvas-telemetry">
+            <span id="telemetry-tool">AKTİF DENEY: En Az 3 Doğru İlkesi</span>
+            <span id="telemetry-notation">TANIM: Ardışık Kesişen Doğruların Kapalı Bölgesi</span>
+            <span id="telemetry-measurement" style="color:var(--accent-signal); font-weight:700;">DURUM: 2 Doğru (Açık Bölge)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) SEKMESİ
+         ==================================================================== -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-5">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Çokgenlerin Oluşumu ve Yorumlanması (MAT.5.3.5)
+            </h2>
+            <p style="color:var(--ink-secondary); font-size:0.92rem;">
+              Çokgenlerin ardışık kesişen doğrularla oluşumu ve kapalılık şartını aşağıdaki 3 mini görevde değerlendirin.
+            </p>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge" style="font-size:0.95rem; padding:0.5rem 0.9rem;">
+            Doğrulanan: 0 / 3
+          </div>
+        </div>
+
+        <div class="assessment-grid">
+          <!-- Mini Görev 1 -->
+          <article class="mini-check-card" data-mini-id="1">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • EN AZ DOĞRU SAYISI KOŞULU</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Düzlemde son doğru ilk doğruyla kesişecek biçimde ardışık kesişen doğrularla kapalı bir çokgen oluşturmak için en az kaç doğru gerekir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">A) En az 2 doğru</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">B) En az 3 doğru (Üçgen oluşturur)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) En az 4 doğru</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 2 -->
+          <article class="mini-check-card" data-mini-id="2">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • ÇOKGEN OLMA ŞARTLARI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Aşağıdaki şekillerden hangisi "ardışık kesişen doğruların oluşturduğu kapalı düzlemsel şekil (çokgen)" tanımına uymaz?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">A) 5 doğru parçasının uç uca kapalı birleştiği beşgen</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">B) Bir kenarı eğrisel (yay) olan veya iki ucu birleşmemiş açık şekil</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) 6 doğrunun ardışık kesişimiyle oluşan altıgen</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+
+          <!-- Mini Görev 3 -->
+          <article class="mini-check-card" data-mini-id="3">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • ÇOKGENİN ADLANDIRILMASI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Düzlemde ikişer ikişer ardışık kesişen 7 doğrunun (son doğru ilk doğruyla kesişecek şekilde) sınırladığı kapalı bölge nasıl adlandırılır?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">A) Altıgen</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">B) Yedigen (7 kenarlı ve 7 köşeli çokgen)</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">C) Sekizgen</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem; min-height:1.2rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border-subtle);">
+          <p style="font-size:0.9rem; color:var(--ink-secondary);">
+            Değerlendirmeyi tamamladıysanız aşağıdaki <strong>"Ek soru çözmek ister misiniz?"</strong> alanından 10 yeni nesil soruya geçebilirsiniz.
+          </p>
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">
+            Aşama 3: Ek Soru Alanına İlerle →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AŞAMA 3 ve SAYFA ALTI: DİNAMİK SORU HAVUZU VE "EK SORU İSTER MİSİNİZ?"
+         ==================================================================== -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            Bu haftanın kazanımı (<strong>MAT.5.3.5 — Çokgenleri Düzlemde Ardışık Olarak Kesişen Doğruların Oluşturduğu Kapalı Şekiller Olarak Yorumlayabilme</strong>) için hazırlanmış <strong>10 adet yeni nesil muhakeme sorusu</strong> hazırdır.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns" role="group" aria-label="Ek Soru Tercihi">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Harika! Bu haftanın aktif öğrenme simülasyonunu tamamladınız. Ek sorular gizli tutuldu. İstediğiniz zaman <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak soru havuzunu görünür hale getirebilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU GÖRÜNÜMLÜ 10 YENİ NESİL EK SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden aria-label="10 Yeni Nesil Ek Soru Havuzu">
+
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">5HAFTA-5 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-5" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">
+            Tümünü Liste Görünümünde Aç
+          </button>
+        </div>
+      </div>
+
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div>
+        <strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB Türkiye Yüzyılı Maarif Modeli (2026-2027)
+      </div>
+      <div class="mono" style="font-size:0.78rem;">
+        Dosya: <code>sinif-5/5hafta-5.html</code> • Kazanım: <code>MAT.5.3.5</code>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simülasyon, Değerlendirme ve 10 Yeni Nesil Soru Motoru -->
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_5hafta_5';
+
+      // 10 Adet Yeni Nesil MEB TYMM (MAT.5.3.5) Sorusu
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • ÜÇ DOĞRUNUN KESİŞİM DURUMLARI ANALİZİ',
+          scenario: 'Öğretmen tahtaya: "Düzlemde çizilen her 3 doğru mutlaka bir üçgen oluşturur mu?" sorusunu yazıyor. Arda, 3 doğrunun birbirine paralel olduğu veya üçünün de tek bir O noktasında kesiştiği durumları çizerek inceliyor.',
+          stem: 'Arda\'nın yaptığı incelemeye göre 3 doğrunun düzlemde kapalı bir üçgen oluşturabilmesi için hangi koşul sağlanmalıdır?',
+          choices: [
+            'Üç doğru ikişer ikişer üç farklı noktada ardışık olarak kesişmelidir.',
+            'Üç doğru birbirine paralel olmalıdır.',
+            'Üç doğru aynı tek noktadan geçmelidir.',
+            'Doğrulardan ikisi üst üste çakışık olmalıdır.'
+          ],
+          correctIndex: 0,
+          explanation: 'Paralel doğrular kesişmez, tek noktada kesişen 3 doğru ise kapalı bir bölge sınırlayamaz. Üçgen oluşması için 3 doğrunun ikişer ikişer 3 farklı köşe noktasında kesişmesi gerekir.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • LAZER IŞINLARIYLA KAPALI ÇOKGEN BÖLGESİ',
+          scenario: 'Bir bilim müzesinde düzlemsel masa üzerine yerleştirilen 5 adet çift yönlü lazer kaynağı (d₁, d₂, d₃, d₄, d₅ doğruları), d₁ ile d₂, d₂ ile d₃, d₃ ile d₄, d₄ ile d₅ ve son olarak d₅ ile d₁ kesişecek biçimde hizalanıyor.',
+          stem: 'Lazer doğrularının kesişim noktaları arasında kalan kapalı bölgenin geometrik adı ve köşe sayısı nedir?',
+          choices: [
+            'Dörtgen — 4 köşe',
+            'Beşgen — 5 köşe',
+            'Altıgen — 6 köşe',
+            'Yedigen — 7 köşe'
+          ],
+          correctIndex: 1,
+          explanation: 'Ardışık olarak kesişen 5 doğru (d₁-d₂, d₂-d₃, d₃-d₄, d₄-d₅, d₅-d₁) toplam 5 kesişim noktası (köşe) ve 5 doğru parçası (kenar) oluşturarak kapalı bir Beşgen sınırlar.'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • GEOMETRİ TAHTASINDA (GEOBOARD) LASTİK DENEYİ',
+          scenario: 'Beren, çivili geometri tahtasında bir paket lastiğini A, B, C ve D çivilerine geçirerek kapalı bir şekil oluşturuyor. Daha sonra E çivisini de lastiğin içine katarak çivi sayısını 5\'e çıkarıyor (hiçbir üç çivi doğrusal değil).',
+          stem: 'Beren\'in oluşturduğu ilk şekil ile ikinci şeklin isimleri sırasıyla aşağıdakilerden hangisidir?',
+          choices: [
+            'Üçgen — Dörtgen',
+            'Dörtgen — Beşgen',
+            'Dörtgen — Altıgen',
+            'Beşgen — Altıgen'
+          ],
+          correctIndex: 1,
+          explanation: 'Her çivi ardışık iki doğru parçasının kesiştiği bir köşeyi temsil eder. 4 köşeli kapalı şekil Dörtgen, 5 köşeli kapalı şekil ise Beşgendir.'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • ÇOKGEN TANIMINA UYMAYAN ŞEKLİN TESPİTİ',
+          scenario: 'Tasarımcı Kaan, okul logosu için dört farklı çerçeve taslağı çiziyor:\n• 1. Taslak: 4 doğru parçasından oluşan kapalı dikdörtgen\n• 2. Taslak: 3 doğru parçası ve 1 yarım çember yayından oluşan kapalı şekil\n• 3. Taslak: 6 doğru parçasından oluşan kapalı altıgen\n• 4. Taslak: 3 doğru parçasından oluşan kapalı üçgen',
+          stem: 'Bu taslaklardan hangisi çokgen olarak nitelendirilemez ve nedeni nedir?',
+          choices: [
+            '2. Taslak — Çünkü çokgenler yalnızca doğruların ardışık kesişimiyle (doğru parçalarıyla) oluşur; eğrisel yay içeremez.',
+            '1. Taslak — Çünkü 4 kenarlıdır.',
+            '3. Taslak — Çünkü kenar sayısı 5\'ten fazladır.',
+            '4. Taslak — Çünkü kenar sayısı en az 4 olmalıdır.'
+          ],
+          correctIndex: 0,
+          explanation: 'Çokgenler yalnızca doğrusal kenarlardan (ardışık kesişen doğruların oluşturduğu doğru parçalarından) meydana gelen kapalı şekillerdir. Eğrisel kenar içeren 2. taslak çokgen değildir.'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • KAĞIT KESME İLE KENAR SAYISI DEĞİŞİMİ',
+          scenario: 'Dikdörtgen (4 kenarlı) şeklindeki bir kartonun yalnız bir köşesi, komşu iki kenarı kesecek biçimde doğrusal bir makas darbesiyle (5. bir doğru boyunca) kesilip atılıyor.',
+          stem: 'Kartonun kesilen köşesinin yerine yeni bir doğrusal kenar eklendiğine göre, kalan büyük karton parçası hangi çokgene dönüşmüştür?',
+          choices: [
+            'Üçgen (3 kenarlı)',
+            'Dörtgen (4 kenarlı)',
+            'Beşgen (5 kenarlı)',
+            'Altıgen (6 kenarlı)'
+          ],
+          correctIndex: 2,
+          explanation: 'Başlangıçta 4 doğru tarafından sınırlanan dikdörtgenin bir köşesi 5. bir doğru ile kesildiğinde, 1 köşe eksilirken 2 yeni kesişim köşesi oluşur (4 - 1 + 2 = 5 köşe / 5 kenar). Kalan şekil bir Beşgendir.'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • ARDIŞIK KESİŞEN DOĞRULARDA KÖŞE VE KENAR KAVRAMI',
+          scenario: 'Düzlemde ardışık kesişen d₁, d₂, d₃ ve d₄ doğrularında; d₁ ile d₂\'nin kesişim noktası K, d₂ ile d₃\'ün kesişim noktası L, d₃ ile d₄\'ün kesişim noktası M ve d₄ ile d₁\'in kesişim noktası N olarak adlandırılıyor.',
+          stem: 'Oluşan KLMN dörtgeninin kenarlarını oluşturan doğru parçaları aşağıdakilerden hangisinde tam ve doğru verilmiştir?',
+          choices: [
+            '[KL], [LM], [MN] ve [NK] doğru parçaları',
+            '[KM] ve [LN] doğru parçaları',
+            'Sadece [KL] ve [MN] doğru parçaları',
+            'K, L, M ve N ışınları'
+          ],
+          correctIndex: 0,
+          explanation: 'Ardışık kesişim noktaları olan K, L, M ve N köşeleri arasında kalan doğru parçaları ([KL], [LM], [MN], [NK]) dörtgenin kenarlarını oluşturur.'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • KAPALILIK KOŞULU VE ROBOT ROTASI',
+          scenario: 'Bir çizim robotu düzlemde A noktasından başlayıp doğrusal olarak B\'ye, B\'den C\'ye, C\'den D\'ye ve D\'den E noktasına gidip duruyor. A ile E noktaları arasında 4 cm boşluk kalıyor.',
+          stem: 'Robotun çizdiği bu iz neden henüz bir çokgen değildir ve çokgen olması için ne yapılmalıdır?',
+          choices: [
+            'Şekil açık kaldığı için çokgen değildir; son noktadan ilk nokta A\'ya [EA] doğru parçası çizilerek kapatıldığında ABCDE beşgeni oluşur.',
+            'Doğru parçası sayısı çift olmadığı için çokgen değildir.',
+            'Açılar 90° olmadığı için çokgen değildir.',
+            'Zaten kapalı bir dörtgendir.'
+          ],
+          correctIndex: 0,
+          explanation: 'Çokgen olmanın temel şartı son doğrunun ilk doğruyla kesişerek şekli kapatmasıdır. [EA] birleştirildiğinde açıklık kapanır ve 5 kenarlı kapalı ABCDE beşgeni oluşur.'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • TRAFİK İŞARET LEVHALARINDA ÇOKGEN YORUMU',
+          scenario: 'Karayollarında kullanılan "DUR" (STOP) levhası, düzlemde ardışık olarak kesişen 8 doğrunun sınırladığı kapalı bir geometrik şekildir.',
+          stem: 'Bu trafik levhasının oluşturduğu çokgenin adı, kenar sayısı ve köşe sayısı aşağıdakilerden hangisidir?',
+          choices: [
+            'Altıgen — 6 kenar, 6 köşe',
+            'Yedigen — 7 kenar, 7 köşe',
+            'Sekizgen — 8 kenar, 8 köşe',
+            'Dokuzgen — 9 kenar, 9 köşe'
+          ],
+          correctIndex: 2,
+          explanation: 'Ardışık kesişen 8 doğrunun oluşturduğu kapalı şekil 8 kenarlı ve 8 köşeli bir Sekizgendir.'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • DOĞRUDAŞ NOKTALAR VE KENAR SAYISI YANILGISI',
+          scenario: 'Emir, ABC üçgeninin [BC] kenarının tam ortasına bir D noktası koyuyor ve "Artık A, B, D, C olmak üzere 4 noktam var, öyleyse bu şekil bir dörtgendir" diyor.',
+          stem: 'Emir\'in bu iddiası matematiksel olarak neden yanlıştır?',
+          choices: [
+            'B, D ve C noktaları aynı doğru üzerinde (doğrudaş) olduğu için [BD] ve [DC] ayrı iki doğrultu oluşturmaz; şekil hâlâ 3 doğrunun sınırladığı ABC üçgenidir.',
+            'D noktası köşe kabul edilir ve şekil dörtgen olur.',
+            'Üçgenin üzerine nokta konulursa şekil çembere dönüşür.',
+            'Nokta sayısı arttıkça kenar sayısı iki katına çıkar.'
+          ],
+          correctIndex: 0,
+          explanation: 'Çokgenin köşesi, farklı doğrultudaki ardışık iki doğrunun kesişim noktasıdır. B, D, C aynı doğru üzerinde olduğundan D bir kesişim köşesi değildir; şekil üçgen olarak kalır.'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • BAL PETEĞİ MODELİNDE ARDIŞIK DOĞRULAR',
+          scenario: 'Doğadaki arı peteklerinin her bir gözü, düzlemde ardışık olarak kesişen 6 doğrunun oluşturduğu kapalı bir bölgedir.',
+          stem: 'Bir petek gözünü oluşturan çokgenin isimlendirilmesi için köşelerine A, B, C, D, E, F harfleri verildiğinde bu çokgen nasıl ifade edilir?',
+          choices: [
+            'ABCDEF Altıgeni',
+            'ABCD Dörtgeni',
+            'ABCDE Beşgeni',
+            'ABCDEFGH Sekizgeni'
+          ],
+          correctIndex: 0,
+          explanation: '6 doğrunun ardışık kesişimiyle oluşan 6 köşeli kapalı şekil, köşe harfleri sırasıyla okunarak "ABCDEF Altıgeni" olarak ifade edilir.'
+        }
+      ];
+
+      // Simülasyonun 4 Rehberli Görev Tanımı (MAT.5.3.5)
+      const SIM_STEPS = [
+        {
+          tool: 'minlines',
+          tag: 'YORUMLAMA 1/4: EN AZ 3 DOĞRU İLKESİ',
+          title: 'Görev 1: En Az Kaç Doğru Kapalı Çokgen Oluşturur?',
+          instruction: '1 veya 2 doğru düzlemde kapalı bir bölge oluşturamaz. Doğru sayısını <strong>3 doğru</strong> konumuna getirerek son doğrunun ilk doğruyla kesiştiği en az kenarlı çokgeni (<strong>Üçgen</strong>) oluşturun.',
+          hint: '💡 İpucu: Düzlemde kapalı bir çokgen bölgesi sınırlamak için ardışık kesişen en az 3 doğru gerekir.',
+          sliderLabel: 'Ardışık Kesişen Doğru Sayısı:',
+          min: 1,
+          max: 5,
+          step: 1,
+          defaultVal: 2,
+          targetVal: 3,
+          unit: 'doğru',
+          notation: 'İLKE: En Az 3 Doğru ⇒ Kapalı Üçgen Bölgesi'
+        },
+        {
+          tool: 'quad',
+          tag: 'YORUMLAMA 2/4: 4 DOĞRUNUN ARDIŞIK KESİŞİMİ',
+          title: 'Görev 2: 4 Doğrunun Ardışık Kesişimiyle Dörtgen İnşası',
+          instruction: 'Düzlemde ardışık kesişen doğru sayısını <strong>4 doğru</strong> konumuna getirin; 4 kesişim köşesi (A, B, C, D) ve 4 kenardan oluşan kapalı <strong>ABCD Dörtgenini</strong> doğrulayın.',
+          hint: '💡 İpucu: d₁ ile d₂ (A), d₂ ile d₃ (B), d₃ ile d₄ (C) ve son doğru d₄ ile ilk doğru d₁ (D) kesiştiğinde kapalı dörtgen oluşur.',
+          sliderLabel: 'Ardışık Kesişen Doğru Sayısı:',
+          min: 3,
+          max: 7,
+          step: 1,
+          defaultVal: 3,
+          targetVal: 4,
+          unit: 'doğru',
+          notation: 'OLUŞUM: 4 Ardışık Kesişen Doğru ⇒ ABCD Dörtgeni'
+        },
+        {
+          tool: 'hex',
+          tag: 'YORUMLAMA 3/4: ÇOKGEN ÇEŞİTLİLİĞİ (ALTIGEN)',
+          title: 'Görev 3: 6 Doğrunun Ardışık Kesişimiyle Altıgen Oluşturma',
+          instruction: 'Ardışık kesişen doğru sayısını <strong>6 doğru</strong> değerine çıkararak <strong>ABCDEF Altıgenini</strong> oluşturun ve doğruların uzantılarını inceleyin.',
+          hint: '💡 İpucu: Çokgenin kenarları aslında ardışık kesişen doğruların kesişim noktaları (köşeler) arasında kalan doğru parçalarıdır.',
+          sliderLabel: 'Ardışık Kesişen Doğru Sayısı:',
+          min: 3,
+          max: 8,
+          step: 1,
+          defaultVal: 5,
+          targetVal: 6,
+          unit: 'doğru',
+          notation: 'OLUŞUM: 6 Ardışık Kesişen Doğru ⇒ ABCDEF Altıgeni'
+        },
+        {
+          tool: 'closure',
+          tag: 'YORUMLAMA 4/4: SON DOĞRUNUN İLK DOĞRUYLA KESİŞMESİ',
+          title: 'Görev 4: Kapalılık Koşulu (Açıklığı 0 Birim Yapma)',
+          instruction: 'Verilen şeklin son kolu ilk doğruyla henüz birleşmemiştir (Açık şekil). Uç açıklığını <strong>0 birim</strong> konumuna getirerek şekli kapatın ve geçerli bir <strong>Beşgen</strong> elde edin.',
+          hint: '💡 İpucu: Bir şeklin çokgen olabilmesi için son doğrunun ilk doğruyla kesişmesi ve hiçbir açıklık kalmaması (Kapalı Şekil) şarttır.',
+          sliderLabel: 'Son Doğru ile İlk Doğru Arası Açıklık:',
+          min: 0,
+          max: 5,
+          step: 1,
+          defaultVal: 3,
+          targetVal: 0,
+          unit: 'birim',
+          notation: 'KOŞUL: Uç Açıklığı = 0 br ⇒ Kapalı Çokgen'
+        }
+      ];
+
+      const POLY_NAMES = {
+        3: 'Üçgen',
+        4: 'Dörtgen',
+        5: 'Beşgen',
+        6: 'Altıgen',
+        7: 'Yedigen',
+        8: 'Sekizgen'
+      };
+
+      let state = {
+        currentStage: 'stage-1',
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraPoolVisible: false,
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.completedSimSteps)) state.completedSimSteps = parsed.completedSimSteps;
+            if (parsed.miniCheckAnswers) state.miniCheckAnswers = parsed.miniCheckAnswers;
+            if (parsed.extraAnswers) state.extraAnswers = parsed.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDoneCount = state.completedSimSteps.filter(Boolean).length;
+          const miniDoneCount = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrectCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+
+          const totalPercent = Math.min(100, Math.round(
+            (simDoneCount / 4) * 40 +
+            (miniDoneCount / 3) * 30 +
+            (Object.keys(state.extraAnswers).length / 10) * 30
+          ));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '5hafta-5',
+            grade: 5,
+            week: 5,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrectCount,
+            progressPercent: totalPercent,
+            updatedAt: new Date().toISOString()
+          }));
+
+          const badge = document.getElementById('module-progress-badge');
+          if (badge) badge.textContent = `İlerleme: %${totalPercent}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const savedTheme = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      stageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchStage(btn.getAttribute('data-stage-target'));
+        });
+      });
+
+      function switchStage(stageId) {
+        state.currentStage = stageId;
+        stageButtons.forEach(b => {
+          b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId);
+        });
+
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+
+        if (stageId === 'stage-1') {
+          s1.classList.remove('is-hidden');
+          s2.classList.add('is-hidden');
+        } else if (stageId === 'stage-2') {
+          s1.classList.add('is-hidden');
+          s2.classList.remove('is-hidden');
+        } else if (stageId === 'stage-3') {
+          s3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => {
+        switchStage('stage-3');
+      });
+
+      function drawSvgGrid() {
+        const gridGroup = document.getElementById('svg-grid-layer');
+        let html = '';
+        for (let x = 40; x <= 720; x += 40) {
+          html += `<line x1="${x}" y1="0" x2="${x}" y2="400" />`;
+        }
+        for (let y = 40; y <= 360; y += 40) {
+          html += `<line x1="0" y1="${y}" x2="760" y2="${y}" />`;
+        }
+        gridGroup.innerHTML = html;
+      }
+
+      // Yardımcı: Ardışık Kesişen n Doğru ve Sınırladığı Çokgen Çizimi
+      function renderIntersectingLinesPolygon(n, isTarget) {
+        const cx = 380, cy = 215, R = 122;
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        const pts = [];
+        for (let i = 0; i < n; i++) {
+          const angle = -Math.PI / 2 + (i * 2 * Math.PI) / n;
+          pts.push({
+            x: cx + R * Math.cos(angle),
+            y: cy + R * Math.sin(angle),
+            label: letters[i],
+            angle: angle
+          });
+        }
+
+        let extendedLines = '';
+        for (let i = 0; i < n; i++) {
+          const p1 = pts[i];
+          const p2 = pts[(i + 1) % n];
+          const dx = p2.x - p1.x;
+          const dy = p2.y - p1.y;
+          const len = Math.hypot(dx, dy) || 1;
+          const ux = dx / len, uy = dy / len;
+          const ext = 55;
+          extendedLines += `
+            <line x1="${p1.x - ux * ext}" y1="${p1.y - uy * ext}" x2="${p2.x + ux * ext}" y2="${p2.y + uy * ext}" stroke="rgba(0, 82, 204, 0.35)" stroke-width="2" stroke-dasharray="5,4"/>
+            <text x="${p2.x + ux * (ext + 14)}" y="${p2.y + uy * (ext + 14) + 4}" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0052CC">d${i + 1}</text>
+          `;
+        }
+
+        const polyPoints = pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+        const strokeCol = isTarget ? '#00875A' : '#FF5500';
+        const fillCol = isTarget ? 'rgba(0, 135, 90, 0.18)' : 'rgba(255, 85, 0, 0.14)';
+
+        const verticesSvg = pts.map(p => {
+          const lx = cx + (R + 26) * Math.cos(p.angle);
+          const ly = cy + (R + 26) * Math.sin(p.angle);
+          return `
+            <circle cx="${p.x}" cy="${p.y}" r="7" fill="${strokeCol}" stroke="#141413" stroke-width="2"/>
+            <text x="${lx}" y="${ly + 5}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700">${p.label}</text>
+          `;
+        }).join('');
+
+        return `
+          ${extendedLines}
+          <polygon points="${polyPoints}" fill="${fillCol}" stroke="${strokeCol}" stroke-width="4"/>
+          ${verticesSvg}
+          <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700" fill="${strokeCol}">
+            ${POLY_NAMES[n] || `${n}-gen`} (${n} Kenar)
+          </text>
+        `;
+      }
+
+      const slider = document.getElementById('sim-param-slider');
+      const sliderLabel = document.getElementById('slider-label');
+      const sliderReadout = document.getElementById('slider-value-readout');
+
+      function resetFeedbackForStep(index) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[index]) {
+          fb.innerHTML = `✅ <strong>Adım ${index + 1} tamamlandı.</strong> İsterseniz sürgüyle tekrar deney yapabilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${index + 1} Hazır:</strong> Sürgüyü hedef değere ayarlayıp <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(index, preserveFeedback = false) {
+        state.currentSimStep = index;
+        const stepCfg = SIM_STEPS[index];
+
+        document.getElementById('sim-step-counter').textContent = `Adım ${index + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = stepCfg.tag;
+        document.getElementById('mission-title').textContent = stepCfg.title;
+        document.getElementById('mission-instruction').innerHTML = stepCfg.instruction;
+        document.getElementById('mission-hint').innerHTML = stepCfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((pill, idx) => {
+          pill.classList.toggle('is-active', idx === index);
+          pill.classList.toggle('is-done', state.completedSimSteps[idx]);
+        });
+
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+          btn.classList.toggle('is-active', btn.getAttribute('data-tool') === stepCfg.tool);
+        });
+
+        slider.min = stepCfg.min;
+        slider.max = stepCfg.max;
+        slider.step = stepCfg.step;
+        slider.value = state.completedSimSteps[index] ? stepCfg.targetVal : stepCfg.defaultVal;
+
+        if (!preserveFeedback) {
+          resetFeedbackForStep(index);
+        }
+
+        updateSimCanvas();
+        updateProcessChecklist();
+      }
+
+      function updateSimCanvas() {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const layer = document.getElementById('svg-construction-layer');
+
+        sliderLabel.textContent = `${stepCfg.sliderLabel} ${val} ${stepCfg.unit}`;
+        sliderReadout.textContent = `${val} ${stepCfg.unit}`;
+        document.getElementById('telemetry-tool').textContent = `AKTİF DENEY: ${stepCfg.title}`;
+        document.getElementById('telemetry-notation').textContent = stepCfg.notation;
+
+        if (stepCfg.tool === 'minlines' || stepCfg.tool === 'quad' || stepCfg.tool === 'hex') {
+          const isTarget = val === stepCfg.targetVal;
+
+          if (val === 1) {
+            document.getElementById('telemetry-measurement').textContent = `DURUM: 1 Doğru ⇒ Kesişim Yok, Kapalı Bölge Oluşmaz!`;
+            layer.innerHTML = `
+              <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#D97706">
+                1 doğru tek başına düzlemde kapalı bir çokgen oluşturamaz! (En az 3 doğru gerekir)
+              </text>
+              <line x1="150" y1="215" x2="610" y2="215" stroke="#0052CC" stroke-width="4"/>
+              <text x="630" y="220" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#0052CC">d₁</text>
+            `;
+          } else if (val === 2) {
+            document.getElementById('telemetry-measurement').textContent = `DURUM: 2 Doğru ⇒ Yalnız 1 Kesişim Noktası (A), Bölge Açık Kalır!`;
+            layer.innerHTML = `
+              <text x="380" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#D97706">
+                2 doğru yalnız 1 noktada (A) kesişir; etrafı kapanmadığı için çokgen oluşmaz!
+              </text>
+              <line x1="160" y1="280" x2="600" y2="150" stroke="#0052CC" stroke-width="4"/>
+              <line x1="160" y1="150" x2="600" y2="280" stroke="#FF5500" stroke-width="4"/>
+              <circle cx="380" cy="215" r="8" fill="#141413"/>
+              <text x="380" y="190" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700">A (Tek Kesişim • Açık Bölge)</text>
+            `;
+          } else {
+            const polyName = POLY_NAMES[val] || `${val}-gen`;
+            document.getElementById('telemetry-measurement').textContent = `DURUM: ${val} Ardışık Doğru ⇒ Kapalı ${polyName} (${val} Kenar, ${val} Köşe) ${isTarget ? '✓ DOĞRULANDI' : ''}`;
+            layer.innerHTML = `
+              <text x="380" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isTarget ? '#00875A' : '#0052CC'}">
+                ${isTarget ? `✓ ÇIKARIM DOĞRULANDI: ${val} ardışık doğru kesişerek kapalı ${polyName} oluşturdu!` : `${val} doğru kesişimi: Kapalı ${polyName} (Hedef: ${stepCfg.targetVal} doğru)`}
+              </text>
+              ${renderIntersectingLinesPolygon(val, isTarget)}
+            `;
+          }
+        } else if (stepCfg.tool === 'closure') {
+          const isClosed = val === 0;
+          const cx = 380, cy = 220, R = 120;
+          const pts = [];
+          for (let i = 0; i < 5; i++) {
+            const angle = -Math.PI / 2 + (i * 2 * Math.PI) / 5;
+            pts.push({
+              x: cx + R * Math.cos(angle),
+              y: cy + R * Math.sin(angle),
+              label: ['A', 'B', 'C', 'D', 'E'][i]
+            });
+          }
+
+          // Son kol E'den A'ya giderken val > 0 ise açık kalır
+          const endX = pts[0].x - val * 28;
+          const endY = pts[0].y - val * 18;
+
+          document.getElementById('telemetry-measurement').textContent = `UÇ AÇIKLIĞI: ${val} birim ⇒ ${isClosed ? '✓ KAPALI ŞEKİL (ABCDE BEŞGENİ)' : '✕ AÇIK ŞEKİL (ÇOKGEN DEĞİLDİR)'}`;
+
+          layer.innerHTML = `
+            <text x="380" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${isClosed ? '#00875A' : '#D97706'}">
+              ${isClosed ? '✓ KAPALILIK KOŞULU SAĞLANDI: Son doğru ilk doğruyla A köşesinde kesişti (Kapalı Beşgen)!' : `Dikkat: A köşesinde ${val} birim açıklık var! Açık şekiller çokgen değildir (Açıklığı 0 yapın).`}
+            </text>
+
+            ${isClosed ? `
+              <polygon points="${pts.map(p => `${p.x},${p.y}`).join(' ')}" fill="rgba(0, 135, 90, 0.18)" stroke="#00875A" stroke-width="4.5"/>
+            ` : `
+              <polyline points="${pts.map(p => `${p.x},${p.y}`).join(' ')} ${endX},${endY}" fill="none" stroke="#FF5500" stroke-width="4.5"/>
+              <line x1="${endX}" y1="${endY}" x2="${pts[0].x}" y2="${pts[0].y}" stroke="#D97706" stroke-width="2.5" stroke-dasharray="5,4"/>
+              <circle cx="${endX}" cy="${endY}" r="7" fill="#D97706"/>
+              <text x="${endX - 18}" y="${endY - 12}" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#D97706">Açık Uç (${val} br)</text>
+            `}
+
+            ${pts.map(p => `
+              <circle cx="${p.x}" cy="${p.y}" r="7" fill="${isClosed ? '#00875A' : '#141413'}"/>
+              <text x="${p.x + (p.x >= cx ? 18 : -18)}" y="${p.y + (p.y > cy ? 20 : -12)}" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700">${p.label}</text>
+            `).join('')}
+          `;
+        }
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+
+        if (val === stepCfg.targetVal) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} başarıyla doğrulandı (${val} ${stepCfg.unit}). "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Şu anki değeriniz <strong>${val} ${stepCfg.unit}</strong>. Görevi doğrulamak için hedef değer olan <strong>${stepCfg.targetVal} ${stepCfg.unit}</strong> konumuna getirin.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('sim-reset-btn').addEventListener('click', () => {
+        const stepCfg = SIM_STEPS[state.currentSimStep];
+        slider.value = stepCfg.defaultVal;
+        resetFeedbackForStep(state.currentSimStep);
+        updateSimCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < SIM_STEPS.length - 1) {
+          loadSimStep(state.currentSimStep + 1);
+        } else {
+          switchStage('stage-2');
+        }
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          loadSimStep(Number(pill.getAttribute('data-step')));
+        });
+      });
+
+      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          loadSimStep(idx);
+        });
+      });
+
+      function updateProcessChecklist() {
+        const doneCount = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${doneCount >= 1 ? '✅' : '⬜'} <strong>a)</strong> Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık kesişerek oluşturdukları durumları inceler.`;
+        document.getElementById('proc-b').innerHTML = `${doneCount >= 3 ? '✅' : '⬜'} <strong>b)</strong> Çeşitli çokgenler oluşturur.`;
+        document.getElementById('proc-c').innerHTML = `${doneCount >= 4 ? '✅' : '⬜'} <strong>c)</strong> İfade eder.`;
+
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', doneCount === 4);
+      }
+
+      // AŞAMA 2: Mini Kontrol
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const miniId = btn.getAttribute('data-mini');
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackEl = document.getElementById(`mini-feedback-${miniId}`);
+
+          document.querySelectorAll(`.mini-option-btn[data-mini="${miniId}"]`).forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+
+          if (isCorrect) {
+            btn.classList.add('is-correct');
+            feedbackEl.style.color = 'var(--status-success)';
+            feedbackEl.textContent = '✓ Doğru Yorum! Çokgen oluşum ve kapalılık kuralı doğrulandı.';
+            state.miniCheckAnswers[miniId] = true;
+          } else {
+            btn.classList.add('is-wrong');
+            feedbackEl.style.color = 'var(--status-error)';
+            feedbackEl.textContent = '✕ Tekrar düşünün: Çokgenler en az 3 doğrunun oluşturduğu kapalı şekillerdir.';
+          }
+
+          const totalMiniCorrect = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalMiniCorrect} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalMiniCorrect === 3);
+          saveState();
+        });
+      });
+
+      // AŞAMA 3: Ek Soru Havuzu
+      const btnExtraYes = document.getElementById('btn-extra-yes');
+      const btnExtraNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleViewModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnExtraYes.addEventListener('click', () => {
+        state.extraPoolVisible = true;
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnExtraYes.setAttribute('aria-expanded', 'true');
+
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnExtraNo.addEventListener('click', () => {
+        state.extraPoolVisible = false;
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnExtraYes.setAttribute('aria-expanded', 'false');
+
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleViewModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleViewModeBtn.textContent = state.extraViewMode === 'single'
+          ? 'Tümünü Liste Görünümünde Aç'
+          : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsContainer = document.getElementById('question-pills-container');
+        const renderArea = document.getElementById('questions-render-area');
+
+        pillsContainer.innerHTML = EXTRA_QUESTIONS.map((q, idx) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && idx === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) {
+            cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          }
+          return `<button type="button" class="${cls}" data-q-index="${idx}" aria-label="Soru ${q.id}">${q.id}</button>`;
+        }).join('');
+
+        pillsContainer.querySelectorAll('.q-pill').forEach(pill => {
+          pill.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(pill.getAttribute('data-q-index'));
+            if (state.extraViewMode === 'list') {
+              const cardEl = document.getElementById(`extra-q-card-${state.currentQuestionIndex + 1}`);
+              if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              renderExtraQuestions();
+            }
+          });
+        });
+
+        const questionsToDisplay = state.extraViewMode === 'single'
+          ? [EXTRA_QUESTIONS[state.currentQuestionIndex]]
+          : EXTRA_QUESTIONS;
+
+        const letters = ['A', 'B', 'C', 'D'];
+
+        renderArea.innerHTML = questionsToDisplay.map(q => {
+          const chosenIdx = state.extraAnswers[q.id];
+          const isAnswered = chosenIdx !== undefined;
+          const isCorrect = isAnswered && chosenIdx === q.correctIndex;
+
+          return `
+            <article class="new-gen-question-card" id="extra-q-card-${q.id}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.76rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+
+              <div class="question-scenario-box">
+                ${q.scenario}
+              </div>
+
+              <p class="question-stem">${q.stem}</p>
+
+              <div class="choices-grid">
+                ${q.choices.map((choiceText, cIdx) => {
+                  let btnCls = 'choice-btn';
+                  if (isAnswered) {
+                    if (cIdx === q.correctIndex) btnCls += ' is-correct';
+                    else if (cIdx === chosenIdx) btnCls += ' is-wrong';
+                  }
+                  return `
+                    <button type="button" class="${btnCls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                      <span class="choice-btn__letter">${letters[cIdx]}</span>
+                      <span>${choiceText}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              ${isAnswered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; margin-bottom:0.3rem; color:${isCorrect ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${isCorrect ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm &amp; Muhakeme:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>
+                    ← Önceki Soru
+                  </button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === EXTRA_QUESTIONS.length - 1 ? 'disabled' : ''}>
+                    Sonraki Soru →
+                  </button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        renderArea.querySelectorAll('.choice-btn').forEach(choiceBtn => {
+          choiceBtn.addEventListener('click', () => {
+            const qId = Number(choiceBtn.getAttribute('data-qid'));
+            const cIdx = Number(choiceBtn.getAttribute('data-cidx'));
+            state.extraAnswers[qId] = cIdx;
+            updateExtraScore();
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prevBtn = document.getElementById('prev-q-btn');
+        const nextBtn = document.getElementById('next-q-btn');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex > 0) {
+              state.currentQuestionIndex--;
+              renderExtraQuestions();
+            }
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (state.currentQuestionIndex < EXTRA_QUESTIONS.length - 1) {
+              state.currentQuestionIndex++;
+              renderExtraQuestions();
+            }
+          });
+        }
+
+        updateExtraScore();
+      }
+
+      function updateExtraScore() {
+        const correctCount = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+          const q = EXTRA_QUESTIONS.find(item => item.id === Number(qId));
+          return q && q.correctIndex === ansIdx;
+        }).length;
+
+        const scoreEl = document.getElementById('extra-score-display');
+        if (scoreEl) scoreEl.textContent = `Doğru: ${correctCount} / 10`;
+
+        const answeredCount = Object.keys(state.extraAnswers).length;
+        document.getElementById('tab-btn-stage-3').classList.toggle('is-completed', answeredCount === 10);
+      }
+
+      initTheme();
+      loadState();
+      drawSvgGrid();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>

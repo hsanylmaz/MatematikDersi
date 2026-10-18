@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7. Sınıf 1. Hafta (`7hafta-1`) | Tam Sayılar, Rasyonel Sayılar ve Farklı Temsilleri — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 7. Sınıf Matematik 1. Hafta (MAT.7.1.1) Tam Sayılar, Rasyonel Sayılar ve Mutlak Değer aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Üst Teknik Durum Çubuğu -->
+  <header class="atelier-topbar">
+    <div class="atelier-topbar__inner">
+      <a href="../index.html" class="brand-mark" aria-label="Matematik Atölyesi Ana Sayfa">
+        <span class="brand-mark__symbol">M</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__title">MATEMATİK ATÖLYESİ</span>
+          <span class="brand-mark__sub">TYMM 2026-2027 • 7HAFTA-1 MODÜLÜ</span>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <span class="tech-badge tech-badge--grade-7">7. SINIF • 1. HAFTA</span>
+        <span class="tech-badge mono">MAT.7.1.1</span>
+        <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
+        <button type="button" class="btn btn--sm" id="theme-toggle-btn">Blueprint Koyu Mod</button>
+        <a href="../index.html" class="btn btn--sm btn--primary">🏠 Ana Sayfa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hafta Başlık ve Kazanım Bandı -->
+  <section class="week-header-banner">
+    <div class="container week-header-banner__grid">
+      <div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+          <span class="tech-badge tech-badge--signal">ETKİNLİK: 7hafta-1.html</span>
+          <span class="tech-badge">14–18 Eylül • 5 Ders Saati</span>
+          <span class="tech-badge">1. TEMA: SAYILAR VE NİCELİKLER (1)</span>
+        </div>
+        <h1 class="week-header-banner__title">Tam Sayılar, Rasyonel Sayılar ve Mutlak Değer Sayı Doğrusu Atölyesi</h1>
+        <p style="color:var(--ink-secondary); font-size:0.94rem; margin-top:0.25rem;">
+          <strong>Öğrenme Çıktısı (MAT.7.1.1):</strong> Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme.
+        </p>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="../index.html" class="btn btn--sm">← Ana Sayfaya Dön (Kazanım Seçimi)</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+
+    <!-- 3 Aşamalı Pedagojik Sekme Çubuğu -->
+    <nav class="stage-tabs-bar" aria-label="Pedagojik Aşamalar">
+      <button type="button" class="stage-tab-btn is-active" data-stage-target="stage-1" id="tab-btn-stage-1">
+        <span class="stage-tab-btn__index">1</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 1 • AKTİF KEŞİF</span>
+          <span class="stage-tab-btn__name">Sayı Doğrusu &amp; Rasyonel Temsil Simülasyonu</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-2" id="tab-btn-stage-2">
+        <span class="stage-tab-btn__index">2</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 2 • KONTROL</span>
+          <span class="stage-tab-btn__name">Öğrendim mi? (Değerlendirme)</span>
+        </span>
+      </button>
+
+      <button type="button" class="stage-tab-btn" data-stage-target="stage-3" id="tab-btn-stage-3">
+        <span class="stage-tab-btn__index">3</span>
+        <span class="stage-tab-btn__label">
+          <span class="stage-tab-btn__eyebrow">AŞAMA 3 • KOŞULLU SORU HAVUZU</span>
+          <span class="stage-tab-btn__name">Ek Soru İster misiniz? (10 Soru)</span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- AŞAMA 1: AKTİF ÖĞRENME SİMÜLASYONU -->
+    <section id="stage-1" class="stage-section">
+      <div class="simulation-workbench">
+
+        <aside class="guide-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:0.78rem; font-weight:700;">KEŞİF ADIMLARI (4 GÖREV)</span>
+            <span class="tech-badge" id="sim-step-counter">Adım 1 / 4</span>
+          </div>
+
+          <div class="guide-step-pills">
+            <button type="button" class="guide-step-pill is-active" data-step="0">1. Tam Sayı</button>
+            <button type="button" class="guide-step-pill" data-step="1">2. Mutlak Değer</button>
+            <button type="button" class="guide-step-pill" data-step="2">3. Rasyonel (+)</button>
+            <button type="button" class="guide-step-pill" data-step="3">4. Rasyonel (-)</button>
+          </div>
+
+          <div class="guide-mission-box">
+            <div class="guide-mission-box__tag" id="mission-tool-tag">ARAÇ 1/4: YÖNLÜ TAM SAYI DOĞRUSU</div>
+            <h2 class="guide-mission-box__title" id="mission-title">Görev 1: Deniz Seviyesi Altı (-3) Konumunu Bulun</h2>
+            <p class="guide-mission-box__inst" id="mission-instruction">
+              Sayı doğrusu sürgüsünü <strong>-3</strong> noktasına (0 başlangıç noktasının 3 birim soluna) getirin ve <strong>"Görevi Doğrula"</strong> butonuna basın.
+            </p>
+          </div>
+
+          <div class="hint-box" id="mission-hint">
+            💡 <strong>Pedagojik İpucu:</strong> Her tam sayı a, paydasına 1 yazılarak <code>a / 1</code> şeklinde bir rasyonel sayı olarak ifade edilebilir (ℕ ⊂ ℤ ⊂ ℚ).
+          </div>
+
+          <div class="feedback-banner feedback-banner--info" id="sim-feedback-box">
+            Sayı doğrusundaki imleci kaydırarak kesir, ondalık ve mutlak değer karşılıklarını inceleyin.
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary" id="verify-step-btn" style="flex:1;">✓ Görevi Doğrula</button>
+            <button type="button" class="btn" id="next-step-btn">Sonraki Adım →</button>
+          </div>
+
+          <div style="border-top:1px dashed var(--border-subtle); padding-top:0.85rem;">
+            <div class="mono" style="font-size:0.74rem; color:var(--ink-muted); margin-bottom:0.4rem;">
+              TYMM SÜREÇ BİLEŞENLERİ (MAT.7.1.1):
+            </div>
+            <ul style="list-style:none; font-size:0.82rem; display:grid; gap:0.35rem;">
+              <li id="proc-a">⬜ <strong>a)</strong> Gerçek yaşam durumlarında tam sayıları inceler.</li>
+              <li id="proc-b">⬜ <strong>b)</strong> Tam sayıları rasyonel sayılara genişletir ve mutlak değerle açıklar.</li>
+              <li id="proc-c">⬜ <strong>c)</strong> Sayı doğrusunda her rasyonel sayının bir noktaya karşılık geldiğini yorumlar.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="canvas-studio">
+          <div class="canvas-toolbar">
+            <div class="tool-group">
+              <button type="button" class="tool-btn is-active" data-step-btn="0">🌡️ Tam Sayılar (ℤ)</button>
+              <button type="button" class="tool-btn" data-step-btn="1">📏 Mutlak Değer |x|</button>
+              <button type="button" class="tool-btn" data-step-btn="2">🍰 Pozitif Rasyonel (1/4 Dilim)</button>
+              <button type="button" class="tool-btn" data-step-btn="3">🧭 Negatif Rasyonel (-7/4)</button>
+            </div>
+            <button type="button" class="btn btn--sm" id="sim-auto-target-btn">Hedef Konuma Getir</button>
+          </div>
+
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-bottom: 1.5px solid var(--border-subtle); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+            <label for="sim-param-slider" class="mono" style="font-size:0.84rem; font-weight:700;" id="slider-label">
+              Sayı Doğrusu Konumu: 1
+            </label>
+            <div style="display:flex; align-items:center; gap:0.75rem; flex:1; max-width:380px;">
+              <input type="range" id="sim-param-slider" min="-4" max="4" step="1" value="1" style="width:100%; accent-color: var(--accent-signal); cursor:pointer;">
+              <span class="tech-badge tech-badge--signal mono" id="slider-value-readout">1</span>
+            </div>
+          </div>
+
+          <div class="canvas-viewport">
+            <svg id="numberline-svg" class="interactive-svg" viewBox="0 0 760 400" aria-label="Rasyonel Sayı Doğrusu ve Mutlak Değer Simülasyonu"></svg>
+          </div>
+
+          <div class="canvas-telemetry">
+            <span id="telemetry-left">KESİR TEMSİLİ: 1 / 1</span>
+            <span id="telemetry-mid">ONDALIK TEMSİL: 1,00</span>
+            <span id="telemetry-right" style="color:var(--accent-signal); font-weight:700;">MUTLAK DEĞER (0'a Uzaklık): |1| = 1 br</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AŞAMA 2: ANLIK DEĞERLENDİRME (ÖĞRENDİM Mİ?) -->
+    <section id="stage-2" class="stage-section is-hidden">
+      <div class="assessment-panel">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:2px solid var(--border-sharp); padding-bottom:1rem;">
+          <div>
+            <span class="tech-badge tech-badge--grade-7">AŞAMA 2 • ANLIK DEĞERLENDİRME</span>
+            <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+              Öğrendim mi? — Tam Sayı ve Rasyonel Sayı Kontrolü (MAT.7.1.1)
+            </h2>
+          </div>
+          <div class="tech-badge tech-badge--signal" id="mini-check-score-badge">Doğrulanan: 0 / 3</div>
+        </div>
+
+        <div class="assessment-grid">
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 1 • SAYI KÜMELERİ İLİŞKİSİ</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              -5 sayısı hakkında aşağıdaki ifadelerden hangisi doğrudur?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">A) Doğal sayıdır (ℕ)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="true">B) Hem tam sayıdır (ℤ) hem de -5/1 şeklinde yazılabildiği için rasyonel sayıdır (ℚ)</button>
+              <button type="button" class="mini-option-btn" data-mini="1" data-correct="false">C) Rasyonel sayı değildir</button>
+            </div>
+            <div class="mono" id="mini-feedback-1" style="font-size:0.8rem;"></div>
+          </article>
+
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 2 • NEGATİF RASYONEL SAYI YERİ</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              -7/4 (-1 tam 3/4) rasyonel sayısı sayı doğrusunda hangi iki ardışık tam sayı arasındadır?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">A) 0 ile -1 arasında</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="true">B) -1 ile -2 arasında (-2'ye daha yakın)</button>
+              <button type="button" class="mini-option-btn" data-mini="2" data-correct="false">C) -2 ile -3 arasında</button>
+            </div>
+            <div class="mono" id="mini-feedback-2" style="font-size:0.8rem;"></div>
+          </article>
+
+          <article class="mini-check-card">
+            <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">MİNİ GÖREV 3 • MUTLAK DEĞER ANLAMI</div>
+            <h3 style="font-family:var(--font-display); font-size:1.05rem;">
+              Sayı doğrusunda 0 (başlangıç) noktasına uzaklığı 2,5 birim (5/2 birim) olan rasyonel sayılar hangileridir?
+            </h3>
+            <div class="mini-check-options">
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="true">A) -5/2 ve +5/2</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">B) Yalnızca +5/2</button>
+              <button type="button" class="mini-option-btn" data-mini="3" data-correct="false">C) -2/5 ve +2/5</button>
+            </div>
+            <div class="mono" id="mini-feedback-3" style="font-size:0.8rem;"></div>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-top:1rem;">
+          <button type="button" class="btn btn--primary" id="goto-stage-3-btn">Aşama 3: Ek Soru Alanına İlerle →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AŞAMA 3: KOŞULLU 10 YENİ NESİL EK SORU KAPISI -->
+    <section id="stage-3" class="extra-questions-gate" aria-labelledby="extra-gate-title">
+      <div class="extra-questions-gate__inner">
+        <div>
+          <span class="tech-badge tech-badge--signal">AŞAMA 3 • DİNAMİK YENİ NESİL SORU HAVUZU</span>
+          <h2 id="extra-gate-title" style="font-family:var(--font-display); font-size:1.5rem; margin-top:0.35rem;">
+            Ek soru çözmek ister misiniz?
+          </h2>
+          <p style="color:var(--ink-secondary); font-size:0.94rem; max-width:64ch;">
+            7. Sınıf 1. Hafta (<strong>MAT.7.1.1 — Tam Sayılar, Rasyonel Sayılar ve Farklı Temsilleri</strong>) için hazırlanan <strong>10 adet yeni nesil muhakeme sorusunu</strong> açmak için "Evet" butonuna tıklayın.
+          </p>
+        </div>
+
+        <div class="extra-questions-gate__btns">
+          <button type="button" class="btn btn--primary" id="btn-extra-yes" aria-expanded="false" aria-controls="extra-questions-panel">
+            ✓ Evet, 10 Yeni Nesil Soruyu Aç
+          </button>
+          <button type="button" class="btn" id="btn-extra-no">
+            ✕ Hayır, Şimdilik Yeterli
+          </button>
+        </div>
+      </div>
+
+      <div id="extra-no-message" class="feedback-banner feedback-banner--info is-hidden" hidden style="margin-top:1rem;">
+        Ek sorular gizli tutuldu. İstediğiniz an <strong>"Evet, 10 Yeni Nesil Soruyu Aç"</strong> butonuna basarak 10 yeni nesil soruya ulaşabilirsiniz.
+      </div>
+    </section>
+
+    <!-- KOŞULLU 10 YENİ NESİL SORU HAVUZU (Başlangıçta ve "Hayır" durumunda GİZLİ) -->
+    <section id="extra-questions-panel" class="extra-questions-container is-hidden" hidden>
+      <div class="question-nav-bar">
+        <div>
+          <div class="mono" style="font-size:0.75rem; color:var(--ink-muted);">7HAFTA-1 • YENİ NESİL SORU GEZGİNİ (1–10)</div>
+          <div class="question-num-pills" id="question-pills-container" style="margin-top:0.4rem;"></div>
+        </div>
+        <div style="display:flex; gap:0.65rem; align-items:center;">
+          <span class="tech-badge tech-badge--grade-7" id="extra-score-display">Doğru: 0 / 10</span>
+          <button type="button" class="btn btn--sm" id="toggle-view-mode-btn">Tümünü Liste Görünümünde Aç</button>
+        </div>
+      </div>
+      <div id="questions-render-area" style="display:flex; flex-direction:column; gap:1.25rem;"></div>
+    </section>
+
+  </main>
+
+  <footer class="atelier-footer">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div><strong>Matematik Atölyesi &amp; Simülasyon Platformu</strong> • MEB TYMM (2026-2027)</div>
+      <div class="mono" style="font-size:0.78rem;">Dosya: <code>sinif-7/7hafta-1.html</code> • Kazanım: <code>MAT.7.1.1</code></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'mat_atolye_7hafta_1';
+
+      const EXTRA_QUESTIONS = [
+        {
+          id: 1,
+          tag: 'YENİ NESİL • SAYI DOĞRUSUNDA EŞ BÖLMELENDİRME',
+          scenario: 'Sayı doğrusu üzerinde -2 ile -1 tam sayıları arası 5 eş parçaya bölünmüştür. -1 noktasından sola doğru 3. bölme noktasına K harfi yerleştirilmiştir.',
+          stem: 'Buna göre K noktasına karşılık gelen rasyonel sayı aşağıdakilerden hangisidir?',
+          choices: ['-3 / 5', '-8 / 5 (-1 tam 3/5)', '-7 / 5', '-12 / 5'],
+          correctIndex: 1,
+          explanation: '-1 tam sayısından sola doğru 5\'te 3 birim ilerlediğimizde -1 tam 3/5 = -8/5 rasyonel sayısına ulaşırız.'
+        },
+        {
+          id: 2,
+          tag: 'YENİ NESİL • DERİNLİK VE MUTLAK DEĞER',
+          scenario: 'Bir denizaltı araştırma aracının deniz seviyesine (0 m) göre konumu -15/2 metredir. Bir insansız hava aracının (drone) ise deniz seviyesine göre konumu +15/2 metredir.',
+          stem: 'Bu iki aracın konumlarını gösteren rasyonel sayılar ve deniz seviyesine olan uzaklıkları (mutlak değerleri) için hangisi doğrudur?',
+          choices: [
+            'Konum sayıları eşittir; uzaklıkları farklıdır.',
+            'Konumları zıt işaretli iki rasyonel sayıdır; ancak deniz seviyesine uzaklıkları (|-15/2| = |+15/2| = 7,5 m) birbirine eşittir.',
+            'Denizaltı deniz seviyesine daha yakındır.',
+            '-15/2 sayısı -7 ile -6 arasındadır.'
+          ],
+          correctIndex: 1,
+          explanation: '|-15/2| = 7,5 m ve |+15/2| = 7,5 m\'dir. İki aracın 0 başlangıç noktasına olan uzaklığı (mutlak değeri) eşittir.'
+        },
+        {
+          id: 3,
+          tag: 'YENİ NESİL • KÜMELER ARASI İLİŞKİ (ℕ, ℤ, ℚ)',
+          scenario: 'Bir bilgisayar programı girilen sayıları; Doğal Sayılar (ℕ), Tam Sayılar (ℤ) ve Rasyonel Sayılar (ℚ) kutularına yerleştirmektedir. Programa sırasıyla: 0, -9, +12/3 ve -7/2 sayıları giriliyor.',
+          stem: 'Bu 4 sayıdan kaç tanesi hem Tam Sayılar (ℤ) hem de Rasyonel Sayılar (ℚ) kutusuna aynı anda girer?',
+          choices: ['1 tanesi', '2 tanesi', '3 tanesi (0, -9 ve +12/3 = 4)', '4 tanesi'],
+          correctIndex: 2,
+          explanation: '0 ve -9 birer tam sayıdır. +12/3 = +4 olduğundan o da bir tam sayıdır. Her tam sayı aynı zamanda rasyonel sayı olduğundan 3 tanesi her iki kümeye de girer (-7/2 = -3,5 tam sayı değildir).'
+        },
+        {
+          id: 4,
+          tag: 'YENİ NESİL • ONDALIK VE RASYONEL FARKLI TEMSİLLER',
+          scenario: 'Laboratuvar hassas terazisinde bir kimyasal numunenin sıcaklık değişimi -2,75 °C olarak ölçülmüştür.',
+          stem: '-2,75 ondalık gösteriminin en sade rasyonel sayı (a/b) temsili aşağıdakilerden hangisidir?',
+          choices: ['-275 / 10', '-11 / 4', '-9 / 4', '-7 / 4'],
+          correctIndex: 1,
+          explanation: '-2,75 = -2 tam 75/100 = -2 tam 3/4 = -(2×4 + 3)/4 = -11/4 olur.'
+        },
+        {
+          id: 5,
+          tag: 'YENİ NESİL • EKSİ İŞARETİNİN KONUMU',
+          scenario: 'Tahtaya üç rasyonel ifade yazılmıştır: K = (-3)/8 , L = 3/(-8) , M = -(3/8).',
+          stem: 'Sayı doğrusu üzerinde K, L ve M sayılarının belirttiği noktalar hakkında ne söylenebilir?',
+          choices: [
+            'Üçü de birbirinden farklı noktaları gösterir.',
+            'K ve M aynı noktayı, L ise pozitif bölgeyi gösterir.',
+            'Üçü de birbirine denktir ve sayı doğrusunda tam olarak aynı noktaya (-0,375) karşılık gelir.',
+            'L tanımsızdır.'
+          ],
+          correctIndex: 2,
+          explanation: 'Negatif bir rasyonel sayıda eksi işareti payın önünde, paydanın önünde veya kesir çizgisinin önünde olabilir: (-a)/b = a/(-b) = -(a/b).'
+        },
+        {
+          id: 6,
+          tag: 'YENİ NESİL • ARDIŞIK TAM SAYILAR ARASINDAKİ KONUM',
+          scenario: 'Bir sayı doğrusu oyununda piyon -19/6 noktasına yerleştirilmiştir.',
+          stem: 'Piyonun bulunduğu nokta hangi iki ardışık tam sayı arasındadır?',
+          choices: ['-2 ile -3 arasında', '-3 ile -4 arasında', '-4 ile -5 arasında', '-1 ile -2 arasında'],
+          correctIndex: 1,
+          explanation: '-19/6 = -3 tam 1/6\'dır. Dolayısıyla -3\'ten biraz daha solda, yani -3 ile -4 tam sayıları arasındadır.'
+        },
+        {
+          id: 7,
+          tag: 'YENİ NESİL • TANIMSIZLIK DURUMU MUHAKEMESİ',
+          scenario: 'a bir tam sayı olmak üzere, M = 14 / (a - 5) ifadesinin rasyonel sayı belirtmediği (tanımsız olduğu) bilinmektedir.',
+          stem: 'Buna göre a tam sayısı kaçtır?',
+          choices: ['0', '-5', '5', '14'],
+          correctIndex: 2,
+          explanation: 'a/b biçimindeki rasyonel sayılarda payda (b) kesinlikle 0 olamaz. a - 5 = 0 ⇒ a = 5 için payda sıfır olur ve ifade rasyonel sayı belirtmez.'
+        },
+        {
+          id: 8,
+          tag: 'YENİ NESİL • MUTLAK DEĞER KARŞILAŞTIRMASI',
+          scenario: 'Sayı doğrusunda A = -9/4 ve B = +7/4 noktaları işaretlenmiştir.',
+          stem: 'A ve B noktalarının başlangıç noktasına (0\'a) olan uzaklıkları için hangisi doğrudur?',
+          choices: [
+            'A noktasının 0\'a uzaklığı (|-9/4| = 9/4), B noktasının 0\'a uzaklığından (|+7/4| = 7/4) daha büyüktür.',
+            'B noktası pozitif olduğu için 0\'a daha uzaktır.',
+            'İkisinin 0\'a uzaklığı eşittir.',
+            'Negatif sayıların uzaklığı negatiftir.'
+          ],
+          correctIndex: 0,
+          explanation: 'Uzaklık mutlak değerle ölçülür ve daima negatif olmayan bir değerdir: |-9/4| = 9/4 = 2,25 birim iken |+7/4| = 7/4 = 1,75 birimdir. A noktası 0\'a daha uzaktır.'
+        },
+        {
+          id: 9,
+          tag: 'YENİ NESİL • İKİ NOKTA ARASI MESAFE',
+          scenario: 'Bir karınca sayı doğrusunda -5/4 noktasından başlayıp sağa doğru ilerleyerek +7/4 noktasına ulaşmıştır.',
+          stem: 'Karıncanın sayı doğrusu üzerinde aldığı toplam yol kaç birimdir?',
+          choices: ['1/2 birim', '2 birim', '3 birim (12/4)', '4 birim'],
+          correctIndex: 2,
+          explanation: '-5/4 noktasından 0\'a kadar |-5/4| = 5/4 birim, 0\'dan +7/4\'e kadar 7/4 birim yol alır. Toplam yol: 5/4 + 7/4 = 12/4 = 3 birimdir.'
+        },
+        {
+          id: 10,
+          tag: 'YENİ NESİL • YÜZDE VE RASYONEL TEMSİL',
+          scenario: 'Bir elektrikli aracın batarya değişim göstergesi yokuş aşağı inerken enerji geri kazanımını +0,40 birim, yokuş yukarı çıkarken enerji tüketimini -0,60 birim olarak göstermektedir.',
+          stem: 'Bu iki değerin rasyonel sayı olarak en sade gösterimleri sırasıyla hangisidir?',
+          choices: [
+            '+2/5 ve -3/5',
+            '+4/100 ve -6/100',
+            '+1/4 ve -1/6',
+            '+2/5 ve +3/5'
+          ],
+          correctIndex: 0,
+          explanation: '+0,40 = +40/100 = +2/5 ve -0,60 = -60/100 = -3/5 olarak en sade rasyonel biçimde temsil edilir.'
+        }
+      ];
+
+      const SIM_STEPS = [
+        {
+          tag: 'ARAÇ 1/4: YÖNLÜ TAM SAYI DOĞRUSU',
+          title: 'Görev 1: Deniz Seviyesi Altı (-3) Konumunu Bulun',
+          instruction: 'Sürgüyü <strong>-3</strong> tam sayısına getirerek 0\'ın 3 birim solundaki konumu ve <code>-3/1</code> rasyonel karşılığını doğrulayın.',
+          hint: '💡 İpucu: 0\'ın solundaki tam sayılar negatif (-), sağındakiler pozitiftir (+).',
+          sliderLabel: 'Tam Sayı Konumu:',
+          min: -4, max: 4, step: 1, defaultVal: 1, targetVal: -3
+        },
+        {
+          tag: 'ARAÇ 2/4: MUTLAK DEĞER VE SİMETRİK UZAKLIK',
+          title: 'Görev 2: Mutlak Değeri |x| = 4 Olan Negatif Tam Sayı',
+          instruction: 'Sayı doğrusunda 0\'a uzaklığı 4 birim olan negatif tam sayıya (<strong>-4</strong>) gelin ve <code>|-4| = |+4| = 4</code> eşitliğini doğrulayın.',
+          hint: '💡 İpucu: Mutlak değer bir sayının 0 başlangıç noktasına olan uzaklığıdır ve asla negatif olamaz.',
+          sliderLabel: 'Konum x (|x| = 4 için):',
+          min: -4, max: 4, step: 1, defaultVal: 2, targetVal: -4
+        },
+        {
+          tag: 'ARAÇ 3/4: POZİTİF RASYONEL SAYILAR (1/4 BÖLMELİ)',
+          title: 'Görev 3: Sayı Doğrusunda 7/4 (1,75) Noktasını Bulun',
+          instruction: 'Her tam sayı arasının 4 eş parçaya bölündüğü sayı doğrusunda sürgüyü <strong>1.75 (yani 7/4)</strong> noktasına getirin.',
+          hint: '💡 İpucu: 7/4 = 1 tam 3/4 olduğundan 1 ile 2 tam sayıları arasında, 1\'den sonra 3. çeyrek bölmededir.',
+          sliderLabel: 'Rasyonel Konum (Çeyrek Birim):',
+          min: -3, max: 3, step: 0.25, defaultVal: 0.5, targetVal: 1.75
+        },
+        {
+          tag: 'ARAÇ 4/4: NEGATİF RASYONEL SAYILAR (-7/4)',
+          title: 'Görev 4: Sayı Doğrusunda -7/4 (-1,75) Noktasını Bulun',
+          instruction: 'Sürgüyü 0\'ın solunda -1 ile -2 arasındaki <strong>-1.75 (yani -7/4)</strong> noktasına getirerek doğrulayın.',
+          hint: '💡 İpucu: Negatif rasyonel sayılarda 0\'dan sola doğru tam kısım kadar gidilir, ardından kesir kısmı kadar yine sola ilerlenir.',
+          sliderLabel: 'Rasyonel Konum (Çeyrek Birim):',
+          min: -3, max: 3, step: 0.25, defaultVal: -0.5, targetVal: -1.75
+        }
+      ];
+
+      let state = {
+        currentSimStep: 0,
+        completedSimSteps: [false, false, false, false],
+        miniCheckAnswers: { 1: false, 2: false, 3: false },
+        extraViewMode: 'single',
+        currentQuestionIndex: 0,
+        extraAnswers: {}
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const p = JSON.parse(raw);
+            if (Array.isArray(p.completedSimSteps)) state.completedSimSteps = p.completedSimSteps;
+            if (p.miniCheckAnswers) state.miniCheckAnswers = p.miniCheckAnswers;
+            if (p.extraAnswers) state.extraAnswers = p.extraAnswers;
+          }
+        } catch (e) {}
+      }
+
+      function saveState() {
+        try {
+          const simDone = state.completedSimSteps.filter(Boolean).length;
+          const miniDone = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          const extraCorrect = Object.entries(state.extraAnswers).filter(([qId, ansIdx]) => {
+            const q = EXTRA_QUESTIONS.find(x => x.id === Number(qId));
+            return q && q.correctIndex === ansIdx;
+          }).length;
+          const pct = Math.min(100, Math.round((simDone / 4) * 40 + (miniDone / 3) * 30 + (Object.keys(state.extraAnswers).length / 10) * 30));
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            id: '7hafta-1',
+            grade: 7,
+            week: 1,
+            completedSimSteps: state.completedSimSteps,
+            miniCheckAnswers: state.miniCheckAnswers,
+            extraAnswers: state.extraAnswers,
+            extraCorrectCount: extraCorrect,
+            progressPercent: pct,
+            updatedAt: new Date().toISOString()
+          }));
+          document.getElementById('module-progress-badge').textContent = `İlerleme: %${pct}`;
+        } catch (e) {}
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      function initTheme() {
+        const saved = localStorage.getItem('mat_atolye_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        themeBtn.textContent = saved === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      }
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('mat_atolye_theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️ Aydınlık Lab Modu' : '📐 Blueprint Koyu Mod';
+      });
+
+      const slider = document.getElementById('sim-param-slider');
+
+      function toFractionString(val) {
+        if (Number.isInteger(val)) return `${val} / 1`;
+        const num = Math.round(val * 4);
+        if (num % 2 === 0) return `${num / 2} / 2`;
+        return `${num} / 4`;
+      }
+
+      function resetFeedbackForStep(idx) {
+        const fb = document.getElementById('sim-feedback-box');
+        if (!fb) return;
+        fb.className = 'feedback-banner feedback-banner--info';
+        if (state.completedSimSteps[idx]) {
+          fb.innerHTML = `✅ <strong>Adım ${idx + 1} tamamlandı.</strong> İsterseniz sürgüyle tekrar deney yapabilir veya diğer adıma geçebilirsiniz.`;
+        } else {
+          fb.innerHTML = `<strong>Adım ${idx + 1} Hazır:</strong> Sürgüyü hedef konuma getirip <strong>"✓ Görevi Doğrula"</strong> butonuna basın.`;
+        }
+      }
+
+      function loadSimStep(idx, preserveFeedback = false) {
+        state.currentSimStep = idx;
+        const cfg = SIM_STEPS[idx];
+        document.getElementById('sim-step-counter').textContent = `Adım ${idx + 1} / 4`;
+        document.getElementById('mission-tool-tag').textContent = cfg.tag;
+        document.getElementById('mission-title').textContent = cfg.title;
+        document.getElementById('mission-instruction').innerHTML = cfg.instruction;
+        document.getElementById('mission-hint').innerHTML = cfg.hint;
+
+        document.querySelectorAll('.guide-step-pill').forEach((p, i) => {
+          p.classList.toggle('is-active', i === idx);
+          p.classList.toggle('is-done', state.completedSimSteps[i]);
+        });
+        document.querySelectorAll('[data-step-btn]').forEach((b, i) => {
+          b.classList.toggle('is-active', i === idx);
+        });
+
+        slider.min = cfg.min;
+        slider.max = cfg.max;
+        slider.step = cfg.step;
+        slider.value = state.completedSimSteps[idx] ? cfg.targetVal : cfg.defaultVal;
+        if (!preserveFeedback) {
+          resetFeedbackForStep(idx);
+        }
+        renderCanvas();
+        updateChecklist();
+      }
+
+      function renderCanvas() {
+        const val = Number(slider.value);
+        const cfg = SIM_STEPS[state.currentSimStep];
+        const svg = document.getElementById('numberline-svg');
+        const frac = toFractionString(val);
+        const absVal = Math.abs(val);
+
+        document.getElementById('slider-label').textContent = `${cfg.sliderLabel} ${val} (${frac})`;
+        document.getElementById('slider-value-readout').textContent = `${frac}`;
+        document.getElementById('telemetry-left').textContent = `RASYONEL TEMSİL: ${frac}`;
+        document.getElementById('telemetry-mid').textContent = `ONDALIK TEMSİL: ${val.toFixed(2).replace('.', ',')}`;
+        document.getElementById('telemetry-right').textContent = `MUTLAK DEĞER: |${frac}| = ${absVal} birim`;
+
+        const centerX = 380;
+        const lineY = 230;
+        const unitPx = 76; // -4..+4 fits nicely (8 * 76 = 608px)
+        const pointX = centerX + val * unitPx;
+
+        let ticks = '';
+        for (let i = -4; i <= 4; i++) {
+          const tx = centerX + i * unitPx;
+          ticks += `
+            <line x1="${tx}" y1="${lineY - 14}" x2="${tx}" y2="${lineY + 14}" stroke="#141413" stroke-width="2.5"/>
+            <text x="${tx}" y="${lineY + 36}" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="${i === 0 ? '#00875A' : '#141413'}">${i}</text>
+          `;
+          if (i < 4 && state.currentSimStep >= 2) {
+            for (let q = 1; q <= 3; q++) {
+              const qx = tx + (q * unitPx) / 4;
+              ticks += `<line x1="${qx}" y1="${lineY - 6}" x2="${qx}" y2="${lineY + 6}" stroke="#75726B" stroke-width="1.2"/>`;
+            }
+          }
+        }
+
+        svg.innerHTML = `
+          <text x="380" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#D97706">
+            Nokta: ${frac} (Ondalık: ${val.toFixed(2).replace('.', ',')}) • 0'a Uzaklık: |${frac}| = ${absVal} br
+          </text>
+
+          <!-- Mutlak Değer Mesafe Çubuğu -->
+          <line x1="${centerX}" y1="145" x2="${pointX}" y2="145" stroke="#00875A" stroke-width="4"/>
+          <line x1="${centerX}" y1="135" x2="${centerX}" y2="230" stroke="rgba(0,135,90,0.4)" stroke-dasharray="4,4" stroke-width="2"/>
+          <line x1="${pointX}" y1="135" x2="${pointX}" y2="230" stroke="rgba(255,85,0,0.5)" stroke-dasharray="4,4" stroke-width="2"/>
+          <text x="${(centerX + pointX) / 2}" y="132" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#00875A">
+            |${frac}| = ${absVal} birim
+          </text>
+
+          <!-- Ana Sayı Doğrusu -->
+          <line x1="50" y1="${lineY}" x2="710" y2="${lineY}" stroke="#141413" stroke-width="3.5"/>
+          ${ticks}
+
+          <!-- Başlangıç 0 Noktası -->
+          <circle cx="${centerX}" cy="${lineY}" r="7" fill="#00875A"/>
+
+          <!-- Seçili Rasyonel Sayı Noktası -->
+          <circle cx="${pointX}" cy="${lineY}" r="11" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+          <text x="${pointX}" y="${lineY - 24}" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF5500">${frac}</text>
+        `;
+      }
+
+      slider.addEventListener('input', () => {
+        resetFeedbackForStep(state.currentSimStep);
+        renderCanvas();
+      });
+
+      document.getElementById('verify-step-btn').addEventListener('click', () => {
+        const cfg = SIM_STEPS[state.currentSimStep];
+        const val = Number(slider.value);
+        const fb = document.getElementById('sim-feedback-box');
+        if (Math.abs(val - cfg.targetVal) < 0.001) {
+          state.completedSimSteps[state.currentSimStep] = true;
+          fb.className = 'feedback-banner feedback-banner--success';
+          fb.innerHTML = `🎉 <strong>Tebrikler!</strong> Adım ${state.currentSimStep + 1} başarıyla doğrulandı (${toFractionString(val)}). "Sonraki Adım" ile devam edebilirsiniz.`;
+          loadSimStep(state.currentSimStep, true);
+          saveState();
+        } else {
+          fb.className = 'feedback-banner feedback-banner--error';
+          fb.innerHTML = `⚠️ Hedef nokta olan <strong>${cfg.targetVal} (${toFractionString(cfg.targetVal)})</strong> konumuna gelip tekrar doğrulayın.`;
+        }
+      });
+
+      document.getElementById('sim-auto-target-btn').addEventListener('click', () => {
+        slider.value = SIM_STEPS[state.currentSimStep].targetVal;
+        resetFeedbackForStep(state.currentSimStep);
+        renderCanvas();
+      });
+
+      document.getElementById('next-step-btn').addEventListener('click', () => {
+        if (state.currentSimStep < 3) loadSimStep(state.currentSimStep + 1);
+        else switchStage('stage-2');
+      });
+
+      document.querySelectorAll('.guide-step-pill').forEach(p => {
+        p.addEventListener('click', () => loadSimStep(Number(p.getAttribute('data-step'))));
+      });
+      document.querySelectorAll('[data-step-btn]').forEach(b => {
+        b.addEventListener('click', () => loadSimStep(Number(b.getAttribute('data-step-btn'))));
+      });
+
+      function updateChecklist() {
+        const cnt = state.completedSimSteps.filter(Boolean).length;
+        document.getElementById('proc-a').innerHTML = `${cnt >= 1 ? '✅' : '⬜'} <strong>a)</strong> Gerçek yaşam durumlarında tam sayıları inceler.`;
+        document.getElementById('proc-b').innerHTML = `${cnt >= 2 ? '✅' : '⬜'} <strong>b)</strong> Tam sayıları rasyonel sayılara genişletir ve mutlak değerle açıklar.`;
+        document.getElementById('proc-c').innerHTML = `${cnt >= 4 ? '✅' : '⬜'} <strong>c)</strong> Sayı doğrusunda her rasyonel sayının bir noktaya karşılık geldiğini yorumlar.`;
+        document.getElementById('tab-btn-stage-1').classList.toggle('is-completed', cnt === 4);
+      }
+
+      // Sekme Geçişleri
+      const stageButtons = document.querySelectorAll('.stage-tab-btn');
+      function switchStage(stageId) {
+        stageButtons.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-stage-target') === stageId));
+        const s1 = document.getElementById('stage-1');
+        const s2 = document.getElementById('stage-2');
+        const s3 = document.getElementById('stage-3');
+        if (stageId === 'stage-1') { s1.classList.remove('is-hidden'); s2.classList.add('is-hidden'); }
+        else if (stageId === 'stage-2') { s1.classList.add('is-hidden'); s2.classList.remove('is-hidden'); }
+        else if (stageId === 'stage-3') { s3.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+      stageButtons.forEach(b => b.addEventListener('click', () => switchStage(b.getAttribute('data-stage-target'))));
+      document.getElementById('goto-stage-3-btn').addEventListener('click', () => switchStage('stage-3'));
+
+      // Mini Değerlendirme
+      document.querySelectorAll('.mini-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mId = btn.getAttribute('data-mini');
+          const ok = btn.getAttribute('data-correct') === 'true';
+          const fb = document.getElementById(`mini-feedback-${mId}`);
+          document.querySelectorAll(`.mini-option-btn[data-mini="${mId}"]`).forEach(x => x.classList.remove('is-correct', 'is-wrong'));
+          btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+          fb.style.color = ok ? 'var(--status-success)' : 'var(--status-error)';
+          fb.textContent = ok ? '✓ Doğru! Kazanım doğrulandı.' : '✕ Sayı doğrusu ve mutlak değer tanımını tekrar düşünün.';
+          if (ok) state.miniCheckAnswers[mId] = true;
+          const totalOk = Object.values(state.miniCheckAnswers).filter(Boolean).length;
+          document.getElementById('mini-check-score-badge').textContent = `Doğrulanan: ${totalOk} / 3`;
+          document.getElementById('tab-btn-stage-2').classList.toggle('is-completed', totalOk === 3);
+          saveState();
+        });
+      });
+
+      // Ek Soru Kapısı (Evet / Hayır)
+      const btnYes = document.getElementById('btn-extra-yes');
+      const btnNo = document.getElementById('btn-extra-no');
+      const extraPanel = document.getElementById('extra-questions-panel');
+      const extraNoMsg = document.getElementById('extra-no-message');
+      const toggleModeBtn = document.getElementById('toggle-view-mode-btn');
+
+      btnYes.addEventListener('click', () => {
+        extraNoMsg.classList.add('is-hidden');
+        extraNoMsg.setAttribute('hidden', '');
+        extraPanel.classList.remove('is-hidden');
+        extraPanel.removeAttribute('hidden');
+        btnYes.setAttribute('aria-expanded', 'true');
+        renderExtraQuestions();
+        extraPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      btnNo.addEventListener('click', () => {
+        extraPanel.classList.add('is-hidden');
+        extraPanel.setAttribute('hidden', '');
+        btnYes.setAttribute('aria-expanded', 'false');
+        extraNoMsg.classList.remove('is-hidden');
+        extraNoMsg.removeAttribute('hidden');
+      });
+
+      toggleModeBtn.addEventListener('click', () => {
+        state.extraViewMode = state.extraViewMode === 'single' ? 'list' : 'single';
+        toggleModeBtn.textContent = state.extraViewMode === 'single' ? 'Tümünü Liste Görünümünde Aç' : 'Tek Tek (Kart Görünümünde) Göster';
+        renderExtraQuestions();
+      });
+
+      function renderExtraQuestions() {
+        const pillsEl = document.getElementById('question-pills-container');
+        const areaEl = document.getElementById('questions-render-area');
+        const letters = ['A', 'B', 'C', 'D'];
+
+        pillsEl.innerHTML = EXTRA_QUESTIONS.map((q, i) => {
+          const ans = state.extraAnswers[q.id];
+          let cls = 'q-pill';
+          if (state.extraViewMode === 'single' && i === state.currentQuestionIndex) cls += ' is-current';
+          if (ans !== undefined) cls += ans === q.correctIndex ? ' is-answered-correct' : ' is-answered-wrong';
+          return `<button type="button" class="${cls}" data-qidx="${i}">${q.id}</button>`;
+        }).join('');
+
+        pillsEl.querySelectorAll('.q-pill').forEach(p => {
+          p.addEventListener('click', () => {
+            state.currentQuestionIndex = Number(p.getAttribute('data-qidx'));
+            renderExtraQuestions();
+          });
+        });
+
+        const list = state.extraViewMode === 'single' ? [EXTRA_QUESTIONS[state.currentQuestionIndex]] : EXTRA_QUESTIONS;
+        areaEl.innerHTML = list.map(q => {
+          const chosen = state.extraAnswers[q.id];
+          const answered = chosen !== undefined;
+          const ok = answered && chosen === q.correctIndex;
+          return `
+            <article class="new-gen-question-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="tech-badge tech-badge--signal">SORU ${q.id} / 10</span>
+                <span class="mono" style="font-size:0.75rem; color:var(--ink-muted);">${q.tag}</span>
+              </div>
+              <div class="question-scenario-box">${q.scenario}</div>
+              <p class="question-stem">${q.stem}</p>
+              <div class="choices-grid">
+                ${q.choices.map((ch, cIdx) => {
+                  let cls = 'choice-btn';
+                  if (answered) {
+                    if (cIdx === q.correctIndex) cls += ' is-correct';
+                    else if (cIdx === chosen) cls += ' is-wrong';
+                  }
+                  return `<button type="button" class="${cls}" data-qid="${q.id}" data-cidx="${cIdx}">
+                    <span class="choice-btn__letter">${letters[cIdx]}</span>
+                    <span>${ch}</span>
+                  </button>`;
+                }).join('')}
+              </div>
+              ${answered ? `
+                <div class="solution-explanation">
+                  <div style="font-weight:700; color:${ok ? 'var(--status-success)' : 'var(--status-error)'};">
+                    ${ok ? '✓ Doğru Cevap!' : `✕ Yanlış Seçim — Doğru Seçenek: ${letters[q.correctIndex]}`}
+                  </div>
+                  <div><strong>Pedagojik Çözüm:</strong> ${q.explanation}</div>
+                </div>
+              ` : ''}
+              ${state.extraViewMode === 'single' ? `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; border-top:1px dashed var(--border-subtle);">
+                  <button type="button" class="btn btn--sm" id="prev-q-btn" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>← Önceki Soru</button>
+                  <span class="mono" style="font-size:0.8rem;">Soru ${q.id} / 10</span>
+                  <button type="button" class="btn btn--sm btn--primary" id="next-q-btn" ${state.currentQuestionIndex === 9 ? 'disabled' : ''}>Sonraki Soru →</button>
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        areaEl.querySelectorAll('.choice-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            state.extraAnswers[Number(btn.getAttribute('data-qid'))] = Number(btn.getAttribute('data-cidx'));
+            renderExtraQuestions();
+            saveState();
+          });
+        });
+
+        const prev = document.getElementById('prev-q-btn');
+        const next = document.getElementById('next-q-btn');
+        if (prev) prev.addEventListener('click', () => { if (state.currentQuestionIndex > 0) { state.currentQuestionIndex--; renderExtraQuestions(); } });
+        if (next) next.addEventListener('click', () => { if (state.currentQuestionIndex < 9) { state.currentQuestionIndex++; renderExtraQuestions(); } });
+
+        const correctCnt = Object.entries(state.extraAnswers).filter(([id, idx]) => {
+          const item = EXTRA_QUESTIONS.find(x => x.id === Number(id));
+          return item && item.correctIndex === idx;
+        }).length;
+        document.getElementById('extra-score-display').textContent = `Doğru: ${correctCnt} / 10`;
+      }
+
+      initTheme();
+      loadState();
+      loadSimStep(0);
+      saveState();
+    })();
+  </script>
+</body>
+</html>
