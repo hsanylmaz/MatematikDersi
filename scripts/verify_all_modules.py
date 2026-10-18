@@ -73,6 +73,20 @@ def verify():
                 if ph in content.lower():
                     errors.append(f"{file_path.name}: Yasaklı mor renk ({ph}) tespit edildi.")
 
+            # 6. JavaScript Sözdizimi (Node.js syntax check)
+            scripts = re.findall(r'<script>(.*?)</script>', content, re.DOTALL)
+            for idx, script_code in enumerate(scripts):
+                temp_js = ROOT_DIR / "temp_check.js"
+                temp_js.write_text(script_code, encoding="utf-8")
+                try:
+                    import subprocess
+                    res = subprocess.run(["node", "--check", str(temp_js)], capture_output=True, text=True, encoding="utf-8")
+                    if res.returncode != 0:
+                        errors.append(f"{file_path.name}: JavaScript sözdizimi hatası (SyntaxError):\n{res.stderr.strip()}")
+                finally:
+                    if temp_js.exists():
+                        temp_js.unlink()
+
     print(f"Toplam {total_checked} modül denetlendi.")
     if errors:
         print(f"❌ {len(errors)} HATA BULUNDU:")
@@ -80,7 +94,7 @@ def verify():
             print("  • " + e)
         return False
     else:
-        print("✅ TÜM 21 MODÜL (5, 6, 7. SINIF 1-7. HAFTA) %100 KUSURSUZ DOĞRULANDI!")
+        print("✅ TÜM 21 MODÜL (5, 6, 7. SINIF 1-7. HAFTA) VE JS SÖZDİZİMLERİ %100 KUSURSUZ DOĞRULANDI!")
         return True
 
 if __name__ == "__main__":
