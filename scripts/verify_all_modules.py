@@ -17,7 +17,7 @@ def verify():
     total_checked = 0
 
     for grade in [5, 6, 7]:
-        for week in range(1, 8):
+        for week in range(1, 10):
             file_path = ROOT_DIR / f"sinif-{grade}" / f"{grade}hafta-{week}.html"
             total_checked += 1
 
@@ -94,7 +94,7 @@ def verify():
             print("  • " + e)
         return False
     else:
-        print("✅ TÜM 21 MODÜL (5, 6, 7. SINIF 1-7. HAFTA) VE JS SÖZDİZİMLERİ %100 KUSURSUZ DOĞRULANDI!")
+        print("✅ TÜM 27 MODÜL (5, 6, 7. SINIF 1-9. HAFTA) VE JS SÖZDİZİMLERİ %100 KUSURSUZ DOĞRULANDI!")
         return True
 
 if __name__ == "__main__":

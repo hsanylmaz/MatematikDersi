@@ -1023,6 +1023,23 @@
         } else if (type === 'rational_mult') {
           const num = v1 * (v2 || 2);
           return { input: `(${v1}/4) × (${v2 || 2}/3)`, value: `Alan = ${num}/12`, note: `Sadeleşmiş: ${(num/12).toFixed(2)}` };
+        } else if (type === 'place_value_blocks') {
+          const valStr = String(v1).padStart(7, '0');
+          const m = parseInt(valStr.slice(0, 1), 10);
+          const th = parseInt(valStr.slice(1, 4), 10);
+          const u = parseInt(valStr.slice(4, 7), 10);
+          return { input: `Sayı = ${v1.toLocaleString('tr-TR')}`, value: `${m} Milyon ${th} Bin ${u}`, note: `${String(v1).length} Basamaklı` };
+        } else if (type === 'fraction_discount_problem') {
+          const disc = (v1 * (v2 || 25)) / 100;
+          const finalP = v1 - disc;
+          return { input: `Etiket: ${v1} ₺, %${v2 || 25} İndirim`, value: `Ödenen: ${finalP} ₺`, note: `Tasarruf: ${disc} ₺` };
+        } else if (type === 'isometric_cubes') {
+          const count = v1;
+          return { input: `Küp Katmanı = ${v1}`, value: `Önden: ${Math.min(v1, 3)} kare, Üstten: ${Math.ceil(v1 / 2)} kare`, note: `${v1} Eş Küp` };
+        } else if (type === 'prism_net_volume') {
+          const vol = v1 * (v2 || 3) * 2;
+          const area = 2 * (v1 * (v2 || 3) + v1 * 2 + (v2 || 3) * 2);
+          return { input: `${v1} × ${v2 || 3} × 2`, value: `Hacim = ${vol} br³, Alan = ${area} br²`, note: `${vol} Birim Küp` };
         } else {
           return { input: `Değer = ${v1}`, value: `Sonuç = ${v1}`, note: 'Gözlem Kaydedildi' };
         }
@@ -1315,6 +1332,122 @@
             <text x="380" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700">En: ${n1}/4 • Boy: ${n2}/3</text>
             <text x="380" y="340" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700" fill="#00875A">
               Ortak Kesişen Alan = ${prod} / 12 birimkare
+            </text>
+          `;
+        } else if (type === 'place_value_blocks') {
+          const valStr = String(v1).padStart(9, ' ');
+          const formatted = Number(v1).toLocaleString('tr-TR');
+          tMeas.textContent = `ÇOK BASAMAKLI SAYI: ${formatted} (Bölükler: Milyonlar • Binler • Birler)`;
+          const parts = formatted.split('.');
+          let mil = '0', bin = '000', bir = '000';
+          if (parts.length === 3) { mil = parts[0]; bin = parts[1]; bir = parts[2]; }
+          else if (parts.length === 2) { bin = parts[0]; bir = parts[1]; }
+          else { bir = parts[0]; }
+          layer.innerHTML = `
+            <rect x="80" y="60" width="600" height="90" fill="#FEF3C7" stroke="#141413" stroke-width="2.5"/>
+            <text x="380" y="115" text-anchor="middle" font-family="JetBrains Mono" font-size="34" font-weight="700" fill="#0052CC">${formatted}</text>
+            <g transform="translate(80, 180)">
+              <rect x="0" y="0" width="180" height="90" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+              <text x="90" y="32" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#FF5500">MİLYONLAR BÖLÜĞÜ</text>
+              <text x="90" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="28" font-weight="700">${mil}</text>
+              <rect x="210" y="0" width="180" height="90" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+              <text x="300" y="32" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#00875A">BİNLER BÖLÜĞÜ</text>
+              <text x="300" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="28" font-weight="700">${bin}</text>
+              <rect x="420" y="0" width="180" height="90" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+              <text x="510" y="32" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#0052CC">BİRLER BÖLÜĞÜ</text>
+              <text x="510" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="28" font-weight="700">${bir}</text>
+            </g>
+            <text x="380" y="320" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#141413">
+              Okunuşu: ${mil !== '0' ? mil + ' milyon ' : ''}${bin !== '000' && bin !== '0' ? bin + ' bin ' : ''}${bir}
+            </text>
+          `;
+        } else if (type === 'fraction_discount_problem') {
+          const price = v1;
+          const rate = v2 || 25;
+          const disc = (price * rate) / 100;
+          const pay = price - disc;
+          tMeas.textContent = `GERÇEK YAŞAM PROBLEMİ: Etiket = ${price} ₺ | İndirim = %${rate} (-${disc} ₺) | Ödenecek = ${pay} ₺`;
+          const discWidth = (rate / 100) * 440;
+          layer.innerHTML = `
+            <text x="380" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="700">Fiyat &amp; Yüzde İndirimi Temsili (Tasarruf Modeli)</text>
+            <rect x="160" y="80" width="440" height="50" fill="#E2E8F0" stroke="#141413" stroke-width="2.5"/>
+            <rect x="160" y="80" width="${440 - discWidth}" height="50" fill="#00875A" stroke="#141413" stroke-width="2.5"/>
+            <rect x="${160 + 440 - discWidth}" y="80" width="${discWidth}" height="50" fill="#FF5500" stroke="#141413" stroke-width="2.5"/>
+            <text x="${160 + (440 - discWidth) / 2}" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#FFFFFF">Ödenen: ${pay} ₺</text>
+            <text x="${160 + 440 - discWidth / 2}" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FFFFFF">-%${rate}</text>
+            <g transform="translate(160, 160)">
+              <rect x="0" y="0" width="200" height="90" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+              <text x="100" y="32" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700">Etiket Fiyatı</text>
+              <text x="100" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="26" font-weight="700" fill="#141413">${price} ₺</text>
+              <rect x="240" y="0" width="200" height="90" fill="#ECFDF5" stroke="#00875A" stroke-width="2"/>
+              <text x="340" y="32" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#00875A">İndirimli Tutar</text>
+              <text x="340" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="26" font-weight="700" fill="#00875A">${pay} ₺</text>
+            </g>
+            <text x="380" y="300" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#0052CC">
+              Kazanılan Tasarruf: ${disc} ₺ (Fiyatın ${rate}/100'ü)
+            </text>
+          `;
+        } else if (type === 'isometric_cubes') {
+          const n = v1;
+          tMeas.textContent = `3B YAPI ANALİZİ: Toplam ${n} Eş Küp | Önden: ${Math.min(n, 3)} Kare | Üstten: ${Math.ceil(n / 2)} Kare`;
+          layer.innerHTML = `
+            <text x="380" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">Eş Küplerle Yapı ve 2B İzdüşüm Görünümleri</text>
+            <g transform="translate(120, 85)">
+              <rect x="0" y="0" width="140" height="140" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+              <text x="70" y="25" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#0052CC">ÖNDEN GÖRÜNÜM</text>
+              <g transform="translate(35, 45)">
+                ${[...Array(Math.min(n, 3))].map((_, i) => `<rect x="0" y="${60 - i * 30}" width="30" height="30" fill="#0052CC" stroke="#141413" stroke-width="2"/>`).join('')}
+                ${n > 3 ? `<rect x="30" y="60" width="30" height="30" fill="#0052CC" stroke="#141413" stroke-width="2"/>` : ''}
+              </g>
+              <text x="70" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">Dikey Sütunlar</text>
+            </g>
+            <g transform="translate(310, 85)">
+              <rect x="0" y="0" width="140" height="140" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+              <text x="70" y="25" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#FF5500">ÜSTTEN GÖRÜNÜM</text>
+              <g transform="translate(35, 50)">
+                <rect x="0" y="0" width="30" height="30" fill="#FF5500" stroke="#141413" stroke-width="2"/>
+                ${n >= 2 ? `<rect x="0" y="30" width="30" height="30" fill="#FF5500" stroke="#141413" stroke-width="2"/>` : ''}
+                ${n >= 4 ? `<rect x="30" y="0" width="30" height="30" fill="#FF5500" stroke="#141413" stroke-width="2"/>` : ''}
+              </g>
+              <text x="70" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">Zemin İzdüşümü</text>
+            </g>
+            <g transform="translate(500, 85)">
+              <rect x="0" y="0" width="140" height="140" fill="var(--surface-paper)" stroke="#141413" stroke-width="2.5"/>
+              <text x="70" y="25" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#00875A">SAĞDAN GÖRÜNÜM</text>
+              <g transform="translate(45, 45)">
+                ${[...Array(Math.min(n, 3))].map((_, i) => `<rect x="0" y="${60 - i * 30}" width="30" height="30" fill="#00875A" stroke="#141413" stroke-width="2"/>`).join('')}
+              </g>
+              <text x="70" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#4A4843">Yan Siluet</text>
+            </g>
+            <text x="380" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141413">
+              3B Cisimler 2B Görünümlerin Ortak Kesişimiyle Tek Anlamlı İnşa Edilir
+            </text>
+          `;
+        } else if (type === 'prism_net_volume') {
+          const a = v1, b = v2 || 3, c = 2;
+          const vol = a * b * c;
+          const area = 2 * (a * b + a * c + b * c);
+          tMeas.textContent = `PRİZMA: ${a} × ${b} × ${c} br | Taban Alanı = ${a * b} br² | Hacim = ${vol} br³ | Yüzey Alanı = ${area} br²`;
+          layer.innerHTML = `
+            <text x="380" y="50" text-anchor="middle" font-family="Space Grotesk" font-size="18" font-weight="700">Dikdörtgenler Prizması Açınımı &amp; Birim Küp Hacim Bağıntısı</text>
+            <g transform="translate(180, 80)">
+              <rect x="0" y="${c * 20}" width="${b * 20}" height="${a * 20}" fill="#93C5FD" stroke="#141413" stroke-width="2"/>
+              <rect x="${b * 20}" y="${c * 20}" width="${c * 20}" height="${a * 20}" fill="#FCA5A5" stroke="#141413" stroke-width="2"/>
+              <rect x="${(b + c) * 20}" y="${c * 20}" width="${b * 20}" height="${a * 20}" fill="#93C5FD" stroke="#141413" stroke-width="2"/>
+              <rect x="${(2 * b + c) * 20}" y="${c * 20}" width="${c * 20}" height="${a * 20}" fill="#FCA5A5" stroke="#141413" stroke-width="2"/>
+              <rect x="${b * 20}" y="0" width="${c * 20}" height="${c * 20}" fill="#86EFAC" stroke="#141413" stroke-width="2"/>
+              <rect x="${b * 20}" y="${(a + c) * 20}" width="${c * 20}" height="${c * 20}" fill="#86EFAC" stroke="#141413" stroke-width="2"/>
+            </g>
+            <g transform="translate(480, 95)">
+              <rect x="0" y="0" width="180" height="150" fill="var(--surface-paper)" stroke="#141413" stroke-width="2"/>
+              <text x="90" y="30" text-anchor="middle" font-family="Space Grotesk" font-size="14" font-weight="700">Boyutlar</text>
+              <text x="90" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="13">En (a): ${a} br</text>
+              <text x="90" y="75" text-anchor="middle" font-family="JetBrains Mono" font-size="13">Boy (b): ${b} br</text>
+              <text x="90" y="95" text-anchor="middle" font-family="JetBrains Mono" font-size="13">Yükseklik (c): ${c} br</text>
+              <text x="90" y="125" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#00875A">V = a×b×c = ${vol} br³</text>
+            </g>
+            <text x="380" y="320" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF5500">
+              Yüzey Alanı = 2 × (${a}×${b} + ${a}×${c} + ${b}×${c}) = ${area} birimkare
             </text>
           `;
         } else {

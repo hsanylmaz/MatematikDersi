@@ -834,5 +834,546 @@ GRADE7_MODULES = [
                 "explanation": "Ali'nin aldığı yol = 20 × (3/4) = 15 metre. Veli'nin aldığı yol = 20 × (2/5) = 8 metre. Aralarındaki fark = 15 - 8 = 7 metre. Veya 20 × (3/4 - 2/5) = 20 × (15/20 - 8/20) = 20 × (7/20) = 7 metre."
             }
         ]
+    },
+# 7. SINIF 8. HAFTA (YENİ MODÜL)
+    {
+        "grade": 7,
+        "week": 8,
+        "title": "Eş Küplerle Yapılar ve Farklı Yönlerden Görünümleri Atölyesi",
+        "date": "02–06 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "4. TEMA: GEOMETRİK NİCELİKLER (1)",
+        "outcome_code": "MAT.7.4.1",
+        "outcome_text": "Eş küplerle oluşturulan yapılar ile görünümleri arasındaki ilişkiyi çözümleyebilme.",
+        "process_items": [
+            "Eş küplerle oluşturulan yapıların farklı yönlerden (ön, üst, sağ, sol) görünümlerini çizer.",
+            "Görünümleri verilen yapıları eş küplerle oluşturur.",
+            "Oluşturduğu yapı ile görünümleri arasındaki ilişkileri belirler.",
+            "Farklı açılardan bakışın oluşturduğu izdüşümleri çözümler."
+        ],
+        "meb_quote": "Mimari yapılar ve futbol kalesi direklerinin tek açıdan bakıldığında tek görünmesi bağlamı; 3B cisimlerin 2B izdüşümleri (önden, üstten, sağdan, soldan bakış), eş küp sayısı tahmin etme ve sağ-sol ile ön-arka simetrisi.",
+        "sim_steps": [
+            {
+                "tag": "ÖNDEN GÖRÜNÜM ANALİZİ",
+                "title": "Adım 1: Yapıdaki Küp Sayısı ve Önden İzdüşüm",
+                "instruction": "Sürgüyle eş küp sayısını (1-6 arası) değiştirin. Önden bakıldığında kaç kare görüldüğünü ve sütun yüksekliklerini gözlem tablosuna kaydedin.",
+                "hint": "Önden görünüm, yapının her sütunundaki en yüksek küp katına göre iki boyutlu bir siluet verir.",
+                "hypotheses": [
+                    {"text": "Önden bakıldığında görülen kare sayısı, arkada kalan küpler gizlendiği için toplam küp sayısından az olabilir.", "correct": True},
+                    {"text": "Önden bakıldığında yapıdaki tüm küpler eksiksiz görülür.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Bir yapının tek bir yönden görünümü o yapının tüm küplerini tam olarak belirlemeye yetmez; derinlik boyutu kaybolur.", "correct": True},
+                    {"text": "Önden görünüm daima toplam küp sayısına eşittir.", "correct": False}
+                ],
+                "sliderLabel": "Eş Küp Sayısı:",
+                "min": 1, "max": 6, "defaultVal": 4, "unit": "küp",
+                "simType": "isometric_cubes",
+                "hasSecondary": False
+            },
+            {
+                "tag": "ÜSTTEN GÖRÜNÜM (ZEMİN PLANI)",
+                "title": "Adım 2: Üstten Görünüm ile Zemin Tabanı",
+                "instruction": "Küp dizilimini değiştirerek üstten görünümü inceleyin. Zemin üzerine oturan taban kare sayısını tabloya kaydedin.",
+                "hint": "Üstten görünüm yapının taban alanını (kaç birimkarelik yer kapladığını) doğrudan gösterir.",
+                "hypotheses": [
+                    {"text": "Üstten görünüm yapının yüksekliğini göstermez; yalnızca zemindeki yerleşim düzenini gösterir.", "correct": True},
+                    {"text": "Üstten bakıldığında yapının kat yüksekliği doğrudan sayılabilir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Üstten görünüm yapının kuş bakışı zemin izdüşümüdür; sütunların üzerindeki küp sayıları zemin karelerinin içine yazılarak yapı tam kodlanabilir.", "correct": True},
+                    {"text": "Üstten görünüm ile önden görünüm daima aynıdır.", "correct": False}
+                ],
+                "sliderLabel": "Küp Sayısı (Taban):",
+                "min": 2, "max": 6, "defaultVal": 3, "unit": "küp",
+                "simType": "isometric_cubes",
+                "hasSecondary": False
+            },
+            {
+                "tag": "SAĞ VE SOL SİMETRİSİ",
+                "title": "Adım 3: Sağdan ve Soldan Görünüm İlişkisi",
+                "instruction": "Sağdan ve soldan görünümleri karşılaştırın. İki görünümün birbirinin ayna simetrisi olup olmadığını gözlem tablosuna kaydedin.",
+                "hint": "Bir yapının sağdan ve soldan görünümleri dikey eksene göre birbirinin ayna yansımasıdır (simetriktir).",
+                "hypotheses": [
+                    {"text": "Sağdan görünüm ile soldan görünüm birbirinin ayna simetrisidir (ters çevrilmiş halidir).", "correct": True},
+                    {"text": "Sağdan ve soldan görünüm birbirinden tamamen bağımsızdır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Sağ-sol ve ön-arka görünümleri karşılıklı olarak birbirinin ayna yansımasıdır; kare sayıları ve sütun yükseklikleri simetriktir.", "correct": True},
+                    {"text": "Sağdan görünümde 3 kare varsa soldan görünümde 5 kare olabilir.", "correct": False}
+                ],
+                "sliderLabel": "Yapı Katman Seviyesi:",
+                "min": 1, "max": 6, "defaultVal": 5, "unit": "küp",
+                "simType": "isometric_cubes",
+                "hasSecondary": False
+            },
+            {
+                "tag": "GÖRÜNÜMDEN YAPI OLUŞTURMA",
+                "title": "Adım 4: Çoklu Görünümlerle Yapıyı Belirleme",
+                "instruction": "Ön, üst ve sağ görünümleri bir arada değerlendirerek bu görünümleri sağlayan en az ve en çok küp sayısını inceleyin.",
+                "hint": "Görünümleri verilen bir yapı için kullanılabilecek minimum ve maksimum küp sayısı farklı olabilir.",
+                "hypotheses": [
+                    {"text": "Görünümleri verilen bir yapı tek bir dizilimle sınırlı olmayabilir; gizli kalan kısımlara fazladan küp eklenebilir.", "correct": True},
+                    {"text": "Görünümü verilen bir yapının küp sayısı daima kesin olarak tek bir sayıdır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "3B yapıyı netleştirmek için en az 3 farklı yönün (ön, üst, yan) ortak kesişimi gereklidir; gizli bölgeler en az / en çok küp sayısı sorularını doğurur.", "correct": True},
+                    {"text": "Yalnızca önden görünüm yapıyı inşa etmek için yeterlidir.", "correct": False}
+                ],
+                "sliderLabel": "İncelenen Yapı:",
+                "min": 1, "max": 6, "defaultVal": 4, "unit": "küp",
+                "simType": "isometric_cubes",
+                "hasSecondary": False
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "ÖNDEN GÖRÜNÜM",
+                "question": "Tabanında 3 küp ve bunların üzerinde 2 küp olan bir yapının önden görünümünde en çok kaç kare görülebilir?",
+                "options": [
+                    {"label": "A) 5 kare (Her küp ön yüzde görünürse)", "correct": True},
+                    {"label": "B) 3 kare", "correct": False},
+                    {"label": "C) 8 kare", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "SAĞ-SOL SİMETRİSİ",
+                "question": "Bir yapının sağdan görünümünde sol sütun 3 kat, sağ sütun 1 kat yüksekliğindedir. Bu yapının soldan görünümü nasıldır?",
+                "options": [
+                    {"label": "A) Sol sütun 1 kat, sağ sütun 3 kat yüksekliğindedir (Ayna simetrisi).", "correct": True},
+                    {"label": "B) Sol sütun 3 kat, sağ sütun 1 kat yüksekliğindedir.", "correct": False},
+                    {"label": "C) Yalnızca 1 kare görünür.", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "ÜSTTEN GÖRÜNÜM VE ALAN",
+                "question": "Üstten görünümünde 4 kare olan bir yapı en az kaç eş küpten oluşabilir?",
+                "options": [
+                    {"label": "A) En az 4 küp (Her kare için zeminde en az 1 küp)", "correct": True},
+                    {"label": "B) En az 1 küp", "correct": False},
+                    {"label": "C) En az 8 küp", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • MİMARİ MAKET VE GÖRÜNÜMLER",
+                "scenario": "Bir mimar, eş küplerle tasarladığı bina maketini müşterisine tanıtıyor. Makete önden bakıldığında 4 kare, üstten bakıldığında ise 'L' harfi şeklinde 3 kare görülmektedir.",
+                "stem": "Bu mimari maket en az kaç eş küp kullanılarak inşa edilmiş olabilir?",
+                "choices": [
+                    "4 eş küp",
+                    "3 eş küp",
+                    "5 eş küp",
+                    "6 eş küp"
+                ],
+                "correctIndex": 0,
+                "explanation": "Üstten 3 kare zemin izdüşümünü verir (en az 3 küp tabanda). Önden 4 kare görülebilmesi için sütunlardan birinin en az 2 katlı olması gerekir. Dolayısıyla en az 3 + 1 = 4 eş küp gereklidir."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • SAĞ-SOL BAKIŞINDA AYNA ETKİSİ",
+                "scenario": "Bir robot yarışmasında parkurdaki eş küp yapısının sağdan görünümünde solda 3 kare, ortada 2 kare ve sağda 1 karelik basamaklı bir siluet tespit edilmiştir.",
+                "stem": "Robot bu yapının tam karşısına (sol tarafına) geçtiğinde nasıl bir siluet kaydeder?",
+                "choices": [
+                    "Solda 1 kare, ortada 2 kare, sağda 3 karelik siluet",
+                    "Solda 3 kare, ortada 2 kare, sağda 1 karelik aynı siluet",
+                    "Yalnızca 3 karelik düz bir sıra",
+                    "2 karelik kare bir blok"
+                ],
+                "correctIndex": 0,
+                "explanation": "Sağdan ve soldan görünümler birbirinin düşey eksene göre ayna simetrisidir. Sağdan bakıştaki (3, 2, 1) sırası, soldan bakıldığında (1, 2, 3) olarak görünür."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • MAKSİMUM KÜP SAYISI BULMA",
+                "scenario": "Önden ve sağdan görünümü 2x2'lik bir kare (4 kare) olan bir yapı eş küplerle inşa edilecektir.",
+                "stem": "Bu iki görünümü bozmadan kullanılabilecek en çok eş küp sayısı kaçtır?",
+                "choices": [
+                    "8 küp (2 x 2 x 2 küp bloğu)",
+                    "4 küp",
+                    "6 küp",
+                    "12 küp"
+                ],
+                "correctIndex": 0,
+                "explanation": "En çok küp için yapının içi tamamen dolu 2x2x2'lik bir küp prizması seçilir: 2 x 2 x 2 = 8 küp. Önden ve sağdan bakıldığında yine 2x2 kare görünür."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • MİNİMUM KÜP SAYISI MUHAKEMESİ",
+                "scenario": "Önden görünümünde 3 kare, sağdan görünümünde ise 3 kare olan bir kule tasarlanacaktır.",
+                "stem": "Bu iki görünümü sağlayan en az kaç eş küp kullanılabilir?",
+                "choices": [
+                    "3 küp (Üst üste dizilmiş tek bir dikey sütun)",
+                    "4 küp",
+                    "6 küp",
+                    "2 küp"
+                ],
+                "correctIndex": 0,
+                "explanation": "Tek bir sütun halinde üst üste konulmuş 3 küp, önden bakıldığında da 3 dikey kare, sağdan bakıldığında da 3 dikey kare verir. En az 3 küp yeterlidir."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • ZEMİN KODLAMALI PLAN",
+                "scenario": "Üstten görünümü verilen bir yapının kareleri içine o sütunda kaç küp olduğu yazılmıştır: Üst satır: [2, 1], Alt satır: [3, 1].",
+                "stem": "Bu yapıya önden (alttan yukarı doğru) bakıldığında görülen kare sayısı kaçtır?",
+                "choices": [
+                    "4 kare (Sol sütunda en yüksek 3, sağ sütunda en yüksek 1 kare ➔ 3 + 1 = 4)",
+                    "7 kare",
+                    "5 kare",
+                    "3 kare"
+                ],
+                "correctIndex": 0,
+                "explanation": "Önden bakışta her dikey hizada en öndeki veya arkadaki en yüksek kat görünür. Sol hizada max(2, 3) = 3 kat, sağ hizada max(1, 1) = 1 kat görünür. Toplam görünen kare = 3 + 1 = 4 karedir."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • GİZLİ KÜPÜ BULMA",
+                "scenario": "Eş küplerle oluşturulmuş bir yapının önden ve üstten görünümü verilmiştir. Ancak yapının arkasında, önden bakıldığında görünmeyen gizli bir küpün bulunma ihtimali tartışılmaktadır.",
+                "stem": "Arkada gizli kalan bir küpün varlığını kesin olarak tespit etmek için hangi yönden bakış şarttır?",
+                "choices": [
+                    "Sağdan veya arkadan bakış",
+                    "Yalnızca önden tekrar bakış",
+                    "Yalnızca üstten bakış",
+                    "Hiçbir yönden anlaşılamaz"
+                ],
+                "correctIndex": 0,
+                "explanation": "Önden görünmeyen derinlikteki bir küp, yanlardan (sağ/sol) veya arkadan bakıldığında silueti değiştirerek tespit edilir."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • BOYA VE DIŞ YÜZEY ALANI",
+                "scenario": "5 eş küpün yan yana ve üst üste yapıştırılmasıyla oluşturulan bir yapının masaya oturan alt tabanı hariç tüm dış yüzeyleri sarıya boyanacaktır.",
+                "stem": "Her küpün bir ayrıtı 2 cm olduğuna göre, 1 birimkarelik bir yüzeyin alanı kaç cm²'dir?",
+                "choices": [
+                    "4 cm² (2 cm x 2 cm)",
+                    "2 cm²",
+                    "8 cm²",
+                    "16 cm²"
+                ],
+                "correctIndex": 0,
+                "explanation": "Küpün bir yüzü 2 x 2 = 4 cm²'lik bir karedir."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • FARKLI YÖNLERDEN EŞİT GÖRÜNÜM",
+                "scenario": "Bir heykelcik önden, üstten ve sağdan bakıldığında tamamen aynı sayıda (3'er kare) kare şeklinde görünmektedir.",
+                "stem": "Bu heykelcik en az kaç küple yapılmış olabilir?",
+                "choices": [
+                    "3 küp",
+                    "4 küp",
+                    "5 küp",
+                    "6 küp"
+                ],
+                "correctIndex": 0,
+                "explanation": "Örneğin (1,0,0), (0,1,0), (0,0,1) konumlarındaki 3 küp her 3 yönden de 3'er kare izdüşüm verebilir."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • KÜP ÇIKARMA PROBLEMİ",
+                "scenario": "3x3x3 boyutunda toplam 27 eş küpten oluşan büyük bir küpün tam merkezindeki 1 adet küp çıkarılıp alınıyor.",
+                "stem": "Büyük küpün dıştan ön, arka, sağ, sol, üst ve alt görünümleri nasıl değişir?",
+                "choices": [
+                    "Hiçbir yönden görünüm değişmez (çünkü çıkarılan küp tamamen içtedir).",
+                    "Tüm yönlerden 1'er kare azalır.",
+                    "Yalnızca üstten görünüm değişir.",
+                    "Önden görünümde delik oluşur."
+                ],
+                "correctIndex": 0,
+                "explanation": "27'lik küpün merkezindeki küp hiçbir dış yüzeye temas etmez. Dıştan bakıldığında tüm yüzeylerdeki küpler durduğundan hiçbir yönün görünümü değişmez."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • İZOMETRİK ÇİZİM ANALİZİ",
+                "scenario": "İzometrik kağıda çizilmiş bir küp yapısında önden bakış yönü kırmızı okla gösterilmiştir. Yapıda 1. sütunda 2 küp, 2. sütunda 1 küp yer almaktadır.",
+                "stem": "Önden bakıldığında görülen toplam alan, bir küp yüzünün alanının kaç katıdır?",
+                "choices": [
+                    "3 katıdır (2 + 1 = 3 kare görünür)",
+                    "2 katıdır",
+                    "4 katıdır",
+                    "5 katıdır"
+                ],
+                "correctIndex": 0,
+                "explanation": "Ön yüzde yan yana 2 sütun vardır; birinci sütun 2 katlı, ikinci sütun 1 katlıdır. Toplam 2 + 1 = 3 kare yüzü görünür."
+            }
+        ]
+    },
+
+    # 7. SINIF 9. HAFTA (YENİ MODÜL)
+    {
+        "grade": 7,
+        "week": 9,
+        "title": "Dikdörtgenler Prizmasının Yüzey Alanı ve Hacim Bağıntısı Atölyesi",
+        "date": "09–13 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "4. TEMA: GEOMETRİK NİCELİKLER (1)",
+        "outcome_code": "MAT.7.4.2 & MAT.7.4.3 & MAT.7.4.4",
+        "outcome_text": "Dikdörtgenler prizmasının yüzey alanını yorumlayabilme; hacmini eş nesneler aracılığıyla yorumlayabilme ve hacim bağıntısını değerlendirebilme.",
+        "process_items": [
+            "Dikdörtgenler prizmasının farklı yüzey açınımlarını inceler.",
+            "Yüzey açınımı ile yüzey alanı arasındaki ilişkileri ifade eder ve yüzey alanını hesaplar.",
+            "Prizmanın içine yerleştirilen birim küpleri sayarak hacmi birim küp sayısı olarak ifade eder.",
+            "Hacmin taban alanı ile yüksekliğin çarpımına (V = a x b x c) eşit olduğu sonucuna ulaşır."
+        ],
+        "meb_quote": "Hediye kutusu kaplama (minimum ambalaj kağıdı tasarrufu) ve kamyon kasası koli yükleme bağlamı; dikdörtgenler prizmasının 6 yüzünün açınımı (karşılıklı yüzler eşit), birim küplerle hacim doldurma ve V = Taban Alanı x Yükseklik bağıntısı.",
+        "sim_steps": [
+            {
+                "tag": "YÜZEY AÇINIMI & ALAN",
+                "title": "Adım 1: Dikdörtgenler Prizmasının 6 Yüzü ve Açınım",
+                "instruction": "En (a) ve boy (b) sürgüleriyle prizmanın tabanını değiştirin. Açınımda yer alan 3 çift eş dikdörtgenin alanlarını ve toplam yüzey alanını tabloya kaydedin.",
+                "hint": "Dikdörtgenler prizmasında karşılıklı yüzler birbirine eşittir: 2 adet (axb), 2 adet (axc), 2 adet (bxc).",
+                "hypotheses": [
+                    {"text": "Prizmanın toplam yüzey alanı, açınımındaki 6 dikdörtgensel bölgenin alanlarının toplamına eşittir.", "correct": True},
+                    {"text": "Prizmanın yüzey alanı yalnızca taban alanının 2 katıdır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Dikdörtgenler prizmasının yüzey alanı Alan = 2 x (a×b + a×c + b×c) formülüyle bulunur; hediye kaplama kağıdı en az bu alana eşit olmalıdır.", "correct": True},
+                    {"text": "Açınımdaki tüm yüzlerin alanları daima birbirine eşittir.", "correct": False}
+                ],
+                "sliderLabel": "Taban Eni (a br):",
+                "min": 2, "max": 6, "defaultVal": 4, "unit": "br",
+                "simType": "prism_net_volume",
+                "hasSecondary": True,
+                "sliderLabel2": "Taban Boyu (b br):",
+                "min2": 2, "max2": 6, "defaultVal2": 3, "unit2": "br"
+            },
+            {
+                "tag": "BİRİM KÜP VE HACİM",
+                "title": "Adım 2: Eş Birim Küplerle Prizmayı Doldurma",
+                "instruction": "Prizmanın boyutlarını değiştirerek içine kaç adet birim küp sığdığını sayın ve gözlem tablosuna kaydedin.",
+                "hint": "Bir cismin uzayda kapladığı boşluğa hacim denir; birim küp sayısı hacmin temel ölçütüdür.",
+                "hypotheses": [
+                    {"text": "Prizmanın hacmi, içine hiç boşluk kalmayacak şekilde yerleştirilen toplam birim küp sayısına eşittir.", "correct": True},
+                    {"text": "Hacim küplerin yüzey alanlarının toplamına eşittir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Dikdörtgenler prizmasının hacmi, prizmayı tamamen dolduran eş birim küplerin toplam sayısıdır (V birimküp).", "correct": True},
+                    {"text": "Birim küplerin boyutu değiştikçe prizmanın kapladığı uzay hacmi değişir.", "correct": False}
+                ],
+                "sliderLabel": "En Boyutu (a):",
+                "min": 2, "max": 5, "defaultVal": 3, "unit": "br",
+                "simType": "prism_net_volume",
+                "hasSecondary": True,
+                "sliderLabel2": "Boy Boyutu (b):",
+                "min2": 2, "max2": 5, "defaultVal2": 4, "unit2": "br"
+            },
+            {
+                "tag": "HACİM BAĞINTISI (V = TABAN ALANI x YÜKSEKLİK)",
+                "title": "Adım 3: Taban Alanı ile Yüksekliğin Çarpımı",
+                "instruction": "Taban alanını (a x b) ve yüksekliği (c = 2 br) inceleyin. Hacmin taban alanı x yükseklik olduğunu doğrulayıp tabloya kaydedin.",
+                "hint": "1. katmana (a x b) adet küp dizilir; c katman olduğunda toplam (a x b) x c küp olur.",
+                "hypotheses": [
+                    {"text": "Hacim formülü V = Taban Alanı x Yükseklik = a x b x c bağıntısıyla hesaplanır.", "correct": True},
+                    {"text": "Hacim formülü üç ayrıtın toplamına eşittir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Tüm dikdörtgenler prizmalarında Hacim = Taban Alanı × Yükseklik (V = a × b × c) genel kuralı geçerlidir.", "correct": True},
+                    {"text": "Hacim bağıntısı yalnızca küplerde çalışır, dikdörtgen prizmalarda çalışmaz.", "correct": False}
+                ],
+                "sliderLabel": "Ayrıt a (br):",
+                "min": 2, "max": 6, "defaultVal": 5, "unit": "br",
+                "simType": "prism_net_volume",
+                "hasSecondary": True,
+                "sliderLabel2": "Ayrıt b (br):",
+                "min2": 2, "max2": 6, "defaultVal2": 3, "unit2": "br"
+            },
+            {
+                "tag": "KARE PRİZMA VE KÜP",
+                "title": "Adım 4: Özel Durumlar: Kare Prizma ve Küp (a = b = c)",
+                "instruction": "a = b yaparak kare prizmayı, a = b = 2 yaparak küp durumunu inceleyin. Alan ve hacim sonuçlarını kaydedin.",
+                "hint": "Küpün tüm ayrıtları eşittir: V = a³, Alan = 6a².",
+                "hypotheses": [
+                    {"text": "Küp, tüm ayrıtları eşit olan özel bir dikdörtgenler prizmasıdır ve yüzey alanı 6 x a² olur.", "correct": True},
+                    {"text": "Küpün yüzey alanı 4 x a²'dir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Kare prizma ve küp, dikdörtgenler prizmasının özel halleridir; küpün hacmi V = a³, yüzey alanı Alan = 6a² olarak genellenir.", "correct": True},
+                    {"text": "Küp bir prizma çeşidi değildir.", "correct": False}
+                ],
+                "sliderLabel": "Küp Ayrıtı (a br):",
+                "min": 2, "max": 5, "defaultVal": 3, "unit": "br",
+                "simType": "prism_net_volume",
+                "hasSecondary": True,
+                "sliderLabel2": "Eşit Ayrıt (b br):",
+                "min2": 2, "max2": 5, "defaultVal2": 3, "unit2": "br"
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "HACİM HESAPLAMA",
+                "question": "Ayrıt uzunlukları 4 cm, 5 cm ve 6 cm olan bir dikdörtgenler prizmasının hacmi kaç cm³'tür?",
+                "options": [
+                    {"label": "A) 4 x 5 x 6 = 120 cm³", "correct": True},
+                    {"label": "B) 4 + 5 + 6 = 15 cm³", "correct": False},
+                    {"label": "C) 60 cm³", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "YÜZEY ALANI HESAPLAMA",
+                "question": "Bir ayrıtı 3 cm olan bir küpün toplam yüzey alanı kaç cm²'dir?",
+                "options": [
+                    {"label": "A) 6 x (3 x 3) = 54 cm²", "correct": True},
+                    {"label": "B) 27 cm²", "correct": False},
+                    {"label": "C) 36 cm²", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "BİRİM KÜP SAYMA",
+                "question": "Tabanına 12 birim küp dizilen ve 4 kat yüksekliğinde olan bir kutuda toplam kaç birim küp vardır?",
+                "options": [
+                    {"label": "A) 12 x 4 = 48 birim küp", "correct": True},
+                    {"label": "B) 16 birim küp", "correct": False},
+                    {"label": "C) 36 birim küp", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • HEDİYE PAKETLEME VE MİNİMUM KAĞIT",
+                "scenario": "Zeynep, kardeşine aldığı boyutları 10 cm, 15 cm ve 20 cm olan dikdörtgenler prizması şeklindeki hediye kutusunu paket kağıdıyla kaplayacaktır.",
+                "stem": "Zeynep'in kutuyu firesiz tam olarak kaplayabilmesi için en az kaç cm² paketleme kağıdına ihtiyacı vardır?",
+                "choices": [
+                    "1300 cm² (Alan = 2 x [150 + 200 + 300])",
+                    "3000 cm²",
+                    "650 cm²",
+                    "1500 cm²"
+                ],
+                "correctIndex": 0,
+                "explanation": "Yüzey Alanı = 2 x (10x15 + 10x20 + 15x20) = 2 x (150 + 200 + 300) = 2 x 650 = 1300 cm² kağıt gerekir."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • NAKLİYE KAMYONU VE KOLİ HESABI",
+                "scenario": "Bir nakliye kamyonunun kasa içi boyutları 2 metre (en), 4 metre (boy) ve 2 metre (yükseklik) şeklindedir. Bir ayrıtı 50 cm (0,5 m) olan küp koliler kamyona yüklenecektir.",
+                "stem": "Kamyon kasasına boşluk kalmayacak şekilde en fazla kaç adet koli yerleştirilebilir?",
+                "choices": [
+                    "128 koli (Hacim: 16 m³ ÷ 0,125 m³)",
+                    "64 koli",
+                    "96 koli",
+                    "256 koli"
+                ],
+                "correctIndex": 0,
+                "explanation": "Enine: 2 / 0,5 = 4 koli. Boyuna: 4 / 0,5 = 8 koli. Yüksekliğe: 2 / 0,5 = 4 koli. Toplam koli = 4 x 8 x 4 = 128 koli."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • AYNI HACİMDE FARKLI ALAN",
+                "scenario": "Hacmi 24 birimküp olan iki farklı dikdörtgenler prizması yapılıyor. 1. Prizma: 1x1x24 br. 2. Prizma: 2x3x4 br.",
+                "stem": "Bu iki prizmanın yüzey alanları karşılaştırıldığında hangisi doğrudur?",
+                "choices": [
+                    "1. Prizmanın alanı 98 br², 2. Prizmanın alanı 52 br² olup küpe yakın olanın yüzey alanı daha küçüktür.",
+                    "İkisinin de hacmi eşit olduğundan yüzey alanları da eşittir.",
+                    "2. Prizmanın yüzey alanı daha büyüktür.",
+                    "1. Prizmanın alanı 48 br²'dir."
+                ],
+                "correctIndex": 0,
+                "explanation": "1. Prizma: 2 x (1 + 24 + 24) = 98 br². 2. Prizma: 2 x (6 + 8 + 12) = 52 br². Boyutlar birbirine yaklaştıkça yüzey alanı minimuma yaklaşır."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • AKVARYUM SU KAPASİTESİ",
+                "scenario": "Taban boyutları 60 cm x 40 cm ve yüksekliği 50 cm olan cam bir akvaryumun tamamı su ile doldurulacaktır. 1 litre = 1000 cm³'tür.",
+                "stem": "Bu akvaryum tam dolduğunda kaç litre su alır?",
+                "choices": [
+                    "120 litre (120.000 cm³)",
+                    "100 litre",
+                    "150 litre",
+                    "80 litre"
+                ],
+                "correctIndex": 0,
+                "explanation": "Hacim = 60 x 40 x 50 = 120.000 cm³. Litreye çevirirsek: 120.000 ÷ 1000 = 120 litredir."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • KÜPÜN AYRITINI 2 KATINA ÇIKARMA",
+                "scenario": "Bir ayrıtı a olan bir küpün tüm ayrıt uzunlukları 2 katına çıkarılarak yeni bir küp yapılıyor.",
+                "stem": "Yeni küpün hacmi ve yüzey alanı başlangıçtakine göre kaç katına çıkar?",
+                "choices": [
+                    "Hacmi 8 katına, yüzey alanı 4 katına çıkar.",
+                    "Hacmi 4 katına, yüzey alanı 2 katına çıkar.",
+                    "İkisi de 2 katına çıkar.",
+                    "Hacmi 6 katına, yüzey alanı 6 katına çıkar."
+                ],
+                "correctIndex": 0,
+                "explanation": "Hacim (2a)³ = 8a³ (8 kat). Yüzey Alanı = 6(2a)² = 24a² = 4 x (6a²) (4 katına çıkar)."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • ÜSTÜ AÇIK HAVUZ BOYAMA",
+                "scenario": "Boyutları 8 metre, 5 metre ve derinliği 2 metre olan dikdörtgenler prizması şeklindeki bir yüzme havuzunun tabanı ve yan duvarları fayansla kaplanacaktır (Üstü açıktır).",
+                "stem": "Fayans kaplanacak toplam yüzey alanı kaç metrekaredir?",
+                "choices": [
+                    "92 m² (Taban: 40 m² + Yanlar: 52 m²)",
+                    "132 m²",
+                    "80 m²",
+                    "100 m²"
+                ],
+                "correctIndex": 0,
+                "explanation": "Taban = 8 x 5 = 40 m² (1 adet). Yan yüzler = 2 x (8x2 + 5x2) = 2 x (16 + 10) = 52 m². Toplam kaplama = 40 + 52 = 92 m²."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • SÜT KUTUSU HACMİ",
+                "scenario": "Boyutları 6 cm, 8 cm ve 20 cm olan bir süt kutusu tamamen doludur.",
+                "stem": "Bu kutudan her gün 160 cm³ süt içen Mert, kutudaki sütü kaç günde bitirir?",
+                "choices": [
+                    "6 günde (Hacim: 960 cm³ ÷ 160 = 6)",
+                    "5 günde",
+                    "7 günde",
+                    "8 günde"
+                ],
+                "correctIndex": 0,
+                "explanation": "Kutunun hacmi = 6 x 8 x 20 = 960 cm³. 960 ÷ 160 = 6 günde biter."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • KARE PRİZMA DİREK KAPLAMA",
+                "scenario": "Tabanı 30 cm x 30 cm kare ve yüksekliği 3 metre (300 cm) olan beton bir kare prizma kolonun yalnızca 4 yan yüzü yalıtım malzemesiyle kaplanacaktır.",
+                "stem": "Kaplanacak toplam yan yüzey alanı kaç metrekaredir?",
+                "choices": [
+                    "3,6 m² (4 x [0,30 m x 3 m])",
+                    "4,5 m²",
+                    "3,0 m²",
+                    "2,7 m²"
+                ],
+                "correctIndex": 0,
+                "explanation": "Yan yüzey alanı = 4 x (0,30 m x 3 m) = 4 x 0,9 m² = 3,6 metrekaredir."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • KESİP ÇIKARMA VE HACİM KAYBI",
+                "scenario": "Boyutları 10 cm, 10 cm, 10 cm olan tahta bir küpün köşesinden 3 cm x 3 cm x 3 cm boyutlarında küçük bir küp kesilip atılıyor.",
+                "stem": "Kalan tahta bloğun hacmi kaç cm³ olur?",
+                "choices": [
+                    "973 cm³ (1000 - 27)",
+                    "900 cm³",
+                    "950 cm³",
+                    "927 cm³"
+                ],
+                "correctIndex": 0,
+                "explanation": "Başlangıç hacmi = 10³ = 1000 cm³. Kesilen küp = 3³ = 27 cm³. Kalan hacim = 1000 - 27 = 973 cm³."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • ÇİKOLATA KUTUSU DÜZENİ",
+                "scenario": "Bir çikolata fabrikası 2 cm x 3 cm x 1 cm boyutlarındaki çikolataları 10 cm x 12 cm x 4 cm boyutlarındaki kutulara yerleştirecektir.",
+                "stem": "Bir kutuya hiç boşluk kalmayacak şekilde kaç adet çikolata sığar?",
+                "choices": [
+                    "80 adet (Kutu Hacmi: 480 cm³ ÷ Çikolata Hacmi: 6 cm³)",
+                    "60 adet",
+                    "100 adet",
+                    "75 adet"
+                ],
+                "correctIndex": 0,
+                "explanation": "Kutu hacmi = 10 x 12 x 4 = 480 cm³. Çikolata hacmi = 2 x 3 x 1 = 6 cm³. 480 ÷ 6 = 80 adet çikolata sığar."
+            }
+        ]
     }
 ]

@@ -840,5 +840,545 @@ GRADE5_MODULES = [
                 "explanation": "Eşkenar üçgen simetrisi, merkezlerin birbirine eşit uzaklıkta olması ve çemberlerin birbirlerinin merkezlerinden geçmesiyle kusursuz geometrik dengeyi sağlar."
             }
         ]
+    },
+# 5. SINIF 8. HAFTA (YENİ MODÜL)
+    {
+        "grade": 5,
+        "week": 8,
+        "title": "Kesişen Çemberler ile Üçgen İnşası ve Karşılaştırma Atölyesi",
+        "date": "02–06 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "3. TEMA: GEOMETRİK ŞEKİLLER",
+        "outcome_code": "MAT.5.3.7",
+        "outcome_text": "Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme.",
+        "process_items": [
+            "Belirlediği üçgenlerin özelliklerini varsayımları ile karşılaştırır.",
+            "Varsayımlarını inşa ettiği üçgenler ile karşılaştırarak doğrulayabileceği önermeler şeklinde ifade eder.",
+            "Sunduğu önermelerin katkısını değerlendirir."
+        ],
+        "meb_quote": "Kesişen çemberler aracılığıyla inşa edilen çeşitkenar, ikizkenar ve eşkenar üçgenlerin kenar özelliklerini çemberin yarıçapına dair bilgiler ile karşılaştırma; Atatürkün Geometri kitabı kılavuzluğunda kavramların Türkçeleştirilmesi ve estetik tasarım.",
+        "sim_steps": [
+            {
+                "tag": "YARIÇAP & ÜÇGEN İLİŞKİSİ",
+                "title": "Adım 1: Yarıçap Eşitliği ve İkizkenar Çıkarımı",
+                "instruction": "A ve B merkezli iki çemberin yarıçaplarını r1 = r2 = 120 px olarak ayarlayın. Kesişim noktası C ile oluşan ABC üçgeninin kenarlarını gözlem tablosuna kaydedin.",
+                "hint": "C noktası her iki çember çizgisi üzerinde olduğundan |AC| = r1 ve |BC| = r2 daima yarıçaplara eşittir.",
+                "hypotheses": [
+                    {"text": "r1 ve r2 eşit olduğunda, C kesişim noktası A ve B merkezlerine eşit uzaklıkta olur ve ikizkenar üçgen oluşur.", "correct": True},
+                    {"text": "Yarıçaplar eşit olduğunda üçgen oluşamaz.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Eş yarıçaplı iki çember kesiştiğinde |AC| = |BC| = r olduğundan tepe noktası C olan bir İKİZKENAR ÜÇGEN oluşur.", "correct": True},
+                    {"text": "Yarıçaplar eşitse üçgen daima çeşitkenardır.", "correct": False}
+                ],
+                "sliderLabel": "Eş Yarıçap r1 (|AB| = 140 px):",
+                "min": 80, "max": 180, "defaultVal": 120, "unit": "px",
+                "simType": "euclid_flower",
+                "hasSecondary": True,
+                "sliderLabel2": "Eş Yarıçap r2:",
+                "min2": 80, "max2": 180, "defaultVal2": 120, "unit2": "px"
+            },
+            {
+                "tag": "ÖKLİD KANITI (EŞKENAR)",
+                "title": "Adım 2: Öklid 1. Önermesi (|AB| = r1 = r2)",
+                "instruction": "Her iki çemberin yarıçapını tam olarak merkezler arası uzaklığa (|AB| = 140 px) eşitleyin. Oluşan üçgenin kenar ve açılarını kaydedin.",
+                "hint": "Bir çember diğerinin merkezinden geçtiğinde |AB| = |AC| = |BC| olur; bu Öklid'in Elements Kitabı 1. Önermesidir.",
+                "hypotheses": [
+                    {"text": "r1 = r2 = |AB| yapıldığında üç kenarı da eşit olan bir Eşkenar Üçgen elde edilir.", "correct": True},
+                    {"text": "Bu durumda çeşitkenar üçgen elde edilir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "İki çember birbirinin merkezinden geçtiğinde (|AB| = r1 = r2) kusursuz bir EŞKENAR ÜÇGEN inşa edilir (Her iç açı 60°).", "correct": True},
+                    {"text": "Çember yarıçapları merkez mesafesine eşitse açı ölçülemez.", "correct": False}
+                ],
+                "sliderLabel": "Yarıçap r1:",
+                "min": 80, "max": 180, "defaultVal": 140, "unit": "px",
+                "simType": "euclid_flower",
+                "hasSecondary": True,
+                "sliderLabel2": "Yarıçap r2:",
+                "min2": 80, "max2": 180, "defaultVal2": 140, "unit2": "px"
+            },
+            {
+                "tag": "FARKLI YARIÇAPLAR (ÇEŞİTKENAR)",
+                "title": "Adım 3: Çeşitkenar Üçgen Koşulu (r1 ≠ r2 ≠ |AB|)",
+                "instruction": "r1 = 160 px ve r2 = 100 px yaparak farklı yarıçapları deneyin. Üç kenarın uzunluklarını karşılaştırıp gözlem tablosuna ekleyin.",
+                "hint": "|AC| = 160 px, |BC| = 100 px ve |AB| = 140 px olduğunda üç kenar da farklıdır.",
+                "hypotheses": [
+                    {"text": "r1, r2 ve |AB| birbirinden farklı seçildiğinde tüm kenarları farklı bir Çeşitkenar Üçgen elde edilir.", "correct": True},
+                    {"text": "Çemberlerle yalnızca eşkenar üçgen çizilebilir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "r1 ≠ r2 ve r1, r2 ≠ |AB| olduğunda kenar uzunlukları birbirinden farklı bir ÇEŞİTKENAR ÜÇGEN inşa edilir.", "correct": True},
+                    {"text": "Farklı yarıçaplı çemberler kesiştiğinde ikizkenar üçgen oluşur.", "correct": False}
+                ],
+                "sliderLabel": "Yarıçap r1:",
+                "min": 90, "max": 180, "defaultVal": 160, "unit": "px",
+                "simType": "euclid_flower",
+                "hasSecondary": True,
+                "sliderLabel2": "Yarıçap r2:",
+                "min2": 80, "max2": 150, "defaultVal2": 100, "unit2": "px"
+            },
+            {
+                "tag": "ÜÇGEN OLUŞMA SINIRI",
+                "title": "Adım 4: Çemberlerin Kesişmeme Sınırı (Üçgen Eşitsizliği)",
+                "instruction": "Yarıçapları küçülterek r1 + r2 < 140 px yapmayı deneyin. Çemberlerin kesişip kesişmediğini gözlemleyin.",
+                "hint": "İki çemberin kesişebilmesi için yarıçaplar toplamı merkezler arası uzaklıktan (140 px) büyük veya eşit olmalıdır.",
+                "hypotheses": [
+                    {"text": "r1 + r2 < |AB| olduğunda çemberler birbirine ulaşamaz, kesişim noktası oluşmaz ve üçgen çizilemez.", "correct": True},
+                    {"text": "Yarıçap ne kadar küçük olursa olsun çemberler daima kesişir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Üçgen inşası için çemberlerin kesişmesi zorunludur; r1 + r2 < |AB| durumunda çemberler ayrık kalır ve üçgen oluşmaz.", "correct": True},
+                    {"text": "Çemberler ayrık olduğunda da üçgen oluşur.", "correct": False}
+                ],
+                "sliderLabel": "Yarıçap r1:",
+                "min": 50, "max": 100, "defaultVal": 60, "unit": "px",
+                "simType": "euclid_flower",
+                "hasSecondary": True,
+                "sliderLabel2": "Yarıçap r2:",
+                "min2": 50, "max2": 100, "defaultVal2": 60, "unit2": "px"
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "İKİZKENARLIK DOĞRULAMA",
+                "question": "A ve B merkezli iki çemberin yarıçapları 10 cm ve 10 cm, merkezler arası |AB| = 14 cm'dir. Kesişim noktası C ile oluşan ABC üçgeninin kenar türü nedir?",
+                "options": [
+                    {"label": "A) |AC| = |BC| = 10 cm, |AB| = 14 cm (İkizkenar Üçgen)", "correct": True},
+                    {"label": "B) Eşkenar Üçgen", "correct": False},
+                    {"label": "C) Çeşitkenar Üçgen", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "EŞKENAR ÜÇGEN KOŞULU",
+                "question": "A ve B merkezli iki çemberin kesişim noktası C ile Eşkenar Üçgen oluşabilmesi için hangi şart sağlanmalıdır?",
+                "options": [
+                    {"label": "A) r1 = r2 = |AB| (Yarıçaplar merkezler arası uzaklığa eşit olmalıdır)", "correct": True},
+                    {"label": "B) r1 > r2 olmalıdır", "correct": False},
+                    {"label": "C) r1 + r2 = 90 olmalıdır", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "KESİŞME KOŞULU",
+                "question": "Merkezleri arası 15 cm olan iki çemberin yarıçapları 6 cm ve 7 cm'dir. Bu çemberlerle üçgen inşa edilebilir mi?",
+                "options": [
+                    {"label": "A) Hayır; r1 + r2 = 13 cm < 15 cm olduğundan çemberler kesişmez.", "correct": True},
+                    {"label": "B) Evet, dar açılı üçgen oluşur.", "correct": False},
+                    {"label": "C) Evet, dik üçgen oluşur.", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • LOGO TASARIMI VE EŞKENAR ÜÇGEN",
+                "scenario": "Bir grafik tasarımcı, pergelini 8 cm açarak A merkezli bir çember çiziyor. Açıklığı hiç bozmadan pergelin sivri ucunu çember üzerindeki B noktasına batırıp ikinci çemberi çiziyor. Kesişim noktalarından biri C olarak işaretleniyor.",
+                "stem": "Tasarımcının oluşturduğu ABC üçgeninin çevre uzunluğu kaç santimetredir ve türü nedir?",
+                "choices": [
+                    "24 cm — Eşkenar Üçgen",
+                    "16 cm — İkizkenar Üçgen",
+                    "32 cm — Kare",
+                    "20 cm — Çeşitkenar Üçgen"
+                ],
+                "correctIndex": 0,
+                "explanation": "Her iki çember birbirinin merkezinden geçtiği için |AB| = |AC| = |BC| = 8 cm olur. Çevre = 8 + 8 + 8 = 24 cm ve tüm kenarları eşit olduğundan Eşkenar Üçgendir."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • ÇEMBERLERİN AYRIK KALMASI",
+                "scenario": "Mert, aralarında 20 cm mesafe bulunan iki nokta belirliyor. Birinci noktadan 8 cm, ikinci noktadan 9 cm yarıçaplı çemberler çiziyor.",
+                "stem": "Mert bu çemberlerin kesişim noktasını kullanarak bir üçgen elde edebilir mi? Neden?",
+                "choices": [
+                    "Elde edemez; çünkü yarıçaplar toplamı (8 + 9 = 17 cm), merkezler arası mesafeden (20 cm) küçüktür ve çemberler kesişmez.",
+                    "Elde edebilir; çeşitkenar üçgen oluşur.",
+                    "Elde edebilir; ikizkenar üçgen oluşur.",
+                    "Elde edebilir; dik açılı üçgen oluşur."
+                ],
+                "correctIndex": 0,
+                "explanation": "İki çemberin kesişebilmesi için r1 + r2 >= d olmalıdır. 8 + 9 = 17 < 20 olduğundan çemberler birbirine değmez, kesişim noktası yoktur."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • İKİZKENAR ÜÇGEN İNŞASI",
+                "scenario": "Bir peyzaj mimarı, havuz kenarında merkezleri arası 12 metre olan iki dairesel fıskiye alanı tasarlıyor. Fıskiyelerin sulama yarıçapları eşit ve 10 metredir.",
+                "stem": "İki sulama alanının kesiştiği noktada bulunan aydınlatma direği ile fıskiye merkezlerinin oluşturduğu üçgenin kenarları nedir?",
+                "choices": [
+                    "10 m, 10 m, 12 m (İkizkenar Üçgen)",
+                    "10 m, 10 m, 10 m (Eşkenar Üçgen)",
+                    "12 m, 12 m, 12 m",
+                    "8 m, 10 m, 12 m (Çeşitkenar Üçgen)"
+                ],
+                "correctIndex": 0,
+                "explanation": "Aydınlatma direği her iki sulama çemberinin de üzerinde olduğundan merkezlere uzaklıkları 10 m ve 10 m'dir. Taban ise 12 m'dir. İki kenarı eşit olduğundan İkizkenar Üçgendir."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • ÇEŞİTKENAR ÇEMBER İNŞASI",
+                "scenario": "Bir çizim programında merkezleri arası 15 cm olan iki çemberin yarıçapları 11 cm ve 13 cm olarak ayarlanıyor. Çemberlerin kesişim noktası K'dir.",
+                "stem": "Merkezler ve K noktasıyla kurulan üçgenin kenar uzunlukları sıralaması hangisinde doğrudur?",
+                "choices": [
+                    "11 cm, 13 cm, 15 cm (Tüm kenarları farklı — Çeşitkenar)",
+                    "11 cm, 11 cm, 15 cm (İkizkenar)",
+                    "13 cm, 13 cm, 15 cm (İkizkenar)",
+                    "15 cm, 15 cm, 15 cm (Eşkenar)"
+                ],
+                "correctIndex": 0,
+                "explanation": "Merkezler arası 15 cm, birinci yarıçap 11 cm ve ikinci yarıçap 13 cm olduğundan üç kenar da farklıdır (11, 13, 15 cm). Bu bir çeşitkenar üçgendir."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • TEĞET ÇEMBERLER VE DOĞRUSALLIK",
+                "scenario": "Yarıçapları 7 cm ve 9 cm olan iki çember dıştan birbirine teğettir. Merkezleri arasındaki mesafe tam olarak 16 cm'dir.",
+                "stem": "Bu iki çemberin merkezleri ve ortak teğet değme noktası ile bir üçgen çizilebilir mi?",
+                "choices": [
+                    "Çizilemez; çünkü değme noktası merkezleri birleştiren doğru parçası üzerinde (doğrusal) yer alır.",
+                    "Çizilebilir; dik üçgen oluşur.",
+                    "Çizilebilir; ikizkenar üçgen oluşur.",
+                    "Çizilebilir; eşkenar üçgen oluşur."
+                ],
+                "correctIndex": 0,
+                "explanation": "Yarıçaplar toplamı merkez mesafesine eşit olduğunda (7 + 9 = 16 cm) üç nokta doğrusaldır; doğrusal noktalardan üçgen oluşmaz."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • ATATÜRK'ÜN GEOMETRİ KİTABI",
+                "scenario": "Gazi Mustafa Kemal Atatürk, 1937 yılında yazdığı Geometri kitabında eski terimlerin yerine günümüzde kullandığımız modern Türkçe terimleri türetmiştir.",
+                "stem": "Aşağıdaki kavram eşleştirmelerinden hangisi Atatürk'ün türettiği Türkçe matematiksel terimlerdendir?",
+                "choices": [
+                    "Müselles-i mütesâviyü'l-adlâ ➔ Eşkenar Üçgen",
+                    "Zaviye ➔ Daire",
+                    "Nısf-ı kutur ➔ Üçgen",
+                    "Kaim zaviye ➔ Çember"
+                ],
+                "correctIndex": 0,
+                "explanation": "Atatürk 'Müselles-i mütesâviyü'l-adlâ' yerine 'Eşkenar Üçgen', 'Zaviye' yerine 'Açı', 'Nısf-ı kutur' yerine 'Yarıçap' terimlerini Türkçemize kazandırmıştır."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • EŞKENAR DÖRTGEN İLİŞKİSİ",
+                "scenario": "Merkezleri arası 12 cm olan iki eş çember (r = 12 cm) C ve D noktalarında kesişmektedir. A, C, B ve D noktaları sırayla birleştirilerek ACBD dörtgeni oluşturuluyor.",
+                "stem": "Oluşan ACBD dörtgeni için hangisi doğrudur?",
+                "choices": [
+                    "Tüm kenarları 12 cm olan Eşkenar Dörtgendir (iki eşkenar üçgenin ortak tabanla birleşimi).",
+                    "Bir karedir ve açıları 90 derecedir.",
+                    "Kenarları farklı bir yamuktur.",
+                    "Yalnızca bir dikdörtgendir."
+                ],
+                "correctIndex": 0,
+                "explanation": "|AC| = |BC| = |AD| = |BD| = 12 cm olduğundan dört kenar eşittir; iki eşkenar üçgenin taban tabana birleşimiyle eşkenar dörtgen oluşur."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • YAŞAM ÇİÇEĞİ VE ALTIGEN",
+                "scenario": "Geleneksel Türk çini sanatında kullanılan altı yapraklı yaşam çiçeği motifinde, eş yarıçaplı çemberler birbirinin merkezinden geçecek şekilde çizilir.",
+                "stem": "Bu motifin köşeleri birleştirildiğinde hangi düzgün çokgen elde edilir?",
+                "choices": [
+                    "Düzgün Altıgen",
+                    "Kare",
+                    "Düzgün Beşgen",
+                    "Yalnızca Dikdörtgen"
+                ],
+                "correctIndex": 0,
+                "explanation": "Birbirinin merkezinden geçen 6 eş çember yayının kesişim noktaları birleştirildiğinde 6 eş eşkenar üçgenin birleşimi olan Düzgün Altıgen oluşur."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • PERGELİN AÇIKLIĞINI KORUMA",
+                "scenario": "Selin cetvel kullanmadan, sadece pergelini 15 cm açıp defterinde iki farklı noktaya batırarak iki yay çiziyor ve yayların kesişim noktasını işaretliyor.",
+                "stem": "Selin'in merkez noktaları ile kesişim noktasını birleştirdiğinde kesinlikle elde ettiği üçgen türü nedir?",
+                "choices": [
+                    "Merkezler arası mesafe 15 cm ise Eşkenar, farklı ise İkizkenar Üçgen",
+                    "Daima Çeşitkenar Üçgen",
+                    "Daima Dik Açılı Üçgen",
+                    "Hiçbir zaman üçgen oluşmaz"
+                ],
+                "correctIndex": 0,
+                "explanation": "Pergel açıklığı değişmediği için kollar kesinlikle 15 cm ve 15 cm'dir (ikizkenar). Eğer merkezler arası da 15 cm seçilmişse eşkenar üçgen olur."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • TEPE AÇISININ DEĞİŞİMİ",
+                "scenario": "Sabit 10 cm yarıçaplı iki çemberin merkezleri arasındaki mesafe 2 cm'den 18 cm'ye doğru adım adım artırılıyor.",
+                "stem": "Oluşan ikizkenar üçgenin C tepe açısı merkezler arası mesafe arttıkça nasıl değişir?",
+                "choices": [
+                    "Taban genişledikçe tepe açısı büyür (Geniş açıya doğru gider).",
+                    "Tepe açısı daima 60 derece sabit kalır.",
+                    "Tepe açısı küçülür.",
+                    "Açı değişmez, sadece alan artar."
+                ],
+                "correctIndex": 0,
+                "explanation": "Kolları sabit (10 cm) olan bir üçgende taban kenarı büyüdükçe tabanı gören tepe açısı genişler; taban 10 cm iken 60°, taban 18 cm iken geniş açı olur."
+            }
+        ]
+    },
+
+    # 5. SINIF 9. HAFTA (YENİ MODÜL)
+    {
+        "grade": 5,
+        "week": 9,
+        "title": "Çok Basamaklı Sayılar, Bölükler ve Basamak Değeri Atölyesi",
+        "date": "09–13 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "1. TEMA: SAYILAR VE NİCELİKLER (1)",
+        "outcome_code": "MAT.5.1.1",
+        "outcome_text": "Altı basamaklı sayıları okuma ve yazmayı çok basamaklı sayılara genelleyebilme.",
+        "process_items": [
+            "Günlük hayattaki farklı bağlamlardan yola çıkarak altıdan çok basamaklı sayılar hakkında bilgi toplar.",
+            "Sayıların bölükleri ile okunuşları arasındaki ortak özellikleri belirler.",
+            "Sayıların bölükleri ile okunuşları arasındaki farklılıkları belirler.",
+            "Sayıların bölükleri ile okunuşları arasındaki örüntüler üzerinden genellemeye ulaşır."
+        ],
+        "meb_quote": "TÜİK Türkiye nüfusu, Dünya ile Güneş arası mesafe (149.600.000 km) ve devlet bütçesi gibi gerçek yaşam bağlamları; 7, 8 ve 9 basamaklı sayıları sağdan sola üçerli bölüklere ayırma (Birler, Binler, Milyonlar), basamak değerlerini çözümleme.",
+        "sim_steps": [
+            {
+                "tag": "BÖLÜK KAVRAMI & MİLYONLAR",
+                "title": "Adım 1: Yedi Basamaklı Sayılarda Milyonlar Bölüğü",
+                "instruction": "Sürgüyle 1.000.000 ile 9.000.000 arasındaki sayıları değiştirin. Sağdan sola üçerli bölük gruplarını (Birler, Binler, Milyonlar) ve okunuşunu gözlem tablosuna kaydedin.",
+                "hint": "Doğal sayılar sağdan sola doğru üçerli basamak gruplarına ayrılır; her gruba 'Bölük' adı verilir.",
+                "hypotheses": [
+                    {"text": "Sayılar okunurken her bölükteki sayı okunur ve ardından o bölüğün adı söylenir (Birler bölüğü hariç).", "correct": True},
+                    {"text": "Tüm basamaklar soldan sağa tek tek okunur, bölük isimleri söylenmez.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Çok basamaklı sayılar sağdan sola üçerli bölüklere ayrılır; her bölük kendi içinde 3 basamaklı sayı gibi okunup bölük adıyla tamamlanır (Birler bölüğünün adı söylenmez).", "correct": True},
+                    {"text": "Birler bölüğünün adı da sayının sonunda mutlaka söylenir.", "correct": False}
+                ],
+                "sliderLabel": "Sayı Değeri (Milyonlar):",
+                "min": 1000000, "max": 9000000, "defaultVal": 3450200, "unit": "",
+                "simType": "place_value_blocks",
+                "hasSecondary": False
+            },
+            {
+                "tag": "TÜİK NÜFUS BAĞLAMI",
+                "title": "Adım 2: 8 Basamaklı Sayılar (On Milyonlar)",
+                "instruction": "Türkiye nüfusu bağlamında (ör. 85.372.377) sekiz basamaklı sayıları inceleyin. Bölük isimleri ve basamak değerlerini tabloya kaydedin.",
+                "hint": "On Milyonlar basamağında yer alan bir rakamın basamak değeri basamak ile rakamın çarpımıdır (ör. 8 x 10.000.000 = 80.000.000).",
+                "hypotheses": [
+                    {"text": "Sekiz basamaklı bir sayıda milyonlar bölüğü iki basamaktan (on milyonlar ve milyonlar) oluşur.", "correct": True},
+                    {"text": "Sekiz basamaklı sayıda milyonlar bölüğü dört basamaklıdır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Milyonlar bölüğünde en fazla 3 basamak bulunabilir; 8 basamaklı sayılarda bu bölük onlar ve birler basamağı gibi iki basamak barındırır.", "correct": True},
+                    {"text": "Basamak sayısı arttıkça bölükteki basamak sayısı 5'e çıkar.", "correct": False}
+                ],
+                "sliderLabel": "Nüfus Modeli (On Milyonlar):",
+                "min": 10000000, "max": 99000000, "defaultVal": 85372000, "unit": "",
+                "simType": "place_value_blocks",
+                "hasSecondary": False
+            },
+            {
+                "tag": "DÜNYA-GÜNEŞ UZAKLIĞI (9 BASAMAK)",
+                "title": "Adım 3: Dokuz Basamaklı Sayılar (Yüz Milyonlar)",
+                "instruction": "Dünya'nın Güneş'e olan yaklaşık 149.600.000 km'lik mesafesini modelleyin. Üç tam bölükten oluşan 9 basamaklı yapıyı gözlem tablosuna kaydedin.",
+                "hint": "Milyonlar Bölüğü: 149, Binler Bölüğü: 600, Birler Bölüğü: 000.",
+                "hypotheses": [
+                    {"text": "Bir bölükteki tüm rakamlar 0 olduğunda o bölüğün adı okunurken atlanır veya sadece 0 olan kısım telaffuz edilmez.", "correct": True},
+                    {"text": "Tüm basamakları 0 olan bir bölük 'sıfır yüz sıfır bin' şeklinde uzunca okunur.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Dokuz basamaklı bir sayıda her üç bölük de tam 3'er basamaktan oluşur; değeri tamamen sıfır olan bölükler okunurken söylenmez.", "correct": True},
+                    {"text": "9 basamaklı sayılarda bölük kuralı geçerli değildir.", "correct": False}
+                ],
+                "sliderLabel": "Mesafe Modeli (Yüz Milyonlar):",
+                "min": 100000000, "max": 999000000, "defaultVal": 149600000, "unit": "km",
+                "simType": "place_value_blocks",
+                "hasSecondary": False
+            },
+            {
+                "tag": "BASAMAK DEĞERİ ÇÖZÜMLEME",
+                "title": "Adım 4: Basamak Değerlerinin Toplamı Olarak Çözümleme",
+                "instruction": "Seçtiğiniz çok basamaklı sayıyı basamak değerlerinin toplamı biçiminde çözümleyin ve tabloya kaydedin.",
+                "hint": "Bir sayının sayı değeri rakamın kendisi, basamak değeri ise bulunduğu basamağın değeriyle çarpımıdır.",
+                "hypotheses": [
+                    {"text": "Bir sayıda aynı rakam farklı basamaklarda yer aldığında sayı değeri aynı kalır fakat basamak değeri 10 katına çıkar.", "correct": True},
+                    {"text": "Rakamın basamak değeri her yerde aynıdır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Bir doğal sayının değeri, tüm basamaklarındaki rakamların basamak değerlerinin toplamına eşittir.", "correct": True},
+                    {"text": "Sayı değeri ile basamak değeri tamamen aynı şeydir.", "correct": False}
+                ],
+                "sliderLabel": "Çözümlenecek Sayı:",
+                "min": 1000000, "max": 50000000, "defaultVal": 12345678, "unit": "",
+                "simType": "place_value_blocks",
+                "hasSecondary": False
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "BÖLÜK OKUMA",
+                "question": "72.045.309 sayısının milyonlar bölüğü ile birler bölüğündeki sayıların toplamı kaçtır?",
+                "options": [
+                    {"label": "A) 72 + 309 = 381", "correct": True},
+                    {"label": "B) 72 + 45 = 117", "correct": False},
+                    {"label": "C) 45 + 309 = 354", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "OKUNUŞTAN SAYI YAZMA",
+                "question": "'Sekiz yüz beş milyon kırk bin iki' sayısının rakamlarla yazılışı hangisidir?",
+                "options": [
+                    {"label": "A) 805.040.002", "correct": True},
+                    {"label": "B) 850.400.002", "correct": False},
+                    {"label": "C) 805.400.200", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "BASAMAK DEĞERİ",
+                "question": "345.678.912 sayısında '4' rakamının basamak değeri nedir?",
+                "options": [
+                    {"label": "A) 40.000.000 (Kırk Milyon)", "correct": True},
+                    {"label": "B) 4.000.000 (Dört Milyon)", "correct": False},
+                    {"label": "C) 400.000 (Dört Yüz Bin)", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • TÜİK NÜFUS VERİSİ",
+                "scenario": "TÜİK verilerine göre Türkiye'nin nüfusu 85.372.377 olarak açıklanmıştır.",
+                "stem": "Bu nüfus sayısının okunuşu aşağıdakilerden hangisinde doğru verilmiştir?",
+                "choices": [
+                    "Seksen beş milyon üç yüz yetmiş iki bin üç yüz yetmiş yedi",
+                    "Sekiz yüz elli üç milyon yetmiş iki bin üç yüz yedi",
+                    "Seksen beş bin üç yüz yetmiş iki milyon üç yüz yetmiş yedi",
+                    "Sekiz yüz elli üç bin üç yüz yetmiş yedi"
+                ],
+                "correctIndex": 0,
+                "explanation": "Milyonlar bölüğü: 85 (seksen beş milyon), Binler bölüğü: 372 (üç yüz yetmiş iki bin), Birler bölüğü: 377 (üç yüz yetmiş yedi)."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • DÜNYA-GÜNEŞ UZAKLIĞI",
+                "scenario": "Dünya ile Güneş arasındaki ortalama uzaklık yaklaşık 149 milyon 600 bin kilometredir.",
+                "stem": "Bu uzaklığın rakamlarla gösteriminde kaç adet sıfır (0) rakamı bulunur?",
+                "choices": [
+                    "5 tane (149.600.000)",
+                    "4 tane",
+                    "6 tane",
+                    "3 tane"
+                ],
+                "correctIndex": 0,
+                "explanation": "Sayı 149.600.000 olarak yazılır. Binler bölüğünde 2 adet, birler bölüğünde 3 adet olmak üzere toplam 5 adet sıfır vardır."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • SIFIRIN BASAMAK TUTUCU ÖZELLİĞİ",
+                "scenario": "Harezmi, onluk sayı sisteminde sıfırı (0) basamak tutucu olarak kullanarak matematik tarihine yön vermiştir.",
+                "stem": "'Dört yüz milyon beş bin altı' sayısında sıfır rakamı kaç farklı basamakta yer alır?",
+                "choices": [
+                    "6 basamakta (400.005.006)",
+                    "5 basamakta",
+                    "4 basamakta",
+                    "7 basamakta"
+                ],
+                "correctIndex": 0,
+                "explanation": "Sayı 400.005.006 olarak yazılır. Milyonlar bölüğünde 2 adet, binler bölüğünde 2 adet, birler bölüğünde 2 adet olmak üzere toplam 6 adet sıfır bulunur."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • BASAMAK DEĞERLERİ FARKI",
+                "scenario": "754.721.308 sayısında 7 rakamı iki farklı basamakta yer almaktadır.",
+                "stem": "Bu iki 7 rakamının basamak değerleri arasındaki fark kaçtır?",
+                "choices": [
+                    "700.000.000 - 700.000 = 699.300.000",
+                    "70.000.000 - 70.000 = 69.930.000",
+                    "700.000.000 - 70.000 = 699.930.000",
+                    "70.000.000 - 7.000 = 69.993.000"
+                ],
+                "correctIndex": 0,
+                "explanation": "Soldaki 7 yüz milyonlar basamağındadır (700.000.000), sağdaki 7 yüz binler basamağındadır (700.000). Fark: 700.000.000 - 700.000 = 699.300.000."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • BANKA TRANSFERİ GÜVENLİK KODU",
+                "scenario": "Bir banka uygulamasında transfer tutarı olan 12.045.090 TL'nin okunuşu teyit ekranında gösterilecektir.",
+                "stem": "Ekranda yazması gereken doğru metin hangisidir?",
+                "choices": [
+                    "On iki milyon kırk beş bin doksan Türk Lirası",
+                    "Yüz yirmi milyon dört yüz elli bin doksan Türk Lirası",
+                    "On iki milyon dört yüz beş bin doksan Türk Lirası",
+                    "Bir milyon iki yüz kırk beş bin doksan Türk Lirası"
+                ],
+                "correctIndex": 0,
+                "explanation": "12.045.090: 12 (On iki milyon) 045 (kırk beş bin) 090 (doksan)."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • BASAMAK SAYISI VE BÖLÜK",
+                "scenario": "Ali Öğretmen tahtaya 9 basamaklı en küçük doğal sayıyı yazmıştır.",
+                "stem": "Bu sayının milyonlar bölüğündeki sayı ile birler bölüğündeki sayının farkı kaçtır?",
+                "choices": [
+                    "100 - 0 = 100 (Sayı: 100.000.000)",
+                    "1 - 0 = 1",
+                    "999 - 100 = 899",
+                    "100 - 1 = 99"
+                ],
+                "correctIndex": 0,
+                "explanation": "9 basamaklı en küçük doğal sayı 100.000.000'dur. Milyonlar bölüğü 100, birler bölüğü 000'dır. Fark 100 - 0 = 100'dür."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • BÖLÜKLERİ KARIŞIK VERİLEN SAYI",
+                "scenario": "Bir matematik yarışmasında bir sayının bölükleri şu şekilde verilmiştir: Binler bölüğü: 304, Birler bölüğü: 018, Milyonlar bölüğü: 92.",
+                "stem": "Bu sayı aşağıdakilerden hangisidir?",
+                "choices": [
+                    "92.304.018",
+                    "304.018.092",
+                    "920.304.018",
+                    "92.034.180"
+                ],
+                "correctIndex": 0,
+                "explanation": "Sıralama: Milyonlar bölüğü (92) + Binler bölüğü (304) + Birler bölüğü (018) ➔ 92.304.018."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • KARTLARLA EN BÜYÜK SAYI",
+                "scenario": "Üzerinde 0, 1, 3, 5, 7, 8, 9 rakamları yazılı olan 7 kartın tamamı birer kez kullanılarak 7 basamaklı bir sayı yazılacaktır.",
+                "stem": "Yazılabilecek en büyük sayının binler bölüğündeki sayı kaçtır?",
+                "choices": [
+                    "875 (En büyük sayı: 9.875.310)",
+                    "753",
+                    "531",
+                    "987"
+                ],
+                "correctIndex": 0,
+                "explanation": "Rakamlar büyükten küçüğe dizildiğinde en büyük 7 basamaklı sayı 9.875.310 olur. Milyonlar: 9, Binler: 875, Birler: 310'dur."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • ÇÖZÜMLEME DENKLİĞİ",
+                "scenario": "Bir sayının çözümlenmiş hali: (5 x 10.000.000) + (3 x 100.000) + (8 x 1.000) + (4 x 1) şeklindedir.",
+                "stem": "Bu sayının okunuşu hangisidir?",
+                "choices": [
+                    "Elli milyon üç yüz sekiz bin dört",
+                    "Beş milyon otuz sekiz bin dört",
+                    "Elli üç milyon sekiz bin dört",
+                    "Beş yüz milyon üç yüz sekiz bin kırk"
+                ],
+                "correctIndex": 0,
+                "explanation": "Basamaklar: On Milyonlar=5, Milyonlar=0, Yüz Binler=3, On Binler=0, Binler=8, Yüzler=0, Onlar=0, Birler=4 ➔ 50.308.004 (Elli milyon üç yüz sekiz bin dört)."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • DEVLET BÜTÇESİ VE YUVARLAMA",
+                "scenario": "Bir ülkenin yıllık eğitim bütçesi 438.749.200 TL olarak ilan edilmiştir.",
+                "stem": "Bu bütçe tutarının en yakın milyonluğa yuvarlanmış hali kaç milyon TL'dir?",
+                "choices": [
+                    "439 Milyon TL (Yüz binler basamağındaki 7 >= 5 olduğundan)",
+                    "438 Milyon TL",
+                    "440 Milyon TL",
+                    "430 Milyon TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Milyonlar basamağının hemen sağındaki yüz binler basamağında 7 vardır. 7 >= 5 olduğundan milyonlar basamağı 1 artırılır: 439.000.000 TL (439 Milyon TL)."
+            }
+        ]
     }
 ]

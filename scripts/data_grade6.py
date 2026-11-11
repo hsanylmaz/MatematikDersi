@@ -829,5 +829,552 @@ GRADE6_MODULES = [
                 "explanation": "A = 0,7000... ve B = 0,7777... Basamak basamak karşılaştırıldığında onda birler eşit (7=7), yüzde birlerde 7 > 0 olduğundan B > A'dır."
             }
         ]
+    },
+# 6. SINIF 8. HAFTA (YENİ MODÜL)
+    {
+        "grade": 6,
+        "week": 8,
+        "title": "Kesir, Ondalık ve Yüzde ile Dört İşlem Problemleri Atölyesi",
+        "date": "02–06 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "1. TEMA: SAYILAR VE NİCELİKLER (2)",
+        "outcome_code": "MAT.6.1.7",
+        "outcome_text": "Gerçek yaşam durumlarında karşılaşılan kesir, ondalık ve yüzde gösterimleri ile ilgili dört işlem gerektiren problemleri çözebilme.",
+        "process_items": [
+            "Kesir, ondalık ve yüzde gösterimleri ile ilgili problemlerde sayı ve işlem bileşenlerini belirler.",
+            "Verilenler ile istenenlerin gerektirdiği işlemler arasındaki ilişkiyi belirler.",
+            "Probleme uygun strateji oluşturur.",
+            "Sonuca ilişkin tahminde bulunur ve işlemi gerçekleştirir."
+        ],
+        "meb_quote": "Kutup buzullarının erimesi (%5 popülasyon kaybı), karbon salınımı ve aile bütçesi tasarruf bağlamı; alışveriş indirimleri (%25 indirim = 1/4 oran), kesir-ondalık-yüzde dönüşümleriyle dört işlem gerektiren gerçek yaşam problemleri.",
+        "sim_steps": [
+            {
+                "tag": "YÜZDE & KESİR DÖNÜŞÜMÜ",
+                "title": "Adım 1: Etiket Fiyatı ve %25 İndirim (1/4 Oran)",
+                "instruction": "Etiket fiyatını sürgüyle değiştirin (ör. 200 ₺). %25 (yani 1/4) indirimi hesaplayıp gözlem tablosuna kaydedin.",
+                "hint": "%25 indirim = 25/100 = 1/4'tür. 200 ₺'nin 1/4'ü 50 ₺ tasarruftur; ödenen tutar 150 ₺ olur.",
+                "hypotheses": [
+                    {"text": "Bir sayının %25'ini bulmak o sayıyı 4'e bölmek (1/4 ile çarpmak) ile tamamen aynıdır.", "correct": True},
+                    {"text": "%25 indirim fiyattan 25 TL düşmek anlamına gelir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "%25 indirim 1/4 kesrine denktir; etiket fiyatı 4'e bölünerek indirim miktarı, fiyattan çıkarılarak indirimli tutar bulunur.", "correct": True},
+                    {"text": "Yüzdelerle işlem yapılırken kesre dönüştürülemez.", "correct": False}
+                ],
+                "sliderLabel": "Etiket Fiyatı (₺):",
+                "min": 100, "max": 800, "defaultVal": 200, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "İndirim Oranı (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 25, "unit2": "%"
+            },
+            {
+                "tag": "ONDALIK & KESİR İŞLEMİ",
+                "title": "Adım 2: Ondalık Çarpma ile İndirim Hesaplama (0,20 Çarpanı)",
+                "instruction": "Fiyatı sürgüyle değiştirin ve %20 (0,2) indirim uygulayın. Ondalık gösterimle çarpmanın kesir karşılığını tabloya kaydedin.",
+                "hint": "Bir sayının %20'si: Sayı x 0,20 veya Sayı x (20/100) = Sayı / 5.",
+                "hypotheses": [
+                    {"text": "0,20 ile çarpmak, 2/10 veya 1/5 ile çarpmakla aynı matematiksel sonucu verir.", "correct": True},
+                    {"text": "0,20 ile çarpmak sayıyı 20 katına çıkarır.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Ondalık çarpan (0,20) ile kesir (1/5) aynı miktarı ifade eder; ikisi de problemi doğru çözüme ulaştırır.", "correct": True},
+                    {"text": "Ondalık işlemler kesir problemlerinde kullanılamaz.", "correct": False}
+                ],
+                "sliderLabel": "Ürün Fiyatı (₺):",
+                "min": 100, "max": 1000, "defaultVal": 500, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "İndirim Yüzdesi (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 20, "unit2": "%"
+            },
+            {
+                "tag": "ÇOK ADIMLI TASARRUF",
+                "title": "Adım 3: İki Aşamalı Kampanya ve Net Ödeme",
+                "instruction": "İndirim oranını %30 ve %40 yaparak aile bütçesine sağlanan net katkıyı (tasarrufu) gözlem tablosuna kaydedin.",
+                "hint": "Tasarruf = Etiket Fiyatı x (Yüzde / 100).",
+                "hypotheses": [
+                    {"text": "İndirim yüzdesi arttıkça ödenen tutar doğrusal olarak azalır, tasarruf miktarı artar.", "correct": True},
+                    {"text": "İndirim oranı fiyattan bağımsız sabit bir değerdir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Ödenen Tutar = Etiket Fiyatı × (1 - Oran/100) bağıntısıyla tek işlemde hesaplanabilir.", "correct": True},
+                    {"text": "Yüzdeler toplanıp fiyattan doğrudan sayı olarak çıkarılır.", "correct": False}
+                ],
+                "sliderLabel": "Alışveriş Sepeti (₺):",
+                "min": 200, "max": 1200, "defaultVal": 600, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "Kampanya Oranı (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 30, "unit2": "%"
+            },
+            {
+                "tag": "GERÇEK YAŞAM VE BÜTÇE",
+                "title": "Adım 4: %50 Sezon Sonu İndirimi (Yarı Fiyat 1/2)",
+                "instruction": "%50 indirim oranını test edin. 1/2 kesri, 0,50 ondalığı ve %50 yüzdesinin denkliklerini kaydedin.",
+                "hint": "1/2 = 0,50 = %50. Ürünün fiyatı tam yarıya iner.",
+                "hypotheses": [
+                    {"text": "%50 indirim doğrudan sayıyı 2'ye bölmek (yarıya indirmek) demektir.", "correct": True},
+                    {"text": "%50 indirimde ürün bedava olur.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "%50 = 0,50 = 1/2 denklikleri sayesinde hesaplamalar zihinden yarıya bölme stratejisiyle hızla yapılabilir.", "correct": True},
+                    {"text": "%50 indirimi hesaplamak için mutlaka 100'e bölüp 50 ile çarpmak gerekir.", "correct": False}
+                ],
+                "sliderLabel": "Mont Fiyatı (₺):",
+                "min": 300, "max": 1500, "defaultVal": 800, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "İndirim Oranı (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 50, "unit2": "%"
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "YÜZDE-KESİR DÖNÜŞÜMÜ",
+                "question": "400 TL olan bir ayakkabı %25 indirimle satılmaktadır. Bu indirim kaç TL'ye karşılık gelir?",
+                "options": [
+                    {"label": "A) 400 ÷ 4 = 100 TL", "correct": True},
+                    {"label": "B) 25 TL", "correct": False},
+                    {"label": "C) 75 TL", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "ONDALIKLA İNDİRİM HESABI",
+                "question": "600 TL'lik elektrik faturasında %10 enerji tasarrufu sağlayan bir aile kaç TL öder?",
+                "options": [
+                    {"label": "A) 600 - 60 = 540 TL", "correct": True},
+                    {"label": "B) 500 TL", "correct": False},
+                    {"label": "C) 590 TL", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "ÇOKLU TEMSİL DENKLİĞİ",
+                "question": "'3/5' kesrinin yüzde ve ondalık gösterimi sırasıyla hangisidir?",
+                "options": [
+                    {"label": "A) 0,60 ve %60", "correct": True},
+                    {"label": "B) 0,35 ve %35", "correct": False},
+                    {"label": "C) 0,30 ve %50", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • ÇEVRESEL SÜRDÜRÜLEBİLİRLİK VE BUZULLAR",
+                "scenario": "MEB TYMM sürdürülebilirlik araştırmasına göre, kutup bölgesindeki her 1000 kilometrekarelik buzul erimesi kutup foklarının popülasyonunda %5 azalmaya neden olmaktadır.",
+                "stem": "Başlangıçta 4000 birey olan bir fok popülasyonu, 1000 km² buzul eridiğinde kaç bireye düşer?",
+                "choices": [
+                    "3800 birey (4000'in %5'i = 200 azalma)",
+                    "3950 birey",
+                    "3600 birey",
+                    "3500 birey"
+                ],
+                "correctIndex": 0,
+                "explanation": "4000 x (5/100) = 200 birey azalır. Kalan popülasyon: 4000 - 200 = 3800 bireydir."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • AİLE BÜTÇESİ VE TASARRUF",
+                "scenario": "Bir ailenin aylık geliri 32.000 TL'dir. Aile bütçesinin 1/4'ünü ev kirasına, %30'unu gıda harcamalarına, 0,15'ini ise faturalara ayırmaktadır.",
+                "stem": "Bu ailenin kira, gıda ve fatura dışındaki diğer harcamaları ve tasarrufu için geriye kaç TL kalır?",
+                "choices": [
+                    "9.600 TL (%30'u kalır)",
+                    "8.000 TL",
+                    "10.200 TL",
+                    "11.400 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Kira = 1/4 = %25, Gıda = %30, Fatura = 0,15 = %15. Toplam harcama = %25 + %30 + %15 = %70. Kalan oran = %100 - %70 = %30. 32.000 x 0,30 = 9.600 TL kalır."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • KİTAP FUARI KAMPANYASI",
+                "scenario": "Bir kitap fuarında etiket fiyatı 120 TL olan romanlarda %20 indirim, 80 TL olan bilim kitaplarında ise 1/4 oranında indirim uygulanmaktadır.",
+                "stem": "1 roman ve 1 bilim kitabı alan bir öğrenci kasada toplam kaç TL öder?",
+                "choices": [
+                    "156 TL (Roman: 96 TL, Bilim: 60 TL)",
+                    "160 TL",
+                    "150 TL",
+                    "144 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Roman indirimi = 120 x 0,20 = 24 TL ➔ 120 - 24 = 96 TL. Bilim kitabı indirimi = 80 x (1/4) = 20 TL ➔ 80 - 20 = 60 TL. Toplam ödeme = 96 + 60 = 156 TL."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • SU TÜKETİMİ VE DAMLA TASARRUFU",
+                "scenario": "Günde ortalama 250 litre su tüketen bir evde, musluklara takılan perlatörler sayesinde su tüketiminde 0,12 oranında (yüzde 12) tasarruf sağlanmıştır.",
+                "stem": "Bu evde 30 günde (bir ayda) toplam kaç litre su tasarrufu edilmiş olur?",
+                "choices": [
+                    "900 litre (Günde 30 L x 30 gün)",
+                    "750 litre",
+                    "600 litre",
+                    "1200 litre"
+                ],
+                "correctIndex": 0,
+                "explanation": "Günlük tasarruf: 250 x 0,12 = 30 litre. 30 günde tasarruf: 30 x 30 = 900 litredir."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • ELEKTRONİK MAĞAZASI ÇİFT İNDİRİM",
+                "scenario": "Etiket fiyatı 2400 TL olan bir tablette önce %10 sezon indirimi yapılıyor, ardından indirimli fiyat üzerinden nakit ödemede 1/10 oranında ek indirim uygulanıyor.",
+                "stem": "Bu tableti nakit alan bir müşteri kaç TL öder?",
+                "choices": [
+                    "1944 TL",
+                    "1920 TL",
+                    "2000 TL",
+                    "1880 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "1. indirim: 2400 x 0,10 = 240 TL ➔ 2400 - 240 = 2160 TL. 2. indirim: 2160 x (1/10) = 216 TL ➔ 2160 - 216 = 1944 TL."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • GÖRECELİ ORAN KARŞILAŞTIRMA",
+                "scenario": "A mağazası 500 TL'lik cekette 150 TL indirim; B mağazası ise 400 TL'lik aynı cekette %30 indirim yapmaktadır.",
+                "stem": "Hangi mağazada indirim oranı yüzde olarak daha fazladır?",
+                "choices": [
+                    "İkisi de eşittir (%30)",
+                    "A mağazası daha fazladır",
+                    "B mağazası daha fazladır",
+                    "Karşılaştırılamaz"
+                ],
+                "correctIndex": 0,
+                "explanation": "A mağazası oranı: 150 / 500 = 3/10 = %30. B mağazası oranı da %30'dur. Her iki mağazada da indirim oranı eşittir."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • SIVI VE KARIŞIM ORANI",
+                "scenario": "600 gramlık bir meyve suyunun 2/5'i portakal, %35'i elma suyu ve geri kalanı sudur.",
+                "stem": "Bu karışımda kaç gram su bulunmaktadır?",
+                "choices": [
+                    "150 gram (%25 su)",
+                    "120 gram",
+                    "180 gram",
+                    "200 gram"
+                ],
+                "correctIndex": 0,
+                "explanation": "Portakal = 2/5 = %40. Elma = %35. Toplam meyve = %40 + %35 = %75. Su oranı = %100 - %75 = %25. Su miktarı = 600 x 0,25 = 150 gramdır."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • GERİ DÖNÜŞÜM VE KAĞIT",
+                "scenario": "1 ton atık kağıdın geri dönüştürülmesi ile 17 ağacın kesilmesi önlenmektedir. Bir okul kampanyasında 2500 kg (2,5 ton) atık kağıt toplanmıştır.",
+                "stem": "Bu okul kaç ağacın kesilmesini önlemiştir?",
+                "choices": [
+                    "42,5 ağaç (yaklaşık 42-43 ağaç)",
+                    "34 ağaç",
+                    "51 ağaç",
+                    "68 ağaç"
+                ],
+                "correctIndex": 0,
+                "explanation": "2,5 ton x 17 ağaç/ton = 42,5 ağaç kurtarılmıştır."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • YOL VE HIZ PROBLEMİNDE KESİR",
+                "scenario": "450 km'lik bir yolun 1/3'ünü saatte 75 km hızla giden bir araç, kalan yolun %60'ını saatte 90 km hızla gitmiştir.",
+                "stem": "Aracın bu iki bölümde toplam harcadığı sürüş süresi kaç saattir?",
+                "choices": [
+                    "4 saat (150/75 = 2 sa, 180/90 = 2 sa)",
+                    "3,5 saat",
+                    "4,5 saat",
+                    "5 saat"
+                ],
+                "correctIndex": 0,
+                "explanation": "1. bölüm: 450 x (1/3) = 150 km ➔ Süre: 150 ÷ 75 = 2 saat. Kalan yol = 300 km. 2. bölüm: 300 x 0,60 = 180 km ➔ Süre: 180 ÷ 90 = 2 saat. Toplam süre = 2 + 2 = 4 saat."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • MARKET SEPETİ VE KDV ORANI",
+                "scenario": "Bir market alışverişinde temel gıda maddelerine %1 KDV, temizlik ürünlerine ise %20 KDV uygulanmaktadır. 300 TL'lik gıda ve 200 TL'lik temizlik ürünü alınmıştır.",
+                "stem": "Alışverişte ödenen toplam KDV tutarı kaç TL'dir?",
+                "choices": [
+                    "43 TL (Gıda KDV: 3 TL, Temizlik KDV: 40 TL)",
+                    "35 TL",
+                    "50 TL",
+                    "60 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Gıda KDV = 300 x 0,01 = 3 TL. Temizlik KDV = 200 x 0,20 = 40 TL. Toplam KDV = 3 + 40 = 43 TL'dir."
+            }
+        ]
+    },
+
+    # 6. SINIF 9. HAFTA (YENİ MODÜL)
+    {
+        "grade": 6,
+        "week": 9,
+        "title": "Çoklu Temsillerle Problem Çözme ve Modelleme Atölyesi",
+        "date": "09–13 Kasım",
+        "hours": "5 Ders Saati",
+        "theme": "1. TEMA: SAYILAR VE NİCELİKLER (2)",
+        "outcome_code": "MAT.6.1.7",
+        "outcome_text": "Gerçek yaşam durumlarında karşılaşılan kesir, ondalık ve yüzde gösterimleri ile ilgili dört işlem gerektiren problemleri çözebilme.",
+        "process_items": [
+            "Problem bağlamına uygun temsilleri (şekil, tablo, diyagram) kullanır.",
+            "Kullanılan temsil üzerinden problemi kendi ifadeleri ile açıklar.",
+            "Alternatif stratejileri inceler ve çözüm yolunu kontrol eder.",
+            "Çözüme ulaştıran stratejileri geneller."
+        ],
+        "meb_quote": "Parça-bütün şeritleri, 10x10 kareli alan modelleri ve sayı doğrusu diyagramları kullanarak kesir, ondalık ve yüzde dönüşümlü problem çözme; karbon ayak izi, su tasarrufu ve akıllı tüketici modelleri.",
+        "sim_steps": [
+            {
+                "tag": "ŞERİT VE DİYAGRAM MODELİ",
+                "title": "Adım 1: Parça-Bütün Şeridiyle Modelleme",
+                "instruction": "Toplam bütçeyi sürgüyle belirleyin (ör. 600 ₺). Şerit üzerinde farklı harcama oranlarını (%15, %25, %40) deneyerek tabloya kaydedin.",
+                "hint": "Bir bütünün farklı kesirlerini tek bir şerit üzerinde renkli bloklarla temsil edebilirsiniz.",
+                "hypotheses": [
+                    {"text": "Bütünün parçalarını gösteren şerit modellerinde tüm yüzdelerin toplamı daima %100 (1 tam) eder.", "correct": True},
+                    {"text": "Şerit modelinde yüzdelerin toplamı fiyata göre değişir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Parça-bütün şerit modeli problemin görselleştirilmesini sağlar; harcamaların toplamı 1 tamdan (veya %100'den) çıkarılarak kalan bulunur.", "correct": True},
+                    {"text": "Şerit modeli yalnızca çıkarma işlemlerinde çalışır.", "correct": False}
+                ],
+                "sliderLabel": "Toplam Bütçe (₺):",
+                "min": 200, "max": 1000, "defaultVal": 600, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "Tasarruf Oranı (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 30, "unit2": "%"
+            },
+            {
+                "tag": "TABLO TEMSİLİ",
+                "title": "Adım 2: Tablo Temsili ile Karşılaştırmalı Problem Çözme",
+                "instruction": "Farklı marketlerdeki indirim oranlarını (%10, %20, %35) tabloya kaydedip en avantajlı seçeneği belirleyin.",
+                "hint": "Tablo temsili, birden çok veriyi organize etmeyi ve karşılaştırmayı kolaylaştırır.",
+                "hypotheses": [
+                    {"text": "Tablo kullanımı, işlem adımlarının kontrol edilmesini ve en ekonomik seçeneğin doğrudan görülmesini sağlar.", "correct": True},
+                    {"text": "Tablo çizmek hesaplama sonucunu değiştirir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "Tablo temsili veriler arasındaki ilişkileri somutlaştırır; birim fiyat ve indirim miktarı karşılaştırmasında en verimli stratejidir.", "correct": True},
+                    {"text": "Tablolar problem çözmeyi zorlaştırır.", "correct": False}
+                ],
+                "sliderLabel": "Ürün Fiyatı (₺):",
+                "min": 150, "max": 900, "defaultVal": 450, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "Seçilen İndirim (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 20, "unit2": "%"
+            },
+            {
+                "tag": "ALAN MODELİ (10x10)",
+                "title": "Adım 3: 100'lük Izgarada Yüzde ve Kesir Birleşimi",
+                "instruction": "100 birimkarelik ızgara üzerinde %45'lik alanı modelleyin. Ondalık (0,45) ve kesir (9/20) karşılıklarını tabloya kaydedin.",
+                "hint": "100 küçük karenin 45 tanesini boyamak %45 = 0,45 = 45/100 = 9/20 anlamına gelir.",
+                "hypotheses": [
+                    {"text": "10x10 kareli alan modeli, yüzde ile ondalık ve kesir arasındaki geçişi doğrudan somutlaştırır.", "correct": True},
+                    {"text": "100'lük ızgarada sadece tam sayılar gösterilebilir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "10x10 alan modeli, bir problemdeki payda eşitleme ve yüzde hesaplamalarını zihinsel olarak hızlandıran temel bir geometrik temsildir.", "correct": True},
+                    {"text": "Alan modeli kesirlerde kullanılmaz.", "correct": False}
+                ],
+                "sliderLabel": "Boya Miktarı (Kare Sayısı):",
+                "min": 10, "max": 90, "defaultVal": 45, "unit": "kare",
+                "simType": "decimal_grid",
+                "hasSecondary": False
+            },
+            {
+                "tag": "GENELLEME & STRATEJİ",
+                "title": "Adım 4: Geriye Doğru Çalışma Stratejisi",
+                "instruction": "İndirimden sonraki fiyatı bilinen bir ürünün orijinal etiket fiyatını bulma sürecini inceleyin ve tabloya kaydedin.",
+                "hint": "%20 indirimli hali 240 TL olan ürünün %80'i 240 TL'dir. Tamamı (240 ÷ 80) x 100 = 300 TL'dir.",
+                "hypotheses": [
+                    {"text": "Parçadan bütüne giderken (geriye doğru çalışma), verilen tutar kalan yüzde oranına bölünerek 1 birim (%1) bulunur.", "correct": True},
+                    {"text": "Geriye doğru çalışırken indirimli fiyata doğrudan %20 eklenir.", "correct": False}
+                ],
+                "conjectures": [
+                    {"text": "İndirimli fiyattan orijinal fiyata ulaşırken doğrudan yüzde eklenemez; kalan yüzdeye bölünüp 100 ile çarpılmalıdır.", "correct": True},
+                    {"text": "240 TL'ye %20 eklenirse tam 300 TL eder.", "correct": False}
+                ],
+                "sliderLabel": "İndirimli Son Fiyat (₺):",
+                "min": 80, "max": 720, "defaultVal": 240, "unit": "₺",
+                "simType": "fraction_discount_problem",
+                "hasSecondary": True,
+                "sliderLabel2": "Uygulanmış İndirim (%):",
+                "min2": 10, "max2": 50, "defaultVal2": 20, "unit2": "%"
+            }
+        ],
+        "mini_tasks": [
+            {
+                "id": 1,
+                "tag": "GERİYE DOĞRU ÇALIŞMA",
+                "question": "%20 indirimli fiyatı 160 TL olan bir pantolonun indirimden önceki fiyatı kaç TL'dir?",
+                "options": [
+                    {"label": "A) %80'i 160 TL ise tamamı 200 TL'dir.", "correct": True},
+                    {"label": "B) 160 + 20 = 180 TL", "correct": False},
+                    {"label": "C) 192 TL", "correct": False}
+                ]
+            },
+            {
+                "id": 2,
+                "tag": "TEMSİL DÖNÜŞÜMÜ",
+                "question": "Bir çiftçi tarlasının 3/8'ine buğday, %25'ine mısır ekmiştir. Geriye kalan alan tarlanın kaçta kaçıdır?",
+                "options": [
+                    {"label": "A) 3/8 (Çünkü %25 = 2/8, 3/8 + 2/8 = 5/8, kalan 3/8)", "correct": True},
+                    {"label": "B) 1/8", "correct": False},
+                    {"label": "C) 1/2", "correct": False}
+                ]
+            },
+            {
+                "id": 3,
+                "tag": "BÜTÇE DİYAGRAMI",
+                "question": "Maaşının 0,35'ini birikime ayıran bir mühendis, maaşı 40.000 TL ise kaç TL biriktirir?",
+                "options": [
+                    {"label": "A) 40.000 x 0,35 = 14.000 TL", "correct": True},
+                    {"label": "B) 12.000 TL", "correct": False},
+                    {"label": "C) 16.000 TL", "correct": False}
+                ]
+            }
+        ],
+        "extra_questions": [
+            {
+                "id": 1,
+                "tag": "YENİ NESİL • GERİYE DOĞRU ÇALIŞMA MUHAKEMESİ",
+                "scenario": "Bir kırtasiyede tüm sırt çantalarına %30 sezon sonu indirimi uygulanıyor. Bir çantayı indirimli olarak 280 TL'ye satın alan Kerem, arkadaşına bu çantayı indirimden önce alsaydı kaç TL ödeyeceğini anlatıyor.",
+                "stem": "Çantanın indirimden önceki etiket fiyatı kaç TL'dir?",
+                "choices": [
+                    "400 TL (%70'i 280 TL ise tamamı 400 TL)",
+                    "350 TL",
+                    "364 TL",
+                    "420 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Ürünün %30 indirimli fiyatı, etiket fiyatının %70'ine eşittir. %70'i 280 TL ise %1'i 280 / 70 = 4 TL'dir. Tamamı (%100) 4 x 100 = 400 TL'dir."
+            },
+            {
+                "id": 2,
+                "tag": "YENİ NESİL • ÇOKLU TEMSİLLİ ÇİFTLİK PROBLEMİ",
+                "scenario": "Bir organik çiftlikte 1200 dönümlük arazinin 0,30'una zeytinlik kurulmuş, 1/4'üne lavanta dikilmiş, geri kalan alanın ise %50'sine güneş enerjisi panelleri yerleştirilmiştir.",
+                "stem": "Güneş enerjisi panelleri kurulan alan kaç dönümdür?",
+                "choices": [
+                    "270 dönüm (Kalan 540 dönümün %50'si)",
+                    "300 dönüm",
+                    "240 dönüm",
+                    "360 dönüm"
+                ],
+                "correctIndex": 0,
+                "explanation": "Zeytinlik = 1200 x 0,30 = 360 dönüm. Lavanta = 1200 x 1/4 = 300 dönüm. Toplam = 660 dönüm. Kalan = 1200 - 660 = 540 dönüm. Güneş paneli = 540 x %50 = 270 dönümdür."
+            },
+            {
+                "id": 3,
+                "tag": "YENİ NESİL • ENERJİ VERİMLİLİĞİ VE FATURA",
+                "scenario": "A sınıfı bir buzdolabı kullanan bir aile, eski buzdolabına göre ayda 45 kilovatsaat (kWh) daha az elektrik tüketmektedir. Elektriğin 1 kWh birim fiyatı 2,40 TL'dir.",
+                "stem": "Bu aile yeni buzdolabı sayesinde 1 yılda (12 ayda) elektrik faturasından toplam kaç TL tasarruf eder?",
+                "choices": [
+                    "1296 TL (Ayda 108 TL x 12 ay)",
+                    "1200 TL",
+                    "1180 TL",
+                    "1350 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "Aylık tasarruf = 45 x 2,40 = 108 TL. Yıllık tasarruf = 108 x 12 = 1296 TL'dir."
+            },
+            {
+                "id": 4,
+                "tag": "YENİ NESİL • AKILLI ALIŞVERİŞ VE 3 AL 2 ÖDE",
+                "scenario": "Bir markette tanesi 60 TL olan şampuanlarda '3 Al 2 Öde' kampanyası vardır. Yan markette ise aynı şampuan tekli alımlarda %30 indirimle satılmaktadır.",
+                "stem": "3 adet şampuan almak isteyen bir tüketici hangi seçenekte kaç TL daha az öder?",
+                "choices": [
+                    "3 Al 2 Öde kampanyasında 6 TL daha az öder (120 TL vs 126 TL)",
+                    "İki seçenek de aynı tutardadır",
+                    "%30 indirimli markette 10 TL daha az öder",
+                    "3 Al 2 Öde kampanyasında 15 TL daha az öder"
+                ],
+                "correctIndex": 0,
+                "explanation": "1. market (3 al 2 öde): 2 x 60 = 120 TL. 2. market (%30 indirim): 60 x 0,70 = 42 TL ➔ 3 x 42 = 126 TL. 1. market 126 - 120 = 6 TL daha ucuzdur."
+            },
+            {
+                "id": 5,
+                "tag": "YENİ NESİL • SU DEPOSU VE KADEMELİ BOŞALMA",
+                "scenario": "Tamamı 800 litre su alan bir deponun önce 3/10'u bahçe sulamada kullanılıyor. Daha sonra kalan suyun %40'ı temizlik için harcanıyor.",
+                "stem": "Son durumda depoda kaç litre su kalmıştır?",
+                "choices": [
+                    "336 litre",
+                    "320 litre",
+                    "350 litre",
+                    "280 litre"
+                ],
+                "correctIndex": 0,
+                "explanation": "1. kullanım: 800 x (3/10) = 240 L ➔ Kalan = 800 - 240 = 560 L. 2. kullanım: 560 x 0,40 = 224 L ➔ Kalan = 560 - 224 = 336 litredir."
+            },
+            {
+                "id": 6,
+                "tag": "YENİ NESİL • DİYAGRAMDAN YÜZDE ÇIKARIMI",
+                "scenario": "Bir okul kütüphanesindeki kitapların türlerine göre dağılımı şöyledir: Roman %45, Şiir 1/5, Tarih 0,15, geri kalanı ise Bilim kitaplarıdır.",
+                "stem": "Kütüphanede toplam 1500 kitap olduğuna göre bilim kitabı sayısı kaçtır?",
+                "choices": [
+                    "300 kitap (%20'si)",
+                    "250 kitap",
+                    "350 kitap",
+                    "280 kitap"
+                ],
+                "correctIndex": 0,
+                "explanation": "Roman = %45, Şiir = 1/5 = %20, Tarih = 0,15 = %15. Toplam = 45 + 20 + 15 = %80. Bilim = %100 - %80 = %20. 1500 x 0,20 = 300 kitap."
+            },
+            {
+                "id": 7,
+                "tag": "YENİ NESİL • KARŞILAŞTIRMALI YAKIT TASARRUFU",
+                "scenario": "Bir hibrit otomobil, 100 kilometrede benzinli araca göre 2,5 litre daha az yakıt tüketmektedir. Yakıtın litresi 42 TL'dir.",
+                "stem": "Yılda 20.000 kilometre yol yapan bu hibrit aracın sahibi yıllık kaç TL yakıt tasarrufu sağlar?",
+                "choices": [
+                    "21.000 TL (500 L tasarruf x 42 TL)",
+                    "18.500 TL",
+                    "24.000 TL",
+                    "19.200 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "20.000 km'de 200 adet 100 km vardır. Toplam yakıt tasarrufu = 200 x 2,5 = 500 litre. Parasal tasarruf = 500 x 42 = 21.000 TL."
+            },
+            {
+                "id": 8,
+                "tag": "YENİ NESİL • KADEMELİ VERGİ HESABI",
+                "scenario": "Bir e-ticaret satıcısı 10.000 TL'ye kadar olan satışlardan %5 komisyon, 10.000 TL'yi aşan kısım için ise %3 komisyon ödemektedir.",
+                "stem": "18.000 TL'lik satış yapan bir satıcının ödeyeceği toplam komisyon kaç TL'dir?",
+                "choices": [
+                    "740 TL (10.000'in %5'i = 500 TL + 8.000'in %3'ü = 240 TL)",
+                    "800 TL",
+                    "700 TL",
+                    "680 TL"
+                ],
+                "correctIndex": 0,
+                "explanation": "İlk 10.000 TL için: 10.000 x 0,05 = 500 TL. Kalan 8.000 TL için: 8.000 x 0,03 = 240 TL. Toplam = 500 + 240 = 740 TL."
+            },
+            {
+                "id": 9,
+                "tag": "YENİ NESİL • TEKSTİL FİRESİ VE VERİMLİLİK",
+                "scenario": "Bir tekstil atölyesinde üretilen kumaşların %4'ü üretim hatası sebebiyle fireye ayrılmaktadır. Bir ayda 7500 metre kumaş üretilmiştir.",
+                "stem": "Kusursuz olarak piyasaya sürülen kaliteli kumaş miktarı kaç metredir?",
+                "choices": [
+                    "7200 metre (%96'sı)",
+                    "7100 metre",
+                    "7300 metre",
+                    "7050 metre"
+                ],
+                "correctIndex": 0,
+                "explanation": "Fire oranı %4 ise sağlam oran %96'dır. 7500 x 0,96 = 7200 metre sağlam kumaş üretilmiştir."
+            },
+            {
+                "id": 10,
+                "tag": "YENİ NESİL • ÇOKLU SEÇENEK MALİYET ANALİZİ",
+                "scenario": "Bir yazıcı kiralama şirketi iki tarife sunuyor: A Tarifesi: Ayda 300 TL sabit ücret + sayfa başı 0,20 TL. B Tarifesi: Sabit ücret yok, sayfa başı 0,35 TL.",
+                "stem": "Ayda 3000 sayfa çıktı alan bir ofis için hangi tarife kaç TL daha ekonomiktir?",
+                "choices": [
+                    "A Tarifesi 150 TL daha ekonomiktir (900 TL vs 1050 TL)",
+                    "B Tarifesi 100 TL daha ekonomiktir",
+                    "İkisi de aynı maliyettedir",
+                    "A Tarifesi 200 TL daha ekonomiktir"
+                ],
+                "correctIndex": 0,
+                "explanation": "A Tarifesi: 300 + (3000 x 0,20) = 300 + 600 = 900 TL. B Tarifesi: 3000 x 0,35 = 1050 TL. A Tarifesi 1050 - 900 = 150 TL daha ekonomiktir."
+            }
+        ]
     }
 ]
