@@ -17,8 +17,9 @@ def verify():
     total_checked = 0
 
     for grade in [5, 6, 7]:
-        for week in range(1, 10):
-            file_path = ROOT_DIR / f"sinif-{grade}" / f"{grade}hafta-{week}.html"
+        files_to_check = [f"{grade}hafta-{w}.html" for w in range(1, 10)] + [f"{grade}hafta-aratatil-1.html"]
+        for fname in files_to_check:
+            file_path = ROOT_DIR / f"sinif-{grade}" / fname
             total_checked += 1
 
             if not file_path.exists():
@@ -94,7 +95,7 @@ def verify():
             print("  • " + e)
         return False
     else:
-        print("✅ TÜM 27 MODÜL (5, 6, 7. SINIF 1-9. HAFTA) VE JS SÖZDİZİMLERİ %100 KUSURSUZ DOĞRULANDI!")
+        print("✅ TÜM 30 MODÜL (5, 6, 7. SINIF 1-9. HAFTA VE 1. ARA TATİL ÖZEL) VE JS SÖZDİZİMLERİ %100 KUSURSUZ DOĞRULANDI!")
         return True
 
 if __name__ == "__main__":

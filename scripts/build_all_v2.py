@@ -16,12 +16,15 @@ from extract_helpers import extract_existing_raw_sections
 from data_grade5 import GRADE5_MODULES
 from data_grade6 import GRADE6_MODULES
 from data_grade7 import GRADE7_MODULES
+from data_aratatil_grade5 import GRADE5_ARATATIL_1
+from data_aratatil_grade6 import GRADE6_ARATATIL_1
+from data_aratatil_grade7 import GRADE7_ARATATIL_1
 from generator import sync_curriculum_js
 
 ALL_GRADES = {
-    5: GRADE5_MODULES,
-    6: GRADE6_MODULES,
-    7: GRADE7_MODULES,
+    5: GRADE5_MODULES + [GRADE5_ARATATIL_1],
+    6: GRADE6_MODULES + [GRADE6_ARATATIL_1],
+    7: GRADE7_MODULES + [GRADE7_ARATATIL_1],
 }
 
 def main():
@@ -37,7 +40,8 @@ def main():
 
         for mod_cfg in modules:
             week = mod_cfg["week"]
-            file_name = f"{grade}hafta-{week}.html"
+            file_id = mod_cfg.get("file_id") or f"{grade}hafta-{week}"
+            file_name = f"{file_id}.html"
             target_path = grade_dir / file_name
 
             # Mevcut 1-6. haftalardan önceki 10 soruyu ve 3 mini görevi koru
@@ -49,6 +53,9 @@ def main():
             mod_payload = {
                 "grade": grade,
                 "week": week,
+                "file_id": file_id,
+                "week_label": mod_cfg.get("week_label") or f"{week}. HAFTA",
+                "footer_label": mod_cfg.get("footer_label") or f"{week}. Hafta",
                 "title": mod_cfg["title"],
                 "date": mod_cfg["date"],
                 "hours": mod_cfg["hours"],

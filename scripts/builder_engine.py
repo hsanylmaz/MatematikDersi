@@ -12,7 +12,9 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 def build_module_html(mod_data: dict) -> str:
     grade = mod_data["grade"]
     week = mod_data["week"]
-    file_id = f"{grade}hafta-{week}"
+    file_id = mod_data.get("file_id") or f"{grade}hafta-{week}"
+    week_label = mod_data.get("week_label") or f"{week}. HAFTA"
+    footer_label = mod_data.get("footer_label") or f"{week}. Hafta"
     title = mod_data["title"]
     date_str = mod_data["date"]
     hours_str = mod_data["hours"]
@@ -58,8 +60,8 @@ def build_module_html(mod_data: dict) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{grade}. Sınıf {week}. Hafta (`{file_id}`) | {title} — Matematik Atölyesi</title>
-  <meta name="description" content="MEB TYMM 2026-2027 {grade}. Sınıf Matematik {week}. Hafta ({outcome_code}) {title} aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
+  <title>{grade}. Sınıf {week_label} (`{file_id}`) | {title} — Matematik Atölyesi</title>
+  <meta name="description" content="MEB TYMM 2026-2027 {grade}. Sınıf Matematik {week_label} ({outcome_code}) {title} aktif öğrenme simülasyonu, anlık değerlendirme ve 10 yeni nesil soru havuzu.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -76,7 +78,7 @@ def build_module_html(mod_data: dict) -> str:
       </a>
 
       <div class="topbar-meta">
-        <span class="tech-badge tech-badge--grade-{grade}">{grade}. SINIF • {week}. HAFTA</span>
+        <span class="tech-badge tech-badge--grade-{grade}">{grade}. SINIF • {week_label.upper()}</span>
         <span class="tech-badge mono">{outcome_code}</span>
         <span class="tech-badge" id="module-progress-badge">İlerleme: %0</span>
         <button type="button" class="btn btn--sm" id="theme-toggle-btn" aria-label="Temayı Değiştir">
@@ -409,7 +411,7 @@ def build_module_html(mod_data: dict) -> str:
         <strong>Matematik Atölyesi</strong> — MEB Türkiye Yüzyılı Maarif Modeli (TYMM) Uyumlu Aktif Öğrenme Platformu
       </div>
       <div class="mono" style="font-size:0.8rem; color:var(--ink-muted);">
-        {grade}. Sınıf • {week}. Hafta • {outcome_code} • GitHub &amp; Vercel Ready
+        {grade}. Sınıf • {footer_label} • {outcome_code} • GitHub &amp; Vercel Ready
       </div>
     </div>
   </footer>

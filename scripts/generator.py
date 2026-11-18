@@ -72,35 +72,54 @@ def parse_grade_docx(grade: int, docx_path: Path) -> list[dict]:
                 clean_text("".join(t.text for t in c.findall(".//w:t", NS) if t.text))
                 for c in row.findall(".//w:tc", NS)
             ]
-            if len(cells) < 7:
+            
+            is_ara_tatil = any("Ara Tatil" in c for c in cells)
+            if not is_ara_tatil and len(cells) < 7:
                 continue
 
-            date_str = cells[0]
-            week_str = cells[1]
-            hours_str = cells[2]
-            theme_str = cells[3]
-            content_str = cells[4]
-            outcome_str = cells[5]
-            process_str = cells[6]
+            if is_ara_tatil:
+                first_text = cells[0] if cells else ""
+                is_first_tatil = "1. Ara Tatil" in first_text
+                week_num = 9.5 if is_first_tatil else 22.5
+                week_label = "1. Ara Tatil" if is_first_tatil else "2. Ara Tatil"
+                date_str = "16-20 Kasım" if is_first_tatil else "08-12 Mart"
+                hours_str = "Tatil / Pekiştirme"
+                file_name = f"{grade}hafta-aratatil-1.html" if is_first_tatil else f"{grade}hafta-aratatil-2.html"
+                file_id = f"{grade}hafta-aratatil-1" if is_first_tatil else f"{grade}hafta-aratatil-2"
+                theme_str = "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI"
+                content_str = "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi"
+                outcome_str = f"MAT.{grade}.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma"
+                process_str = "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
+            else:
+                date_str = cells[0]
+                week_str = cells[1]
+                hours_str = cells[2]
+                theme_str = cells[3]
+                content_str = cells[4]
+                outcome_str = cells[5]
+                process_str = cells[6]
 
-            m = re.search(r"(\d+)\.\s*Hafta", week_str, re.IGNORECASE)
-            if not m:
-                continue
+                m = re.search(r"(\d+)\.\s*Hafta", week_str, re.IGNORECASE)
+                if not m:
+                    continue
 
-            week_num = int(m.group(1))
+                week_num = int(m.group(1))
+                week_label = f"{week_num}. Hafta"
+                file_name = f"{grade}hafta-{week_num}.html"
+                file_id = f"{grade}hafta-{week_num}"
+
             if week_num in seen_weeks:
                 continue
             seen_weeks.add(week_num)
 
-            file_name = f"{grade}hafta-{week_num}.html"
             rel_path = f"sinif-{grade}/{file_name}"
             abs_path = ROOT_DIR / f"sinif-{grade}" / file_name
 
             weeks_data.append({
                 "grade": grade,
                 "week": week_num,
-                "weekLabel": f"{week_num}. Hafta",
-                "fileId": f"{grade}hafta-{week_num}",
+                "weekLabel": week_label,
+                "fileId": file_id,
                 "fileName": file_name,
                 "path": rel_path,
                 "isReady": abs_path.exists(),

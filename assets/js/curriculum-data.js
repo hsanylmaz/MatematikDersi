@@ -139,6 +139,21 @@ window.TYMM_CURRICULUM = {
     },
     {
       "grade": 5,
+      "week": 9.5,
+      "weekLabel": "1. Ara Tatil",
+      "fileId": "5hafta-aratatil-1",
+      "fileName": "5hafta-aratatil-1.html",
+      "path": "sinif-5/5hafta-aratatil-1.html",
+      "isReady": true,
+      "date": "16-20 Kasım",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.5.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
+    },
+    {
+      "grade": 5,
       "week": 10,
       "weekLabel": "10. Hafta",
       "fileId": "5hafta-10",
@@ -331,6 +346,21 @@ window.TYMM_CURRICULUM = {
       "content": "Kesirlerin Farklı GösterimleriKesirlerin Karşılaştırılması",
       "outcomes": "MAT.5.1.3. Gerçek yaşam durumlarına karşılık gelen kesirleri farklı biçimlerde temsil edebilmeMAT.5.1.4. Farklı gösterimlerle ifade edilen kesirlerin karşılaştırılmasına yönelik çıkarım yapabilme",
       "process": "MAT.5.1.3.d) Benzer durumlarda kullanılabilecek farklı modelleri kullanışlılık açısından karşılaştırır.e) Karşılaştırdığı modellerin kullanışlılığına ilişkin karar verir.MAT.5.1.4.a) Farklı gösterimlerle ifade edilen kesirlerin karşılaştırılmasına yönelik varsayımda bulunur."
+    },
+    {
+      "grade": 5,
+      "week": 22.5,
+      "weekLabel": "2. Ara Tatil",
+      "fileId": "5hafta-aratatil-2",
+      "fileName": "5hafta-aratatil-2.html",
+      "path": "sinif-5/5hafta-aratatil-2.html",
+      "isReady": false,
+      "date": "08-12 Mart",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.5.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
     },
     {
       "grade": 5,
@@ -696,6 +726,21 @@ window.TYMM_CURRICULUM = {
     },
     {
       "grade": 6,
+      "week": 9.5,
+      "weekLabel": "1. Ara Tatil",
+      "fileId": "6hafta-aratatil-1",
+      "fileName": "6hafta-aratatil-1.html",
+      "path": "sinif-6/6hafta-aratatil-1.html",
+      "isReady": true,
+      "date": "16-20 Kasım",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.6.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
+    },
+    {
+      "grade": 6,
       "week": 10,
       "weekLabel": "10. Hafta",
       "fileId": "6hafta-10",
@@ -888,6 +933,21 @@ window.TYMM_CURRICULUM = {
       "content": "Üçgenin AçılarıYamuk, Paralelkenar, Eşkenar Dörtgen, Dikdörtgen ve Karenin Kenar, Açı ve Köşegen Özellikleri",
       "outcomes": "MAT.6.3.4. Üçgen, yamuk, paralelkenar, eşkenar dörtgen, dikdörtgen ve karenin açıları ile ilgili problemleri çözebilme",
       "process": "a) Üçgen, yamuk, paralelkenar, eşkenar dörtgen, dikdörtgen ve karenin açıları ile ilgili problemlerde matematiksel bileşenleri (şekil, açı ölçüsü, kenar uzunluğu, paralellik, diklik gibi) belirler.b) Matematiksel bileşenler arasındaki ilişkiyi belirler.c) Problem bağlamındaki temsilleri farklı temsillere dönüştürür.ç) Matematiksel temsillere dönüştürdüğü problemi kendi ifadeleri ile açıklar.d) Problemin çözümü için stratejiler geliştirir.e) Belirlenen stratejileri çözüm için uygular.f) Çözüm yollarını kontrol eder ve çözüme ulaştırmayan stratejiyi değiştirir.g) Problemin çözümü için kullandığı veya geliştirdiği stratejileri gözden geçirerek alternatif çözüm yollarını değerlendirir.ğ) Kullandığı strateji veya stratejileri farklı problemlerin çözümlerine geneller.h) Genellemenin geçerliliğini matematiksel örneklerle değerlendirir."
+    },
+    {
+      "grade": 6,
+      "week": 22.5,
+      "weekLabel": "2. Ara Tatil",
+      "fileId": "6hafta-aratatil-2",
+      "fileName": "6hafta-aratatil-2.html",
+      "path": "sinif-6/6hafta-aratatil-2.html",
+      "isReady": false,
+      "date": "08-12 Mart",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.6.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
     },
     {
       "grade": 6,
@@ -1253,6 +1313,21 @@ window.TYMM_CURRICULUM = {
     },
     {
       "grade": 7,
+      "week": 9.5,
+      "weekLabel": "1. Ara Tatil",
+      "fileId": "7hafta-aratatil-1",
+      "fileName": "7hafta-aratatil-1.html",
+      "path": "sinif-7/7hafta-aratatil-1.html",
+      "isReady": true,
+      "date": "16-20 Kasım",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.7.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
+    },
+    {
+      "grade": 7,
       "week": 10,
       "weekLabel": "10. Hafta",
       "fileId": "7hafta-10",
@@ -1445,6 +1520,21 @@ window.TYMM_CURRICULUM = {
       "content": "Doğru Orantılı Durumlara İlişkin Problem Çözme",
       "outcomes": "MAT.7.1.7. Gerçek yaşam durumları üzerinden doğru orantılı durumlara ilişkin problemleri çözebilme",
       "process": "a) Doğru orantılı durumlara ilişkin problemlerde nicelikleri belirler.b) Doğru orantılı durumlar arasındaki ilişkileri belirler.c) Bu ilişkileri tablo ve grafik temsillerine dönüştürür.ç) Dönüştürdüğü temsillerin problem bağlamındaki anlamını ifade eder.d) Elde ettiği ve yorumladığı farklı temsillere dayalı olarak problemin çözümü için stratejiler oluşturur.e) Belirlediği stratejileri kullanır."
+    },
+    {
+      "grade": 7,
+      "week": 22.5,
+      "weekLabel": "2. Ara Tatil",
+      "fileId": "7hafta-aratatil-2",
+      "fileName": "7hafta-aratatil-2.html",
+      "path": "sinif-7/7hafta-aratatil-2.html",
+      "isReady": false,
+      "date": "08-12 Mart",
+      "hours": "Tatil / Pekiştirme",
+      "theme": "ARA TATİL ÖZEL: PEKİŞTİRME & KEŞİF KAMPI",
+      "content": "1. Dönem Ara Tatil Matematiksel Keşif ve Pekiştirme Atölyesi",
+      "outcomes": "MAT.7.ARA-1. 1-9. Haftalar Arası Temel Matematiksel Becerileri Pekiştirme ve Yansıtma",
+      "process": "a) 1-9. haftalarda edinilen matematiksel araç ve modelleri gözden geçirir. b) Çözüm stratejilerini farklı problem durumlarında sınar. c) Kazanımlar arası ilişki kurarak çıkarımlarını pekiştirir."
     },
     {
       "grade": 7,
